@@ -25,6 +25,9 @@ namespace ui_qlnhahang
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
 
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,7 +42,16 @@ namespace ui_qlnhahang
 
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
+            QuanLyBan frm = new QuanLyBan();
+            frm.Show();
+            this.Hide();
+        }
 
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3();
+            frm.Show();
+            this.Hide();
         }
     }
 }

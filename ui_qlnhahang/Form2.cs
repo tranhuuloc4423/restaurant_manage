@@ -24,5 +24,15 @@ namespace ui_qlnhahang
                 e.Handled = true;
             }
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
