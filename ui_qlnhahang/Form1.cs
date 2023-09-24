@@ -25,6 +25,9 @@ namespace ui_qlnhahang
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
 
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
