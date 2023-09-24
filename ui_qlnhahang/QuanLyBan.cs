@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ui_qlnhahang
 {
-    public partial class QuanLyNV : Form
+    public partial class QuanLyBan : Form
     {
-        public QuanLyNV()
+        public QuanLyBan()
         {
             InitializeComponent();
         }

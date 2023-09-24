@@ -42,12 +42,14 @@ namespace ui_qlnhahang
 
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
-
+            QuanLyBan frm = new QuanLyBan();
+            frm.Show();
+            this.Hide();
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            QuanLyNV frm = new QuanLyNV();
+            Form3 frm = new Form3();
             frm.Show();
             this.Hide();
         }
