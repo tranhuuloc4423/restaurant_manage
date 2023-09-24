@@ -44,5 +44,12 @@ namespace ui_qlnhahang
         {
 
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            QuanLyNV frm = new QuanLyNV();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
