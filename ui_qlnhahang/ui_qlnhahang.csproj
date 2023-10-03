@@ -61,6 +61,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -110,40 +113,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AccountManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AccountManage.Designer.cs">
+      <DependentUpon>AccountManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="CustomMessBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="CustomMessBox.Designer.cs">
+      <DependentUpon>CustomMessBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManage.Designer.cs">
+      <DependentUpon>FoodManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CateManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CateManage.Designer.cs">
+      <DependentUpon>CateManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillManage.Designer.cs">
+      <DependentUpon>BillManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableManage.Designer.cs">
+      <DependentUpon>TableManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyBan.cs">
+    <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyBan.Designer.cs">
-      <DependentUpon>QuanLyBan.cs</DependentUpon>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AccountManage.resx">
+      <DependentUpon>AccountManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="CustomMessBox.resx">
+      <DependentUpon>CustomMessBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManage.resx">
+      <DependentUpon>FoodManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CateManage.resx">
+      <DependentUpon>CateManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillManage.resx">
+      <DependentUpon>BillManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManage.resx">
+      <DependentUpon>TableManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -155,6 +194,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

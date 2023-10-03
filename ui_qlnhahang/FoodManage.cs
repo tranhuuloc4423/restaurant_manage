@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ui_qlnhahang
 {
-    public partial class Form2 : Form
+    public partial class FoodManage : Form
     {
-        public Form2()
+        public FoodManage()
         {
             InitializeComponent();
         }
@@ -31,6 +31,11 @@ namespace ui_qlnhahang
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

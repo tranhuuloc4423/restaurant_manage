@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ui_qlnhahang
 {
-    public partial class Form3 : Form
+    public partial class TableManage : Form
     {
-        public Form3()
+        public TableManage()
         {
             InitializeComponent();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
