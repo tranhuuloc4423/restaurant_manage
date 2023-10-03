@@ -52,4 +52,6 @@ D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillManage.reso
 D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.TableManage.resources
 D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.CustomMessBox.resources
 D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.AccountManage.resources
-D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Welcome.resources
+D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillDetails.resources
+D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.ChangeInfo.resources
+D:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Home.resources

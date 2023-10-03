@@ -16,5 +16,31 @@ namespace ui_qlnhahang
         {
             InitializeComponent();
         }
+
+        private void CateManage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void AddRowData(string id, string name)
+        {
+            string[] row = { id, name };
+            gvCate.Rows.Add(row);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

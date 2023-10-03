@@ -16,5 +16,15 @@ namespace ui_qlnhahang
         {
             InitializeComponent();
         }
+
+        private void AccountManage_Load(object sender, EventArgs e)
+        {
+            //gvAccount ==> gridview
+            // txtUserName.Text ==> tên đăng nhập
+            //txtUserNameDisplay.Text ==> tên hiển thị
+            //txtPass.Text ==> password
+            //dpdType.SelectedValue ==> loại tài khoản
+            // btnAdd, btnDelete, btnEdit
+        }
     }
 }

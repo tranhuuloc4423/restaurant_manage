@@ -17,12 +17,28 @@ namespace ui_qlnhahang
             InitializeComponent();
         }
 
-        private void Form5_Load(object sender, EventArgs e)
+        private void TableManage_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void bunifuPictureBox1_Click(object sender, EventArgs e)
+        public void AddRowData(string id, string name, string state)
+        {
+            string[] row = { id, name, state };
+            gvTable.Rows.Add(row);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
         }

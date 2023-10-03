@@ -119,6 +119,18 @@
     <Compile Include="AccountManage.Designer.cs">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="BillDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillDetails.Designer.cs">
+      <DependentUpon>BillDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeInfo.Designer.cs">
+      <DependentUpon>ChangeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomMessBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,17 @@
     <Compile Include="BillManage.Designer.cs">
       <DependentUpon>BillManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TableManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,14 +180,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Welcome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Welcome.Designer.cs">
-      <DependentUpon>Welcome.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AccountManage.resx">
       <DependentUpon>AccountManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillDetails.resx">
+      <DependentUpon>BillDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeInfo.resx">
+      <DependentUpon>ChangeInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomMessBox.resx">
       <DependentUpon>CustomMessBox.cs</DependentUpon>
@@ -181,21 +204,17 @@
     <EmbeddedResource Include="BillManage.resx">
       <DependentUpon>BillManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TableManage.resx">
       <DependentUpon>TableManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Welcome.resx">
-      <DependentUpon>Welcome.cs</DependentUpon>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -209,6 +228,44 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dining-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foodie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\bill.png" />
+    <Content Include="Properties\dining-table.png" />
+    <Content Include="Properties\food-delivery.png" />
+    <Content Include="Properties\food.png" />
+    <Content Include="Properties\foodie.png" />
+    <Content Include="Properties\logo.png" />
+    <Content Include="Properties\order-food.png" />
+    <Content Include="Properties\restaurant.png" />
+    <Content Include="Properties\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

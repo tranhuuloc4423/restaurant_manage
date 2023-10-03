@@ -48,5 +48,15 @@ namespace ui_qlnhahang
                 dpTo.Value = dpFrom.Value;
             }
         }
+
+        private void btnPrintBill_Click(object sender, EventArgs e)
+        {
+            BillDetails billdetails = new BillDetails();
+            
+            // xử lý lấy dữ liệu người dùng chọn từ database để print hoá đơn 
+            //
+            //
+            billdetails.ShowDialog();
+        }
     }
 }
