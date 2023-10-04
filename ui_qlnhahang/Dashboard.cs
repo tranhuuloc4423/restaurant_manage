@@ -129,5 +129,19 @@ namespace ui_qlnhahang
         {
 
         }
+
+        private void btnOpenOrder_Click(object sender, EventArgs e)
+        {
+            Order form = new Order();
+            form.Show();
+            this.Hide();
+
+        }
+        
+
+        private void panel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
