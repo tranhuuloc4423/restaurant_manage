@@ -23,21 +23,23 @@ namespace ui_qlnhahang
 
         void loadFoodlist()
         {
-            string query = "Select * from [Food]";
-
-            DataProvider provider = new DataProvider();
-            
-
-            FoodDataGridView1.DataSource = provider.ExecuteQuery(query);
-        }
-
-        void addFoodDropdown() 
-        {
             string query = "Select Name from [Food]";
 
             DataProvider provider = new DataProvider();
 
-           
+
+            AddNamesToDropdown(provider.ExecuteQuery(query));
+        }
+
+        public void AddNamesToDropdown(DataTable data)
+        {
+            FoodlistDropdown1.Items.Clear(); // Clear existing items
+
+            foreach (DataRow row in data.Rows)
+            {
+                string name = row["Name"].ToString();
+                FoodlistDropdown1.Items.Add(name);
+            }
         }
 
 
