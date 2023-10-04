@@ -16,20 +16,21 @@ namespace ui_qlnhahang.DAo
 
             public DataTable ExecuteQuery(string query)
             {
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
-                {
+                DataTable data = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
+                    {
 
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);                               
 
-                    DataTable data = new DataTable();
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(data);
 
-                    adapter.Fill(data);
-                    connection.Close();
-                    return data;
-                }
+                        connection.Close();
+                    
+                    }
+                return data;
             }
 
         
