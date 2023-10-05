@@ -69,6 +69,8 @@ namespace ui_qlnhahang
             return foodList;
         }
 
+
+
         public void AddNamesToDropdown(DataTable data)
         {
             FoodlistDropdown1.Items.Clear(); // Clear existing items
@@ -146,7 +148,7 @@ namespace ui_qlnhahang
         {
             int rowIndex = 0; // Index of the desired row (e.g., 0 for the first row)
             int columnIndex = 0; // Index of the desired column (e.g., 2 for the third column)
-
+            List<Food> foodData = GetAllFoodData();
             string selectedFood = FoodlistDropdown1.SelectedItem?.ToString();
             FoodDataGridView1.Rows[rowIndex].Cells[columnIndex].Value = selectedFood;
             //tableList[tableindex=1].AddItem();
