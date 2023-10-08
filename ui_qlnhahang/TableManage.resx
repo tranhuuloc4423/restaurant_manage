@@ -132,18 +132,17 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuSeparator1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAXwAAAAKCAYAAAC36+WiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA4SURBVGhD7chBEQAwDMOw8CfdEQiBdtKdPw4AAAAAG40k
-        6YvqlCTdq05J0r3qlCTdCwAAAIBNkgf1H+pc5J3dAAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAUsAAAAOCAYAAACmVT71AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA7SURBVHhe7cixCQBADMPA7L90vjYYvg7cgRoNAAAAAAAA
+        96wk6VudkqSsTklSVqckKQMAAAAAAOCOmQdA+ycgXOpG0AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="txtNameTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAR0AAAAXCAYAAAA2hpupAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACLSURBVHhe7dxLDQJREEXBloY0/BD0DAYGZPDLLEDAO6u6
-        SW1awFn2mJnlu2yP03XbzwCrfDpzJGfme7zdnwDLvDtzJEd0gIDoACnRAVKiA6REB0iJDpASHSAlOkBK
-        dICU6AAp0QFSogOkRAdIiQ6QEh0gJTpASnSAlOgAqd/o+JEMrPb3I9nMrNnMCzBrFP2LNdYVAAAAAElF
-        TkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAOwAAAAXCAYAAAAIhqPOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACFSURBVHhe7dy5DQJREAXBCY3QyAcRz5LAQhhcWgMy+C3V
+        k8oZv90ZM4vtsj1O120/A2v6NHrkOvM93u5PYFHvRo9cBQvLEyyECBZCBAshgoUQwUKIYCFEsBAiWAgR
+        LIQIFkIECyGChRDBQohgIUSwECJYCBEshPwG66cTrO3vp5OZFTbzAtGDjHspzNFDAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -84,7 +84,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(825, 179);
+            this.bunifuButton1.Location = new System.Drawing.Point(726, 113);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -173,7 +173,7 @@
             this.btnExit.IdleIconLeftImage = null;
             this.btnExit.IdleIconRightImage = null;
             this.btnExit.IndicateFocus = false;
-            this.btnExit.Location = new System.Drawing.Point(825, 458);
+            this.btnExit.Location = new System.Drawing.Point(726, 392);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnExit.OnDisabledState.BorderRadius = 20;
@@ -263,7 +263,7 @@
             this.btnChangePass.IdleIconLeftImage = null;
             this.btnChangePass.IdleIconRightImage = null;
             this.btnChangePass.IndicateFocus = false;
-            this.btnChangePass.Location = new System.Drawing.Point(825, 316);
+            this.btnChangePass.Location = new System.Drawing.Point(726, 250);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnChangePass.OnDisabledState.BorderRadius = 20;
@@ -313,7 +313,7 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1237, 708);
+            this.ClientSize = new System.Drawing.Size(1039, 576);
             this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.bunifuButton1);

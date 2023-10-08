@@ -94,7 +94,7 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(808, 164);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(641, 116);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -161,7 +161,7 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(808, 340);
+            this.bunifuLabel1.Location = new System.Drawing.Point(641, 292);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(132, 23);
@@ -179,7 +179,7 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 3;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(808, 369);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(641, 321);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(380, 10);
@@ -212,7 +212,7 @@
             this.txtCate.IconRight = null;
             this.txtCate.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCate.Lines = new string[0];
-            this.txtCate.Location = new System.Drawing.Point(941, 340);
+            this.txtCate.Location = new System.Drawing.Point(774, 292);
             this.txtCate.MaxLength = 32767;
             this.txtCate.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCate.Modified = false;
@@ -306,7 +306,7 @@
             this.bunifuButton5.IdleIconLeftImage = null;
             this.bunifuButton5.IdleIconRightImage = null;
             this.bunifuButton5.IndicateFocus = false;
-            this.bunifuButton5.Location = new System.Drawing.Point(1062, 164);
+            this.bunifuButton5.Location = new System.Drawing.Point(879, 116);
             this.bunifuButton5.Name = "bunifuButton5";
             this.bunifuButton5.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.bunifuButton5.OnDisabledState.BorderRadius = 20;
@@ -358,6 +358,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvCate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvCate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvCate.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.gvCate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvCate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -405,7 +406,7 @@
             this.gvCate.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.gvCate.HeaderBgColor = System.Drawing.Color.Empty;
             this.gvCate.HeaderForeColor = System.Drawing.Color.White;
-            this.gvCate.Location = new System.Drawing.Point(30, 82);
+            this.gvCate.Location = new System.Drawing.Point(12, 82);
             this.gvCate.Name = "gvCate";
             this.gvCate.ReadOnly = true;
             this.gvCate.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -413,7 +414,7 @@
             this.gvCate.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gvCate.RowTemplate.Height = 40;
             this.gvCate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvCate.Size = new System.Drawing.Size(738, 578);
+            this.gvCate.Size = new System.Drawing.Size(601, 363);
             this.gvCate.TabIndex = 19;
             this.gvCate.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
@@ -424,7 +425,6 @@
             this.cateID.Name = "cateID";
             this.cateID.ReadOnly = true;
             this.cateID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cateID.Width = 299;
             // 
             // cateName
             // 
@@ -432,7 +432,6 @@
             this.cateName.HeaderText = "Tên Danh mục";
             this.cateName.Name = "cateName";
             this.cateName.ReadOnly = true;
-            this.cateName.Width = 439;
             // 
             // btnDelete
             // 
@@ -481,7 +480,7 @@
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(1088, 482);
+            this.btnDelete.Location = new System.Drawing.Point(921, 364);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnDelete.OnDisabledState.BorderRadius = 20;
@@ -571,7 +570,7 @@
             this.btnEdit.IdleIconLeftImage = null;
             this.btnEdit.IdleIconRightImage = null;
             this.btnEdit.IndicateFocus = false;
-            this.btnEdit.Location = new System.Drawing.Point(951, 482);
+            this.btnEdit.Location = new System.Drawing.Point(784, 364);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnEdit.OnDisabledState.BorderRadius = 20;
@@ -661,7 +660,7 @@
             this.btnAdd.IdleIconLeftImage = null;
             this.btnAdd.IdleIconRightImage = null;
             this.btnAdd.IndicateFocus = false;
-            this.btnAdd.Location = new System.Drawing.Point(808, 482);
+            this.btnAdd.Location = new System.Drawing.Point(641, 364);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnAdd.OnDisabledState.BorderRadius = 20;
@@ -709,7 +708,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1237, 720);
+            this.ClientSize = new System.Drawing.Size(1039, 576);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);

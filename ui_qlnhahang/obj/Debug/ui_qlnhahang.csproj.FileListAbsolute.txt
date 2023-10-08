@@ -78,3 +78,46 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe.config
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\ui_qlnhahang.pdb
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.AssemblyReference.cache
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.AccountManage.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillDetails.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.ChangeInfo.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.CustomMessBox.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Dashboard.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.FoodManage.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.CateManage.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillManage.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Home.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Order.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.TableManage.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Properties.Resources.resources
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.GenerateResource.cache
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe.licenses
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CoreCompileInputs.cache
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
+G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
