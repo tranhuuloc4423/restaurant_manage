@@ -187,6 +187,7 @@ begin
 	SELECT @id = SCOPE_IDENTITY()
 end
 go
+
 --drop procedure Bills_GetByDate
 create procedure Bills_GetByDate -- XUẤT DANH SÁCH HÓA ĐƠN THEO NGÀY
 @date smalldatetime
@@ -232,16 +233,18 @@ begin
 	where ID = @ID and InvoiceID = @BillId
 end
 go
---drop procedure BillDetail_GetById
-create procedure BillDetail_GetById -- XUẤT CHI TIẾT HÓA ĐƠN THEO ID
+--drop procedure BillDetail_GetByIdWithFood
+CREATE PROCEDURE BillDetail_GetByIdWithFood
 @ID int
-as 
-begin
-	select bd.ID,f.Name, bd.Quantity 
-	from BillDetails bd, Food f
-	where bd.InvoiceID = @ID and f.ID = bd.FoodID
-end
-go
+AS 
+BEGIN
+    SELECT bd.ID, f.Name AS FoodName, bd.Quantity, f.Price, b.Amount
+    FROM BillDetails bd
+    INNER JOIN Food f ON bd.FoodID = f.ID
+    INNER JOIN Bills b ON b.ID = bd.InvoiceID
+    WHERE bd.InvoiceID = @ID
+END
+GO
 --------------------TABLE_STATUS---------------------
 --drop proc UpdateTableStatus
 CREATE PROCEDURE UpdateTableStatus -- CẬP NHẬT TRẠNG THÁI BÀN
