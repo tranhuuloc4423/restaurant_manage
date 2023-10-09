@@ -13,14 +13,8 @@ AS
 	VALUES ( @Name, @FoodCategoryID, @Price)
 go
 
---EXEC [dbo].[InsertFood] 
---    @Name = N'Xoài',
---    @FoodCategoryID = 5,
---    @Price = 10000;
---GO
-
 --drop PROCEDURE UpdateFood
-CREATE PROCEDURE [UpdateFood] -- Sửa món ăn từ bảng Food dựa trên ID
+CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂN
 @ID int output,
 @Name nvarchar(3000), 
 @FoodCategoryID int, 
@@ -36,14 +30,8 @@ else
 return 1
 GO
 
---EXEC [dbo].[UpdateFood] 
---    @ID = 1,
---    @Name = N'Gỏi cuốn',
---    @FoodCategoryID = 1,
---    @Price = 25000;
-
 --drop PROCEDURE DeleteFood
-CREATE PROCEDURE [dbo].[DeleteFood] -- Xóa món ăn từ bảng Food dựa trên ID
+CREATE PROCEDURE [dbo].[DeleteFood] -- XÓA MÓN ĂN
     @FoodID INT
 AS
 BEGIN
@@ -51,8 +39,6 @@ BEGIN
     WHERE [ID] = @FoodID;
 END
 GO
-
---EXEC [dbo].[DeleteFood] @FoodID = 11
 --------------------CATEGORY-------------------------
 --SELECT * FROM Category -- Xem danh mục món ăn từ bảng Category
 --GO
@@ -66,10 +52,9 @@ BEGIN
     VALUES (@Name, @Type);
 END;
 GO
---EXECUTE Category_Insert @Name = 'Danh mục mới', @Type = 1;
 
---drop PROCEDURE Category_Update -- CHỈNH SỬA DANH MỤC
-CREATE PROCEDURE Category_Update
+--drop PROCEDURE Category_Update 
+CREATE PROCEDURE Category_Update -- CHỈNH SỬA DANH MỤC
     @ID int,
     @Name nvarchar(1000),
     @Type int
@@ -82,8 +67,8 @@ END;
 GO
 --EXECUTE Category_Update @ID = 1, @Name = 'Danh mục sửa', @Type = 2;
 
---drop PROCEDURE Category_Delete -- XÓA DANH MỤC
-CREATE PROCEDURE Category_Delete
+--drop PROCEDURE Category_Delete 
+CREATE PROCEDURE Category_Delete -- XÓA DANH MỤC
     @ID int
 AS
 BEGIN
@@ -95,8 +80,8 @@ GO
 -----------------------TABLE-------------------------
 --SELECT * FROM [dbo].[Table] -- Xem bàn từ bảng Table
 --GO
---drop PROCEDURE Table_Insert -- THÊM BÀN
-CREATE PROCEDURE Table_Insert
+--drop PROCEDURE Table_Insert 
+CREATE PROCEDURE Table_Insert -- THÊM BÀN
     @Name nvarchar(1000),
     @Status int
 AS
@@ -105,10 +90,9 @@ BEGIN
     VALUES (@Name, @Status);
 END;
 GO
---EXECUTE Table_Insert @Name = 'Bàn mới', @Status = 1;
 
---drop PROCEDURE Table_Update -- CHỈNH SỬA BÀN
-CREATE PROCEDURE Table_Update
+--drop PROCEDURE Table_Update 
+CREATE PROCEDURE Table_Update-- CHỈNH SỬA BÀN
     @ID int,
     @Name nvarchar(1000),
     @Status int
@@ -119,10 +103,9 @@ BEGIN
     WHERE ID = @ID;
 END;
 GO
---EXECUTE Table_Update @ID = 1, @Name = 'Bàn sửa', @Status = 2;
 
---drop PROCEDURE Table_Delete -- XÓA BÀN
-CREATE PROCEDURE Table_Delete
+--drop PROCEDURE Table_Delete 
+CREATE PROCEDURE Table_Delete -- XÓA BÀN
     @ID int
 AS
 BEGIN
@@ -130,29 +113,25 @@ BEGIN
     WHERE ID = @ID;
 END
 GO
---EXECUTE Table_Delete @ID = 1;
 --------------------ACCOUNT--------------------------
 --SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account
 --GO
 --drop PROCEDURE Account_Insert
-create procedure Account_Insert
+create procedure Account_Insert -- THÊM TÀI KHOẢN
 (
 	@AccountName nvarchar(100),
+	@DisplayName nvarchar(100),
 	@Pass nvarchar(200)
 )
 as
 begin
 	if (not exists (select AccountName from Account where AccountName = @AccountName))
-		insert into Account(AccountName,Password) values (@AccountName, @Pass)
+		insert into Account(AccountName,DisplayName,Password) values (@AccountName,@DisplayName, @Pass)
 end
 go
 
---DECLARE @AccountNameToAdd nvarchar(100) = 'new_account';
---DECLARE @PasswordToAdd nvarchar(200) = 'new_password';
---EXEC Account_Insert @AccountNameToAdd, @PasswordToAdd;
-
 --drop PROCEDURE Account_Update
-create procedure Account_Update
+create procedure Account_Update -- CẬP NHẬT TÀI KHOẢN
 (
 	@AccountName nvarchar(100),
 	@Pass nvarchar(200)
@@ -165,12 +144,8 @@ begin
 end
 go
 
---DECLARE @AccountNameToUpdate nvarchar(100) = 'existing_account';
---DECLARE @NewPassword nvarchar(200) = 'new_password';
---EXEC Account_Update @AccountNameToUpdate, @NewPassword;
-
 --drop PROCEDURE Account_Delete
-CREATE PROCEDURE Account_Delete
+CREATE PROCEDURE Account_Delete -- XÓA TÀI KHOẢN
     @AccountName nvarchar(100)
 AS
 BEGIN
@@ -178,16 +153,13 @@ BEGIN
     WHERE AccountName = @AccountName
 END
 GO
-
---DECLARE @AccountNameToDelete nvarchar(100) = 'example_account';
---EXEC Account_Delete @AccountNameToDelete;
 -----------------------------------------------------
 --SELECT AccountName,HashBytes('MD5', Password) as Password
 --from Account
 --go
 ---------------PASSWORD------------------------------
 --drop PROCEDURE Password_Update
-create procedure Password_Update
+create procedure Password_Update -- CẬP NHẬT MẬT KHẨU
 (
 	@AccountName nvarchar(100),
 	@Pass nvarchar(200)
@@ -199,37 +171,9 @@ begin
 	where AccountName = @AccountName
 end
 go
-
---DECLARE @AccountNameToUpdate nvarchar(100) = 'existing_account';
---DECLARE @NewPassword nvarchar(200) = 'new_password';
---EXEC Password_Update @AccountNameToUpdate, @NewPassword;
 -----------------------BILLS-------------------------
---drop procedure BillDetail_Insert
-create procedure BillDetail_Insert
-@id int output,
-@InvoiceID int,
-@FoodID int,
-@Quantity int
-as
-begin
-	insert into BillDetails(InvoiceID, FoodID, Quantity) values (@InvoiceID, @FoodID, @Quantity)
-	SELECT @id = SCOPE_IDENTITY()
-end
-go
---drop procedure BillDetail_Update
-create procedure BillDetail_Update
-@ID int,
-@BillId int,
-@Quantity int
-as
-begin
-	update BillDetails
-	set Quantity = @Quantity
-	where ID = @ID and InvoiceID = @BillId
-end
-go
 --drop procedure Bills_Insert
-create procedure Bills_Insert
+create procedure Bills_Insert -- THÊM HÓA ĐƠN
 @id int output,
 @Name nvarchar(1000),
 @TableID int,
@@ -243,9 +187,64 @@ begin
 	SELECT @id = SCOPE_IDENTITY()
 end
 go
+--drop procedure Bills_GetByDate
+create procedure Bills_GetByDate -- XUẤT DANH SÁCH HÓA ĐƠN THEO NGÀY
+@date smalldatetime
+as 
+begin
+	select * from Bills
+	where CheckoutDate = @date
+end
+go
+--drop procedure [CreateBillReport]
+create procedure [CreateBillReport] -- THỐNG KÊ HÓA ĐƠN THEO KHOẢNG THỜI GIAN
+	@StartDate DATE,
+    @EndDate DATE
+as 
+begin
+	select * from Bills
+	where [CheckoutDate] >= @StartDate AND [CheckoutDate] <= @EndDate;
+end
+go
+--EXEC [CreateBillReport] '2023-01-01', '2024-12-31';
+--GO
+--drop procedure BillDetail_Insert
+create procedure BillDetail_Insert -- THÊM CHI TIẾT HÓA ĐƠN
+@id int output,
+@InvoiceID int,
+@FoodID int,
+@Quantity int
+as
+begin
+	insert into BillDetails(InvoiceID, FoodID, Quantity) values (@InvoiceID, @FoodID, @Quantity)
+	SELECT @id = SCOPE_IDENTITY()
+end
+go
+--drop procedure BillDetail_Update
+create procedure BillDetail_Update -- CẬP NHẬT SỐ LƯỢNG TRONG CHI TIẾT HÓA ĐƠN
+@ID int,
+@BillId int,
+@Quantity int
+as
+begin
+	update BillDetails
+	set Quantity = @Quantity
+	where ID = @ID and InvoiceID = @BillId
+end
+go
+--drop procedure BillDetail_GetById
+create procedure BillDetail_GetById -- XUẤT CHI TIẾT HÓA ĐƠN THEO ID
+@ID int
+as 
+begin
+	select bd.ID,f.Name, bd.Quantity 
+	from BillDetails bd, Food f
+	where bd.InvoiceID = @ID and f.ID = bd.FoodID
+end
+go
 --------------------TABLE_STATUS---------------------
 --drop proc UpdateTableStatus
-CREATE PROCEDURE UpdateTableStatus
+CREATE PROCEDURE UpdateTableStatus -- CẬP NHẬT TRẠNG THÁI BÀN
     @TableID INT,
     @IsOccupied BIT
 AS
@@ -255,12 +254,9 @@ BEGIN
     WHERE [ID] = @TableID
 END
 GO
---DECLARE @TableID INT = 1;
---DECLARE @IsOccupied BIT = 1;
---EXEC UpdateTableStatus @TableID, @IsOccupied;
 --------------------BILL_STATUS---------------------
 --drop proc UpdateBillStatus
-CREATE PROCEDURE UpdateBillStatus
+CREATE PROCEDURE UpdateBillStatus -- CẬP NHẬT TRẠNG THÁI BILL
     @BillID INT,
     @IsPaid BIT
 AS
@@ -270,12 +266,9 @@ BEGIN
     WHERE [ID] = @BillID
 END
 GO
---DECLARE @BillID INT = 1;
---DECLARE @IsPaid BIT = 1;
---EXEC UpdateBillStatus @BillID, @IsPaid;
 ------------------AMOUNT----------------------------
 --drop procedure Amount_Update
-create procedure Amount_Update
+create procedure Amount_Update -- CẬP NHẬT TỔNG TIỀN 
 @ID int
 as
 begin
@@ -286,6 +279,4 @@ begin
 	where Bills.ID = @ID
 end
 go
---DECLARE @ID INT = 1; -- Thay đổi giá trị ID tương ứng với hóa đơn cần cập nhật tổng số tiền
---EXEC Amount_Update @ID;
 -----------------------------------------------------

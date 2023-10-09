@@ -13,6 +13,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Account](
 	[AccountName] [nvarchar](100) NOT NULL,
+	[DisplayName] [nvarchar](100) NOT NULL,
 	[Password] [nvarchar](200) NOT NULL
 
  CONSTRAINT [PK_Account_1] PRIMARY KEY CLUSTERED 
@@ -132,11 +133,11 @@ CREATE TABLE [dbo].[Table](
 ) ON [PRIMARY]
 GO
 
-INSERT [dbo].[Account] ([AccountName], [Password]) VALUES (N'levantuan', N'123')
-INSERT [dbo].[Account] ([AccountName], [Password]) VALUES (N'nguyenminhquan', N'123')
-INSERT [dbo].[Account] ([AccountName], [Password]) VALUES (N'tranhuuloc', N'123')
-INSERT [dbo].[Account] ([AccountName], [Password]) VALUES (N'nguyenthiennhan', N'123')
-INSERT [dbo].[Account] ([AccountName], [Password]) VALUES (N'letanphat', N'123')
+INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'levantuan',N'Lê Văn Tuấn', N'123')
+INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'nguyenminhquan',N'Nguyễn Minh Quân', N'123')
+INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'tranhuuloc',N'Trần Hữu Lộc', N'123')
+INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'nguyenthiennhan',N'Nguyễn Thiện Nhân', N'123')
+INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'letanphat',N'Lê Tấn Phát', N'123')
 
 SET IDENTITY_INSERT [dbo].[BillDetails] ON 
 INSERT [dbo].[BillDetails] ([ID], [InvoiceID], [FoodID], [Quantity]) VALUES (1, 1, 1, 1)
@@ -147,7 +148,8 @@ INSERT [dbo].[BillDetails] ([ID], [InvoiceID], [FoodID], [Quantity]) VALUES (5, 
 SET IDENTITY_INSERT [dbo].[BillDetails] OFF
 
 SET IDENTITY_INSERT [dbo].[Bills] ON 
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,null, N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,'2023-10-04 10:30:00', N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 410000, 1,'2023-10-04 10:30:00', N'levantuan')
 SET IDENTITY_INSERT [dbo].[Bills] OFF
 
 SET IDENTITY_INSERT [dbo].[Category] ON 
@@ -160,7 +162,6 @@ SET IDENTITY_INSERT [dbo].[Category] OFF
 
 SET IDENTITY_INSERT [dbo].[Food] ON 
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (1, N'Gỏi cuốn', 1, 20000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (1, N'Bún đậu mắm tôm', 1, 100000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (2, N'Soup', 1, 30000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (3, N'Thịt bò xào', 2, 150000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (4, N'Gà nướng', 2, 10000)
@@ -237,7 +238,7 @@ GO
 ALTER TABLE [dbo].[RoleAccount] CHECK CONSTRAINT [FK_RoleAccount_Role]
 GO
 
---Lay thong tin
+--LẤY THÔNG TIN
 Select * from [Account]
 select * from [BillDetails]
 select * from [Bills]
