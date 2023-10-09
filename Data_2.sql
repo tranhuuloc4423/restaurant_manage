@@ -1,8 +1,8 @@
-﻿--use master 
---go
+﻿use master 
+go
 
---create database [RestaurantManagement]
---go
+create database [RestaurantManagement]
+go
 
 use [RestaurantManagement]
 go

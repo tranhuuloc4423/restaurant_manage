@@ -65,11 +65,7 @@
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-<<<<<<< HEAD
             this.bunifuLabel1.Size = new System.Drawing.Size(674, 59);
-=======
-            this.bunifuLabel1.Size = new System.Drawing.Size(1061, 73);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Nhà Hàng FOODIE";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,11 +84,7 @@
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-<<<<<<< HEAD
             this.bunifuLabel2.Size = new System.Drawing.Size(674, 39);
-=======
-            this.bunifuLabel2.Size = new System.Drawing.Size(1061, 48);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel2.TabIndex = 1;
             this.bunifuLabel2.Text = "HOÁ ĐƠN THANH TOÁN";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,12 +129,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.bunifuLabel3.Location = new System.Drawing.Point(488, 124);
-=======
-            this.bunifuLabel3.Location = new System.Drawing.Point(787, 153);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(225, 31);
@@ -158,12 +145,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.bunifuLabel4.Location = new System.Drawing.Point(380, 124);
-=======
-            this.bunifuLabel4.Location = new System.Drawing.Point(643, 153);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(109, 31);
@@ -178,12 +160,7 @@
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.bunifuLabel5.Location = new System.Drawing.Point(548, 479);
-=======
-            this.bunifuLabel5.Location = new System.Drawing.Point(941, 608);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(84, 31);
@@ -198,12 +175,7 @@
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.CursorType = null;
             this.bunifuLabel6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.bunifuLabel6.Location = new System.Drawing.Point(430, 479);
-=======
-            this.bunifuLabel6.Location = new System.Drawing.Point(704, 608);
-            this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel6.Size = new System.Drawing.Size(119, 31);
@@ -218,18 +190,10 @@
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.bunifuLabel7.Location = new System.Drawing.Point(246, 50);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(183, 25);
-=======
-            this.bunifuLabel7.Location = new System.Drawing.Point(379, 62);
-            this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(226, 30);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuLabel7.TabIndex = 9;
             this.bunifuLabel7.Text = "Cảm ơn quý khách!";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,23 +226,6 @@
             this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuDataGridView1.ColumnHeadersHeight = 40;
-            this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.billOrderNum,
-            this.billName,
-            this.billPrice,
-            this.billQuantity,
-            this.billTotal});
-=======
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
@@ -288,7 +235,6 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuDataGridView1.ColumnHeadersHeight = 40;
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -327,11 +273,7 @@
             this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-<<<<<<< HEAD
             this.bunifuDataGridView1.Size = new System.Drawing.Size(597, 243);
-=======
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(981, 316);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuDataGridView1.TabIndex = 11;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -347,17 +289,9 @@
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuGroupBox1.LabelIndent = 10;
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-<<<<<<< HEAD
             this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 510);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
             this.bunifuGroupBox1.Size = new System.Drawing.Size(674, 101);
-=======
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 667);
-            this.bunifuGroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(1061, 124);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.bunifuGroupBox1.TabIndex = 12;
             this.bunifuGroupBox1.TabStop = false;
             // 
@@ -370,12 +304,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.IsCircle = true;
-<<<<<<< HEAD
             this.btnClose.Location = new System.Drawing.Point(632, 12);
-=======
-            this.btnClose.Location = new System.Drawing.Point(1005, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -393,12 +322,7 @@
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.IsCircle = true;
-<<<<<<< HEAD
             this.btnMinimize.Location = new System.Drawing.Point(584, 12);
-=======
-            this.btnMinimize.Location = new System.Drawing.Point(955, 15);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(40, 40);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -411,11 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(674, 611);
-=======
-            this.ClientSize = new System.Drawing.Size(1061, 791);
->>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.bunifuGroupBox1);
