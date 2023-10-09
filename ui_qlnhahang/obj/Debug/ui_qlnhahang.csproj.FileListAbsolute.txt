@@ -195,8 +195,6 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_man
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
-<<<<<<< HEAD
 G:\WinForm\test\ui_qlnhahang\ui_qlnhahang\obj\Debug\ui_qlnhahang.Login.resources
-=======
 >>>>>>> 2bd40cf478816d4415bc0fc1f43be800fe6858d8
 >>>>>>> a069fcacf413fcaeff79655d5dd7342a765e8ed1
