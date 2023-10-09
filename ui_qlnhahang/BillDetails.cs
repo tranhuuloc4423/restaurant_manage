@@ -37,5 +37,10 @@ namespace ui_qlnhahang
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void bunifuLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

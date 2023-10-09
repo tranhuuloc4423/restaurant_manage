@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.Properties;
 using System.Drawing;
+using Bunifu.UI.WinForms.BunifuButton;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace ui_qlnhahang
 {
+    
     public partial class Dashboard : Form
     {
         Form subForm = null;
+        bool sidebarExpand;
         public Dashboard()
         {
             InitializeComponent();
@@ -34,6 +39,25 @@ namespace ui_qlnhahang
             panel.Controls.Add(subForm);
             form.Show();
             changeTitle(title);
+            activeButton(title);
+        }
+
+        void activeButton(string title)
+        {
+            foreach (Control control in sidebar.Controls)
+            {
+                if (control is BunifuButton)
+                {
+                    BunifuButton button = (BunifuButton)control;
+                    if(button.Text == title)
+                    {
+                        button.IdleFillColor = Color.AliceBlue;
+                    } else
+                    {
+                        button.IdleFillColor = Color.Transparent;
+                    }
+                }
+            }
         }
 
         private void changeTitle(String title)
@@ -44,7 +68,8 @@ namespace ui_qlnhahang
         private void Form1_Load(object sender, EventArgs e)
         {
             Home form = new Home();
-            navigation(form, "Chào mừng đến với nhà hàng Foodie");
+            navigation(form, btnHome.Text);
+            activeButton(btnHome.Text);
         }
 
         private void bunifuButton3_Click(object sender, EventArgs e)
@@ -81,43 +106,36 @@ namespace ui_qlnhahang
         private void btnFoodManage_Click(object sender, EventArgs e)
         {
             FoodManage form = new FoodManage();
-            navigation(form, "Quản lý món ăn");
+            navigation(form, btnFoodManage.Text);
             pbHeader.Image = Resources.food;
         }
 
         private void btnCateManage_Click(object sender, EventArgs e)
         {
             CateManage form = new CateManage();
-            navigation(form, "Quản lý danh mục món ăn");
+            navigation(form, btnCateManage.Text);
             pbHeader.Image = Resources.food_delivery;
         }
 
         private void btnBillManage_Click(object sender, EventArgs e)
         {
             BillManage form = new BillManage();
-            navigation(form,"Quản lý hoá đơn");
+            navigation(form, btnBillManage.Text);
             pbHeader.Image = Resources.bill;
         }
 
         private void btnTableManage_Click(object sender, EventArgs e)
         {
             TableManage form = new TableManage();
-            navigation(form, "Quản lý bàn ăn");
+            navigation(form, btnTableManage.Text);
             pbHeader.Image = Resources.dining_table;
         }
 
         private void btnAccManage_Click(object sender, EventArgs e)
         {
             AccountManage form = new AccountManage();
-            navigation(form, "Quản lý tài khoản");
+            navigation(form, btnAccManage.Text);
             pbHeader.Image = Resources.user;
-        }
-
-        private void btnHomeManage_Click(object sender, EventArgs e)
-        {
-            Home form = new Home();
-            navigation(form, "Chào mừng đến với nhà hàng Foodie");
-            pbHeader.Image = Resources.restaurant;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -133,12 +151,62 @@ namespace ui_qlnhahang
         private void btnOpenOrder_Click(object sender, EventArgs e)
         {
             Order form = new Order();
-            navigation(form, "Bắt đầu Order");
+            navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
         }
         
 
         private void panel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sideBarTimer_Tick(object sender, EventArgs e)
+        {
+
+
+            //if(sidebarExpand)
+            //{
+            //    sidebar.Width -= 10;
+            //    if(sidebar.Width == sidebar.MinimumSize.Width)
+            //    {
+            //        sidebarExpand = false;
+            //        sideBarTimer.Stop();
+            //    }
+            //} else
+            //{
+            //    sidebar.Width += 10;
+            //    if (sidebar.Width == sidebar.MaximumSize.Width)
+            //    {
+            //        sidebarExpand = true;
+            //        sideBarTimer.Stop();
+            //    }
+            //}
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Home form = new Home();
+            navigation(form, btnHome.Text);
+            pbHeader.Image = Resources.restaurant;
+        }
+
+        private void panelButtons_Click(object sender, EventArgs e)
         {
 
         }

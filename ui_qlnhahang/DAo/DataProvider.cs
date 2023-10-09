@@ -12,7 +12,7 @@ namespace ui_qlnhahang.DAo
     {
         
         
-            private string connectionSTR = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
 
             public DataTable ExecuteQuery(string query)
             {
