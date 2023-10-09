@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,13 @@ namespace ui_qlnhahang
 {
     public partial class BillDetails : Form
     {
-        public BillDetails()
+        private int billId;
+        public BillDetails(int selectedBillId)
         {
             InitializeComponent();
             CenterToScreen();
+            billId = selectedBillId;
         }
-
         private void bunifuLabel3_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +29,6 @@ namespace ui_qlnhahang
         {
 
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();

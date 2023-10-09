@@ -148,8 +148,8 @@ INSERT [dbo].[BillDetails] ([ID], [InvoiceID], [FoodID], [Quantity]) VALUES (5, 
 SET IDENTITY_INSERT [dbo].[BillDetails] OFF
 
 SET IDENTITY_INSERT [dbo].[Bills] ON 
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,'2023-10-04 10:30:00', N'levantuan')
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 410000, 1,'2023-10-04 10:30:00', N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,'2023-10-04', N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 410000, 1,'2023-10-04', N'levantuan')
 SET IDENTITY_INSERT [dbo].[Bills] OFF
 
 SET IDENTITY_INSERT [dbo].[Category] ON 

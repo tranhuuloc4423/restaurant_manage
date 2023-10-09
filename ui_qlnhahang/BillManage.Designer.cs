@@ -35,14 +35,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.billID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThongKe = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dpFrom = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.dpTo = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnPrintBill = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
@@ -72,11 +67,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuDataGridView1.ColumnHeadersHeight = 40;
-            this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.billID,
-            this.billTable,
-            this.billPrice,
-            this.billDate});
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -108,44 +98,19 @@
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(43, 88);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(57, 108);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(975, 389);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1300, 479);
             this.bunifuDataGridView1.TabIndex = 20;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            // 
-            // billID
-            // 
-            this.billID.FillWeight = 76.14214F;
-            this.billID.HeaderText = "Số Hoá Đơn";
-            this.billID.Name = "billID";
-            this.billID.ReadOnly = true;
-            this.billID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // billTable
-            // 
-            this.billTable.FillWeight = 111.9289F;
-            this.billTable.HeaderText = "Số Bàn";
-            this.billTable.Name = "billTable";
-            this.billTable.ReadOnly = true;
-            // 
-            // billPrice
-            // 
-            this.billPrice.HeaderText = "Tổng tiền";
-            this.billPrice.Name = "billPrice";
-            this.billPrice.ReadOnly = true;
-            // 
-            // billDate
-            // 
-            this.billDate.HeaderText = "Ngày xuất hoá đơn";
-            this.billDate.Name = "billDate";
-            this.billDate.ReadOnly = true;
             // 
             // btnThongKe
             // 
@@ -194,7 +159,8 @@
             this.btnThongKe.IdleIconLeftImage = null;
             this.btnThongKe.IdleIconRightImage = null;
             this.btnThongKe.IndicateFocus = false;
-            this.btnThongKe.Location = new System.Drawing.Point(752, 40);
+            this.btnThongKe.Location = new System.Drawing.Point(986, 31);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnThongKe.OnDisabledState.BorderRadius = 20;
@@ -228,13 +194,14 @@
             this.btnThongKe.OnPressedState.ForeColor = System.Drawing.Color.Empty;
             this.btnThongKe.OnPressedState.IconLeftImage = null;
             this.btnThongKe.OnPressedState.IconRightImage = null;
-            this.btnThongKe.Size = new System.Drawing.Size(122, 32);
+            this.btnThongKe.Size = new System.Drawing.Size(163, 39);
             this.btnThongKe.TabIndex = 39;
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThongKe.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnThongKe.TextMarginLeft = 0;
             this.btnThongKe.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnThongKe.UseDefaultRadiusAndThickness = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // dpFrom
             // 
@@ -257,12 +224,13 @@
             this.dpFrom.IconColor = System.Drawing.Color.IndianRed;
             this.dpFrom.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dpFrom.LeftTextMargin = 5;
-            this.dpFrom.Location = new System.Drawing.Point(226, 40);
+            this.dpFrom.Location = new System.Drawing.Point(57, 38);
+            this.dpFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dpFrom.MinimumSize = new System.Drawing.Size(4, 32);
             this.dpFrom.Name = "dpFrom";
-            this.dpFrom.Size = new System.Drawing.Size(226, 32);
+            this.dpFrom.Size = new System.Drawing.Size(390, 32);
             this.dpFrom.TabIndex = 40;
-            this.dpFrom.Value = new System.DateTime(2023, 9, 15, 0, 0, 0, 0);
+            this.dpFrom.Value = new System.DateTime(2023, 10, 1, 0, 0, 0, 0);
             this.dpFrom.ValueChanged += new System.EventHandler(this.dpFrom_ValueChanged);
             // 
             // dpTo
@@ -286,29 +254,14 @@
             this.dpTo.IconColor = System.Drawing.Color.IndianRed;
             this.dpTo.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dpTo.LeftTextMargin = 5;
-            this.dpTo.Location = new System.Drawing.Point(490, 40);
+            this.dpTo.Location = new System.Drawing.Point(539, 38);
+            this.dpTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dpTo.MinimumSize = new System.Drawing.Size(4, 32);
             this.dpTo.Name = "dpTo";
-            this.dpTo.Size = new System.Drawing.Size(228, 32);
+            this.dpTo.Size = new System.Drawing.Size(393, 32);
             this.dpTo.TabIndex = 41;
-            this.dpTo.Value = new System.DateTime(2023, 10, 13, 0, 0, 0, 0);
+            this.dpTo.Value = new System.DateTime(2023, 10, 8, 0, 0, 0, 0);
             this.dpTo.ValueChanged += new System.EventHandler(this.dpTo_ValueChanged);
-            // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(43, 47);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(177, 19);
-            this.bunifuLabel2.TabIndex = 43;
-            this.bunifuLabel2.Text = "Chọn thời gian thống kê:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel1
             // 
@@ -316,14 +269,15 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(458, 47);
+            this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(488, 31);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(26, 19);
+            this.bunifuLabel1.Size = new System.Drawing.Size(13, 45);
             this.bunifuLabel1.TabIndex = 44;
-            this.bunifuLabel1.Text = "đến";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.Text = "-";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnPrintBill
@@ -373,7 +327,8 @@
             this.btnPrintBill.IdleIconLeftImage = null;
             this.btnPrintBill.IdleIconRightImage = null;
             this.btnPrintBill.IndicateFocus = false;
-            this.btnPrintBill.Location = new System.Drawing.Point(900, 40);
+            this.btnPrintBill.Location = new System.Drawing.Point(1194, 31);
+            this.btnPrintBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrintBill.Name = "btnPrintBill";
             this.btnPrintBill.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnPrintBill.OnDisabledState.BorderRadius = 20;
@@ -407,7 +362,7 @@
             this.btnPrintBill.OnPressedState.ForeColor = System.Drawing.Color.Empty;
             this.btnPrintBill.OnPressedState.IconLeftImage = null;
             this.btnPrintBill.OnPressedState.IconRightImage = null;
-            this.btnPrintBill.Size = new System.Drawing.Size(122, 32);
+            this.btnPrintBill.Size = new System.Drawing.Size(163, 39);
             this.btnPrintBill.TabIndex = 45;
             this.btnPrintBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPrintBill.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -418,18 +373,18 @@
             // 
             // BillManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1039, 576);
+            this.ClientSize = new System.Drawing.Size(1385, 709);
             this.Controls.Add(this.btnPrintBill);
             this.Controls.Add(this.bunifuLabel1);
-            this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.dpTo);
             this.Controls.Add(this.dpFrom);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.bunifuDataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BillManage";
             this.Text = "Thống kê hoá đơn";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -445,12 +400,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThongKe;
         private Bunifu.UI.WinForms.BunifuDatePicker dpFrom;
         private Bunifu.UI.WinForms.BunifuDatePicker dpTo;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrintBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billDate;
     }
 }
