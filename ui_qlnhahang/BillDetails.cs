@@ -43,5 +43,10 @@ namespace ui_qlnhahang
         {
 
         }
+
+        private void lblBillID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

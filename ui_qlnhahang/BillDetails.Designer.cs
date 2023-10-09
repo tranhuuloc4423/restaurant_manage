@@ -60,12 +60,11 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(674, 59);
+            this.bunifuLabel1.Size = new System.Drawing.Size(506, 40);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Nhà Hàng FOODIE";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,12 +78,11 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(0, 73);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Location = new System.Drawing.Point(0, 40);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(674, 39);
+            this.bunifuLabel2.Size = new System.Drawing.Size(506, 40);
             this.bunifuLabel2.TabIndex = 1;
             this.bunifuLabel2.Text = "HOÁ ĐƠN THANH TOÁN";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,12 +94,11 @@
             this.lblBill.AutoEllipsis = false;
             this.lblBill.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBill.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblBill.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBill.Location = new System.Drawing.Point(44, 153);
-            this.lblBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblBill.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBill.Location = new System.Drawing.Point(33, 86);
             this.lblBill.Name = "lblBill";
             this.lblBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBill.Size = new System.Drawing.Size(147, 31);
+            this.lblBill.Size = new System.Drawing.Size(89, 19);
             this.lblBill.TabIndex = 2;
             this.lblBill.Text = "Mã hoá đơn:";
             this.lblBill.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -112,27 +109,28 @@
             this.lblBillID.AllowParentOverrides = false;
             this.lblBillID.AutoEllipsis = false;
             this.lblBillID.CursorType = null;
-            this.lblBillID.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillID.Location = new System.Drawing.Point(223, 153);
-            this.lblBillID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblBillID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillID.Location = new System.Drawing.Point(128, 86);
             this.lblBillID.Name = "lblBillID";
             this.lblBillID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBillID.Size = new System.Drawing.Size(42, 31);
+            this.lblBillID.Size = new System.Drawing.Size(27, 19);
             this.lblBillID.TabIndex = 3;
             this.lblBillID.Text = "001";
             this.lblBillID.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblBillID.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblBillID.Click += new System.EventHandler(this.lblBillID_Click);
             // 
             // bunifuLabel3
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(488, 124);
+            this.bunifuLabel3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Location = new System.Drawing.Point(315, 86);
+            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(225, 31);
+            this.bunifuLabel3.Size = new System.Drawing.Size(143, 19);
             this.bunifuLabel3.TabIndex = 5;
             this.bunifuLabel3.Text = "30/09/2023 7:00PM";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -144,11 +142,12 @@
             this.bunifuLabel4.AllowParentOverrides = false;
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(380, 124);
+            this.bunifuLabel4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Location = new System.Drawing.Point(243, 86);
+            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(109, 31);
+            this.bunifuLabel4.Size = new System.Drawing.Size(68, 19);
             this.bunifuLabel4.TabIndex = 4;
             this.bunifuLabel4.Text = "Ngày lập:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -159,11 +158,12 @@
             this.bunifuLabel5.AllowParentOverrides = false;
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(548, 479);
+            this.bunifuLabel5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel5.Location = new System.Drawing.Point(344, 389);
+            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(84, 31);
+            this.bunifuLabel5.Size = new System.Drawing.Size(54, 19);
             this.bunifuLabel5.TabIndex = 7;
             this.bunifuLabel5.Text = "100000";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -174,11 +174,12 @@
             this.bunifuLabel6.AllowParentOverrides = false;
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(430, 479);
+            this.bunifuLabel6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Location = new System.Drawing.Point(266, 389);
+            this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(119, 31);
+            this.bunifuLabel6.Size = new System.Drawing.Size(74, 19);
             this.bunifuLabel6.TabIndex = 8;
             this.bunifuLabel6.Text = "Tổng tiền:";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -190,7 +191,8 @@
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(246, 50);
+            this.bunifuLabel7.Location = new System.Drawing.Point(157, 46);
+            this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(183, 25);
@@ -209,16 +211,18 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 3;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(44, 42);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(-26, 31);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(976, 12);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(732, 10);
             this.bunifuSeparator1.TabIndex = 10;
             // 
             // bunifuDataGridView1
             // 
             this.bunifuDataGridView1.AllowCustomTheming = false;
+            this.bunifuDataGridView1.AllowUserToAddRows = false;
+            this.bunifuDataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -266,14 +270,14 @@
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(44, 249);
-            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(33, 178);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
+            this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
             this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(597, 243);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(448, 197);
             this.bunifuDataGridView1.TabIndex = 11;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -289,9 +293,11 @@
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuGroupBox1.LabelIndent = 10;
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 510);
+            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 414);
+            this.bunifuGroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(674, 101);
+            this.bunifuGroupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bunifuGroupBox1.Size = new System.Drawing.Size(506, 82);
             this.bunifuGroupBox1.TabIndex = 12;
             this.bunifuGroupBox1.TabStop = false;
             // 
@@ -300,13 +306,14 @@
             this.btnClose.AllowFocused = false;
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClose.AutoSizeHeight = true;
-            this.btnClose.BorderRadius = 20;
+            this.btnClose.BorderRadius = 15;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.IsCircle = true;
-            this.btnClose.Location = new System.Drawing.Point(632, 12);
+            this.btnClose.Location = new System.Drawing.Point(472, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 13;
             this.btnClose.TabStop = false;
@@ -318,13 +325,14 @@
             this.btnMinimize.AllowFocused = false;
             this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMinimize.AutoSizeHeight = true;
-            this.btnMinimize.BorderRadius = 20;
+            this.btnMinimize.BorderRadius = 15;
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.IsCircle = true;
-            this.btnMinimize.Location = new System.Drawing.Point(584, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(436, 5);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimize.TabIndex = 14;
             this.btnMinimize.TabStop = false;
@@ -333,9 +341,9 @@
             // 
             // BillDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 611);
+            this.ClientSize = new System.Drawing.Size(506, 496);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.bunifuGroupBox1);
@@ -349,7 +357,6 @@
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.bunifuLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BillDetails";
             this.Text = "BillDetails";
             this.Load += new System.EventHandler(this.BillDetails_Load);

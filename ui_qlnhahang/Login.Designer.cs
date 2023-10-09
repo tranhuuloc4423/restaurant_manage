@@ -59,7 +59,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(65, 74);
+            this.bunifuLabel1.Location = new System.Drawing.Point(24, 296);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(84, 23);
@@ -77,7 +77,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(65, 124);
+            this.bunifuLabel2.Location = new System.Drawing.Point(24, 346);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(80, 23);
@@ -113,7 +113,7 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(151, 61);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(110, 283);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -187,7 +187,7 @@
             this.bunifuTextBox2.IconRight = null;
             this.bunifuTextBox2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox2.Lines = new string[0];
-            this.bunifuTextBox2.Location = new System.Drawing.Point(151, 113);
+            this.bunifuTextBox2.Location = new System.Drawing.Point(110, 335);
             this.bunifuTextBox2.MaxLength = 32767;
             this.bunifuTextBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox2.Modified = false;
@@ -281,7 +281,7 @@
             this.btnDangNhap.IdleIconLeftImage = null;
             this.btnDangNhap.IdleIconRightImage = null;
             this.btnDangNhap.IndicateFocus = false;
-            this.btnDangNhap.Location = new System.Drawing.Point(69, 179);
+            this.btnDangNhap.Location = new System.Drawing.Point(28, 401);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangNhap.OnDisabledState.BorderRadius = 20;
@@ -371,7 +371,7 @@
             this.btnThoat.IdleIconLeftImage = null;
             this.btnThoat.IdleIconRightImage = null;
             this.btnThoat.IndicateFocus = false;
-            this.btnThoat.Location = new System.Drawing.Point(261, 179);
+            this.btnThoat.Location = new System.Drawing.Point(220, 401);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThoat.OnDisabledState.BorderRadius = 20;
@@ -419,12 +419,12 @@
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 61;
+            this.bunifuPictureBox1.BorderRadius = 123;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(417, -1);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(75, 12);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(122, 122);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(246, 246);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 25;
             this.bunifuPictureBox1.TabStop = false;
@@ -435,7 +435,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(542, 256);
+            this.ClientSize = new System.Drawing.Size(394, 501);
             this.Controls.Add(this.bunifuPictureBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);

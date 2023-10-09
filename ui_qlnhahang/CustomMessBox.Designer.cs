@@ -241,12 +241,12 @@
             this.lblContent.AutoEllipsis = false;
             this.lblContent.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblContent.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblContent.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblContent.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContent.Location = new System.Drawing.Point(0, 45);
+            this.lblContent.Location = new System.Drawing.Point(204, 76);
+            this.lblContent.MaximumSize = new System.Drawing.Size(400, 100);
             this.lblContent.Name = "lblContent";
             this.lblContent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblContent.Size = new System.Drawing.Size(540, 43);
+            this.lblContent.Size = new System.Drawing.Size(120, 25);
             this.lblContent.TabIndex = 42;
             this.lblContent.Text = "bunifuLabel1";
             this.lblContent.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
