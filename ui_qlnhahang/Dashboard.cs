@@ -18,7 +18,6 @@ namespace ui_qlnhahang
     public partial class Dashboard : Form
     {
         Form subForm = null;
-        bool sidebarExpand;
         public Dashboard()
         {
             InitializeComponent();
@@ -46,15 +45,15 @@ namespace ui_qlnhahang
         {
             foreach (Control control in sidebar.Controls)
             {
-                if (control is BunifuButton)
+                if (control is System.Windows.Forms.Button)
                 {
-                    BunifuButton button = (BunifuButton)control;
+                    System.Windows.Forms.Button button = (System.Windows.Forms.Button)control;
                     if(button.Text == title)
                     {
-                        button.IdleFillColor = Color.AliceBlue;
+                        button.BackColor = Color.AliceBlue;
                     } else
                     {
-                        button.IdleFillColor = Color.Transparent;
+                        button.BackColor = Color.Transparent;
                     }
                 }
             }
@@ -63,32 +62,6 @@ namespace ui_qlnhahang
         private void changeTitle(String title)
         {
             lblTitle.Text = title;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Home form = new Home();
-            navigation(form, btnHome.Text);
-            activeButton(btnHome.Text);
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuButton4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void bunifuPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuPictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -143,60 +116,11 @@ namespace ui_qlnhahang
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void pbHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnOpenOrder_Click(object sender, EventArgs e)
         {
             Order form = new Order();
             navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
-        }
-        
-
-        private void panel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuPictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuPanel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void sideBarTimer_Tick(object sender, EventArgs e)
-        {
-
-
-            //if(sidebarExpand)
-            //{
-            //    sidebar.Width -= 10;
-            //    if(sidebar.Width == sidebar.MinimumSize.Width)
-            //    {
-            //        sidebarExpand = false;
-            //        sideBarTimer.Stop();
-            //    }
-            //} else
-            //{
-            //    sidebar.Width += 10;
-            //    if (sidebar.Width == sidebar.MaximumSize.Width)
-            //    {
-            //        sidebarExpand = true;
-            //        sideBarTimer.Stop();
-            //    }
-            //}
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -206,9 +130,11 @@ namespace ui_qlnhahang
             pbHeader.Image = Resources.restaurant;
         }
 
-        private void panelButtons_Click(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            Home form = new Home();
+            navigation(form, btnHome.Text);
+            activeButton(btnHome.Text);
         }
     }
 }

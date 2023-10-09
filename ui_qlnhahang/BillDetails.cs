@@ -48,5 +48,10 @@ namespace ui_qlnhahang
         {
 
         }
+
+        private void bunifuSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
