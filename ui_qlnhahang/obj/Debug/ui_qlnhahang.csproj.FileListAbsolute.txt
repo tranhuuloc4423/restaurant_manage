@@ -145,3 +145,4 @@ D:\21CT114-121001491\winform\QLNH2\restaurant_manage\ui_qlnhahang\obj\Debug\ui_q
 D:\21CT114-121001491\winform\QLNH2\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 D:\21CT114-121001491\winform\QLNH2\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
 D:\21CT114-121001491\winform\QLNH2\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Login.resources
+C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Login.resources
