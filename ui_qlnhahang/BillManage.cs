@@ -18,7 +18,7 @@ namespace ui_qlnhahang
             InitializeComponent();
         }
 
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+        private string connectionString = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
         private void Form4_Load(object sender, EventArgs e)
         {
             dpFrom.Value = DateTime.Today;
@@ -99,14 +99,14 @@ namespace ui_qlnhahang
 
         private void btnPrintBill_Click(object sender, EventArgs e)
         {
-            if (bunifuDataGridView1.SelectedRows.Count > 0) // Kiểm tra xem người dùng đã chọn một hàng trong DataGridView chưa
+            if (bunifuDataGridView1.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = bunifuDataGridView1.SelectedRows[0];
-                int selectedBillId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                // Lấy ID của hóa đơn được chọn
+                int selectedBillID = Convert.ToInt32(bunifuDataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                // Tạo và hiển thị form chi tiết hóa đơn
-                BillDetails billDetailForm = new BillDetails(selectedBillId);
-                billDetailForm.ShowDialog();
+                // Tạo form Chi tiết hóa đơn và truyền ID cho nó
+                BillDetails detailForm = new BillDetails(selectedBillID);
+                detailForm.ShowDialog();
             }
         }
 

@@ -14,17 +14,14 @@ namespace ui_qlnhahang
     public partial class BillDetails : Form
     {
         private int billId;
-        public BillDetails(int selectedBillId)
+
+        private string connectionString = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
+        public BillDetails(int billID)
         {
             InitializeComponent();
             CenterToScreen();
-            billId = selectedBillId;
+            this.billId = billID;
         }
-        private void bunifuLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BillDetails_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +35,7 @@ namespace ui_qlnhahang
         {
             this.WindowState = FormWindowState.Minimized;
         }
+<<<<<<< HEAD
 
         private void bunifuLabel7_Click(object sender, EventArgs e)
         {
@@ -53,5 +51,7 @@ namespace ui_qlnhahang
         {
 
         }
+=======
+>>>>>>> c6cfb76147fb3d070a2878e3a1eed011f4ed7a3a
     }
 }
