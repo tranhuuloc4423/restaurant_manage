@@ -245,6 +245,26 @@ BEGIN
     WHERE bd.InvoiceID = @ID
 END
 GO
+
+CREATE PROCEDURE Amount_GetById
+@ID int
+AS 
+BEGIN
+    SELECT b.Amount
+    FROM Bills b
+    WHERE b.ID = @ID
+END
+GO
+
+CREATE PROCEDURE Date_GetById
+@ID int
+AS 
+BEGIN
+    SELECT b.CheckoutDate
+    FROM Bills b
+    WHERE b.ID = @ID
+END
+GO
 --------------------TABLE_STATUS---------------------
 --drop proc UpdateTableStatus
 CREATE PROCEDURE UpdateTableStatus -- CẬP NHẬT TRẠNG THÁI BÀN
