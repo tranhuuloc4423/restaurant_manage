@@ -18,6 +18,8 @@ namespace ui_qlnhahang
         public Order()
         {
             InitializeComponent();
+            GetAllFoodData();
+            
         }
 
 
@@ -37,10 +39,10 @@ namespace ui_qlnhahang
             public int FoodId { get; set; }
             public string FoodName { get; set; }
             public int FoodCategoryId { get; set; }
-            public decimal Price { get; set; }
+            public int Price { get; set; }
         }
 
-        public List<Food> GetAllFoodData()
+        /*public List<Food> GetAllFoodData()
         {
             List<Food> foodList = new List<Food>();
             string query = "SELECT ID, Name, FoodCategoryID, Price FROM Food";
@@ -54,7 +56,7 @@ namespace ui_qlnhahang
                 int foodId = (int)row["ID"];
                 string foodName = (string)row["Name"];
                 int foodCategoryId = (int)row["FoodCategoryID"];
-                decimal foodPrice = (decimal)row["Price"];
+                int foodPrice = (int)row["Price"];
 
                 Food food = new Food
                 {
@@ -67,9 +69,38 @@ namespace ui_qlnhahang
             }
 
             return foodList;
+        }*/
+        private List<Food> foodList;
+        
+        void GetAllFoodData()
+        {
+           
+            string query = "SELECT [ID], [Name], [FoodCategoryID], [Price] FROM [dbo].[Food]";
+
+            DataProvider provider = new DataProvider();
+
+            DataTable dataTable = provider.ExecuteQuery(query);
+
+            foodList = new List<Food>();
+            foreach (DataRow row in dataTable.Rows)
+                {
+                    int foodId = Convert.ToInt32(row["ID"]);
+                    string foodName = row["Name"].ToString();
+                    int foodCategoryId = Convert.ToInt32(row["FoodCategoryID"]);
+                    int price = Convert.ToInt32(row["Price"]);
+
+                    Food food = new Food
+                    {
+                        FoodId = foodId,
+                        FoodName = foodName,
+                        FoodCategoryId = foodCategoryId,
+                        Price = price
+                    };
+
+                    foodList.Add(food);
+                }
+            
         }
-
-
 
         public void AddNamesToDropdown(DataTable data)
         {
@@ -146,12 +177,19 @@ namespace ui_qlnhahang
         
         private void bunifuButton21_Click(object sender, EventArgs e)
         {
-            int rowIndex = 0; // Index of the desired row (e.g., 0 for the first row)
-            int columnIndex = 0; // Index of the desired column (e.g., 2 for the third column)
-            List<Food> foodData = GetAllFoodData();
-            string selectedFood = FoodlistDropdown1.SelectedItem?.ToString();
-            FoodDataGridView1.Rows[rowIndex].Cells[columnIndex].Value = selectedFood;
-            //tableList[tableindex=1].AddItem();
+            string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
+            int quantity = (int)numericUpDown1.Value;
+
+            Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
+
+            if (selectedFood != null)
+            {
+                int totalPrice = selectedFood.Price * quantity;
+
+                // Add the selected food and its details to the DataGridView
+                FoodDataGridView1.Rows.Add(selectedFood.FoodName, selectedFood.Price, quantity, totalPrice);
+            }
+
         }
     }
 
@@ -161,7 +199,7 @@ namespace ui_qlnhahang
         public int FoodId { get; set; }
         public string FoodName { get; set; }
         public int Quantity { get; set; }
-        public decimal Price { get; set; }
+        public int Price { get; set; }
     }
 
     public class OrderListed
@@ -175,7 +213,7 @@ namespace ui_qlnhahang
             OrderItems = new List<OrderItem>();
         }
 
-        public void AddItem(int foodId, string foodName, int quantity, decimal price)
+        public void AddItem(int foodId, string foodName, int quantity, int price)
         {
             OrderItem item = new OrderItem
             {

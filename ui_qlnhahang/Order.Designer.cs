@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -55,11 +52,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuButton21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDelFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCheckout = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -91,104 +86,15 @@
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FoodDataGridView1
-            // 
-            this.FoodDataGridView1.AllowCustomTheming = false;
-            this.FoodDataGridView1.AllowUserToAddRows = false;
-            this.FoodDataGridView1.AllowUserToDeleteRows = false;
-            this.FoodDataGridView1.AllowUserToResizeColumns = false;
-            this.FoodDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.FoodDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.FoodDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.FoodDataGridView1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
-            this.FoodDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FoodDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.FoodDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FoodDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.FoodDataGridView1.ColumnHeadersHeight = 40;
-            this.FoodDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FoodName,
-            this.Price,
-            this.Quantity,
-            this.TotalPrice});
-            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.FoodDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.FoodDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.FoodDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.FoodDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.FoodDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.FoodDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.FoodDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.FoodDataGridView1.CurrentTheme.Name = null;
-            this.FoodDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.FoodDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FoodDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FoodDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.FoodDataGridView1.EnableHeadersVisualStyles = false;
-            this.FoodDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.FoodDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.FoodDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
-            this.FoodDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.FoodDataGridView1.Location = new System.Drawing.Point(558, 140);
-            this.FoodDataGridView1.Name = "FoodDataGridView1";
-            this.FoodDataGridView1.RowHeadersVisible = false;
-            this.FoodDataGridView1.RowTemplate.Height = 40;
-            this.FoodDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FoodDataGridView1.Size = new System.Drawing.Size(469, 368);
-            this.FoodDataGridView1.TabIndex = 23;
-            this.FoodDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.FoodDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FoodDataGridView1_CellContentClick);
-            // 
-            // FoodName
-            // 
-            this.FoodName.FillWeight = 203.0457F;
-            this.FoodName.HeaderText = "Món";
-            this.FoodName.Name = "FoodName";
-            // 
-            // Price
-            // 
-            this.Price.FillWeight = 65.65144F;
-            this.Price.HeaderText = "Giá";
-            this.Price.Name = "Price";
-            // 
-            // Quantity
-            // 
-            this.Quantity.FillWeight = 65.65144F;
-            this.Quantity.HeaderText = "SL";
-            this.Quantity.Name = "Quantity";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 65.65144F;
-            this.TotalPrice.HeaderText = "Tổng";
-            this.TotalPrice.Name = "TotalPrice";
             // 
             // bunifuButton21
             // 
@@ -2434,6 +2340,100 @@
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 65.65144F;
+            this.TotalPrice.HeaderText = "Tổng";
+            this.TotalPrice.Name = "TotalPrice";
+            // 
+            // Quantity
+            // 
+            this.Quantity.FillWeight = 65.65144F;
+            this.Quantity.HeaderText = "SL";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            this.Price.FillWeight = 65.65144F;
+            this.Price.HeaderText = "Giá";
+            this.Price.Name = "Price";
+            // 
+            // FoodName
+            // 
+            this.FoodName.FillWeight = 203.0457F;
+            this.FoodName.HeaderText = "Món";
+            this.FoodName.Name = "FoodName";
+            // 
+            // FoodDataGridView1
+            // 
+            this.FoodDataGridView1.AllowCustomTheming = false;
+            this.FoodDataGridView1.AllowUserToAddRows = false;
+            this.FoodDataGridView1.AllowUserToDeleteRows = false;
+            this.FoodDataGridView1.AllowUserToResizeColumns = false;
+            this.FoodDataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.FoodDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.FoodDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FoodDataGridView1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.FoodDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FoodDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.FoodDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FoodDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.FoodDataGridView1.ColumnHeadersHeight = 40;
+            this.FoodDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FoodName,
+            this.Price,
+            this.Quantity,
+            this.TotalPrice});
+            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.FoodDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.FoodDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.FoodDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.FoodDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.FoodDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.FoodDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.FoodDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.FoodDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.FoodDataGridView1.CurrentTheme.Name = null;
+            this.FoodDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.FoodDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FoodDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FoodDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.FoodDataGridView1.EnableHeadersVisualStyles = false;
+            this.FoodDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.FoodDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.FoodDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
+            this.FoodDataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.FoodDataGridView1.Location = new System.Drawing.Point(558, 140);
+            this.FoodDataGridView1.Name = "FoodDataGridView1";
+            this.FoodDataGridView1.RowHeadersVisible = false;
+            this.FoodDataGridView1.RowTemplate.Height = 40;
+            this.FoodDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.FoodDataGridView1.Size = new System.Drawing.Size(469, 368);
+            this.FoodDataGridView1.TabIndex = 23;
+            this.FoodDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.FoodDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FoodDataGridView1_CellContentClick);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2457,9 +2457,9 @@
             this.Text = "Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Order_FormClosed);
             this.Load += new System.EventHandler(this.Order_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2491,17 +2491,17 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private Bunifu.UI.WinForms.BunifuDataGridView FoodDataGridView1;
         private Bunifu.UI.WinForms.BunifuDropdown FoodlistDropdown1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
+        private Bunifu.UI.WinForms.BunifuDataGridView FoodDataGridView1;
     }
 }
