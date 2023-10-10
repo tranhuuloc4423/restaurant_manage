@@ -14,7 +14,7 @@ AS
 go
 
 --drop PROCEDURE UpdateFood
-CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂN
+CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂNS
 @ID int output,
 @Name nvarchar(3000), 
 @FoodCategoryID int, 
