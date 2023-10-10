@@ -82,9 +82,8 @@
             this.FoodlistDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.TypeDropdown = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,6 +273,7 @@
             this.btnDelFood.TextMarginLeft = 0;
             this.btnDelFood.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDelFood.UseDefaultRadiusAndThickness = true;
+            this.btnDelFood.Click += new System.EventHandler(this.btnDelFood_Click);
             // 
             // btnCheckout
             // 
@@ -412,7 +412,7 @@
             this.bunifuButton17.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton17.BackgroundImage")));
             this.bunifuButton17.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton17.ButtonText = "Bàn 22";
+            this.bunifuButton17.ButtonText = "Bàn 20";
             this.bunifuButton17.ButtonTextMarginLeft = 0;
             this.bunifuButton17.ColorContrastOnClick = 45;
             this.bunifuButton17.ColorContrastOnHover = 45;
@@ -501,7 +501,7 @@
             this.bunifuButton18.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton18.BackgroundImage")));
             this.bunifuButton18.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton18.ButtonText = "Bàn 21";
+            this.bunifuButton18.ButtonText = "Bàn 19";
             this.bunifuButton18.ButtonTextMarginLeft = 0;
             this.bunifuButton18.ColorContrastOnClick = 45;
             this.bunifuButton18.ColorContrastOnHover = 45;
@@ -575,6 +575,7 @@
             this.bunifuButton18.TextMarginLeft = 0;
             this.bunifuButton18.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton18.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton18.Click += new System.EventHandler(this.bunifuButton18_Click);
             // 
             // bunifuButton19
             // 
@@ -590,7 +591,7 @@
             this.bunifuButton19.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton19.BackgroundImage")));
             this.bunifuButton19.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton19.ButtonText = "Bàn 20";
+            this.bunifuButton19.ButtonText = "Bàn 18";
             this.bunifuButton19.ButtonTextMarginLeft = 0;
             this.bunifuButton19.ColorContrastOnClick = 45;
             this.bunifuButton19.ColorContrastOnHover = 45;
@@ -664,6 +665,7 @@
             this.bunifuButton19.TextMarginLeft = 0;
             this.bunifuButton19.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton19.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton19.Click += new System.EventHandler(this.bunifuButton19_Click);
             // 
             // bunifuButton20
             // 
@@ -679,7 +681,7 @@
             this.bunifuButton20.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton20.BackgroundImage")));
             this.bunifuButton20.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton20.ButtonText = "Bàn 19";
+            this.bunifuButton20.ButtonText = "Bàn 17";
             this.bunifuButton20.ButtonTextMarginLeft = 0;
             this.bunifuButton20.ColorContrastOnClick = 45;
             this.bunifuButton20.ColorContrastOnHover = 45;
@@ -753,6 +755,7 @@
             this.bunifuButton20.TextMarginLeft = 0;
             this.bunifuButton20.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton20.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton20.Click += new System.EventHandler(this.bunifuButton20_Click);
             // 
             // bunifuButton13
             // 
@@ -768,7 +771,7 @@
             this.bunifuButton13.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton13.BackgroundImage")));
             this.bunifuButton13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton13.ButtonText = "Bàn 18";
+            this.bunifuButton13.ButtonText = "Bàn 16";
             this.bunifuButton13.ButtonTextMarginLeft = 0;
             this.bunifuButton13.ColorContrastOnClick = 45;
             this.bunifuButton13.ColorContrastOnHover = 45;
@@ -842,6 +845,7 @@
             this.bunifuButton13.TextMarginLeft = 0;
             this.bunifuButton13.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton13.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton13.Click += new System.EventHandler(this.bunifuButton13_Click);
             // 
             // bunifuButton14
             // 
@@ -857,7 +861,7 @@
             this.bunifuButton14.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton14.BackgroundImage")));
             this.bunifuButton14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton14.ButtonText = "Bàn 17";
+            this.bunifuButton14.ButtonText = "Bàn 15";
             this.bunifuButton14.ButtonTextMarginLeft = 0;
             this.bunifuButton14.ColorContrastOnClick = 45;
             this.bunifuButton14.ColorContrastOnHover = 45;
@@ -931,6 +935,7 @@
             this.bunifuButton14.TextMarginLeft = 0;
             this.bunifuButton14.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton14.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton14.Click += new System.EventHandler(this.bunifuButton14_Click);
             // 
             // bunifuButton15
             // 
@@ -946,7 +951,7 @@
             this.bunifuButton15.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton15.BackgroundImage")));
             this.bunifuButton15.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton15.ButtonText = "Bàn 16";
+            this.bunifuButton15.ButtonText = "Bàn 14";
             this.bunifuButton15.ButtonTextMarginLeft = 0;
             this.bunifuButton15.ColorContrastOnClick = 45;
             this.bunifuButton15.ColorContrastOnHover = 45;
@@ -1020,6 +1025,7 @@
             this.bunifuButton15.TextMarginLeft = 0;
             this.bunifuButton15.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton15.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton15.Click += new System.EventHandler(this.bunifuButton15_Click);
             // 
             // bunifuButton16
             // 
@@ -1035,7 +1041,7 @@
             this.bunifuButton16.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton16.BackgroundImage")));
             this.bunifuButton16.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton16.ButtonText = "Bàn 15";
+            this.bunifuButton16.ButtonText = "Bàn 13";
             this.bunifuButton16.ButtonTextMarginLeft = 0;
             this.bunifuButton16.ColorContrastOnClick = 45;
             this.bunifuButton16.ColorContrastOnHover = 45;
@@ -1109,6 +1115,7 @@
             this.bunifuButton16.TextMarginLeft = 0;
             this.bunifuButton16.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton16.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton16.Click += new System.EventHandler(this.bunifuButton16_Click);
             // 
             // bunifuButton9
             // 
@@ -1124,7 +1131,7 @@
             this.bunifuButton9.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton9.BackgroundImage")));
             this.bunifuButton9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton9.ButtonText = "Bàn 14";
+            this.bunifuButton9.ButtonText = "Bàn 12";
             this.bunifuButton9.ButtonTextMarginLeft = 0;
             this.bunifuButton9.ColorContrastOnClick = 45;
             this.bunifuButton9.ColorContrastOnHover = 45;
@@ -1198,6 +1205,7 @@
             this.bunifuButton9.TextMarginLeft = 0;
             this.bunifuButton9.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton9.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton9.Click += new System.EventHandler(this.bunifuButton9_Click);
             // 
             // bunifuButton10
             // 
@@ -1213,7 +1221,7 @@
             this.bunifuButton10.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton10.BackgroundImage")));
             this.bunifuButton10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton10.ButtonText = "Bàn 13";
+            this.bunifuButton10.ButtonText = "Bàn 11";
             this.bunifuButton10.ButtonTextMarginLeft = 0;
             this.bunifuButton10.ColorContrastOnClick = 45;
             this.bunifuButton10.ColorContrastOnHover = 45;
@@ -1287,6 +1295,7 @@
             this.bunifuButton10.TextMarginLeft = 0;
             this.bunifuButton10.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton10.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton10.Click += new System.EventHandler(this.bunifuButton10_Click);
             // 
             // bunifuButton11
             // 
@@ -1302,7 +1311,7 @@
             this.bunifuButton11.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton11.BackgroundImage")));
             this.bunifuButton11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton11.ButtonText = "Bàn 12";
+            this.bunifuButton11.ButtonText = "Bàn 10";
             this.bunifuButton11.ButtonTextMarginLeft = 0;
             this.bunifuButton11.ColorContrastOnClick = 45;
             this.bunifuButton11.ColorContrastOnHover = 45;
@@ -1376,6 +1385,7 @@
             this.bunifuButton11.TextMarginLeft = 0;
             this.bunifuButton11.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton11.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton11.Click += new System.EventHandler(this.bunifuButton11_Click);
             // 
             // bunifuButton12
             // 
@@ -1391,7 +1401,7 @@
             this.bunifuButton12.BackColor1 = System.Drawing.Color.AliceBlue;
             this.bunifuButton12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton12.BackgroundImage")));
             this.bunifuButton12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton12.ButtonText = "Bàn 11";
+            this.bunifuButton12.ButtonText = "Bàn 9";
             this.bunifuButton12.ButtonTextMarginLeft = 0;
             this.bunifuButton12.ColorContrastOnClick = 45;
             this.bunifuButton12.ColorContrastOnHover = 45;
@@ -1465,6 +1475,7 @@
             this.bunifuButton12.TextMarginLeft = 0;
             this.bunifuButton12.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton12.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton12.Click += new System.EventHandler(this.bunifuButton12_Click);
             // 
             // bunifuButton5
             // 
@@ -1554,6 +1565,7 @@
             this.bunifuButton5.TextMarginLeft = 0;
             this.bunifuButton5.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton5.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton5.Click += new System.EventHandler(this.bunifuButton5_Click);
             // 
             // bunifuButton6
             // 
@@ -1643,6 +1655,7 @@
             this.bunifuButton6.TextMarginLeft = 0;
             this.bunifuButton6.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton6.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton6.Click += new System.EventHandler(this.bunifuButton6_Click);
             // 
             // bunifuButton7
             // 
@@ -2250,47 +2263,47 @@
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuDropdown1
+            // TypeDropdown
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDropdown1.BorderRadius = 1;
-            this.bunifuDropdown1.Color = System.Drawing.Color.Silver;
-            this.bunifuDropdown1.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.bunifuDropdown1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.bunifuDropdown1.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bunifuDropdown1.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.bunifuDropdown1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bunifuDropdown1.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown1.FillDropDown = true;
-            this.bunifuDropdown1.FillIndicator = false;
-            this.bunifuDropdown1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.FormattingEnabled = true;
-            this.bunifuDropdown1.Icon = null;
-            this.bunifuDropdown1.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown1.IndicatorColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown1.ItemBackColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemBorderColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.ItemHeight = 26;
-            this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDropdown1.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(558, 33);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.Size = new System.Drawing.Size(184, 32);
-            this.bunifuDropdown1.TabIndex = 32;
-            this.bunifuDropdown1.Text = "Loại";
-            this.bunifuDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown1.TextLeftMargin = 5;
+            this.TypeDropdown.BackColor = System.Drawing.Color.Transparent;
+            this.TypeDropdown.BackgroundColor = System.Drawing.Color.White;
+            this.TypeDropdown.BorderColor = System.Drawing.Color.Silver;
+            this.TypeDropdown.BorderRadius = 1;
+            this.TypeDropdown.Color = System.Drawing.Color.Silver;
+            this.TypeDropdown.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.TypeDropdown.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.TypeDropdown.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.TypeDropdown.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.TypeDropdown.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TypeDropdown.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.TypeDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TypeDropdown.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.TypeDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeDropdown.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.TypeDropdown.FillDropDown = true;
+            this.TypeDropdown.FillIndicator = false;
+            this.TypeDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TypeDropdown.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TypeDropdown.ForeColor = System.Drawing.Color.Black;
+            this.TypeDropdown.FormattingEnabled = true;
+            this.TypeDropdown.Icon = null;
+            this.TypeDropdown.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.TypeDropdown.IndicatorColor = System.Drawing.Color.Gray;
+            this.TypeDropdown.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.TypeDropdown.ItemBackColor = System.Drawing.Color.White;
+            this.TypeDropdown.ItemBorderColor = System.Drawing.Color.White;
+            this.TypeDropdown.ItemForeColor = System.Drawing.Color.Black;
+            this.TypeDropdown.ItemHeight = 26;
+            this.TypeDropdown.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.TypeDropdown.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.TypeDropdown.ItemTopMargin = 3;
+            this.TypeDropdown.Location = new System.Drawing.Point(558, 33);
+            this.TypeDropdown.Name = "TypeDropdown";
+            this.TypeDropdown.Size = new System.Drawing.Size(184, 32);
+            this.TypeDropdown.TabIndex = 32;
+            this.TypeDropdown.Text = "Loại";
+            this.TypeDropdown.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.TypeDropdown.TextLeftMargin = 5;
             // 
             // bunifuLabel5
             // 
@@ -2308,22 +2321,6 @@
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel6
-            // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(933, 528);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(41, 25);
-            this.bunifuLabel6.TabIndex = 36;
-            this.bunifuLabel6.Text = "VND";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel7
             // 
             this.bunifuLabel7.AllowParentOverrides = false;
@@ -2339,6 +2336,7 @@
             this.bunifuLabel7.Text = "000,000";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel7.Click += new System.EventHandler(this.bunifuLabel7_Click);
             // 
             // TotalPrice
             // 
@@ -2441,9 +2439,8 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1039, 576);
             this.Controls.Add(this.bunifuLabel7);
-            this.Controls.Add(this.bunifuLabel6);
             this.Controls.Add(this.bunifuLabel5);
-            this.Controls.Add(this.bunifuDropdown1);
+            this.Controls.Add(this.TypeDropdown);
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.FoodlistDropdown1);
@@ -2494,9 +2491,8 @@
         private Bunifu.UI.WinForms.BunifuDropdown FoodlistDropdown1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
+        private Bunifu.UI.WinForms.BunifuDropdown TypeDropdown;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
