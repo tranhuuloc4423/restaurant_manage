@@ -266,6 +266,16 @@ BEGIN
     WHERE b.ID = @ID
 END
 GO
+
+CREATE PROCEDURE GetID
+@ID int
+AS 
+BEGIN
+    SELECT b.ID
+    FROM Bills b
+    WHERE b.ID = @ID
+END
+GO
 --------------------TABLE_STATUS---------------------
 --drop proc UpdateTableStatus
 CREATE PROCEDURE UpdateTableStatus -- CẬP NHẬT TRẠNG THÁI BÀN

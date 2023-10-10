@@ -48,7 +48,7 @@ CREATE TABLE [dbo].[Bills](
 	[TableID] [int] NOT NULL,
 	[Amount] [int] NOT NULL,
 	[Status] [bit] NOT NULL,
-	[CheckoutDate] [smalldatetime] NULL,
+	[CheckoutDate] [Date] NULL,
 	[Account] [nvarchar](100) NOT NULL,
  CONSTRAINT [PK_Invoice] PRIMARY KEY CLUSTERED 
 (

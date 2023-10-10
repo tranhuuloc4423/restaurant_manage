@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace ui_qlnhahang.DAo
 {
     public class DataProvider
-    {
-        
-        
-            private string connectionSTR = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
+    {            
+            public string connectionSTR = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
             private static DataProvider instance;
 
             public static DataProvider Instance

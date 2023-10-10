@@ -90,3 +90,26 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_man
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restiear2=9-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
+D:\QLNH\restaurant_manage\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe.config
+D:\QLNH\restaurant_manage\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe
+D:\QLNH\restaurant_manage\ui_qlnhahang\bin\Debug\ui_qlnhahang.pdb
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.AssemblyReference.cache
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.AccountManage.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillDetail.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.ChangeInfo.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.CustomMessBox.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Dashboard.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.FoodManage.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.CateManage.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.BillManage.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Home.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Login.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Order.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.TableManage.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Properties.Resources.resources
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.GenerateResource.cache
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe.licenses
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CoreCompileInputs.cache
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb

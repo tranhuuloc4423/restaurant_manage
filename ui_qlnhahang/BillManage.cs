@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using static ui_qlnhahang.Order;
 using static ui_qlnhahang.FormUltility;
+using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
@@ -19,8 +20,6 @@ namespace ui_qlnhahang
         {
             InitializeComponent();
         }
-
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
         private void Form4_Load(object sender, EventArgs e)
         {
             dpFrom.Value = DateTime.Today;
@@ -58,7 +57,7 @@ namespace ui_qlnhahang
             if (gvBill.SelectedRows.Count > 0)
             {
                 // Lấy ID của hóa đơn được chọn
-                int selectedBillID = Convert.ToInt32(gvBill.SelectedRows[0].Cells["ID"].Value);
+                int selectedBillID = Convert.ToInt32(gvBill.SelectedRows[0].Cells["billID"].Value);
 
                 // Tạo form Chi tiết hóa đơn và truyền ID cho nó
                 BillDetail detailForm = new BillDetail(selectedBillID);
@@ -100,7 +99,7 @@ namespace ui_qlnhahang
 
         private void LoadBillReport(DateTime startDate, DateTime endDate)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DataProvider.Instance.connectionSTR))
             {
                 SqlCommand command = new SqlCommand("CreateBillReport", connection);
                 command.CommandType = CommandType.StoredProcedure;
