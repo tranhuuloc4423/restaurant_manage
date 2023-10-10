@@ -25,6 +25,7 @@ namespace ui_qlnhahang
         {
             string query = "select * from [Table]";
             GetAllData(query, gvTable);
+            txtNameTable.Clear();
         }
 
         private void handleData(string name, string query, string desc, object[] parameter = null)

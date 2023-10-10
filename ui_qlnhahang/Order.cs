@@ -330,7 +330,7 @@ namespace ui_qlnhahang
         private void Order_Load(object sender, EventArgs e)
         {
             loadFoodlist();
-
+            //LoadTables();
             int TotalTable = 22;
             
 
@@ -350,6 +350,41 @@ namespace ui_qlnhahang
         {
 
         }
+
+        //public void LoadTables()
+        //{
+        //    panelBtns.Controls.Clear();
+
+        //    // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
+        //    DataProvider provider = new DataProvider();
+        //    DataTable tableData = provider.ExecuteQuery("select * from [Table]");
+
+        //    // Duyệt qua từng dòng dữ liệu trong bảng
+        //    foreach (DataRow row in tableData.Rows)
+        //    {
+        //        // Tạo một nút đại diện cho mỗi bàn ăn
+        //        Button tableButton = new Button();
+        //        tableButton.Text = row["ID"].ToString();
+        //        tableButton.Name = row["Name"].ToString();
+        //        tableButton.Width = 95;
+        //        tableButton.Height = 75;
+
+        //        // Xử lý sự kiện khi nút được nhấp
+        //        tableButton.Click += TableButton_Click;
+
+        //        // Thêm nút vào form
+        //        this.Controls.Add(tableButton);
+        //    }
+        //}
+
+        //private void TableButton_Click(object sender, EventArgs e)
+        //{
+        //    Button tableButton = (Button)sender;
+        //    int tableID = Convert.ToInt32(tableButton.Name);
+        //    FoodDataGridView1.Rows.Clear();
+        //    orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
+        //    getTotalBill();
+        //}
 
         List<OrderListed> tableList = new List<OrderListed>();
         private int currentRowIndex = 0;
@@ -521,8 +556,6 @@ namespace ui_qlnhahang
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
         }
-
-        
     }
 
         
