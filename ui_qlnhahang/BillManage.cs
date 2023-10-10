@@ -31,9 +31,25 @@ namespace ui_qlnhahang
 
             dpTo.Format = DateTimePickerFormat.Custom;
             dpTo.CustomFormat = "dd/MM/yyyy";
-
             string query = "select * from [Bills]";
             GetAllData(query, gvBill);
+            gvBill.ClearSelection();
+            handleFormatDate();
+        }
+
+        private void handleFormatDate()
+        {
+            foreach (DataGridViewColumn column in gvBill.Columns)
+            {
+                foreach (DataGridViewRow row in gvBill.Rows)
+                {
+                    if (row.Cells[column.Index].Value is DateTime)
+                    {
+                        column.DefaultCellStyle.Format = "dd/MM/yyyy";
+                        return;
+                    }
+                }
+            }
         }
 
         private void dpTo_ValueChanged(object sender, EventArgs e)
@@ -98,20 +114,20 @@ namespace ui_qlnhahang
             }
         }
 
-        private void LoadBillReport(DateTime startDate, DateTime endDate)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("CreateBillReport", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@StartDate", startDate);
-                command.Parameters.AddWithValue("@EndDate", endDate);
+        //private void LoadBillReport(DateTime startDate, DateTime endDate)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        SqlCommand command = new SqlCommand("CreateBillReport", connection);
+        //        command.CommandType = CommandType.StoredProcedure;
+        //        command.Parameters.AddWithValue("@StartDate", startDate);
+        //        command.Parameters.AddWithValue("@EndDate", endDate);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable dataTable = new DataTable();
+        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
+        //        DataTable dataTable = new DataTable();
 
-                adapter.Fill(dataTable);
-            }
-        }
+        //        adapter.Fill(dataTable);
+        //    }
+        //}
     }
 }

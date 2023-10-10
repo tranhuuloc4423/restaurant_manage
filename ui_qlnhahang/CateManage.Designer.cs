@@ -358,7 +358,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvCate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvCate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvCate.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.gvCate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvCate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -372,6 +371,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvCate.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvCate.ColumnHeadersHeight = 40;
+            this.gvCate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gvCate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cateID,
             this.cateName});
@@ -426,6 +426,7 @@
             this.cateID.Name = "cateID";
             this.cateID.ReadOnly = true;
             this.cateID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cateID.Width = 243;
             // 
             // cateName
             // 
@@ -433,6 +434,7 @@
             this.cateName.HeaderText = "Tên Danh mục";
             this.cateName.Name = "cateName";
             this.cateName.ReadOnly = true;
+            this.cateName.Width = 358;
             // 
             // btnDelete
             // 

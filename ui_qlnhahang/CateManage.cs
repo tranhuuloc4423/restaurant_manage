@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using ui_qlnhahang.DAo;
 using static ui_qlnhahang.FormUltility;
 using static ui_qlnhahang.Order;
@@ -17,7 +18,7 @@ namespace ui_qlnhahang
 {
     public partial class CateManage : Form
     {
-        string query = "select * from [Category]";
+        string mainquery = "select * from [Category]";
         public CateManage()
         {
             InitializeComponent();
@@ -26,7 +27,16 @@ namespace ui_qlnhahang
             
         private void CateManage_Load(object sender, EventArgs e)
         {
-            GetAllData(query, gvCate);
+            GetAllData(mainquery, gvCate);
+            gvCate.ClearSelection();
+        }
+
+        private void handleData(string name, string query, string desc, object[] parameter = null)
+        {
+            DataProvider dataprovider = new DataProvider();
+            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
+            MessageBox.Show(desc);
+            GetAllData(mainquery, gvCate);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -38,14 +48,29 @@ namespace ui_qlnhahang
             }
             string name = "Category_Insert";
             string query = "@Name @Type";
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQuery(name, query, new object[] { txtCate.Text.ToString(), 1 });
+            string desc = "Thêm danh mục món ăn thành công!";
+            handleData(name, query, desc, new object[] { txtCate.Text, 1 });
 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+            if (gvCate.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = gvCate.SelectedRows[0];
+                if (string.IsNullOrEmpty(txtCate.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên danh mục món ăn");
+                    return;
+                } else
+                {
+                    object id = selectedRow.Cells[0].Value;
+                    string name = "Category_Update";
+                    string query = "@ID @Name @Type";
+                    string desc = "Cập nhật danh mục món ăn thành công!";
+                    handleData(name, query, desc, new object[] { id, txtCate.Text, 1 });
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -53,12 +78,12 @@ namespace ui_qlnhahang
 
             if (gvCate.SelectedRows.Count > 0)
             {
-                DataProvider dataprovider = new DataProvider();
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
                 string name = "Category_Delete";
                 string query = "@ID";
+                string desc = "Xoá danh mục món ăn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                dataprovider.ExecuteNonQuery(name, query, (object[])id);
+                handleData(name, query, desc, new object[] { id });
             }
         }
 
