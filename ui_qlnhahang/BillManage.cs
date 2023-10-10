@@ -18,7 +18,7 @@ namespace ui_qlnhahang
             InitializeComponent();
         }
 
-        private string connectionString = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
         private void Form4_Load(object sender, EventArgs e)
         {
             dpFrom.Value = DateTime.Today;
@@ -105,7 +105,7 @@ namespace ui_qlnhahang
                 int selectedBillID = Convert.ToInt32(bunifuDataGridView1.SelectedRows[0].Cells["ID"].Value);
 
                 // Tạo form Chi tiết hóa đơn và truyền ID cho nó
-                BillDetails detailForm = new BillDetails(selectedBillID);
+                BillDetail detailForm = new BillDetail(selectedBillID);
                 detailForm.ShowDialog();
             }
         }

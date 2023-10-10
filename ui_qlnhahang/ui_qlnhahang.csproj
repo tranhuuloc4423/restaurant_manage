@@ -119,11 +119,11 @@
     <Compile Include="AccountManage.Designer.cs">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="BillDetails.cs">
+    <Compile Include="BillDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BillDetails.Designer.cs">
-      <DependentUpon>BillDetails.cs</DependentUpon>
+    <Compile Include="BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeInfo.cs">
       <SubType>Form</SubType>
@@ -201,9 +201,8 @@
     <EmbeddedResource Include="AccountManage.resx">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BillDetails.resx">
-      <DependentUpon>BillDetails.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfo.resx">
       <DependentUpon>ChangeInfo.cs</DependentUpon>
