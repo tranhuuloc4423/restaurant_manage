@@ -49,10 +49,6 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.gvFood = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.FoodID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtFoodName = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -67,6 +63,10 @@
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAdd = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.FoodID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvFood)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,8 +97,8 @@
             this.gvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FoodID,
             this.FoodName,
-            this.FoodPrice,
-            this.FoodCate});
+            this.FoodCate,
+            this.FoodPrice});
             this.gvFood.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.gvFood.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gvFood.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -141,34 +141,7 @@
             this.gvFood.Size = new System.Drawing.Size(554, 423);
             this.gvFood.TabIndex = 2;
             this.gvFood.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            // 
-            // FoodID
-            // 
-            this.FoodID.FillWeight = 76.14214F;
-            this.FoodID.HeaderText = "ID";
-            this.FoodID.Name = "FoodID";
-            this.FoodID.ReadOnly = true;
-            this.FoodID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // FoodName
-            // 
-            this.FoodName.FillWeight = 111.9289F;
-            this.FoodName.HeaderText = "Tên món ăn";
-            this.FoodName.Name = "FoodName";
-            this.FoodName.ReadOnly = true;
-            // 
-            // FoodPrice
-            // 
-            this.FoodPrice.FillWeight = 111.9289F;
-            this.FoodPrice.HeaderText = "Giá tiền";
-            this.FoodPrice.Name = "FoodPrice";
-            this.FoodPrice.ReadOnly = true;
-            // 
-            // FoodCate
-            // 
-            this.FoodCate.HeaderText = "Danh mục";
-            this.FoodCate.Name = "FoodCate";
-            this.FoodCate.ReadOnly = true;
+            this.gvFood.SelectionChanged += new System.EventHandler(this.gvFood_SelectionChanged);
             // 
             // btnSearch
             // 
@@ -217,7 +190,7 @@
             this.btnSearch.IdleIconLeftImage = null;
             this.btnSearch.IdleIconRightImage = null;
             this.btnSearch.IndicateFocus = false;
-            this.btnSearch.Location = new System.Drawing.Point(861, 97);
+            this.btnSearch.Location = new System.Drawing.Point(857, 76);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnSearch.OnDisabledState.BorderRadius = 20;
@@ -286,7 +259,7 @@
             this.txtFoodName.IconRight = null;
             this.txtFoodName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFoodName.Lines = new string[0];
-            this.txtFoodName.Location = new System.Drawing.Point(736, 191);
+            this.txtFoodName.Location = new System.Drawing.Point(732, 170);
             this.txtFoodName.MaxLength = 32767;
             this.txtFoodName.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtFoodName.Modified = false;
@@ -342,7 +315,7 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 3;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(621, 220);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(617, 199);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(380, 10);
@@ -355,7 +328,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(621, 191);
+            this.bunifuLabel1.Location = new System.Drawing.Point(617, 170);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(109, 23);
@@ -370,7 +343,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(621, 282);
+            this.bunifuLabel2.Location = new System.Drawing.Point(617, 261);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(71, 23);
@@ -388,7 +361,7 @@
             this.bunifuSeparator2.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator2.LineThickness = 3;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(621, 311);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(617, 290);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator2.Size = new System.Drawing.Size(380, 10);
@@ -429,7 +402,7 @@
             this.txtPrice.IconRight = null;
             this.txtPrice.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrice.Lines = new string[0];
-            this.txtPrice.Location = new System.Drawing.Point(698, 282);
+            this.txtPrice.Location = new System.Drawing.Point(694, 261);
             this.txtPrice.MaxLength = 32767;
             this.txtPrice.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPrice.Modified = false;
@@ -475,6 +448,7 @@
             this.txtPrice.TextPlaceholder = "";
             this.txtPrice.UseSystemPasswordChar = false;
             this.txtPrice.WordWrap = true;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // bunifuLabel3
             // 
@@ -482,7 +456,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(621, 363);
+            this.bunifuLabel3.Location = new System.Drawing.Point(617, 342);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(94, 23);
@@ -500,7 +474,7 @@
             this.bunifuSeparator3.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator3.LineThickness = 3;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(621, 392);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(617, 371);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
             this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator3.Size = new System.Drawing.Size(380, 10);
@@ -541,7 +515,7 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(621, 97);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(617, 76);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -622,20 +596,14 @@
             this.dpdCate.ItemHeight = 30;
             this.dpdCate.ItemHighLightColor = System.Drawing.Color.White;
             this.dpdCate.ItemHighLightForeColor = System.Drawing.Color.Black;
-            this.dpdCate.Items.AddRange(new object[] {
-            "Đồ uống",
-            "Món chính",
-            "Món khai vị",
-            "Món tráng miệng",
-            "Món ăn vặt"});
             this.dpdCate.ItemTopMargin = 3;
-            this.dpdCate.Location = new System.Drawing.Point(747, 357);
+            this.dpdCate.Location = new System.Drawing.Point(743, 336);
             this.dpdCate.Name = "dpdCate";
             this.dpdCate.Size = new System.Drawing.Size(172, 36);
             this.dpdCate.TabIndex = 18;
-            this.dpdCate.Text = "Món khai vị";
             this.dpdCate.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.dpdCate.TextLeftMargin = 4;
+            this.dpdCate.SelectedValueChanged += new System.EventHandler(this.dpdCate_SelectedValueChanged);
             // 
             // btnDelete
             // 
@@ -684,7 +652,7 @@
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(901, 432);
+            this.btnDelete.Location = new System.Drawing.Point(897, 411);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnDelete.OnDisabledState.BorderRadius = 20;
@@ -774,7 +742,7 @@
             this.btnEdit.IdleIconLeftImage = null;
             this.btnEdit.IdleIconRightImage = null;
             this.btnEdit.IndicateFocus = false;
-            this.btnEdit.Location = new System.Drawing.Point(764, 432);
+            this.btnEdit.Location = new System.Drawing.Point(760, 411);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnEdit.OnDisabledState.BorderRadius = 20;
@@ -864,7 +832,7 @@
             this.btnAdd.IdleIconLeftImage = null;
             this.btnAdd.IdleIconRightImage = null;
             this.btnAdd.IndicateFocus = false;
-            this.btnAdd.Location = new System.Drawing.Point(621, 432);
+            this.btnAdd.Location = new System.Drawing.Point(617, 411);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnAdd.OnDisabledState.BorderRadius = 20;
@@ -907,6 +875,34 @@
             this.btnAdd.UseDefaultRadiusAndThickness = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // FoodID
+            // 
+            this.FoodID.FillWeight = 76.14214F;
+            this.FoodID.HeaderText = "ID";
+            this.FoodID.Name = "FoodID";
+            this.FoodID.ReadOnly = true;
+            this.FoodID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // FoodName
+            // 
+            this.FoodName.FillWeight = 111.9289F;
+            this.FoodName.HeaderText = "Tên món ăn";
+            this.FoodName.Name = "FoodName";
+            this.FoodName.ReadOnly = true;
+            // 
+            // FoodCate
+            // 
+            this.FoodCate.HeaderText = "Danh mục";
+            this.FoodCate.Name = "FoodCate";
+            this.FoodCate.ReadOnly = true;
+            // 
+            // FoodPrice
+            // 
+            this.FoodPrice.FillWeight = 111.9289F;
+            this.FoodPrice.HeaderText = "Giá tiền";
+            this.FoodPrice.Name = "FoodPrice";
+            this.FoodPrice.ReadOnly = true;
+            // 
             // FoodManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -940,9 +936,6 @@
 
         #endregion
         private Bunifu.UI.WinForms.BunifuDataGridView gvFood;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodPrice;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearch;
         private Bunifu.UI.WinForms.BunifuTextBox txtFoodName;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
@@ -954,9 +947,12 @@
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private Bunifu.UI.WinForms.BunifuDropdown dpdCate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodCate;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDelete;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEdit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodCate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodPrice;
     }
 }

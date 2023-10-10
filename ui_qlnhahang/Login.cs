@@ -41,5 +41,7 @@ namespace ui_qlnhahang
         {
             Application.Exit();
         }
+
+        
     }
 }

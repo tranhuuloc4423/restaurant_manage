@@ -14,7 +14,7 @@ AS
 go
 
 --drop PROCEDURE UpdateFood
-CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂN
+CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂNS
 @ID int output,
 @Name nvarchar(3000), 
 @FoodCategoryID int, 
@@ -131,15 +131,16 @@ end
 go
 
 --drop PROCEDURE Account_Update
-create procedure Account_Update -- CẬP NHẬT TÀI KHOẢN
+CREATE procedure Account_Update -- CẬP NHẬT TÀI KHOẢN
 (
 	@AccountName nvarchar(100),
+	@DisplayName nvarchar(100),
 	@Pass nvarchar(200)
 )
 as
 begin
 	update Account
-	set AccountName = @AccountName, Password = @Pass
+	set AccountName = @AccountName, Password = @Pass , DisplayName = @DisplayName
 	where AccountName = @AccountName
 end
 go
@@ -303,3 +304,12 @@ begin
 end
 go
 -----------------------------------------------------
+
+CREATE PROC USP_LOGIN
+@userName nvarchar(100),
+@passWord nvarchar(100)
+AS 
+BEGIN
+	SELECT * FROM dbo.Account WHERE AccountName =@userName AND Password = @passWord
+END
+GO

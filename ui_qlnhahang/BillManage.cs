@@ -70,8 +70,34 @@ namespace ui_qlnhahang
         {
             DateTime startDate = dpFrom.Value;
             DateTime endDate = dpTo.Value;
-            LoadBillReport(startDate, endDate);
+            filterBill(startDate, endDate);
         }
+
+        private void filterBill(DateTime start, DateTime end)
+        {
+
+            string columnName = "billCheckout"; 
+            foreach (DataGridViewRow row in gvBill.Rows)
+            {
+                if (row.Cells[columnName].Value != null && row.Cells[columnName].Value is DateTime)
+                {
+                    DateTime dateValue = (DateTime)row.Cells[columnName].Value;
+                    if (dateValue >= start && dateValue < end.AddDays(1))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
         private void LoadBillReport(DateTime startDate, DateTime endDate)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -83,8 +109,8 @@ namespace ui_qlnhahang
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
+
                 adapter.Fill(dataTable);
-                gvBill.DataSource = dataTable;
             }
         }
     }

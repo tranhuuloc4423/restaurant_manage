@@ -417,6 +417,7 @@
             this.gvCate.Size = new System.Drawing.Size(601, 363);
             this.gvCate.TabIndex = 19;
             this.gvCate.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.gvCate.SelectionChanged += new System.EventHandler(this.gvCate_SelectionChanged);
             // 
             // cateID
             // 

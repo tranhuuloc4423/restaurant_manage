@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,14 +15,41 @@ namespace ui_qlnhahang
     {
         public static void GetAllData(string query, DataGridView gridView)
         {
+            // reset
+            gridView.Rows.Clear();
+            DataProvider provider = new DataProvider();
+
+            DataTable dataTable = provider.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                AddRowData(gridView, row.ItemArray);
+            }
+        }
+
+        public static void GetAllData(string query, BunifuDropdown dropdown)
+        {
+            dropdown.Items.Clear();
             DataProvider provider = new DataProvider();
 
             DataTable dataTable = provider.ExecuteQuery(query);
             foreach (DataRow row in dataTable.Rows)
             {
-                AddRowData(gridView, row.ItemArray);
+                AddRowData(dropdown, row.ItemArray);
             }
+        }
 
+        public static DataTable GetTableData(string query)
+        {
+            DataProvider provider = new DataProvider();
+
+            DataTable dataTable = provider.ExecuteQuery(query);
+            return dataTable;
+        }
+
+        public static void AddRowData(BunifuDropdown dropdown, params object[] row)
+        {
+            dropdown.Items.Add(string.Join(", ", row));
         }
 
 
