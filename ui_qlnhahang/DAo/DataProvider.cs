@@ -10,7 +10,7 @@ namespace ui_qlnhahang.DAo
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+        private string connectionSTR = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
         private static DataProvider instance;
 
         public static DataProvider Instance
