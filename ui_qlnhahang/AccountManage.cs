@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -19,12 +20,8 @@ namespace ui_qlnhahang
 
         private void AccountManage_Load(object sender, EventArgs e)
         {
-            //gvAccount ==> gridview
-            // txtUserName.Text ==> tên đăng nhập
-            //txtUserNameDisplay.Text ==> tên hiển thị
-            //txtPass.Text ==> password
-            //dpdType.SelectedValue ==> loại tài khoản
-            // btnAdd, btnDelete, btnEdit
+            string query = "Select * from [Account]";
+            GetAllData(query, gvAccount);
         }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static ui_qlnhahang.Order;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -30,54 +32,8 @@ namespace ui_qlnhahang
             dpTo.Format = DateTimePickerFormat.Custom;
             dpTo.CustomFormat = "dd/MM/yyyy";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                // Tạo truy vấn SQL để lấy dữ liệu
-                string query = "SELECT * FROM Bills";
-                SqlCommand command = new SqlCommand(query, connection);
-
-                // Tạo đối tượng SqlDataAdapter để lấy dữ liệu từ truy vấn
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                // Tạo đối tượng DataTable để chứa dữ liệu từ cơ sở dữ liệu
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                // Gán DataTable làm nguồn dữ liệu cho DataGridView
-                bunifuDataGridView1.DataSource = dataTable;
-            }
-
-            foreach (DataGridViewColumn column in bunifuDataGridView1.Columns)
-            {
-                if (column.DataPropertyName == "ID")
-                {
-                    column.HeaderText = "Mã Hóa Đơn";
-                }
-                else if (column.DataPropertyName == "Name")
-                {
-                    column.HeaderText = "Tên Hóa Đơn";
-                }
-                else if (column.DataPropertyName == "TableID")
-                {
-                    column.HeaderText = "Số Bàn";
-                }
-                else if (column.DataPropertyName == "Amount")
-                {
-                    column.HeaderText = "Tổng Tiền";
-                }
-                else if (column.DataPropertyName == "Status")
-                {
-                    column.HeaderText = "Trạng Thái";
-                }
-                else if (column.DataPropertyName == "CheckoutDate")
-                {
-                    column.HeaderText = "Ngày Xuất Đơn";
-                }
-                else if (column.DataPropertyName == "Account")
-                {
-                    column.HeaderText = "Tài Khoản";
-                }
-            }
+            string query = "select * from [Bills]";
+            GetAllData(query, gvBill);
         }
 
         private void dpTo_ValueChanged(object sender, EventArgs e)
@@ -99,10 +55,10 @@ namespace ui_qlnhahang
 
         private void btnPrintBill_Click(object sender, EventArgs e)
         {
-            if (bunifuDataGridView1.SelectedRows.Count > 0)
+            if (gvBill.SelectedRows.Count > 0)
             {
                 // Lấy ID của hóa đơn được chọn
-                int selectedBillID = Convert.ToInt32(bunifuDataGridView1.SelectedRows[0].Cells["ID"].Value);
+                int selectedBillID = Convert.ToInt32(gvBill.SelectedRows[0].Cells["ID"].Value);
 
                 // Tạo form Chi tiết hóa đơn và truyền ID cho nó
                 BillDetail detailForm = new BillDetail(selectedBillID);
@@ -128,7 +84,7 @@ namespace ui_qlnhahang
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-                bunifuDataGridView1.DataSource = dataTable;
+                gvBill.DataSource = dataTable;
             }
         }
     }

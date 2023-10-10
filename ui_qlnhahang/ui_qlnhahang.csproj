@@ -163,6 +163,7 @@
     <Compile Include="BillManage.Designer.cs">
       <DependentUpon>BillManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUltility.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
