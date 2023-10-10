@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -19,13 +20,8 @@ namespace ui_qlnhahang
 
         private void TableManage_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public void AddRowData(string id, string name, string state)
-        {
-            string[] row = { id, name, state };
-            gvTable.Rows.Add(row);
+            string query = "select * from [Table]";
+            GetAllData(query, gvTable);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
