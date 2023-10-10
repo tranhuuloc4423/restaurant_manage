@@ -28,6 +28,21 @@ namespace ui_qlnhahang
             orderManager.CreateOrder(4, DateTime.Now);
             orderManager.CreateOrder(5, DateTime.Now);
             orderManager.CreateOrder(6, DateTime.Now);
+            orderManager.CreateOrder(7, DateTime.Now);
+            orderManager.CreateOrder(8, DateTime.Now);
+            orderManager.CreateOrder(9, DateTime.Now);
+            orderManager.CreateOrder(10, DateTime.Now);
+            orderManager.CreateOrder(11, DateTime.Now);
+            orderManager.CreateOrder(12, DateTime.Now);
+            orderManager.CreateOrder(13, DateTime.Now);
+            orderManager.CreateOrder(14, DateTime.Now);
+            orderManager.CreateOrder(15, DateTime.Now);
+            orderManager.CreateOrder(16, DateTime.Now);
+            orderManager.CreateOrder(17, DateTime.Now);
+            orderManager.CreateOrder(19, DateTime.Now);
+            orderManager.CreateOrder(20, DateTime.Now);
+            
+
 
 
 
