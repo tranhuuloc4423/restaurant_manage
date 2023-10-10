@@ -52,6 +52,7 @@
             // 
             // gvBill
             // 
+            this.gvBill.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.gvBill.AllowCustomTheming = false;
             this.gvBill.AllowUserToAddRows = false;
             this.gvBill.AllowUserToDeleteRows = false;
@@ -60,10 +61,11 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gvBill.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.gvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.gvBill.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.gvBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -74,6 +76,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvBill.ColumnHeadersHeight = 40;
+            this.gvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.billID,
             this.billName,
@@ -114,6 +117,7 @@
             this.gvBill.HeaderBgColor = System.Drawing.Color.Empty;
             this.gvBill.HeaderForeColor = System.Drawing.Color.White;
             this.gvBill.Location = new System.Drawing.Point(43, 88);
+            this.gvBill.MultiSelect = false;
             this.gvBill.Name = "gvBill";
             this.gvBill.ReadOnly = true;
             this.gvBill.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -385,42 +389,63 @@
             this.billID.HeaderText = "Mã hoá đơn";
             this.billID.Name = "billID";
             this.billID.ReadOnly = true;
+            this.billID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billID.Width = 139;
             // 
             // billName
             // 
             this.billName.HeaderText = "Tên hoá đơn";
             this.billName.Name = "billName";
             this.billName.ReadOnly = true;
+            this.billName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billName.Width = 140;
             // 
             // billTableID
             // 
             this.billTableID.HeaderText = "Mã bàn";
             this.billTableID.Name = "billTableID";
             this.billTableID.ReadOnly = true;
+            this.billTableID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billTableID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billTableID.Width = 139;
             // 
             // billTotal
             // 
             this.billTotal.HeaderText = "Tổng tiền";
             this.billTotal.Name = "billTotal";
             this.billTotal.ReadOnly = true;
+            this.billTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billTotal.Width = 139;
             // 
             // billState
             // 
             this.billState.HeaderText = "Trạng thái";
             this.billState.Name = "billState";
             this.billState.ReadOnly = true;
+            this.billState.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billState.Width = 139;
             // 
             // billCheckout
             // 
             this.billCheckout.HeaderText = "Ngày tính";
             this.billCheckout.Name = "billCheckout";
             this.billCheckout.ReadOnly = true;
+            this.billCheckout.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billCheckout.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billCheckout.Width = 140;
             // 
             // billAccount
             // 
             this.billAccount.HeaderText = "Tài khoản";
             this.billAccount.Name = "billAccount";
             this.billAccount.ReadOnly = true;
+            this.billAccount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.billAccount.Width = 139;
             // 
             // BillManage
             // 

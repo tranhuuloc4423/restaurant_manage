@@ -145,6 +145,7 @@
             this.gvTable.Size = new System.Drawing.Size(627, 389);
             this.gvTable.TabIndex = 19;
             this.gvTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.gvTable.SelectionChanged += new System.EventHandler(this.gvTable_SelectionChanged);
             // 
             // tableID
             // 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,10 +7,12 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using ui_qlnhahang.DAo;
 using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
@@ -17,7 +20,7 @@ namespace ui_qlnhahang
     public partial class FoodManage : Form
     {
         private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-        public string query = "select * from [Food]";
+        public string mainquery = "select * from [Food]";
         public string queryNameOfFood = "select name from [Category]";
         public string queryCategory = "select *  from [Category]";
         public DataTable categoryList;
@@ -43,34 +46,45 @@ namespace ui_qlnhahang
         private void FoodManage_Load(object sender, EventArgs e)
         {
             categoryList = GetTableData(queryCategory);
-            GetAllData(query, gvFood);
+            GetAllData(mainquery, gvFood);
             GetAllData(queryNameOfFood, dpdCate);
             dpdCate.Text = dpdCate.Items[0].ToString();
+            gvFood.ClearSelection();
+        }
+
+        private void handleData(string name, string query, string desc, object[] parameter = null)
+        {
+            DataProvider dataprovider = new DataProvider();
+            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
+            MessageBox.Show(desc);
+            GetAllData(mainquery, gvFood);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string name = txtFoodName.Text;
-            string foodCateText = dpdCate.Text;
-            string foodPrice = txtPrice.Text;
-            int foodCateID = 0;
-            if (String.IsNullOrEmpty(name))
+            
+            if (String.IsNullOrEmpty(txtFoodName.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn");
                 return;
             }
 
-            if (String.IsNullOrEmpty(foodCateText))
+            if (String.IsNullOrEmpty(dpdCate.Text))
             {
                 MessageBox.Show("Vui lòng chọn danh mục món ăn");
                 return;
             }
 
-            if (String.IsNullOrEmpty(foodPrice))
+            if (String.IsNullOrEmpty(txtPrice.Text))
             {
                 MessageBox.Show("Vui lòng nhập giá món ăn");
                 return;
             }
+
+            string name = txtFoodName.Text;
+            string foodCateText = dpdCate.Text;
+            int foodPrice = Convert.ToInt32(txtPrice.Text);
+            int foodCateID = 0;
 
             foreach (DataRow row in categoryList.Rows)
             {
@@ -80,19 +94,10 @@ namespace ui_qlnhahang
                     break;
                 }
             }
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("[InsertFood]", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", name);
-                command.Parameters.AddWithValue("@FoodCategoryID", foodCateID);
-                command.Parameters.AddWithValue("@Price", Convert.ToInt32(foodPrice));
-                command.ExecuteNonQuery();
-                GetAllData(query, gvFood);
-            }
-
+            string nameProcedure = "[InsertFood]";
+            string query = "@Name @FoodCategoryID @Price";
+            string desc = "Thêm món ăn thành công";
+            handleData(nameProcedure, query, desc, new object[] { name, foodCateID, foodPrice });
             txtFoodName.Clear();
             txtPrice.Clear();
 
@@ -103,30 +108,29 @@ namespace ui_qlnhahang
             if (gvFood.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
-
-                // Lấy giá trị của cột cụ thể từ hàng được chọn
-                object id = selectedRow.Cells[0].Value;
-                string name = txtFoodName.Text;
-                string foodCateText = dpdCate.Text;
-                string foodPrice = txtPrice.Text;
-                int foodCateID = 0;
-                if (String.IsNullOrEmpty(name))
+                
+                if (String.IsNullOrEmpty(txtFoodName.Text))
                 {
                     MessageBox.Show("Vui lòng nhập tên món ăn");
                     return;
                 }
 
-                if (String.IsNullOrEmpty(foodCateText))
+                if (String.IsNullOrEmpty(dpdCate.Text))
                 {
                     MessageBox.Show("Vui lòng chọn danh mục món ăn");
                     return;
                 }
 
-                if (String.IsNullOrEmpty(foodPrice))
+                if (String.IsNullOrEmpty(txtPrice.Text))
                 {
                     MessageBox.Show("Vui lòng nhập giá món ăn");
                     return;
                 }
+                object id = selectedRow.Cells[0].Value;
+                string name = txtFoodName.Text;
+                string foodCateText = dpdCate.Text;
+                int foodPrice = Convert.ToInt32(txtPrice.Text);
+                int foodCateID = 0;
 
                 foreach (DataRow row in categoryList.Rows)
                 {
@@ -136,20 +140,10 @@ namespace ui_qlnhahang
                         break;
                     }
                 }
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("[UpdateFood]", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@ID", id);
-                    command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@FoodCategoryID", foodCateID);
-                    command.Parameters.AddWithValue("@Price", Convert.ToInt32(foodPrice));
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Cập nhật món ăn thành công!");
-                    GetAllData(query, gvFood);
-                }
+                string nameProcedure = "[UpdateFood]";
+                string query = "@ID @Name @FoodCategoryID @Price";
+                string desc = "Cập nhật món ăn thành công!";
+                handleData(nameProcedure, query, desc, new object[] { id, name, foodCateID, foodPrice });
             }
         }
 
@@ -160,16 +154,10 @@ namespace ui_qlnhahang
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
                 object id = selectedRow.Cells[0].Value;
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("[DeleteFood]", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@FoodID", id);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Xoá món ăn thành công!");
-                    GetAllData(query, gvFood);
-                }
+                string nameProcedure = "[DeleteFood]";
+                string query = "@FoodID";
+                string desc = "Xoá món ăn thành công!";
+                handleData(nameProcedure, query, desc, new object[] { id });
             } else
             {
                 MessageBox.Show("Chọn món ăn để xoá");
