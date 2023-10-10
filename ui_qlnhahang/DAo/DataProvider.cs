@@ -12,7 +12,7 @@ namespace ui_qlnhahang.DAo
     {
         
         
-            private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            private string connectionSTR = "Data Source=.;Initial Catalog=RestaurantManagement;Integrated Security=True";
             private static DataProvider instance;
 
             public static DataProvider Instance
@@ -20,7 +20,7 @@ namespace ui_qlnhahang.DAo
                 get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
                 private set => instance = value;
             }
-        public DataTable ExecuteQuery(string query, object[] parameter = null)
+            public DataTable ExecuteQuery(string query, object[] parameter = null)
             {
                 DataTable data = new DataTable();
                 using (SqlConnection connection = new SqlConnection(connectionSTR))
