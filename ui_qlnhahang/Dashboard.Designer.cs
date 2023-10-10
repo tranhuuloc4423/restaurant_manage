@@ -43,6 +43,7 @@
             this.btnCateManage = new System.Windows.Forms.Button();
             this.btnFoodManage = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.Panel();
+            this.lblaccountactive = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
@@ -286,11 +287,29 @@
             this.sidebar.Size = new System.Drawing.Size(225, 668);
             this.sidebar.TabIndex = 15;
             // 
+            // lblaccountactive
+            // 
+            this.lblaccountactive.AllowParentOverrides = false;
+            this.lblaccountactive.AutoEllipsis = false;
+            this.lblaccountactive.AutoSize = false;
+            this.lblaccountactive.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblaccountactive.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblaccountactive.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaccountactive.Location = new System.Drawing.Point(706, 12);
+            this.lblaccountactive.Name = "lblaccountactive";
+            this.lblaccountactive.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblaccountactive.Size = new System.Drawing.Size(490, 30);
+            this.lblaccountactive.TabIndex = 16;
+            this.lblaccountactive.Text = "Dashboard";
+            this.lblaccountactive.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblaccountactive.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1282, 668);
+            this.Controls.Add(this.lblaccountactive);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMinimize);
@@ -326,6 +345,7 @@
         private System.Windows.Forms.Button btnCateManage;
         private System.Windows.Forms.Button btnFoodManage;
         private System.Windows.Forms.Panel sidebar;
+        private Bunifu.UI.WinForms.BunifuLabel lblaccountactive;
     }
 }
 

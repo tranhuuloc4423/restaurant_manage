@@ -20,17 +20,31 @@ namespace ui_qlnhahang.DAo
                 get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
                 private set => instance = value;
             }
-        public DataTable ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
             {
                 DataTable data = new DataTable();
                 using (SqlConnection connection = new SqlConnection(connectionSTR))
                     {
 
                         connection.Open();
-                        SqlCommand command = new SqlCommand(query, connection);                               
+                        SqlCommand command = new SqlCommand(query, connection);
 
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        if (parameter != null)
+                        {
+                            string[] listPara = query.Split(' ');
+                            int i = 0;
+                            foreach (string item in listPara)
+                                {
+                                if (item.Contains('@'))
+                                    {
+                                        command.Parameters.AddWithValue(item, parameter[i]);
+                                        i++;
+                                    }
+                        }
+                    }
 
+                   SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        
                         adapter.Fill(data);
 
                         connection.Close();

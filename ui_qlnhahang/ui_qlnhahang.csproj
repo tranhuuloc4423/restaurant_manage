@@ -303,6 +303,8 @@
     <Content Include="Properties\order-food.png" />
     <Content Include="Properties\restaurant.png" />
     <Content Include="Properties\user.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\hide.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
