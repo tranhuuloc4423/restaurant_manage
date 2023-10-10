@@ -137,6 +137,7 @@
     <Compile Include="CustomMessBox.Designer.cs">
       <DependentUpon>CustomMessBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAo\AccountDAO.cs" />
     <Compile Include="DAo\DataProvider.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>

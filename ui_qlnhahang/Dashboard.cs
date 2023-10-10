@@ -11,6 +11,7 @@ using ui_qlnhahang.Properties;
 using System.Drawing;
 using Bunifu.UI.WinForms.BunifuButton;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
@@ -20,6 +21,13 @@ namespace ui_qlnhahang
         Form subForm = null;
         public Dashboard()
         {
+            InitializeComponent();
+            CenterToScreen();
+        }
+        private string tk;
+        public Dashboard(string tk)
+        {
+            this.tk = tk;
             InitializeComponent();
             CenterToScreen();
         }
@@ -135,6 +143,18 @@ namespace ui_qlnhahang
             Home form = new Home();
             navigation(form, btnHome.Text);
             activeButton(btnHome.Text);
+            if(checkStaff(tk))
+            {
+                btnAccManage.Enabled = false;
+                btnBillManage.Enabled = false;
+                btnCateManage.Enabled = false;
+                btnTableManage.Enabled = false;
+                btnFoodManage.Enabled = false;
+            }
+        }
+        bool checkStaff(string tk)
+        {
+            return AccountDAO.Instance.checkStaff(tk);
         }
     }
 }
