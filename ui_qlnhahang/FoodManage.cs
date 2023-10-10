@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -27,7 +28,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
@@ -37,15 +38,8 @@ namespace ui_qlnhahang
 
         private void FoodManage_Load(object sender, EventArgs e)
         {
-            // xử lý đổ dữ liệu vào gridview ==> gvFood
-            AddRowData("1", "gà rán", "100000", "Món chính");
-            AddRowData("2", "gỏi cuốn", "80000", "Món khai vị");
-        }
-
-        public void AddRowData(string id, string name, string price, string cate)
-        {
-            string[] row = { id, name, price, cate};
-            gvFood.Rows.Add(row);
+            string query = "select * from [Food]";
+            GetAllData(query, gvFood);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

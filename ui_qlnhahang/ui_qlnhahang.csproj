@@ -119,11 +119,11 @@
     <Compile Include="AccountManage.Designer.cs">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="BillDetails.cs">
+    <Compile Include="BillDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BillDetails.Designer.cs">
-      <DependentUpon>BillDetails.cs</DependentUpon>
+    <Compile Include="BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeInfo.cs">
       <SubType>Form</SubType>
@@ -137,6 +137,7 @@
     <Compile Include="CustomMessBox.Designer.cs">
       <DependentUpon>CustomMessBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAo\AccountDAO.cs" />
     <Compile Include="DAo\DataProvider.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -162,6 +163,7 @@
     <Compile Include="BillManage.Designer.cs">
       <DependentUpon>BillManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUltility.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +187,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RestaurantManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TableManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,8 +203,8 @@
     <EmbeddedResource Include="AccountManage.resx">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BillDetails.resx">
-      <DependentUpon>BillDetails.cs</DependentUpon>
+    <EmbeddedResource Include="BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfo.resx">
       <DependentUpon>ChangeInfo.cs</DependentUpon>
@@ -244,6 +251,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RestaurantManagementDataSet.xsc">
+      <DependentUpon>RestaurantManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RestaurantManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RestaurantManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RestaurantManagementDataSet.xss">
+      <DependentUpon>RestaurantManagementDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

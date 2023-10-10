@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using static ui_qlnhahang.Order;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -17,19 +20,20 @@ namespace ui_qlnhahang
             InitializeComponent();
         }
 
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
         private void Form4_Load(object sender, EventArgs e)
         {
-            // set current date for datepicker
             dpFrom.Value = DateTime.Today;
             dpTo.Value = DateTime.Today.AddDays(1);
 
-            // reformat datepicker
             dpFrom.Format = DateTimePickerFormat.Custom;
             dpFrom.CustomFormat = "dd/MM/yyyy";
 
             dpTo.Format = DateTimePickerFormat.Custom;
             dpTo.CustomFormat = "dd/MM/yyyy";
 
+            string query = "select * from [Bills]";
+            GetAllData(query, gvBill);
         }
 
         private void dpTo_ValueChanged(object sender, EventArgs e)
@@ -51,12 +55,37 @@ namespace ui_qlnhahang
 
         private void btnPrintBill_Click(object sender, EventArgs e)
         {
-            BillDetails billdetails = new BillDetails();
-            
-            // xử lý lấy dữ liệu người dùng chọn từ database để print hoá đơn 
-            //
-            //
-            billdetails.ShowDialog();
+            if (gvBill.SelectedRows.Count > 0)
+            {
+                // Lấy ID của hóa đơn được chọn
+                int selectedBillID = Convert.ToInt32(gvBill.SelectedRows[0].Cells["ID"].Value);
+
+                // Tạo form Chi tiết hóa đơn và truyền ID cho nó
+                BillDetail detailForm = new BillDetail(selectedBillID);
+                detailForm.ShowDialog();
+            }
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dpFrom.Value;
+            DateTime endDate = dpTo.Value;
+            LoadBillReport(startDate, endDate);
+        }
+        private void LoadBillReport(DateTime startDate, DateTime endDate)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("CreateBillReport", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@StartDate", startDate);
+                command.Parameters.AddWithValue("@EndDate", endDate);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                gvBill.DataSource = dataTable;
+            }
         }
     }
 }

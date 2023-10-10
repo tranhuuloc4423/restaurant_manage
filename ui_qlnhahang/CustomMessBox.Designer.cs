@@ -102,7 +102,7 @@
             this.btnYes.IdleIconLeftImage = null;
             this.btnYes.IdleIconRightImage = null;
             this.btnYes.IndicateFocus = false;
-            this.btnYes.Location = new System.Drawing.Point(118, 163);
+            this.btnYes.Location = new System.Drawing.Point(113, 213);
             this.btnYes.Name = "btnYes";
             this.btnYes.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnYes.OnDisabledState.BorderRadius = 20;
@@ -192,7 +192,7 @@
             this.btnNo.IdleIconLeftImage = null;
             this.btnNo.IdleIconRightImage = null;
             this.btnNo.IndicateFocus = false;
-            this.btnNo.Location = new System.Drawing.Point(297, 163);
+            this.btnNo.Location = new System.Drawing.Point(309, 213);
             this.btnNo.Name = "btnNo";
             this.btnNo.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnNo.OnDisabledState.BorderRadius = 20;
@@ -238,16 +238,15 @@
             // lblContent
             // 
             this.lblContent.AllowParentOverrides = false;
-            this.lblContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblContent.AutoEllipsis = false;
-            this.lblContent.AutoSize = false;
             this.lblContent.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblContent.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblContent.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContent.Location = new System.Drawing.Point(194, 65);
+            this.lblContent.Location = new System.Drawing.Point(204, 76);
+            this.lblContent.MaximumSize = new System.Drawing.Size(400, 100);
             this.lblContent.Name = "lblContent";
             this.lblContent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblContent.Size = new System.Drawing.Size(153, 60);
+            this.lblContent.Size = new System.Drawing.Size(120, 25);
             this.lblContent.TabIndex = 42;
             this.lblContent.Text = "bunifuLabel1";
             this.lblContent.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,8 +257,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(540, 241);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(540, 279);
             this.Controls.Add(this.lblContent);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
@@ -269,6 +268,7 @@
             this.Text = "CustomMessBox";
             this.Load += new System.EventHandler(this.CustomMessBox_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

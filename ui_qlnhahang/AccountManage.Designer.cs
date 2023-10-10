@@ -67,13 +67,12 @@
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAdd = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.gvAccount = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.accID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accPass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator4 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtUserName = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.accName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accDisplay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accPass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvAccount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -835,9 +834,8 @@
             this.gvAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvAccount.ColumnHeadersHeight = 40;
             this.gvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.accID,
             this.accName,
-            this.accType,
+            this.accDisplay,
             this.accPass});
             this.gvAccount.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.gvAccount.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -879,30 +877,6 @@
             this.gvAccount.Size = new System.Drawing.Size(600, 457);
             this.gvAccount.TabIndex = 19;
             this.gvAccount.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            // 
-            // accID
-            // 
-            this.accID.FillWeight = 76.14214F;
-            this.accID.HeaderText = "ID";
-            this.accID.Name = "accID";
-            this.accID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // accName
-            // 
-            this.accName.FillWeight = 111.9289F;
-            this.accName.HeaderText = "Tên tài khoản";
-            this.accName.Name = "accName";
-            // 
-            // accType
-            // 
-            this.accType.FillWeight = 111.9289F;
-            this.accType.HeaderText = "Loại";
-            this.accType.Name = "accType";
-            // 
-            // accPass
-            // 
-            this.accPass.HeaderText = "Mật khẩu";
-            this.accPass.Name = "accPass";
             // 
             // bunifuLabel4
             // 
@@ -1009,6 +983,23 @@
             this.txtUserName.UseSystemPasswordChar = false;
             this.txtUserName.WordWrap = true;
             // 
+            // accName
+            // 
+            this.accName.FillWeight = 111.9289F;
+            this.accName.HeaderText = "Tên tài khoản";
+            this.accName.Name = "accName";
+            // 
+            // accDisplay
+            // 
+            this.accDisplay.FillWeight = 111.9289F;
+            this.accDisplay.HeaderText = "Tên hiển thị";
+            this.accDisplay.Name = "accDisplay";
+            // 
+            // accPass
+            // 
+            this.accPass.HeaderText = "Mật khẩu";
+            this.accPass.Name = "accPass";
+            // 
             // AccountManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1059,12 +1050,11 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEdit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAdd;
         private Bunifu.UI.WinForms.BunifuDataGridView gvAccount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accPass;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
         private Bunifu.UI.WinForms.BunifuTextBox txtUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accDisplay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accPass;
     }
 }

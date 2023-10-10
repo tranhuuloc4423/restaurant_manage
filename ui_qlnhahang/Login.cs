@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
@@ -19,12 +21,22 @@ namespace ui_qlnhahang
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            Dashboard f = new Dashboard();
-            this.Hide();
-            f.ShowDialog();
-       
-        }
+            string tk = txttk.Text;
+            string mk = txtmk.Text;
+            if (checkLogin(tk, mk))
+            {
+                Dashboard f = new Dashboard(tk);
+                this.Hide();
+                f.ShowDialog();
+            }
+            else MessageBox.Show("Sai tài khoản mật khẩu");
 
+        }
+        bool checkLogin(string tk, string mk)
+        {
+            return AccountDAO.Instance.Login(tk, mk);
+        }
+        
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
