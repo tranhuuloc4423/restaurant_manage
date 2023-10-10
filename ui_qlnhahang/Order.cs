@@ -196,15 +196,31 @@ namespace ui_qlnhahang
             }
         }
 
-        void loadFoodlist()
+        List<string> loadFoodlist(int foodCategoryId)
         {
-            string query = "Select Name from [Food]";
+            /*string query = "Select FoodCategoryID, Name from [Food]";
 
             DataProvider provider = new DataProvider();
 
 
-            AddNamesToDropdown(provider.ExecuteQuery(query));
+            AddNamesToDropdown(provider.ExecuteQuery(query));*/
+
+            string query = $"SELECT Name FROM Food WHERE FoodCategoryID = {foodCategoryId}";
+
+            DataProvider provider = new DataProvider();
+            return AddNamesToDropdown(provider.ExecuteQuery(query));
         }
+
+        void loadCatlist()
+        {
+            string query = "Select ID, Name from [Category]";
+
+            DataProvider provider = new DataProvider();
+
+
+            AddCatsToDropdown(provider.ExecuteQuery(query));
+        }
+
 
         public class Food
         {
@@ -329,26 +345,63 @@ namespace ui_qlnhahang
         }
 
 
-        public void AddNamesToDropdown(DataTable data)
+        public List<string> AddNamesToDropdown(DataTable data)
         {
-            FoodlistDropdown1.Items.Clear(); // Clear existing items
+            FoodlistDropdown1.Items.Clear(); 
+            List<string> foodNames = new List<string>();
 
             foreach (DataRow row in data.Rows)
             {
                 string name = row["Name"].ToString();
                 FoodlistDropdown1.Items.Add(name);
+                foodNames.Add(name);
             }
+
+            return foodNames;
+        }
+
+        public void AddCatsToDropdown(DataTable data)
+        {
+            /*TypeDropdown.Items.Clear(); // Clear existing items
+
+            foreach (DataRow row in data.Rows)
+            {
+                string name = row["Name"].ToString();
+                TypeDropdown.Items.Add(name);
+            }*/
+
+            TypeDropdown.Items.Clear();
+
+            foreach (DataRow row in data.Rows)
+            {
+                string name = row["Name"].ToString();
+                TypeDropdown.Items.Add(name);
+            }
+
+            // Select the default category
+            TypeDropdown.SelectedIndex = 0;
         }
 
 
 
         private void Order_Load(object sender, EventArgs e)
         {
-            loadFoodlist();
-            //LoadTables();
-            int TotalTable = 22;
-            
+            //loadFoodlist();
 
+            loadCatlist();
+
+        }
+
+        private void TypeDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedCategoryId = TypeDropdown.SelectedIndex + 1;
+
+            List<string> foodNames = loadFoodlist(selectedCategoryId);
+
+            if (foodNames.Count > 0)
+            {
+                FoodlistDropdown1.SelectedIndex = 0;
+            }
         }
 
         private void Order_FormClosed(object sender, FormClosedEventArgs e)
@@ -571,6 +624,8 @@ namespace ui_qlnhahang
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
         }
+
+        
     }
 
         
