@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
+using ui_qlnhahang.Properties;
 
 namespace ui_qlnhahang
 {
@@ -17,6 +18,7 @@ namespace ui_qlnhahang
         public Login()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -36,12 +38,34 @@ namespace ui_qlnhahang
         {
             return AccountDAO.Instance.Login(tk, mk);
         }
-        
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtmk.PasswordChar = '*';
+            pbHide.BringToFront();
+        }
+
+        private void pbShow_Click(object sender, EventArgs e)
+        {
+            if (txtmk.PasswordChar == '\0')
+            {
+                txtmk.PasswordChar = '*';
+                pbHide.BringToFront();
+            }
+        }
+
+        private void pbHide_Click(object sender, EventArgs e)
+        {
+            if (txtmk.PasswordChar == '*')
+            {
+                txtmk.PasswordChar = '\0';
+                pbShow.BringToFront();
+            }
+        }
     }
 }

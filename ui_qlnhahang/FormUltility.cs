@@ -25,6 +25,7 @@ namespace ui_qlnhahang
             {
                 AddRowData(gridView, row.ItemArray);
             }
+            gridView.ClearSelection();
         }
 
         public static void GetAllData(string query, BunifuDropdown dropdown)

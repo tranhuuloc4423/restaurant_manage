@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDangNhap = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtmk = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txttk = new Bunifu.UI.WinForms.BunifuTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbHide = new System.Windows.Forms.PictureBox();
+            this.pbShow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuLabel1
@@ -90,28 +90,6 @@
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::ui_qlnhahang.Properties.Resources.view;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::ui_qlnhahang.Properties.Resources.view;
-            this.pictureBox2.Location = new System.Drawing.Point(367, 346);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 23);
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ui_qlnhahang.Properties.Resources.hide;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::ui_qlnhahang.Properties.Resources.hide;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 346);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 23);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
@@ -146,12 +124,12 @@
             this.btnThoat.ButtonTextMarginLeft = 0;
             this.btnThoat.ColorContrastOnClick = 45;
             this.btnThoat.ColorContrastOnHover = 45;
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnThoat.CustomizableEdges = borderEdges1;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnThoat.CustomizableEdges = borderEdges3;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnThoat.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThoat.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -236,12 +214,12 @@
             this.btnDangNhap.ButtonTextMarginLeft = 0;
             this.btnDangNhap.ColorContrastOnClick = 45;
             this.btnDangNhap.ColorContrastOnHover = 45;
-            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnDangNhap.CustomizableEdges = borderEdges2;
+            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnDangNhap.CustomizableEdges = borderEdges4;
             this.btnDangNhap.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDangNhap.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangNhap.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -341,28 +319,28 @@
             this.txtmk.Modified = false;
             this.txtmk.Multiline = false;
             this.txtmk.Name = "txtmk";
-            stateProperties1.BorderColor = System.Drawing.Color.Black;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtmk.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.Black;
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtmk.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.Black;
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtmk.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Black;
-            stateProperties4.FillColor = System.Drawing.Color.LightBlue;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtmk.OnIdleState = stateProperties4;
+            stateProperties9.BorderColor = System.Drawing.Color.Black;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtmk.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.Black;
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtmk.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.Black;
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtmk.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Black;
+            stateProperties12.FillColor = System.Drawing.Color.LightBlue;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtmk.OnIdleState = stateProperties12;
             this.txtmk.Padding = new System.Windows.Forms.Padding(3);
-            this.txtmk.PasswordChar = '●';
+            this.txtmk.PasswordChar = '*';
             this.txtmk.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtmk.PlaceholderText = "";
             this.txtmk.ReadOnly = false;
@@ -379,7 +357,7 @@
             this.txtmk.TextMarginLeft = 3;
             this.txtmk.TextMarginTop = 0;
             this.txtmk.TextPlaceholder = "";
-            this.txtmk.UseSystemPasswordChar = true;
+            this.txtmk.UseSystemPasswordChar = false;
             this.txtmk.WordWrap = true;
             // 
             // txttk
@@ -415,26 +393,26 @@
             this.txttk.Modified = false;
             this.txttk.Multiline = false;
             this.txttk.Name = "txttk";
-            stateProperties5.BorderColor = System.Drawing.Color.Black;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txttk.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.Black;
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txttk.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.Black;
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txttk.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Black;
-            stateProperties8.FillColor = System.Drawing.Color.LightBlue;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txttk.OnIdleState = stateProperties8;
+            stateProperties13.BorderColor = System.Drawing.Color.Black;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txttk.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.Black;
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txttk.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.Black;
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txttk.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Black;
+            stateProperties16.FillColor = System.Drawing.Color.LightBlue;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txttk.OnIdleState = stateProperties16;
             this.txttk.Padding = new System.Windows.Forms.Padding(3);
             this.txttk.PasswordChar = '\0';
             this.txttk.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -456,14 +434,38 @@
             this.txttk.UseSystemPasswordChar = false;
             this.txttk.WordWrap = true;
             // 
+            // pbHide
+            // 
+            this.pbHide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbHide.Image = global::ui_qlnhahang.Properties.Resources.hide;
+            this.pbHide.Location = new System.Drawing.Point(335, 346);
+            this.pbHide.Name = "pbHide";
+            this.pbHide.Size = new System.Drawing.Size(25, 25);
+            this.pbHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHide.TabIndex = 26;
+            this.pbHide.TabStop = false;
+            this.pbHide.Click += new System.EventHandler(this.pbHide_Click);
+            // 
+            // pbShow
+            // 
+            this.pbShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbShow.Image = global::ui_qlnhahang.Properties.Resources.view;
+            this.pbShow.Location = new System.Drawing.Point(335, 346);
+            this.pbShow.Name = "pbShow";
+            this.pbShow.Size = new System.Drawing.Size(25, 25);
+            this.pbShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbShow.TabIndex = 27;
+            this.pbShow.TabStop = false;
+            this.pbShow.Click += new System.EventHandler(this.pbShow_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(394, 501);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbShow);
+            this.Controls.Add(this.pbHide);
             this.Controls.Add(this.bunifuPictureBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -475,9 +477,10 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +495,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDangNhap;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThoat;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbHide;
+        private System.Windows.Forms.PictureBox pbShow;
     }
 }

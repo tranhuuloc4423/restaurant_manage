@@ -30,9 +30,25 @@ namespace ui_qlnhahang
 
             dpTo.Format = DateTimePickerFormat.Custom;
             dpTo.CustomFormat = "dd/MM/yyyy";
-
             string query = "select * from [Bills]";
             GetAllData(query, gvBill);
+            gvBill.ClearSelection();
+            handleFormatDate();
+        }
+
+        private void handleFormatDate()
+        {
+            foreach (DataGridViewColumn column in gvBill.Columns)
+            {
+                foreach (DataGridViewRow row in gvBill.Rows)
+                {
+                    if (row.Cells[column.Index].Value is DateTime)
+                    {
+                        column.DefaultCellStyle.Format = "dd/MM/yyyy";
+                        return;
+                    }
+                }
+            }
         }
 
         private void dpTo_ValueChanged(object sender, EventArgs e)
@@ -41,7 +57,7 @@ namespace ui_qlnhahang
             {
                 MessageBox.Show("Giá trị ngày không hợp lệ!");
                 dpTo.Value = dpFrom.Value;
-            } 
+            }
         }
 
         private void dpFrom_ValueChanged(object sender, EventArgs e)
@@ -75,7 +91,7 @@ namespace ui_qlnhahang
         private void filterBill(DateTime start, DateTime end)
         {
 
-            string columnName = "billCheckout"; 
+            string columnName = "billCheckout";
             foreach (DataGridViewRow row in gvBill.Rows)
             {
                 if (row.Cells[columnName].Value != null && row.Cells[columnName].Value is DateTime)
@@ -105,11 +121,6 @@ namespace ui_qlnhahang
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@StartDate", startDate);
                 command.Parameters.AddWithValue("@EndDate", endDate);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable dataTable = new DataTable();
-
-                adapter.Fill(dataTable);
             }
         }
     }
