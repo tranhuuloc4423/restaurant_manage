@@ -50,6 +50,8 @@ namespace ui_qlnhahang
             GetAllData(queryNameOfFood, dpdCate);
             dpdCate.Text = dpdCate.Items[0].ToString();
             gvFood.ClearSelection();
+            txtFoodName.Clear();
+            txtPrice.Clear();
         }
 
         private void handleData(string name, string query, string desc, object[] parameter = null)

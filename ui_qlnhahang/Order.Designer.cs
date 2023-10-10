@@ -58,7 +58,7 @@
             this.bunifuButton21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDelFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCheckout = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.panelBtns = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuButton17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -90,7 +90,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.bunifuPanel1.SuspendLayout();
+            this.panelBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -367,40 +367,40 @@
             this.btnCheckout.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCheckout.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuPanel1
+            // panelBtns
             // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 20;
-            this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.bunifuButton17);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton18);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton19);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton20);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton13);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton14);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton15);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton16);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton9);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton10);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton11);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton12);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton5);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton6);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton7);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton8);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton4);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton3);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton2);
-            this.bunifuPanel1.Controls.Add(this.bunifuButton1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(8, 41);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(709, 640);
-            this.bunifuPanel1.TabIndex = 24;
+
+            this.panelBtns.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.panelBtns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBtns.BackgroundImage")));
+            this.panelBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
+            this.panelBtns.BorderRadius = 20;
+            this.panelBtns.BorderThickness = 1;
+            this.panelBtns.Controls.Add(this.bunifuButton17);
+            this.panelBtns.Controls.Add(this.bunifuButton18);
+            this.panelBtns.Controls.Add(this.bunifuButton19);
+            this.panelBtns.Controls.Add(this.bunifuButton20);
+            this.panelBtns.Controls.Add(this.bunifuButton13);
+            this.panelBtns.Controls.Add(this.bunifuButton14);
+            this.panelBtns.Controls.Add(this.bunifuButton15);
+            this.panelBtns.Controls.Add(this.bunifuButton16);
+            this.panelBtns.Controls.Add(this.bunifuButton9);
+            this.panelBtns.Controls.Add(this.bunifuButton10);
+            this.panelBtns.Controls.Add(this.bunifuButton11);
+            this.panelBtns.Controls.Add(this.bunifuButton12);
+            this.panelBtns.Controls.Add(this.bunifuButton5);
+            this.panelBtns.Controls.Add(this.bunifuButton6);
+            this.panelBtns.Controls.Add(this.bunifuButton7);
+            this.panelBtns.Controls.Add(this.bunifuButton8);
+            this.panelBtns.Controls.Add(this.bunifuButton4);
+            this.panelBtns.Controls.Add(this.bunifuButton3);
+            this.panelBtns.Controls.Add(this.bunifuButton2);
+            this.panelBtns.Controls.Add(this.bunifuButton1);
+            this.panelBtns.Location = new System.Drawing.Point(6, 33);
+            this.panelBtns.Name = "panelBtns";
+            this.panelBtns.ShowBorders = true;
+            this.panelBtns.Size = new System.Drawing.Size(532, 520);
+            this.panelBtns.TabIndex = 24;
             // 
             // bunifuButton17
             // 
@@ -2502,7 +2502,7 @@
             this.Controls.Add(this.bunifuButton21);
             this.Controls.Add(this.btnDelFood);
             this.Controls.Add(this.btnCheckout);
-            this.Controls.Add(this.bunifuPanel1);
+            this.Controls.Add(this.panelBtns);
             this.Controls.Add(this.FoodDataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -2510,7 +2510,7 @@
             this.Text = "Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Order_FormClosed);
             this.Load += new System.EventHandler(this.Order_Load);
-            this.bunifuPanel1.ResumeLayout(false);
+            this.panelBtns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -2523,7 +2523,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton21;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDelFood;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCheckout;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
+        private Bunifu.UI.WinForms.BunifuPanel panelBtns;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton17;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton18;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton19;

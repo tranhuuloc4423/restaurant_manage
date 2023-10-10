@@ -29,6 +29,7 @@ namespace ui_qlnhahang
         {
             GetAllData(mainquery, gvCate);
             gvCate.ClearSelection();
+            txtCate.Clear();
         }
 
         private void handleData(string name, string query, string desc, object[] parameter = null)
