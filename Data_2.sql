@@ -1,7 +1,7 @@
 ﻿use master 
 go
 
-create database [RestaurantManagement]
+CREATE database [RestaurantManagement]
 go
 
 use [RestaurantManagement]

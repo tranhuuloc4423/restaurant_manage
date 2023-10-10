@@ -16,6 +16,12 @@ namespace ui_qlnhahang
         {
             InitializeComponent();
         }
+        private string tk;
+        public Home(string tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -27,7 +33,7 @@ namespace ui_qlnhahang
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            ChangeInfo form = new ChangeInfo();
+            ChangeInfo form = new ChangeInfo(tk);
             form.ShowDialog();
         }
     }

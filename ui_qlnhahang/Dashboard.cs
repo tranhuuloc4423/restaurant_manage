@@ -140,7 +140,7 @@ namespace ui_qlnhahang
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            Home form = new Home();
+            Home form = new Home(tk);
             navigation(form, btnHome.Text);
             activeButton(btnHome.Text);
             if(checkStaff(tk))
@@ -151,6 +151,7 @@ namespace ui_qlnhahang
                 btnTableManage.Enabled = false;
                 btnFoodManage.Enabled = false;
             }
+            lblaccountactive.Text =  "Tài khoản : " + tk ;
         }
         bool checkStaff(string tk)
         {

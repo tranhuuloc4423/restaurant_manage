@@ -1540,4 +1540,7 @@
         SOIBAAAAAAAAALD7jg7ux3u8b7fb7Xa73W632+12u93uc875AyQ/UIR8n/tnAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="lblaccountactive.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Tahoma'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: right; }</value>
+  </data>
 </root>
