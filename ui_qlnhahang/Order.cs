@@ -21,7 +21,7 @@ namespace ui_qlnhahang
             InitializeComponent();
             GetAllFoodData();
 
-
+            orderManager.CreateOrder(0, DateTime.Now);
             orderManager.CreateOrder(1, DateTime.Now);
             orderManager.CreateOrder(2, DateTime.Now);
             orderManager.CreateOrder(3, DateTime.Now);
@@ -39,9 +39,10 @@ namespace ui_qlnhahang
             orderManager.CreateOrder(15, DateTime.Now);
             orderManager.CreateOrder(16, DateTime.Now);
             orderManager.CreateOrder(17, DateTime.Now);
+            orderManager.CreateOrder(18, DateTime.Now);
             orderManager.CreateOrder(19, DateTime.Now);
-            orderManager.CreateOrder(20, DateTime.Now);
             
+            ;
 
 
 
@@ -135,6 +136,28 @@ namespace ui_qlnhahang
                     dataGridView.Rows.Add(foodName, price, quantity, totalPrice);
                 }
 
+
+            }
+
+            public void checkoutToBillDetails(int index, Label label)
+            {
+                Dashboard form = new Dashboard();
+
+                string tkname = form.tk;
+
+                OrderListed order = orders[index];
+                foreach (OrderItem item in order.OrderItems)
+                {
+                    string name = "Hóa đơn " +(index + 1);//
+                    int tableID = index + 1;
+
+                    int quantity = item.Quantity;
+                    int Amount = item.Price * quantity;
+                    float status = 1;
+                    string CheckoutDate = DateTime.Now.ToString("dd/MM/yyyy");
+                                                            
+                }
+                label.Text = tkname;
 
             }
 
@@ -290,7 +313,7 @@ namespace ui_qlnhahang
         }
 
 
-        int tableindex = 0;
+        int tableindex = 1;
 
 
 
@@ -301,7 +324,7 @@ namespace ui_qlnhahang
             string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
             
             Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
-            orderManager.RemoveItemFromOrder(tableindex + 1, selectedFood.FoodId);
+            orderManager.RemoveItemFromOrder(tableindex , selectedFood.FoodId);
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
         }
@@ -317,7 +340,7 @@ namespace ui_qlnhahang
             {
                 int totalPrice = selectedFood.Price * quantity;
 
-                orderManager.AddItemToOrder(tableindex + 1, selectedFood.FoodId, selectedFood.FoodName, quantity, totalPrice);
+                orderManager.AddItemToOrder(tableindex , selectedFood.FoodId, selectedFood.FoodName, quantity, totalPrice);
 
                 //FoodDataGridView1.Rows.Add(selectedFood.FoodName, selectedFood.Price, quantity, totalPrice);
                 FoodDataGridView1.Rows.Clear();
@@ -500,7 +523,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
-            tableindex = 6;
+            tableindex = 5;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -508,7 +531,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton6_Click(object sender, EventArgs e)
         {
-            tableindex = 7;
+            tableindex = 6;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -516,7 +539,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
-            tableindex = 8;
+            tableindex = 7;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -524,7 +547,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton12_Click(object sender, EventArgs e)
         {
-            tableindex = 9;
+            tableindex = 8;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -539,7 +562,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton11_Click(object sender, EventArgs e)
         {
-            tableindex = 10;
+            tableindex = 9;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -547,7 +570,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton10_Click(object sender, EventArgs e)
         {
-            tableindex = 11;
+            tableindex = 10;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -555,7 +578,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton9_Click(object sender, EventArgs e)
         {
-            tableindex = 12;
+            tableindex = 11;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -563,7 +586,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton16_Click(object sender, EventArgs e)
         {
-            tableindex = 13;
+            tableindex = 12;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -571,7 +594,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton15_Click(object sender, EventArgs e)
         {
-            tableindex = 14;
+            tableindex = 13;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -579,7 +602,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton14_Click(object sender, EventArgs e)
         {
-            tableindex = 15;
+            tableindex = 14;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -587,7 +610,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton13_Click(object sender, EventArgs e)
         {
-            tableindex = 16;
+            tableindex = 15;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -595,7 +618,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton20_Click(object sender, EventArgs e)
         {
-            tableindex = 17;
+            tableindex = 16;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -603,7 +626,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton19_Click(object sender, EventArgs e)
         {
-            tableindex = 18;
+            tableindex = 17;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -611,7 +634,7 @@ namespace ui_qlnhahang
 
         private void bunifuButton18_Click(object sender, EventArgs e)
         {
-            tableindex = 19;
+            tableindex = 18;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
@@ -619,13 +642,17 @@ namespace ui_qlnhahang
 
         private void bunifuButton17_Click(object sender, EventArgs e)
         {
-            tableindex = 20;
+            tableindex = 19;
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
             getTotalBill();
+            // số bàn  = tableindex + 1
         }
 
-        
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            orderManager.checkoutToBillDetails(tableindex, label1);
+        }
     }
 
         

@@ -90,6 +90,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
@@ -363,6 +364,7 @@
             this.btnCheckout.TextMarginLeft = 0;
             this.btnCheckout.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCheckout.UseDefaultRadiusAndThickness = true;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // panelBtns
             // 
@@ -372,6 +374,7 @@
             this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
             this.panelBtns.BorderRadius = 20;
             this.panelBtns.BorderThickness = 1;
+            this.panelBtns.Controls.Add(this.label1);
             this.panelBtns.Controls.Add(this.bunifuButton17);
             this.panelBtns.Controls.Add(this.bunifuButton18);
             this.panelBtns.Controls.Add(this.bunifuButton19);
@@ -487,6 +490,7 @@
             this.bunifuButton17.TextMarginLeft = 0;
             this.bunifuButton17.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton17.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton17.Click += new System.EventHandler(this.bunifuButton17_Click);
             // 
             // bunifuButton18
             // 
@@ -2460,6 +2464,15 @@
             this.FoodDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.FoodDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FoodDataGridView1_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(337, 426);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2483,6 +2496,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Order_FormClosed);
             this.Load += new System.EventHandler(this.Order_Load);
             this.panelBtns.ResumeLayout(false);
+            this.panelBtns.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -2527,5 +2541,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
         private Bunifu.UI.WinForms.BunifuDataGridView FoodDataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }
