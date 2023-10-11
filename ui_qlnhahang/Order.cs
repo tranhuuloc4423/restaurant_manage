@@ -143,7 +143,7 @@ namespace ui_qlnhahang
             {
                 
 
-                string tkname = Dashboard.;
+                
 
                 OrderListed order = orders[index];
                 foreach (OrderItem item in order.OrderItems)
@@ -157,7 +157,7 @@ namespace ui_qlnhahang
                     string CheckoutDate = DateTime.Now.ToString("dd/MM/yyyy");
                                                             
                 }
-                label.Text = tkname;
+                
 
             }
 
