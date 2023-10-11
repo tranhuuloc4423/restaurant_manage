@@ -126,7 +126,7 @@ namespace ui_qlnhahang
 
         private void btnOpenOrder_Click(object sender, EventArgs e)
         {
-            Order form = new Order();
+            Order form = new Order(tk);
             navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
         }

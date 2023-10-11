@@ -16,37 +16,50 @@ namespace ui_qlnhahang
 {
     public partial class Order : Form
     {
-        public Order()
+        private string tk;
+        public int totalTable;
+        //public Order()
+        //{
+        //    InitializeComponent();
+        //    GetAllFoodData();
+
+        //    //orderManager.CreateOrder(0, DateTime.Now);
+        //    //orderManager.CreateOrder(1, DateTime.Now);
+        //    //orderManager.CreateOrder(2, DateTime.Now);
+        //    //orderManager.CreateOrder(3, DateTime.Now);
+        //    //orderManager.CreateOrder(4, DateTime.Now);
+        //    //orderManager.CreateOrder(5, DateTime.Now);
+        //    //orderManager.CreateOrder(6, DateTime.Now);
+        //    //orderManager.CreateOrder(7, DateTime.Now);
+        //    //orderManager.CreateOrder(8, DateTime.Now);
+        //    //orderManager.CreateOrder(9, DateTime.Now);
+        //    //orderManager.CreateOrder(10, DateTime.Now);
+        //    //orderManager.CreateOrder(11, DateTime.Now);
+        //    //orderManager.CreateOrder(12, DateTime.Now);
+        //    //orderManager.CreateOrder(13, DateTime.Now);
+        //    //orderManager.CreateOrder(14, DateTime.Now);
+        //    //orderManager.CreateOrder(15, DateTime.Now);
+        //    //orderManager.CreateOrder(16, DateTime.Now);
+        //    //orderManager.CreateOrder(17, DateTime.Now);
+        //    //orderManager.CreateOrder(18, DateTime.Now);
+        //    //orderManager.CreateOrder(19, DateTime.Now);
+        //    for (int i = 0; i < 100; i++)
+        //    {
+        //        orderManager.CreateOrder(i, DateTime.Now);
+        //    }
+
+        //}
+
+        public Order(string tk)
         {
             InitializeComponent();
+            this.tk = tk;
             GetAllFoodData();
-
-            orderManager.CreateOrder(0, DateTime.Now);
-            orderManager.CreateOrder(1, DateTime.Now);
-            orderManager.CreateOrder(2, DateTime.Now);
-            orderManager.CreateOrder(3, DateTime.Now);
-            orderManager.CreateOrder(4, DateTime.Now);
-            orderManager.CreateOrder(5, DateTime.Now);
-            orderManager.CreateOrder(6, DateTime.Now);
-            orderManager.CreateOrder(7, DateTime.Now);
-            orderManager.CreateOrder(8, DateTime.Now);
-            orderManager.CreateOrder(9, DateTime.Now);
-            orderManager.CreateOrder(10, DateTime.Now);
-            orderManager.CreateOrder(11, DateTime.Now);
-            orderManager.CreateOrder(12, DateTime.Now);
-            orderManager.CreateOrder(13, DateTime.Now);
-            orderManager.CreateOrder(14, DateTime.Now);
-            orderManager.CreateOrder(15, DateTime.Now);
-            orderManager.CreateOrder(16, DateTime.Now);
-            orderManager.CreateOrder(17, DateTime.Now);
-            orderManager.CreateOrder(18, DateTime.Now);
-            orderManager.CreateOrder(19, DateTime.Now);
-            
-            ;
-
-
-
-
+            LoadTables();
+            for (int i = 0; i <= totalTable; i++)
+            {
+                orderManager.CreateOrder(i, DateTime.Now);
+            }
         }
         OrderManager orderManager = new OrderManager();
 
@@ -315,12 +328,9 @@ namespace ui_qlnhahang
 
         int tableindex = 1;
 
-
-
         private void btnDelFood_Click(object sender, EventArgs e)
         {
             FoodDataGridView1.Rows.Clear();
-
             string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
             
             Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
@@ -334,7 +344,7 @@ namespace ui_qlnhahang
             string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
             int quantity = (int)numericUpDown1.Value;
 
-            Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
+            Food selectedFood = foodList.Find(food => food.FoodName.Equals(selectedFoodName));
 
             if (selectedFood != null)
             {
@@ -410,10 +420,55 @@ namespace ui_qlnhahang
         private void Order_Load(object sender, EventArgs e)
         {
             //loadFoodlist();
-
             loadCatlist();
+            //LoadTables();
 
         }
+        public void LoadTables()
+        {
+            panelBtns.Controls.Clear();
+
+            // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
+            DataProvider provider = new DataProvider();
+            DataTable tableData = provider.ExecuteQuery("select * from [Table]");
+            // Sử dụng FlowLayoutPanel để chứa các nút bàn ăn
+            FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+            flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanel.Dock = DockStyle.Fill;
+            // Duyệt qua từng dòng dữ liệu trong bảng
+            foreach (DataRow row in tableData.Rows)
+            {
+                totalTable++;
+                // Tạo một nút đại diện cho mỗi bàn ăn
+                Button tableButton = new Button();
+                tableButton.Text = row["Name"].ToString();
+                tableButton.Name = "btnTable_" + row["ID"].ToString();
+                tableButton.Width = 150;
+                tableButton.Height = 75;
+                tableButton.Image = 
+                tableButton.FlatStyle = FlatStyle.Flat;
+
+                // Xử lý sự kiện khi nút được nhấp
+                tableButton.Click += TableButton_Click;
+
+                // Thêm nút vào form
+                flowLayoutPanel.Controls.Add(tableButton);
+            }
+            panelBtns.Controls.Add(flowLayoutPanel);
+        }
+
+        private void TableButton_Click(object sender, EventArgs e)
+        {
+            Button tableButton = (Button)sender;
+            int tableID = Convert.ToInt32(tableButton.Name.Split('_')[1]);
+            tableindex = tableID;
+            FoodDataGridView1.Rows.Clear();
+            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
+            getTotalBill();
+            //MessageBox.Show(tableID.ToString());
+        }
+
+
 
         private void TypeDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -651,7 +706,7 @@ namespace ui_qlnhahang
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            orderManager.checkoutToBillDetails(tableindex, label1);
+            //orderManager.checkoutToBillDetails(tableindex, label1);
         }
     }
 
