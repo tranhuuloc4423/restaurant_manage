@@ -141,9 +141,9 @@ namespace ui_qlnhahang
 
             public void checkoutToBillDetails(int index, Label label)
             {
-                Dashboard form = new Dashboard();
+                
 
-                string tkname = form.tk;
+                string tkname = Dashboard.;
 
                 OrderListed order = orders[index];
                 foreach (OrderItem item in order.OrderItems)
