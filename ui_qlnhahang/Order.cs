@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -151,26 +152,110 @@ namespace ui_qlnhahang
 
 
             }
+            int invoiceID = 0;
 
-            public void checkoutToBillDetails(int index, Label label)
+            public void checkoutToBills(int index,string staffname)
             {
-                
 
-                
+
+                DataProvider provider = new DataProvider();
 
                 OrderListed order = orders[index];
+                int totalAmount = 0;
+
                 foreach (OrderItem item in order.OrderItems)
                 {
-                    string name = "Hóa đơn " +(index + 1);//
-                    int tableID = index + 1;
-
                     int quantity = item.Quantity;
-                    int Amount = item.Price * quantity;
+                    int amount = item.Price * quantity;
+                    totalAmount += amount;
+                }
+                if (totalAmount !=0) {
+                    string name = "Hóa đơn " + (invoiceID + 1);
+                    int tableID = index + 1;
                     float status = 1;
-                    string CheckoutDate = DateTime.Now.ToString("dd/MM/yyyy");
-                                                            
+                    string checkoutDate = DateTime.Now.ToString("dd/MM/yyyy");
+                    string account = staffname.ToLower();
+
+                    string query = "INSERT INTO [dbo].[Bills] ([Name], [TableID], [Amount], [Status], [CheckoutDate], [Account]) " +
+                                       "VALUES (@Name, @TableID, @Amount, @Status, @CheckoutDate, @Account)";
+
+                    using (SqlConnection connection = new SqlConnection(provider.getconnectionSTR()))
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Name", name);
+                        command.Parameters.AddWithValue("@TableID", tableID);
+                        command.Parameters.AddWithValue("@Amount", totalAmount);
+                        command.Parameters.AddWithValue("@Status", status);
+                        command.Parameters.AddWithValue("@CheckoutDate", checkoutDate);
+                        command.Parameters.AddWithValue("@Account", account);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
                 }
                 
+
+            }
+
+
+            public void checkoutToBillDetails(int index)
+            {
+
+                OrderListed order = orders[index];
+
+                int totalAmount = 0;
+
+                DataProvider provider = new DataProvider();
+                string query1 = "SELECT MAX(ID) FROM Bills";
+
+                using (SqlConnection connection = new SqlConnection(provider.getconnectionSTR()))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query1, connection))
+                    {
+                        object result = command.ExecuteScalar();
+
+                        if (result != DBNull.Value)
+                        {
+                            invoiceID = Convert.ToInt32(result);
+                        }
+                    }
+
+                    connection.Close();
+                }
+
+                foreach (OrderItem item in order.OrderItems)
+                {
+                    int name = invoiceID;
+                    int tableID = index + 1;
+                    int quantity = item.Quantity;
+                    
+                    
+                    
+
+                    string query = "INSERT INTO [dbo].[BillDetails] ([InvoiceID],  [FoodID], [Quantity]) " +
+                                   "VALUES (@Name, @TableID, @Amount)";
+
+                    using (SqlConnection connection = new SqlConnection(provider.getconnectionSTR()))
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", invoiceID);
+                        command.Parameters.AddWithValue("@TableID", tableID);
+                        command.Parameters.AddWithValue("@Amount", quantity);
+                        
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+
+
+
+                order.OrderItems.Clear();
 
             }
 
@@ -255,6 +340,25 @@ namespace ui_qlnhahang
 
 
             AddCatsToDropdown(provider.ExecuteQuery(query));
+        }
+
+        int  getInvoiceID()
+        {
+            int invoiceID = 0;
+            string query = "SELECT InvoiceID FROM BillDetails WHERE ID = (SELECT MAX(ID) FROM BillDetails)";
+
+            DataProvider provider = new DataProvider();
+            
+            DataTable dataTable = provider.ExecuteQuery(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow lastRow = dataTable.Rows[dataTable.Rows.Count - 1];
+                invoiceID = Convert.ToInt32(lastRow["InvoiceID"]);
+            }
+
+            return invoiceID;
+
         }
 
 
@@ -445,6 +549,7 @@ namespace ui_qlnhahang
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
                 tableButton.Width = 150;
                 tableButton.Height = 75;
+                //tableButton.Image =
                 tableButton.FlatStyle = FlatStyle.Flat;
 
                 // Xử lý sự kiện khi nút được nhấp
@@ -495,6 +600,41 @@ namespace ui_qlnhahang
         {
 
         }
+
+        //public void LoadTables()
+        //{
+        //    panelBtns.Controls.Clear();
+
+        //    // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
+        //    DataProvider provider = new DataProvider();
+        //    DataTable tableData = provider.ExecuteQuery("select * from [Table]");
+
+        //    // Duyệt qua từng dòng dữ liệu trong bảng
+        //    foreach (DataRow row in tableData.Rows)
+        //    {
+        //        // Tạo một nút đại diện cho mỗi bàn ăn
+        //        Button tableButton = new Button();
+        //        tableButton.Text = row["ID"].ToString();
+        //        tableButton.Name = row["Name"].ToString();
+        //        tableButton.Width = 95;
+        //        tableButton.Height = 75;
+
+        //        // Xử lý sự kiện khi nút được nhấp
+        //        tableButton.Click += TableButton_Click;
+
+        //        // Thêm nút vào form
+        //        this.Controls.Add(tableButton);
+        //    }
+        //}
+
+        //private void TableButton_Click(object sender, EventArgs e)
+        //{
+        //    Button tableButton = (Button)sender;
+        //    int tableID = Convert.ToInt32(tableButton.Name);
+        //    FoodDataGridView1.Rows.Clear();
+        //    orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
+        //    getTotalBill();
+        //}
 
         List<OrderListed> tableList = new List<OrderListed>();
         private int currentRowIndex = 0;
@@ -670,8 +810,20 @@ namespace ui_qlnhahang
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            //orderManager.checkoutToBillDetails(tableindex, label1);
+
+            if (orderManager.orders[tableindex].OrderItems != null)
+            {
+
+                //orderManager.checkoutToBillDetails(tableindex, label1);
+                orderManager.checkoutToBills(tableindex, tk);
+
+                orderManager.checkoutToBillDetails(tableindex);
+
+                FoodDataGridView1.Rows.Clear();
+            }
         }
+
+        
     }
 
         
