@@ -1,13 +1,18 @@
 ﻿using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.BunifuButton;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
+using static ui_qlnhahang.Order;
 
 namespace ui_qlnhahang
 {
@@ -57,6 +62,35 @@ namespace ui_qlnhahang
         public static void AddRowData(DataGridView gridView, params object[] row)
         {
             gridView.Rows.Add(row);
+        }
+
+        public static void preventResise(BunifuDataGridView gridview)
+        {
+            gridview.AllowUserToResizeRows = false;
+            gridview.AllowUserToResizeColumns = false;
+        }
+
+        public static void handleProcedure(string query, string name, string procedureParams, BunifuDataGridView gridview, string desc, object[] parameter = null)
+        {
+            DataProvider dataprovider = new DataProvider();
+            dataprovider.ExecuteNonQueryProvider(name, procedureParams, parameter);
+            //MessageBox.Show(desc);
+            MessBox mb = new MessBox(desc);
+            mb.Show();
+            GetAllData(query, gridview);
+        }
+
+        public static void setStateButton(BunifuButton button, bool state)
+        {
+            if(!state)
+            {
+                button.Enabled = state;
+                button.BackColor = Color.DarkSlateGray;
+            } else
+            {
+                button.Enabled = state;
+                button.BackColor = Color.AliceBlue;
+            }
         }
     }
 }

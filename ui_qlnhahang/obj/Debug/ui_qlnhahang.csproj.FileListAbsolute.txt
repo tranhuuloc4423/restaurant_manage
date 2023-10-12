@@ -181,3 +181,4 @@ G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
+G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.MessBox.resources
