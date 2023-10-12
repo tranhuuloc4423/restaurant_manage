@@ -1543,4 +1543,16 @@
   <data name="lblaccountactive.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Tahoma'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: right; }</value>
   </data>
+  <data name="btnDangXuat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGMAAAAbCAYAAABoSjE5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFqSURBVGhD7ZqhUkMxEEUjkUgkEolE9hOQyEpkJbJ/geQz
+        KpFIJBKJTMqUlyCSbXYJw9DZ0um0b4m4d+ao7ETsfZtN8uJ26T3RhY80qUwrc7A3nLeJ/6TLltL95VOZ
+        +SG/hEQEjkV+ZYOI6KSl+W9JJaT8pE8GjgF/5MuPctVSrktKashRmwCMwEB3LfW/JRUBI8zhftIs+BGW
+        pv+h5v3NE502G76atRYIrMgPzQrnuMvrQcACbg9SHbz/1QKALT7RtQtDudEGgTG8s0K/6AM+DPLZYq4N
+        AltgRkfAjI6AGR0BMzpCzOAtlTYIbPmujKk2CGwRM/heXRsExtTDt+O/TiFmrwYAM2plnMtF4TLley0A
+        GBHzsxjBWq3ojO/V1UAwKnJju/lYgW8NtWAwMtt+vWK5sqXme9FSr0u2umjooyJvDbZVxKa4h4SUH7WJ
+        wGFUI3Y/09HE260Qyy0fSMCBpDLjFzgttYqcWwNTxcU2aNlQAgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
