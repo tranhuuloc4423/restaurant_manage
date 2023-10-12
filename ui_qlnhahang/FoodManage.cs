@@ -23,7 +23,7 @@ namespace ui_qlnhahang
         public string queryNameOfFood = "select name from [Category]";
         public string queryCategory = "select *  from [Category]";
         public DataTable categoryList;
-        public DataTable foodList;
+        //public DataTable foodList;
         public FoodManage()
         {
             InitializeComponent();
@@ -53,9 +53,8 @@ namespace ui_qlnhahang
             txtPrice.Clear();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void checkTextboxNull()
         {
-            
             if (String.IsNullOrEmpty(txtFoodName.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn");
@@ -73,7 +72,11 @@ namespace ui_qlnhahang
                 MessageBox.Show("Vui lòng nhập giá món ăn");
                 return;
             }
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            checkTextboxNull();
             string name = txtFoodName.Text;
             string foodCateText = dpdCate.Text;
             int foodPrice = Convert.ToInt32(txtPrice.Text);
@@ -101,24 +104,8 @@ namespace ui_qlnhahang
             if (gvFood.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
-                
-                if (String.IsNullOrEmpty(txtFoodName.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập tên món ăn");
-                    return;
-                }
 
-                if (String.IsNullOrEmpty(dpdCate.Text))
-                {
-                    MessageBox.Show("Vui lòng chọn danh mục món ăn");
-                    return;
-                }
-
-                if (String.IsNullOrEmpty(txtPrice.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập giá món ăn");
-                    return;
-                }
+                checkTextboxNull();
                 object id = selectedRow.Cells[0].Value;
                 string name = txtFoodName.Text;
                 string foodCateText = dpdCate.Text;

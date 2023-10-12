@@ -111,15 +111,11 @@
             this.dpdType.ItemHeight = 30;
             this.dpdType.ItemHighLightColor = System.Drawing.Color.White;
             this.dpdType.ItemHighLightForeColor = System.Drawing.Color.Black;
-            this.dpdType.Items.AddRange(new object[] {
-            "Nhân viên",
-            "Quản lý"});
             this.dpdType.ItemTopMargin = 3;
             this.dpdType.Location = new System.Drawing.Point(762, 387);
             this.dpdType.Name = "dpdType";
             this.dpdType.Size = new System.Drawing.Size(172, 36);
             this.dpdType.TabIndex = 35;
-            this.dpdType.Text = "nhân viên";
             this.dpdType.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.dpdType.TextLeftMargin = 4;
             // 
@@ -795,6 +791,7 @@
             this.gvAccount.TabIndex = 19;
             this.gvAccount.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             this.gvAccount.ColumnHeadersHeightChanged += new System.EventHandler(this.gvAccount_ColumnHeadersHeightChanged);
+            this.gvAccount.SelectionChanged += new System.EventHandler(this.gvAccount_SelectionChanged);
             // 
             // bunifuLabel4
             // 
