@@ -144,7 +144,7 @@ go
 --    @RoleName = N'Staff'
 
 
---drop PROCEDURE [[UpdateAccountWithRoleID]]
+--drop PROCEDURE [UpdateAccountWithRoleID]
 CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
@@ -153,22 +153,33 @@ CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
 AS
 BEGIN
     SET NOCOUNT ON;
-    UPDATE [dbo].[Account]
-    SET DisplayName = @DisplayName,
-        Password = @Password
-    WHERE AccountName = @AccountName
-    UPDATE [dbo].[RoleAccount]
-    SET RoleID = @NewRoleID
-    WHERE AccountName = @AccountName
-    SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
+    IF EXISTS (
+        SELECT 1
+        FROM [dbo].[RoleAccount]
+        WHERE AccountName = @AccountName
+    )
+    BEGIN
+        UPDATE [dbo].[Account]
+        SET DisplayName = @DisplayName,
+            Password = @Password
+        WHERE AccountName = @AccountName
+        UPDATE [dbo].[RoleAccount]
+        SET RoleID = @NewRoleID
+        WHERE AccountName = @AccountName
+        SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
+    END
+    ELSE
+    BEGIN
+        SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message
+    END
 END
 GO
 
---EXEC [dbo].[UpdateAccountWithRoleID]
---    @AccountName = N'nguyenthiennhan', 
---    @DisplayName = N'Nguyen Thien Nhan', 
---    @Password = N'123456789', 
---    @NewRoleID = 1 
+EXEC [dbo].[UpdateAccountWithRoleID]
+    @AccountName = N'nguyenthiennhan', 
+    @DisplayName = N'Nguyen Thien Nhan', 
+    @Password = N'123456789', 
+    @NewRoleID = 1
 
 --drop PROCEDURE [DeleteAccountWithRole]
 CREATE PROCEDURE [dbo].[DeleteAccountWithRole]
