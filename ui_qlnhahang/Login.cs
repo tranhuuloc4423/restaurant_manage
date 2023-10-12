@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,11 +33,16 @@ namespace ui_qlnhahang
                 f.ShowDialog();
             }
             else MessageBox.Show("Sai tài khoản mật khẩu");
-
+            
         }
         bool checkLogin(string tk, string mk)
         {
             return AccountDAO.Instance.Login(tk, mk);
+        }
+
+        public string gettk()
+        {
+            return txttk.Text;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

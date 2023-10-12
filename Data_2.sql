@@ -240,10 +240,10 @@ GO
 
 --LẤY THÔNG TIN
 Select * from [Account]
+select * from [Role]
+select * from [RoleAccount]
 select * from [BillDetails]
 select * from [Bills]
 select * from [Category]
 select * from [Food]
-select * from [Role]
-select * from [RoleAccount]
 select * from [Table]
