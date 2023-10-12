@@ -445,7 +445,6 @@ namespace ui_qlnhahang
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
                 tableButton.Width = 150;
                 tableButton.Height = 75;
-                tableButton.Image = 
                 tableButton.FlatStyle = FlatStyle.Flat;
 
                 // Xử lý sự kiện khi nút được nhấp
