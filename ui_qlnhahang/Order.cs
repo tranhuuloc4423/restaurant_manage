@@ -169,20 +169,20 @@ namespace ui_qlnhahang
                     int amount = item.Price * quantity;
                     totalAmount += amount;
                 }
+                if (totalAmount !=0) {
+                    string name = "Hóa đơn " + (invoiceID + 1);
+                    int tableID = index + 1;
+                    float status = 1;
+                    string checkoutDate = DateTime.Now.ToString("dd/MM/yyyy");
+                    string account = staffname.ToLower();
 
-                string name = "Hóa đơn " + (invoiceID + 1);
-                int tableID = index + 1;
-                float status = 1;
-                string checkoutDate = DateTime.Now.ToString("dd/MM/yyyy");
-                string account = staffname.ToLower();
-
-                string query = "INSERT INTO [dbo].[Bills] ([Name], [TableID], [Amount], [Status], [CheckoutDate], [Account]) " +
-                                   "VALUES (@Name, @TableID, @Amount, @Status, @CheckoutDate, @Account)";
+                    string query = "INSERT INTO [dbo].[Bills] ([Name], [TableID], [Amount], [Status], [CheckoutDate], [Account]) " +
+                                       "VALUES (@Name, @TableID, @Amount, @Status, @CheckoutDate, @Account)";
 
                     using (SqlConnection connection = new SqlConnection(provider.getconnectionSTR()))
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        
+
                         command.Parameters.AddWithValue("@Name", name);
                         command.Parameters.AddWithValue("@TableID", tableID);
                         command.Parameters.AddWithValue("@Amount", totalAmount);
@@ -194,6 +194,8 @@ namespace ui_qlnhahang
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
+                }
+                
 
             }
 
@@ -808,12 +810,17 @@ namespace ui_qlnhahang
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            //orderManager.checkoutToBillDetails(tableindex, label1);
-            orderManager.checkoutToBills(tableindex, tk);
 
-            orderManager.checkoutToBillDetails(tableindex);
+            if (orderManager.orders[tableindex].OrderItems != null)
+            {
 
-            FoodDataGridView1.Rows.Clear();
+                //orderManager.checkoutToBillDetails(tableindex, label1);
+                orderManager.checkoutToBills(tableindex, tk);
+
+                orderManager.checkoutToBillDetails(tableindex);
+
+                FoodDataGridView1.Rows.Clear();
+            }
         }
 
         
