@@ -116,44 +116,94 @@ GO
 --------------------ACCOUNT--------------------------
 --SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account
 --GO
---drop PROCEDURE Account_Insert
-create procedure Account_Insert -- THÊM TÀI KHOẢN
-(
-	@AccountName nvarchar(100),
-	@DisplayName nvarchar(100),
-	@Pass nvarchar(200)
-)
-as
-begin
-	if (not exists (select AccountName from Account where AccountName = @AccountName))
-		insert into Account(AccountName,DisplayName,Password) values (@AccountName,@DisplayName, @Pass)
-end
-go
-
---drop PROCEDURE Account_Update
-CREATE procedure Account_Update -- CẬP NHẬT TÀI KHOẢN
-(
-	@AccountName nvarchar(100),
-	@DisplayName nvarchar(100),
-	@Pass nvarchar(200)
-)
-as
-begin
-	update Account
-	set AccountName = @AccountName, Password = @Pass , DisplayName = @DisplayName
-	where AccountName = @AccountName
-end
-go
-
---drop PROCEDURE Account_Delete
-CREATE PROCEDURE Account_Delete -- XÓA TÀI KHOẢN
-    @AccountName nvarchar(100)
+--drop procedure [InsertAccount]
+CREATE PROCEDURE [dbo].[InsertAccount]
+    @AccountName NVARCHAR(100),
+    @DisplayName NVARCHAR(100),
+    @Password NVARCHAR(200),
+    @RoleName NVARCHAR(1000)
 AS
 BEGIN
-    DELETE FROM Account
+    SET NOCOUNT ON;
+    DECLARE @RoleID INT
+    SELECT @RoleID = ID
+    FROM [dbo].[Role]
+    WHERE RoleName = @RoleName
+    INSERT INTO [dbo].[Account] (AccountName, DisplayName, Password)
+    VALUES (@AccountName, @DisplayName, @Password)
+    INSERT INTO [dbo].[RoleAccount] (RoleID, AccountName, Actived)
+    VALUES (@RoleID, @AccountName, 1) -- Giả sử Actived = 1 cho tài khoản mới
+    SELECT N'Tài khoản đã được thêm thành công' AS Message
+END
+go
+
+--EXEC [dbo].[InsertAccount]
+--    @AccountName = N'test',
+--    @DisplayName = N'Tét Văn Tơ',
+--    @Password = N'123456',
+--    @RoleName = N'Staff'
+
+
+--drop PROCEDURE [[UpdateAccountWithRoleID]]
+CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
+    @AccountName NVARCHAR(100),
+    @DisplayName NVARCHAR(100),
+    @Password NVARCHAR(200),
+    @NewRoleID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [dbo].[Account]
+    SET DisplayName = @DisplayName,
+        Password = @Password
     WHERE AccountName = @AccountName
+    UPDATE [dbo].[RoleAccount]
+    SET RoleID = @NewRoleID
+    WHERE AccountName = @AccountName
+    SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
 END
 GO
+
+--EXEC [dbo].[UpdateAccountWithRoleID]
+--    @AccountName = N'nguyenthiennhan', 
+--    @DisplayName = N'Nguyen Thien Nhan', 
+--    @Password = N'123456789', 
+--    @NewRoleID = 1 
+
+--drop PROCEDURE [DeleteAccountWithRole]
+CREATE PROCEDURE [dbo].[DeleteAccountWithRole]
+    @AccountName NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DELETE FROM [dbo].[RoleAccount]
+    WHERE AccountName = @AccountName
+    DELETE FROM [dbo].[Account]
+    WHERE AccountName = @AccountName
+    SELECT N'Tài khoản đã được xóa thành công từ cả bảng Account và bảng RoleAccount' AS Message
+END
+GO
+
+--EXEC [dbo].[DeleteAccountWithRole]
+--    @AccountName = N'test' 
+
+--drop PROCEDURE [UpdateRoleAccountStatus]
+CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus]
+    @AccountName NVARCHAR(100),
+    @Actived BIT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [dbo].[RoleAccount]
+    SET Actived = @Actived
+    WHERE AccountName = @AccountName
+    SELECT N'Trạng thái tài khoản đã được cập nhật thành công' AS Message
+END
+GO
+
+--EXEC [dbo].[UpdateRoleAccountStatus]
+--    @AccountName = N'nguyenthiennhan', 
+--    @Actived = 1
 -----------------------------------------------------
 --SELECT AccountName,HashBytes('MD5', Password) as Password
 --from Account

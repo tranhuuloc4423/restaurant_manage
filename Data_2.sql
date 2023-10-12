@@ -164,7 +164,7 @@ SET IDENTITY_INSERT [dbo].[Food] ON
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (1, N'Gỏi cuốn', 1, 20000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (2, N'Soup', 1, 30000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (3, N'Thịt bò xào', 2, 150000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (4, N'Gà nướng', 2, 10000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (4, N'Gà nướng', 2, 100000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (5, N'Tôm rang muối', 3, 200000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (6, N'Càng cua hấp', 3, 300000)
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (7, N'Rau muống xào tỏi', 4, 30000)
@@ -240,10 +240,10 @@ GO
 
 --LẤY THÔNG TIN
 Select * from [Account]
+select * from [Role]
+select * from [RoleAccount]
 select * from [BillDetails]
 select * from [Bills]
 select * from [Category]
 select * from [Food]
-select * from [Role]
-select * from [RoleAccount]
 select * from [Table]
