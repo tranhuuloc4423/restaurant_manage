@@ -175,11 +175,11 @@ BEGIN
 END
 GO
 
-EXEC [dbo].[UpdateAccountWithRoleID]
-    @AccountName = N'nguyenthiennhan', 
-    @DisplayName = N'Nguyen Thien Nhan', 
-    @Password = N'123456789', 
-    @NewRoleID = 1
+--EXEC [dbo].[UpdateAccountWithRoleID]
+--    @AccountName = N'nguyenthiennhan', 
+--    @DisplayName = N'Nguyen Thien Nhan', 
+--    @Password = N'123456789', 
+--    @NewRoleID = 1
 
 --drop PROCEDURE [DeleteAccountWithRole]
 CREATE PROCEDURE [dbo].[DeleteAccountWithRole]
