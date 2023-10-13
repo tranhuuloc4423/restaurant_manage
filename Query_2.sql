@@ -82,12 +82,21 @@ GO
 --GO
 --drop PROCEDURE Table_Insert 
 CREATE PROCEDURE Table_Insert -- THÊM BÀN
-    @Name nvarchar(1000),
-    @Status int
+@Name nvarchar(1000),
+@Status int
 AS
 BEGIN
-    INSERT INTO [Table] (Name, Status)
-    VALUES (@Name, @Status);
+DECLARE @TableCount int;
+SELECT @TableCount = COUNT(*) FROM [Table];
+IF @TableCount < 15
+	BEGIN
+		INSERT INTO [Table] (Name, Status)
+		VALUES (@Name, @Status);
+	END
+ELSE
+	BEGIN
+		PRINT N'Đã đạt đến giới hạn số lượng bàn. Không thể thêm bàn mới.';
+	END
 END;
 GO
 
