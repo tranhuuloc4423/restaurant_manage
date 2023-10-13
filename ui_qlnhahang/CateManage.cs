@@ -32,14 +32,6 @@ namespace ui_qlnhahang
             txtCate.Clear();
         }
 
-        private void handleData(string name, string query, string desc, object[] parameter = null)
-        {
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
-            MessageBox.Show(desc);
-            GetAllData(mainquery, gvCate);
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(txtCate.Text))
@@ -48,9 +40,9 @@ namespace ui_qlnhahang
                 return;
             }
             string name = "Category_Insert";
-            string query = "@Name @Type";
+            string procedureParams = "@Name @Type";
             string desc = "Thêm danh mục món ăn thành công!";
-            handleData(name, query, desc, new object[] { txtCate.Text, 1 });
+            handleProcedure(mainquery, name, procedureParams,gvCate, desc, new object[] { txtCate.Text, 1 });
 
         }
 
@@ -67,9 +59,9 @@ namespace ui_qlnhahang
                 {
                     object id = selectedRow.Cells[0].Value;
                     string name = "Category_Update";
-                    string query = "@ID @Name @Type";
+                    string procedureParams = "@ID @Name @Type";
                     string desc = "Cập nhật danh mục món ăn thành công!";
-                    handleData(name, query, desc, new object[] { id, txtCate.Text, 1 });
+                    handleProcedure(mainquery, name, procedureParams,gvCate, desc, new object[] { id, txtCate.Text, 1 });
                 }
             }
         }
@@ -81,10 +73,10 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
                 string name = "Category_Delete";
-                string query = "@ID";
+                string procedureParams = "@ID";
                 string desc = "Xoá danh mục món ăn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                handleData(name, query, desc, new object[] { id });
+                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
             }
         }
 

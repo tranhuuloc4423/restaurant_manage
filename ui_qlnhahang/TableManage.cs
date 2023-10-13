@@ -44,9 +44,9 @@ namespace ui_qlnhahang
                 return;
             }
             string name = "Table_Insert";
-            string query = "@Name @Status";
+            string procedureParams = "@Name @Status";
             string desc = "Thêm bàn thành công!";
-            handleData(name, query, desc, new object[] { txtNameTable.Text, 0 });
+            handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { txtNameTable.Text, 0 });
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -63,9 +63,9 @@ namespace ui_qlnhahang
                 {
                     object id = selectedRow.Cells[0].Value;
                     string name = "Table_Update";
-                    string query = "@ID @Name @Status";
+                    string procedureParams = "@ID @Name @Status";
                     string desc = "Cập nhật bàn thành công!";
-                    handleData(name, query, desc, new object[] { id, txtNameTable.Text, 0 });
+                    handleProcedure(mainquery, name, procedureParams,gvTable, desc, new object[] { id, txtNameTable.Text, 0 });
                 }
             }
         }
@@ -76,10 +76,10 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
                 string name = "Table_Delete";
-                string query = "@ID";
+                string procedureParams = "@ID";
                 string desc = "Xoá bàn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                handleData(name, query, desc, new object[] { id });
+                handleProcedure(mainquery, name, procedureParams,gvTable, desc, new object[] { id });
             }
         }
 

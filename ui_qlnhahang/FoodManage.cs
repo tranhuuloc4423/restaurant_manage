@@ -19,12 +19,11 @@ namespace ui_qlnhahang
 {
     public partial class FoodManage : Form
     {
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
         public string mainquery = "select * from [Food]";
         public string queryNameOfFood = "select name from [Category]";
         public string queryCategory = "select *  from [Category]";
         public DataTable categoryList;
-        public DataTable foodList;
+        //public DataTable foodList;
         public FoodManage()
         {
             InitializeComponent();
@@ -54,17 +53,8 @@ namespace ui_qlnhahang
             txtPrice.Clear();
         }
 
-        private void handleData(string name, string query, string desc, object[] parameter = null)
+        void checkTextboxNull()
         {
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
-            MessageBox.Show(desc);
-            GetAllData(mainquery, gvFood);
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            
             if (String.IsNullOrEmpty(txtFoodName.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn");
@@ -82,7 +72,11 @@ namespace ui_qlnhahang
                 MessageBox.Show("Vui lòng nhập giá món ăn");
                 return;
             }
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            checkTextboxNull();
             string name = txtFoodName.Text;
             string foodCateText = dpdCate.Text;
             int foodPrice = Convert.ToInt32(txtPrice.Text);
@@ -97,9 +91,9 @@ namespace ui_qlnhahang
                 }
             }
             string nameProcedure = "[InsertFood]";
-            string query = "@Name @FoodCategoryID @Price";
+            string procedureParams = "@Name @FoodCategoryID @Price";
             string desc = "Thêm món ăn thành công";
-            handleData(nameProcedure, query, desc, new object[] { name, foodCateID, foodPrice });
+            handleProcedure(mainquery, nameProcedure, procedureParams, gvFood, desc, new object[] { name, foodCateID, foodPrice });
             txtFoodName.Clear();
             txtPrice.Clear();
 
@@ -110,24 +104,8 @@ namespace ui_qlnhahang
             if (gvFood.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
-                
-                if (String.IsNullOrEmpty(txtFoodName.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập tên món ăn");
-                    return;
-                }
 
-                if (String.IsNullOrEmpty(dpdCate.Text))
-                {
-                    MessageBox.Show("Vui lòng chọn danh mục món ăn");
-                    return;
-                }
-
-                if (String.IsNullOrEmpty(txtPrice.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập giá món ăn");
-                    return;
-                }
+                checkTextboxNull();
                 object id = selectedRow.Cells[0].Value;
                 string name = txtFoodName.Text;
                 string foodCateText = dpdCate.Text;
@@ -143,9 +121,9 @@ namespace ui_qlnhahang
                     }
                 }
                 string nameProcedure = "[UpdateFood]";
-                string query = "@ID @Name @FoodCategoryID @Price";
+                string procedureParams = "@ID @Name @FoodCategoryID @Price";
                 string desc = "Cập nhật món ăn thành công!";
-                handleData(nameProcedure, query, desc, new object[] { id, name, foodCateID, foodPrice });
+                handleProcedure(mainquery, nameProcedure, procedureParams,gvFood, desc, new object[] { id, name, foodCateID, foodPrice });
             }
         }
 
@@ -157,9 +135,9 @@ namespace ui_qlnhahang
                 object id = selectedRow.Cells[0].Value;
 
                 string nameProcedure = "[DeleteFood]";
-                string query = "@FoodID";
+                string procedureParams = "@FoodID";
                 string desc = "Xoá món ăn thành công!";
-                handleData(nameProcedure, query, desc, new object[] { id });
+                handleProcedure(mainquery ,nameProcedure, procedureParams, gvFood, desc, new object[] { id });
             } else
             {
                 MessageBox.Show("Chọn món ăn để xoá");
