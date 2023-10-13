@@ -149,7 +149,7 @@ SET IDENTITY_INSERT [dbo].[BillDetails] OFF
 
 SET IDENTITY_INSERT [dbo].[Bills] ON 
 INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,'2023-10-04', N'levantuan')
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 410000, 1,'2023-10-04', N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 0, 0,'2023-10-04', N'levantuan')
 SET IDENTITY_INSERT [dbo].[Bills] OFF
 
 SET IDENTITY_INSERT [dbo].[Category] ON 
@@ -174,8 +174,8 @@ INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (10, N'Plan
 SET IDENTITY_INSERT [dbo].[Food] OFF
 
 SET IDENTITY_INSERT [dbo].[Role] ON 
-INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (1, N'Adminstrator')
-INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (2, N'Staff')
+INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (1, N'Quản lý')
+INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (2, N'Nhân viên')
 SET IDENTITY_INSERT [dbo].[Role] OFF
 
 INSERT [dbo].[RoleAccount] ([RoleID], [AccountName], [Actived]) VALUES (1, N'levantuan', 1)
@@ -195,11 +195,18 @@ INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (7, N'07', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (8, N'08', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (9, N'09', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (10, N'10', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (11, N'VIP.1', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (12, N'VIP.2', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (13, N'VIP.3', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (14, N'VIP.4', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (15, N'VIP.5', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (11, N'11', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (12, N'12', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (13, N'13', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (14, N'14', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (15, N'15', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (16, N'16', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (17, N'17', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (18, N'18', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (19, N'19', 0)
+INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (20, N'20', 0)
+
+
 SET IDENTITY_INSERT [dbo].[Table] OFF
 
 ALTER TABLE [dbo].[BillDetails] ADD  CONSTRAINT [DF_InvoiceDetails_Amount]  DEFAULT ((0)) FOR [Quantity]

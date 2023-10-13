@@ -117,7 +117,7 @@ GO
 --SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account
 --GO
 --drop procedure [InsertAccount]
-CREATE PROCEDURE [dbo].[InsertAccount]
+CREATE PROCEDURE [dbo].[InsertAccount] -- Thêm tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
     @Password NVARCHAR(200),
@@ -145,7 +145,7 @@ go
 
 
 --drop PROCEDURE [UpdateAccountWithRoleID]
-CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
+CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
     @Password NVARCHAR(200),
@@ -182,7 +182,7 @@ GO
 --    @NewRoleID = 1
 
 --drop PROCEDURE [DeleteAccountWithRole]
-CREATE PROCEDURE [dbo].[DeleteAccountWithRole]
+CREATE PROCEDURE [dbo].[DeleteAccountWithRole] -- Xóa tài khoản
     @AccountName NVARCHAR(100)
 AS
 BEGIN
@@ -199,7 +199,7 @@ GO
 --    @AccountName = N'test' 
 
 --drop PROCEDURE [UpdateRoleAccountStatus]
-CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus]
+CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus] -- Cập nhật trạng thái quyền của tài khoản
     @AccountName NVARCHAR(100),
     @Actived BIT
 AS
