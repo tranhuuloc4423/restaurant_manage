@@ -1,4 +1,5 @@
-﻿using Bunifu.UI.WinForms;
+﻿using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms;
 using Bunifu.UI.WinForms.BunifuButton;
 using System;
 using System.Collections;
@@ -12,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
-using static ui_qlnhahang.Order;
+using BunifuDropdown = Bunifu.UI.WinForms.BunifuDropdown;
 
 namespace ui_qlnhahang
 {
@@ -64,6 +65,13 @@ namespace ui_qlnhahang
             gridView.Rows.Add(row);
         }
 
+        public static void AddColumnData(DataGridView gridView, params object[] column)
+        {
+            gridView.Columns.Add("test", "");
+        }
+
+
+
         public static void preventResise(BunifuDataGridView gridview)
         {
             gridview.AllowUserToResizeRows = false;
@@ -80,16 +88,18 @@ namespace ui_qlnhahang
             GetAllData(query, gridview);
         }
 
-        public static void setStateButton(BunifuButton button, bool state)
+        public static void setStateButton(BunifuThinButton2 button, bool state)
         {
             if(!state)
             {
                 button.Enabled = state;
-                button.BackColor = Color.DarkSlateGray;
+                button.ActiveFillColor = Color.DarkSlateGray;
+                button.IdleFillColor = Color.DarkSlateGray;
             } else
             {
                 button.Enabled = state;
-                button.BackColor = Color.AliceBlue;
+                button.IdleFillColor = Color.AliceBlue;
+                button.ActiveFillColor = Color.AliceBlue;
             }
         }
     }

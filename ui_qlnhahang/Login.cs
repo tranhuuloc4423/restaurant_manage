@@ -52,7 +52,7 @@ namespace ui_qlnhahang
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtmk.PasswordChar = '●';
+            txtmk.PasswordChar = '*';
             pbHide.BringToFront();
             this.KeyPreview = true;
         }
@@ -61,14 +61,14 @@ namespace ui_qlnhahang
         {
             if (txtmk.PasswordChar == '\0')
             {
-                txtmk.PasswordChar = '●';
+                txtmk.PasswordChar = '*';
                 pbHide.BringToFront();
             }
         }
 
         private void pbHide_Click(object sender, EventArgs e)
         {
-            if (txtmk.PasswordChar == '●')
+            if (txtmk.PasswordChar == '*')
             {
                 txtmk.PasswordChar = '\0';
                 pbShow.BringToFront();

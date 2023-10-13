@@ -16,12 +16,11 @@ namespace ui_qlnhahang
 {
     public partial class AccountManage : Form
     {
-        string mainquery = "Select * from [Account]";
+        string mainquery = "Select * from [Account] ORDER BY AccountName";
         string queryRoleName = "select [RoleName] from [Role]";
         string queryRole = "select *  from [Role]";
-        string queryAccToRole = "select * from [RoleAccount]";
+        string queryAccToRole = "select * from [RoleAccount] ORDER BY AccountName";
         DataTable roles;
-        DataTable rolesNames;
         public AccountManage()
         {
             InitializeComponent();
@@ -30,15 +29,18 @@ namespace ui_qlnhahang
         private void AccountManage_Load(object sender, EventArgs e)
         {
             roles = GetTableData(queryRole);
-            rolesNames = GetTableData(queryAccToRole);
             GetAllData(mainquery, gvAccount);
+            //GetAllData(queryAccToRoleName, gvAccount);
             GetAllData(queryRoleName, dpdType);
             dpdType.Text = dpdType.Items[0].ToString();
             preventResise(gvAccount);
 
             // setStateButton
-            //setStateButton(btnEdit, false);
-            // handleAddColumn();
+            setStateButton(btnEdit, false);
+
+
+            // Thêm cột mới vào GridView
+            handleAddColumn();
 
             txtUserName.Clear();
             txtUserNameDisplay.Clear();
@@ -52,16 +54,19 @@ namespace ui_qlnhahang
 
         private void handleAddColumn()
         {
-            DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
-            newColumn.Name = "colNewColumn";
-            newColumn.HeaderText = "Loại";
-            newColumn.DataPropertyName = "RoleID";
-            newColumn.ValueType = typeof(string);
-            gvAccount.Columns.Add(newColumn);
-            int columnIndex = gvAccount.Columns["colNewColumn"].Index;
-            foreach (DataGridViewRow row in gvAccount.Rows)
+            for (int rowIndex = 0; rowIndex < gvAccount.Rows.Count; rowIndex++)
             {
-                row.Cells[columnIndex].Value = "New Column Data";
+                int columnIndex = gvAccount.Columns["accountRole"].Index;
+                string value = "";
+                foreach (DataRow item in GetTableData(queryRole).Rows)
+                {
+                    if(GetTableData(queryAccToRole).Rows[rowIndex]["RoleID"].ToString() == item["ID"].ToString())
+                    {
+                        value = item["RoleName"].ToString();
+                        break;
+                    }
+                }
+                gvAccount.Rows[rowIndex].Cells[columnIndex].Value = value;
             }
         }
 
@@ -102,11 +107,12 @@ namespace ui_qlnhahang
             string procedureParams = "@AccountName @DisplayName @Password @RoleName";
             string desc = "Thêm tài khoản thành công";
             handleProcedure(mainquery, procedureName, procedureParams, gvAccount, desc, new object[] {name, displayName, pass, role});
+            handleAddColumn();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(gvAccount.SelectedRows.Count > 0)
+            if (gvAccount.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvAccount.SelectedRows[0];
 
@@ -126,14 +132,12 @@ namespace ui_qlnhahang
                     }
                 }
 
-                MessBox mb = new MessBox(roleId.ToString());
-                mb.ShowDialog();
-
                 string nameProcedure = "[UpdateAccountWithRoleID]";
                 string procedureParams = "@AccountName @DisplayName @Password @NewRoleID";
                 string desc = "Cập nhật tài khoản thành công!";
                 handleProcedure(mainquery, nameProcedure, procedureParams, gvAccount, desc, new object[] { name, displayName, pass, roleId });
             }
+            handleAddColumn();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -153,6 +157,7 @@ namespace ui_qlnhahang
                 MessBox mb = new MessBox("Chọn tài khoản để xoá");
                 mb.ShowDialog();
             }
+            handleAddColumn();
         }
 
         private void gvAccount_SelectionChanged(object sender, EventArgs e)
