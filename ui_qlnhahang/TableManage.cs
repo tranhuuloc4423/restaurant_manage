@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,14 +27,6 @@ namespace ui_qlnhahang
             string query = "select * from [Table]";
             GetAllData(query, gvTable);
             txtNameTable.Clear();
-        }
-
-        private void handleData(string name, string query, string desc, object[] parameter = null)
-        {
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
-            MessageBox.Show(desc);
-            GetAllData(mainquery, gvTable);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -90,6 +83,12 @@ namespace ui_qlnhahang
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
                 txtNameTable.Text = selectedRow.Cells[1].Value.ToString();
             }
+        }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "Name";
+            handleFilter(gvTable, txtSearch, mainquery, columnName);
         }
     }
 }

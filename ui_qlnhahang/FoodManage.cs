@@ -54,7 +54,7 @@ namespace ui_qlnhahang
             txtPrice.Clear();
         }
 
-        void checkTextboxNull()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtFoodName.Text))
             {
@@ -73,11 +73,6 @@ namespace ui_qlnhahang
                 MessageBox.Show("Vui lòng nhập giá món ăn");
                 return;
             }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            checkTextboxNull();
             string name = txtFoodName.Text;
             string foodCateText = dpdCate.Text;
             int foodPrice = Convert.ToInt32(txtPrice.Text);
@@ -106,7 +101,23 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
 
-                checkTextboxNull();
+                if (String.IsNullOrEmpty(txtFoodName.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên món ăn");
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(dpdCate.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn danh mục món ăn");
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(txtPrice.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập giá món ăn");
+                    return;
+                }
                 object id = selectedRow.Cells[0].Value;
                 string name = txtFoodName.Text;
                 string foodCateText = dpdCate.Text;
@@ -145,11 +156,6 @@ namespace ui_qlnhahang
             }
         }
 
-        private void dpdCate_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -176,6 +182,12 @@ namespace ui_qlnhahang
                     }
                 }
             }
+        }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "Name";
+            handleFilter(gvFood, txtSearch, mainquery, columnName);
         }
     }
 }

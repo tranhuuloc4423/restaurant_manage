@@ -149,17 +149,12 @@ namespace ui_qlnhahang
 
                     dataGridView.Rows.Add(foodName, price, quantity, totalPrice);
                 }
-
-
             }
             int invoiceID = 0;
 
             public void checkoutToBills(int index,string staffname)
             {
-
-
                 DataProvider provider = new DataProvider();
-
                 OrderListed order = orders[index];
                 int totalAmount = 0;
 
@@ -443,7 +438,9 @@ namespace ui_qlnhahang
             getTotalBill();
         }
 
-        private void bunifuButton21_Click(object sender, EventArgs e)
+
+        // button thêm món t đổi tên 
+        private void btnAddFood_Click(object sender, EventArgs e)
         {
             string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
             int quantity = (int)numericUpDown1.Value;
@@ -454,7 +451,7 @@ namespace ui_qlnhahang
             {
                 int totalPrice = selectedFood.Price * quantity;
 
-                orderManager.AddItemToOrder(tableindex , selectedFood.FoodId, selectedFood.FoodName, quantity, totalPrice);
+                orderManager.AddItemToOrder(tableindex, selectedFood.FoodId, selectedFood.FoodName, quantity, totalPrice);
 
                 //FoodDataGridView1.Rows.Add(selectedFood.FoodName, selectedFood.Price, quantity, totalPrice);
                 FoodDataGridView1.Rows.Clear();
@@ -463,7 +460,6 @@ namespace ui_qlnhahang
                 getTotalBill();
 
             }
-
         }
 
 

@@ -36,10 +36,6 @@ namespace ui_qlnhahang
             this.Hide();
         }
 
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text.Equals(tk)) {

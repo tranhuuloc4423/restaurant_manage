@@ -36,5 +36,12 @@ namespace ui_qlnhahang
             ChangeInfo form = new ChangeInfo(tk);
             form.ShowDialog();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            btnAdd.BackColor = Color.Transparent;
+            btnChangePass.BackColor = Color.Transparent;
+            btnExit.BackColor = Color.Transparent;
+        }
     }
 }

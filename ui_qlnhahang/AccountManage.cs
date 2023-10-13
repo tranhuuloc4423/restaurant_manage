@@ -16,10 +16,9 @@ namespace ui_qlnhahang
 {
     public partial class AccountManage : Form
     {
-        string mainquery = "Select * from [Account] ORDER BY AccountName";
+        string mainquery = "SELECT A.AccountName, A.DisplayName, A.Password, R.RoleName\r\nFROM dbo.Account A\r\nJOIN dbo.RoleAccount RA ON A.AccountName = RA.AccountName\r\nJOIN dbo.Role R ON RA.RoleID = R.ID;";
         string queryRoleName = "select [RoleName] from [Role]";
         string queryRole = "select *  from [Role]";
-        string queryAccToRole = "select * from [RoleAccount] ORDER BY AccountName";
         DataTable roles;
         public AccountManage()
         {
@@ -36,11 +35,7 @@ namespace ui_qlnhahang
             preventResise(gvAccount);
 
             // setStateButton
-            setStateButton(btnEdit, false);
-
-
-            // Thêm cột mới vào GridView
-            handleAddColumn();
+            //setStateButton(btnEdit, false);
 
             txtUserName.Clear();
             txtUserNameDisplay.Clear();
@@ -50,24 +45,6 @@ namespace ui_qlnhahang
         private void gvAccount_ColumnHeadersHeightChanged(object sender, EventArgs e)
         {
             gvAccount.Rows[0].HeaderCell.Value = new Size(gvAccount.Rows[0].HeaderCell.Size.Width, 50);
-        }
-
-        private void handleAddColumn()
-        {
-            for (int rowIndex = 0; rowIndex < gvAccount.Rows.Count; rowIndex++)
-            {
-                int columnIndex = gvAccount.Columns["accountRole"].Index;
-                string value = "";
-                foreach (DataRow item in GetTableData(queryRole).Rows)
-                {
-                    if(GetTableData(queryAccToRole).Rows[rowIndex]["RoleID"].ToString() == item["ID"].ToString())
-                    {
-                        value = item["RoleName"].ToString();
-                        break;
-                    }
-                }
-                gvAccount.Rows[rowIndex].Cells[columnIndex].Value = value;
-            }
         }
 
         void checkTextBoxNull()
@@ -107,7 +84,6 @@ namespace ui_qlnhahang
             string procedureParams = "@AccountName @DisplayName @Password @RoleName";
             string desc = "Thêm tài khoản thành công";
             handleProcedure(mainquery, procedureName, procedureParams, gvAccount, desc, new object[] {name, displayName, pass, role});
-            handleAddColumn();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -137,7 +113,6 @@ namespace ui_qlnhahang
                 string desc = "Cập nhật tài khoản thành công!";
                 handleProcedure(mainquery, nameProcedure, procedureParams, gvAccount, desc, new object[] { name, displayName, pass, roleId });
             }
-            handleAddColumn();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -157,7 +132,6 @@ namespace ui_qlnhahang
                 MessBox mb = new MessBox("Chọn tài khoản để xoá");
                 mb.ShowDialog();
             }
-            handleAddColumn();
         }
 
         private void gvAccount_SelectionChanged(object sender, EventArgs e)
@@ -168,8 +142,14 @@ namespace ui_qlnhahang
                 txtUserName.Text = selectedRow.Cells[0].Value.ToString();
                 txtUserNameDisplay.Text = selectedRow.Cells[1].Value.ToString();
                 txtPass.Text = selectedRow.Cells[2].Value.ToString();
-                // dropdown
+                dpdType.Text = selectedRow.Cells[3].Value.ToString();
             }
+        }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "accountName";
+            handleFilter(gvAccount, txtSearch, mainquery, columnName);
         }
     }
 }
