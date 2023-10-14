@@ -19,7 +19,7 @@ namespace ui_qlnhahang
 {
     public static class FormUltility
     {
-        public static void GetAllData(string query, DataGridView gridView)
+        public static DataTable GetAllData(string query, DataGridView gridView)
         {
             // reset
             gridView.Rows.Clear();
@@ -32,6 +32,8 @@ namespace ui_qlnhahang
                 AddRowData(gridView, row.ItemArray);
             }
             gridView.ClearSelection();
+
+            return dataTable;
         }
 
         public static void GetAllData(string query, BunifuDropdown dropdown)
@@ -95,11 +97,33 @@ namespace ui_qlnhahang
                 button.Enabled = state;
                 button.ActiveFillColor = Color.DarkSlateGray;
                 button.IdleFillColor = Color.DarkSlateGray;
+                button.BackColor = Color.DarkSlateGray;
             } else
             {
                 button.Enabled = state;
                 button.IdleFillColor = Color.AliceBlue;
                 button.ActiveFillColor = Color.AliceBlue;
+            }
+        }
+
+        public static void handleFilter(DataGridView gridview, BunifuTextBox txtbox, string query, string columnName)
+        {
+            string keyword = txtbox.Text.Trim();
+            DataTable list = GetAllData(query, gridview);
+            DataTable searchResult = list.Clone();
+
+            foreach (DataRow row in list.Rows)
+            {
+                if (row[columnName].ToString().ToUpper().Contains(keyword) || row[columnName].ToString().ToLower().Contains(keyword) || row[columnName].ToString().Contains(keyword))
+                {
+                    searchResult.ImportRow(row);
+                }
+            }
+            gridview.Rows.Clear();
+
+            foreach (DataRow row in searchResult.Rows)
+            {
+                AddRowData(gridview, row.ItemArray);
             }
         }
     }

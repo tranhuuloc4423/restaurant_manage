@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillManage));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.gvBill = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.btnThongKe = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.dpFrom = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.dpTo = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.btnPrintBill = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.billID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billTableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +40,11 @@
             this.billState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billCheckout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dpFrom = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.dpTo = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnPrintBill = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnStatistic = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,25 +56,25 @@
             this.gvBill.AllowUserToDeleteRows = false;
             this.gvBill.AllowUserToResizeColumns = false;
             this.gvBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.gvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.gvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvBill.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.gvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvBill.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.gvBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvBill.ColumnHeadersHeight = 40;
-            this.gvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.billID,
             this.billName,
@@ -103,14 +101,14 @@
             this.gvBill.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.gvBill.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.gvBill.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvBill.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvBill.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvBill.EnableHeadersVisualStyles = false;
             this.gvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.gvBill.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -130,95 +128,61 @@
             this.gvBill.TabIndex = 20;
             this.gvBill.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
-            // btnThongKe
+            // billID
             // 
-            this.btnThongKe.AllowAnimations = true;
-            this.btnThongKe.AllowMouseEffects = true;
-            this.btnThongKe.AllowToggling = false;
-            this.btnThongKe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnThongKe.AnimationSpeed = 200;
-            this.btnThongKe.AutoGenerateColors = false;
-            this.btnThongKe.AutoRoundBorders = false;
-            this.btnThongKe.AutoSizeLeftIcon = true;
-            this.btnThongKe.AutoSizeRightIcon = true;
-            this.btnThongKe.BackColor = System.Drawing.Color.Transparent;
-            this.btnThongKe.BackColor1 = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThongKe.BackgroundImage")));
-            this.btnThongKe.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThongKe.ButtonText = "Thống kê";
-            this.btnThongKe.ButtonTextMarginLeft = 0;
-            this.btnThongKe.ColorContrastOnClick = 45;
-            this.btnThongKe.ColorContrastOnHover = 45;
-            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnThongKe.CustomizableEdges = borderEdges1;
-            this.btnThongKe.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnThongKe.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.DisabledFillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnThongKe.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnThongKe.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnThongKe.IconMarginLeft = 11;
-            this.btnThongKe.IconPadding = 10;
-            this.btnThongKe.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThongKe.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnThongKe.IconSize = 25;
-            this.btnThongKe.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.IdleBorderRadius = 20;
-            this.btnThongKe.IdleBorderThickness = 1;
-            this.btnThongKe.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.IdleIconLeftImage = null;
-            this.btnThongKe.IdleIconRightImage = null;
-            this.btnThongKe.IndicateFocus = false;
-            this.btnThongKe.Location = new System.Drawing.Point(740, 25);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnDisabledState.BorderRadius = 20;
-            this.btnThongKe.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThongKe.OnDisabledState.BorderThickness = 1;
-            this.btnThongKe.OnDisabledState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.OnDisabledState.ForeColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnDisabledState.IconLeftImage = null;
-            this.btnThongKe.OnDisabledState.IconRightImage = null;
-            this.btnThongKe.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.onHoverState.BorderRadius = 20;
-            this.btnThongKe.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThongKe.onHoverState.BorderThickness = 1;
-            this.btnThongKe.onHoverState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnThongKe.onHoverState.IconLeftImage = null;
-            this.btnThongKe.onHoverState.IconRightImage = null;
-            this.btnThongKe.OnIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnIdleState.BorderRadius = 20;
-            this.btnThongKe.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThongKe.OnIdleState.BorderThickness = 1;
-            this.btnThongKe.OnIdleState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.OnIdleState.ForeColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnIdleState.IconLeftImage = null;
-            this.btnThongKe.OnIdleState.IconRightImage = null;
-            this.btnThongKe.OnPressedState.BorderColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnPressedState.BorderRadius = 20;
-            this.btnThongKe.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThongKe.OnPressedState.BorderThickness = 1;
-            this.btnThongKe.OnPressedState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnThongKe.OnPressedState.ForeColor = System.Drawing.Color.Empty;
-            this.btnThongKe.OnPressedState.IconLeftImage = null;
-            this.btnThongKe.OnPressedState.IconRightImage = null;
-            this.btnThongKe.Size = new System.Drawing.Size(122, 32);
-            this.btnThongKe.TabIndex = 39;
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThongKe.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnThongKe.TextMarginLeft = 0;
-            this.btnThongKe.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnThongKe.UseDefaultRadiusAndThickness = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.billID.HeaderText = "Mã hoá đơn";
+            this.billID.Name = "billID";
+            this.billID.ReadOnly = true;
+            this.billID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billName
+            // 
+            this.billName.HeaderText = "Tên hoá đơn";
+            this.billName.Name = "billName";
+            this.billName.ReadOnly = true;
+            this.billName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billTableID
+            // 
+            this.billTableID.HeaderText = "Mã bàn";
+            this.billTableID.Name = "billTableID";
+            this.billTableID.ReadOnly = true;
+            this.billTableID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billTableID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billTotal
+            // 
+            this.billTotal.HeaderText = "Tổng tiền";
+            this.billTotal.Name = "billTotal";
+            this.billTotal.ReadOnly = true;
+            this.billTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billState
+            // 
+            this.billState.HeaderText = "Trạng thái";
+            this.billState.Name = "billState";
+            this.billState.ReadOnly = true;
+            this.billState.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billCheckout
+            // 
+            this.billCheckout.HeaderText = "Ngày tính";
+            this.billCheckout.Name = "billCheckout";
+            this.billCheckout.ReadOnly = true;
+            this.billCheckout.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billCheckout.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // billAccount
+            // 
+            this.billAccount.HeaderText = "Tài khoản";
+            this.billAccount.Name = "billAccount";
+            this.billAccount.ReadOnly = true;
+            this.billAccount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.billAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dpFrom
             // 
@@ -273,7 +237,7 @@
             this.dpTo.Location = new System.Drawing.Point(404, 31);
             this.dpTo.MinimumSize = new System.Drawing.Size(4, 32);
             this.dpTo.Name = "dpTo";
-            this.dpTo.Size = new System.Drawing.Size(296, 32);
+            this.dpTo.Size = new System.Drawing.Size(239, 32);
             this.dpTo.TabIndex = 41;
             this.dpTo.Value = new System.DateTime(2023, 10, 8, 0, 0, 0, 0);
             this.dpTo.ValueChanged += new System.EventHandler(this.dpTo_ValueChanged);
@@ -296,156 +260,55 @@
             // 
             // btnPrintBill
             // 
-            this.btnPrintBill.AllowAnimations = true;
-            this.btnPrintBill.AllowMouseEffects = true;
-            this.btnPrintBill.AllowToggling = false;
-            this.btnPrintBill.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrintBill.AnimationSpeed = 200;
-            this.btnPrintBill.AutoGenerateColors = false;
-            this.btnPrintBill.AutoRoundBorders = false;
-            this.btnPrintBill.AutoSizeLeftIcon = true;
-            this.btnPrintBill.AutoSizeRightIcon = true;
-            this.btnPrintBill.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrintBill.BackColor1 = System.Drawing.Color.AliceBlue;
+            this.btnPrintBill.ActiveBorderThickness = 2;
+            this.btnPrintBill.ActiveCornerRadius = 20;
+            this.btnPrintBill.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnPrintBill.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnPrintBill.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnPrintBill.BackColor = System.Drawing.Color.LightBlue;
             this.btnPrintBill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintBill.BackgroundImage")));
-            this.btnPrintBill.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrintBill.ButtonText = "In hoá đơn";
-            this.btnPrintBill.ButtonTextMarginLeft = 0;
-            this.btnPrintBill.ColorContrastOnClick = 45;
-            this.btnPrintBill.ColorContrastOnHover = 45;
+            this.btnPrintBill.ButtonText = "In Hoá Đơn";
             this.btnPrintBill.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnPrintBill.CustomizableEdges = borderEdges2;
-            this.btnPrintBill.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPrintBill.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.DisabledFillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnPrintBill.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnPrintBill.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintBill.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintBill.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintBill.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnPrintBill.IconMarginLeft = 11;
-            this.btnPrintBill.IconPadding = 10;
-            this.btnPrintBill.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintBill.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintBill.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnPrintBill.IconSize = 25;
-            this.btnPrintBill.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.IdleBorderRadius = 20;
-            this.btnPrintBill.IdleBorderThickness = 1;
+            this.btnPrintBill.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintBill.ForeColor = System.Drawing.Color.Black;
+            this.btnPrintBill.IdleBorderThickness = 2;
+            this.btnPrintBill.IdleCornerRadius = 20;
             this.btnPrintBill.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.IdleIconLeftImage = null;
-            this.btnPrintBill.IdleIconRightImage = null;
-            this.btnPrintBill.IndicateFocus = false;
-            this.btnPrintBill.Location = new System.Drawing.Point(896, 25);
+            this.btnPrintBill.IdleForecolor = System.Drawing.Color.Black;
+            this.btnPrintBill.IdleLineColor = System.Drawing.Color.Black;
+            this.btnPrintBill.Location = new System.Drawing.Point(898, 21);
+            this.btnPrintBill.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnPrintBill.Name = "btnPrintBill";
-            this.btnPrintBill.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnDisabledState.BorderRadius = 20;
-            this.btnPrintBill.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrintBill.OnDisabledState.BorderThickness = 1;
-            this.btnPrintBill.OnDisabledState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.OnDisabledState.ForeColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnDisabledState.IconLeftImage = null;
-            this.btnPrintBill.OnDisabledState.IconRightImage = null;
-            this.btnPrintBill.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.onHoverState.BorderRadius = 20;
-            this.btnPrintBill.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrintBill.onHoverState.BorderThickness = 1;
-            this.btnPrintBill.onHoverState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.onHoverState.IconLeftImage = null;
-            this.btnPrintBill.onHoverState.IconRightImage = null;
-            this.btnPrintBill.OnIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnIdleState.BorderRadius = 20;
-            this.btnPrintBill.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrintBill.OnIdleState.BorderThickness = 1;
-            this.btnPrintBill.OnIdleState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.OnIdleState.ForeColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnIdleState.IconLeftImage = null;
-            this.btnPrintBill.OnIdleState.IconRightImage = null;
-            this.btnPrintBill.OnPressedState.BorderColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnPressedState.BorderRadius = 20;
-            this.btnPrintBill.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrintBill.OnPressedState.BorderThickness = 1;
-            this.btnPrintBill.OnPressedState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnPrintBill.OnPressedState.ForeColor = System.Drawing.Color.Empty;
-            this.btnPrintBill.OnPressedState.IconLeftImage = null;
-            this.btnPrintBill.OnPressedState.IconRightImage = null;
-            this.btnPrintBill.Size = new System.Drawing.Size(122, 32);
-            this.btnPrintBill.TabIndex = 45;
+            this.btnPrintBill.Size = new System.Drawing.Size(120, 50);
+            this.btnPrintBill.TabIndex = 49;
             this.btnPrintBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrintBill.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnPrintBill.TextMarginLeft = 0;
-            this.btnPrintBill.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnPrintBill.UseDefaultRadiusAndThickness = true;
             this.btnPrintBill.Click += new System.EventHandler(this.btnPrintBill_Click);
             // 
-            // billID
+            // btnStatistic
             // 
-            this.billID.HeaderText = "Mã hoá đơn";
-            this.billID.Name = "billID";
-            this.billID.ReadOnly = true;
-            this.billID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billID.Width = 139;
-            // 
-            // billName
-            // 
-            this.billName.HeaderText = "Tên hoá đơn";
-            this.billName.Name = "billName";
-            this.billName.ReadOnly = true;
-            this.billName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billName.Width = 140;
-            // 
-            // billTableID
-            // 
-            this.billTableID.HeaderText = "Mã bàn";
-            this.billTableID.Name = "billTableID";
-            this.billTableID.ReadOnly = true;
-            this.billTableID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billTableID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billTableID.Width = 139;
-            // 
-            // billTotal
-            // 
-            this.billTotal.HeaderText = "Tổng tiền";
-            this.billTotal.Name = "billTotal";
-            this.billTotal.ReadOnly = true;
-            this.billTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billTotal.Width = 139;
-            // 
-            // billState
-            // 
-            this.billState.HeaderText = "Trạng thái";
-            this.billState.Name = "billState";
-            this.billState.ReadOnly = true;
-            this.billState.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billState.Width = 139;
-            // 
-            // billCheckout
-            // 
-            this.billCheckout.HeaderText = "Ngày tính";
-            this.billCheckout.Name = "billCheckout";
-            this.billCheckout.ReadOnly = true;
-            this.billCheckout.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billCheckout.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billCheckout.Width = 140;
-            // 
-            // billAccount
-            // 
-            this.billAccount.HeaderText = "Tài khoản";
-            this.billAccount.Name = "billAccount";
-            this.billAccount.ReadOnly = true;
-            this.billAccount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.billAccount.Width = 139;
+            this.btnStatistic.ActiveBorderThickness = 2;
+            this.btnStatistic.ActiveCornerRadius = 20;
+            this.btnStatistic.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnStatistic.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnStatistic.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnStatistic.BackColor = System.Drawing.Color.LightBlue;
+            this.btnStatistic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStatistic.BackgroundImage")));
+            this.btnStatistic.ButtonText = "Thống Kê";
+            this.btnStatistic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStatistic.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.ForeColor = System.Drawing.Color.Black;
+            this.btnStatistic.IdleBorderThickness = 2;
+            this.btnStatistic.IdleCornerRadius = 20;
+            this.btnStatistic.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnStatistic.IdleForecolor = System.Drawing.Color.Black;
+            this.btnStatistic.IdleLineColor = System.Drawing.Color.Black;
+            this.btnStatistic.Location = new System.Drawing.Point(742, 21);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Size = new System.Drawing.Size(120, 50);
+            this.btnStatistic.TabIndex = 48;
+            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // BillManage
             // 
@@ -454,10 +317,10 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1039, 576);
             this.Controls.Add(this.btnPrintBill);
+            this.Controls.Add(this.btnStatistic);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.dpTo);
             this.Controls.Add(this.dpFrom);
-            this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.gvBill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BillManage";
@@ -472,11 +335,9 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuDataGridView gvBill;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThongKe;
         private Bunifu.UI.WinForms.BunifuDatePicker dpFrom;
         private Bunifu.UI.WinForms.BunifuDatePicker dpTo;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrintBill;
         private System.Windows.Forms.DataGridViewTextBoxColumn billID;
         private System.Windows.Forms.DataGridViewTextBoxColumn billName;
         private System.Windows.Forms.DataGridViewTextBoxColumn billTableID;
@@ -484,5 +345,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn billState;
         private System.Windows.Forms.DataGridViewTextBoxColumn billCheckout;
         private System.Windows.Forms.DataGridViewTextBoxColumn billAccount;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPrintBill;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnStatistic;
     }
 }

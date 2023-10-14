@@ -88,5 +88,11 @@ namespace ui_qlnhahang
                 txtCate.Text = selectedRow.Cells[1].Value.ToString();
             }
         }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "Name";
+            handleFilter(gvCate, txtSearch, mainquery, columnName);
+        }
     }
 }
