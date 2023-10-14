@@ -9,9 +9,10 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 namespace ui_qlnhahang
 {
-    public partial class MessBox : Bunifu.Framework.UI.BunifuForm
+    public partial class MessBox : BunifuForm
     {
         string title;
         public MessBox(string title)
@@ -67,11 +68,6 @@ namespace ui_qlnhahang
             int iconX = (this.Width - 40);
             int iconY = 20;
             btnExit.SetBounds(iconX, iconY, iconWidth, iconHeight);
-
-        }
-
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
 
         }
     }

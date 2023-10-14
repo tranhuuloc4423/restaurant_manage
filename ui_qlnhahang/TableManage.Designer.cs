@@ -82,7 +82,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvTable.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.gvTable.BackgroundColor = System.Drawing.Color.Lavender;
             this.gvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -131,6 +131,7 @@
             this.gvTable.HeaderBgColor = System.Drawing.Color.Empty;
             this.gvTable.HeaderForeColor = System.Drawing.Color.White;
             this.gvTable.Location = new System.Drawing.Point(22, 77);
+            this.gvTable.MultiSelect = false;
             this.gvTable.Name = "gvTable";
             this.gvTable.ReadOnly = true;
             this.gvTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -77,7 +77,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvFood.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.gvFood.BackgroundColor = System.Drawing.Color.Lavender;
             this.gvFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvFood.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvFood.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -127,6 +127,7 @@
             this.gvFood.HeaderBgColor = System.Drawing.Color.Empty;
             this.gvFood.HeaderForeColor = System.Drawing.Color.White;
             this.gvFood.Location = new System.Drawing.Point(29, 49);
+            this.gvFood.MultiSelect = false;
             this.gvFood.Name = "gvFood";
             this.gvFood.ReadOnly = true;
             this.gvFood.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -493,7 +494,6 @@
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
             this.txtSearch.TextChange += new System.EventHandler(this.txtSearch_TextChange);
-            this.txtSearch.TextChanged += new System.EventHandler(this.bunifuTextBox1_TextChanged);
             // 
             // dpdCate
             // 
@@ -594,7 +594,7 @@
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.IdleBorderThickness = 2;
             this.btnEdit.IdleCornerRadius = 20;
-            this.btnEdit.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnEdit.IdleFillColor = System.Drawing.Color.White;
             this.btnEdit.IdleForecolor = System.Drawing.Color.Black;
             this.btnEdit.IdleLineColor = System.Drawing.Color.Black;
             this.btnEdit.Location = new System.Drawing.Point(758, 411);

@@ -66,7 +66,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.IsCircle = true;
-            this.btnExit.Location = new System.Drawing.Point(381, 12);
+            this.btnExit.Location = new System.Drawing.Point(358, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,14 +79,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BorderRadius = 20;
-            this.ClientSize = new System.Drawing.Size(423, 184);
+            this.ClientSize = new System.Drawing.Size(400, 150);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pbIcon);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(700, 300);
+            this.MinimumSize = new System.Drawing.Size(400, 150);
             this.Name = "MessBox";
             this.Text = "MessBox";
             this.Load += new System.EventHandler(this.MessBox_Load);

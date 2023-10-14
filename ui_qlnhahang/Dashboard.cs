@@ -74,14 +74,12 @@ namespace ui_qlnhahang
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn rời nhà hàng", "NHÀ HÀNG FOODIE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                Application.Exit();
-            }
-            //CustomMessBox messbox = new CustomMessBox();
-            //messbox.lblTitle.Text = "NHÀ HÀNG FOODIE";
-            //messbox.lblContent.Text = "Bạn có muốn rời nhà hàng Foodie!";
-            //messbox.ShowDialog();
+            //if (MessageBox.Show("Bạn có muốn rời nhà hàng", "NHÀ HÀNG FOODIE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
+            CustomMessBox messbox = new CustomMessBox("Bạn có muốn rời nhà hàng FOODIE!");
+            messbox.ShowDialog();
         }
 
         private void btnFoodManage_Click(object sender, EventArgs e)

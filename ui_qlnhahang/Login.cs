@@ -14,7 +14,7 @@ using ui_qlnhahang.Properties;
 
 namespace ui_qlnhahang
 {
-    public partial class Login : Form
+    public partial class Login : BorderForm
     {
         public Login()
         {
@@ -32,7 +32,10 @@ namespace ui_qlnhahang
                 this.Hide();
                 f.ShowDialog();
             }
-            else MessageBox.Show("Sai tài khoản mật khẩu");
+            else {
+                MessBox mb = new MessBox("Sai tài khoản mật khẩu");
+                mb.ShowDialog();
+            }
             
         }
         bool checkLogin(string tk, string mk)

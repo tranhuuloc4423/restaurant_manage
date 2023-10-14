@@ -14,17 +14,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using ui_qlnhahang.DAo;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
     public partial class FoodManage : Form
     {
-        public string mainquery = "select * from [Food]";
+        public string mainquery = "SELECT F.ID, F.Name AS Name, C.Name AS CategoryName, F.Price\r\nFROM Food F\r\nJOIN Category C ON F.FoodCategoryID = C.ID";
         public string queryNameOfFood = "select name from [Category]";
         public string queryCategory = "select *  from [Category]";
         public DataTable categoryList;
-        //public DataTable foodList;
+        BunifuTextBox[] myTextBoxes;
         public FoodManage()
         {
             InitializeComponent();
@@ -38,39 +39,30 @@ namespace ui_qlnhahang
             }
         }
 
-        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FoodManage_Load(object sender, EventArgs e)
         {
             categoryList = GetTableData(queryCategory);
             GetAllData(mainquery, gvFood);
             GetAllData(queryNameOfFood, dpdCate);
             dpdCate.Text = dpdCate.Items[0].ToString();
-            gvFood.ClearSelection();
-            txtFoodName.Clear();
-            txtPrice.Clear();
+            myTextBoxes = new BunifuTextBox[] { txtFoodName, txtPrice };
+            handleResetTextbox(gvFood,txtFoodName, myTextBoxes);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtFoodName.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên món ăn");
-                return;
-            }
-
-            if (String.IsNullOrEmpty(dpdCate.Text))
-            {
-                MessageBox.Show("Vui lòng chọn danh mục món ăn");
+                MessBox mb = new MessBox("Vui lòng nhập tên món ăn!");
+                mb.ShowDialog();
                 return;
             }
 
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                MessageBox.Show("Vui lòng nhập giá món ăn");
+                MessBox mb = new MessBox("Vui lòng nhập giá món ăn!");
+                mb.ShowDialog();
+
                 return;
             }
             string name = txtFoodName.Text;
@@ -90,9 +82,7 @@ namespace ui_qlnhahang
             string procedureParams = "@Name @FoodCategoryID @Price";
             string desc = "Thêm món ăn thành công";
             handleProcedure(mainquery, nameProcedure, procedureParams, gvFood, desc, new object[] { name, foodCateID, foodPrice });
-            txtFoodName.Clear();
-            txtPrice.Clear();
-
+            handleResetTextbox(gvFood, txtFoodName, myTextBoxes);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -103,21 +93,17 @@ namespace ui_qlnhahang
 
                 if (String.IsNullOrEmpty(txtFoodName.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập tên món ăn");
-                    return;
-                }
-
-                if (String.IsNullOrEmpty(dpdCate.Text))
-                {
-                    MessageBox.Show("Vui lòng chọn danh mục món ăn");
+                    MessBox mb = new MessBox("Vui lòng nhập tên món ăn!");
+                    mb.ShowDialog();
                     return;
                 }
 
                 if (String.IsNullOrEmpty(txtPrice.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập giá món ăn");
-                    return;
+                    MessBox mb = new MessBox("Vui lòng nhập giá món ăn!");
+                    mb.ShowDialog();
                 }
+
                 object id = selectedRow.Cells[0].Value;
                 string name = txtFoodName.Text;
                 string foodCateText = dpdCate.Text;
@@ -136,7 +122,15 @@ namespace ui_qlnhahang
                 string procedureParams = "@ID @Name @FoodCategoryID @Price";
                 string desc = "Cập nhật món ăn thành công!";
                 handleProcedure(mainquery, nameProcedure, procedureParams,gvFood, desc, new object[] { id, name, foodCateID, foodPrice });
+                handleResetTextbox(gvFood, txtFoodName, myTextBoxes);
             }
+            else
+            {
+                MessBox mb = new MessBox("Vui lòng chọn món ăn muốn sửa!");
+                mb.ShowDialog();
+            }
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -150,9 +144,12 @@ namespace ui_qlnhahang
                 string procedureParams = "@FoodID";
                 string desc = "Xoá món ăn thành công!";
                 handleProcedure(mainquery ,nameProcedure, procedureParams, gvFood, desc, new object[] { id });
-            } else
+                handleResetTextbox(gvFood, txtFoodName, myTextBoxes);
+            }
+            else
             {
-                MessageBox.Show("Chọn món ăn để xoá");
+                MessBox mb = new MessBox("Chọn món ăn để xoá!");
+                mb.ShowDialog();
             }
         }
 
@@ -170,17 +167,8 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
                 txtFoodName.Text = selectedRow.Cells[1].Value.ToString();
+                dpdCate.Text = selectedRow.Cells[2].Value.ToString();
                 txtPrice.Text = selectedRow.Cells[3].Value.ToString();
-                string foodCate;
-                foreach (DataRow row in categoryList.Rows)
-                {
-                    if (row["ID"].ToString().Equals(selectedRow.Cells[2].Value.ToString()))
-                    {
-                        foodCate = row["Name"].ToString();
-                        dpdCate.Text = foodCate;
-                        break;
-                    }
-                }
             }
         }
 
@@ -188,6 +176,10 @@ namespace ui_qlnhahang
         {
             string columnName = "Name";
             handleFilter(gvFood, txtSearch, mainquery, columnName);
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                handleResetTextbox(gvFood, txtSearch, myTextBoxes);
+            }
         }
     }
 }

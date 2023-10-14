@@ -267,7 +267,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.gvCate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvCate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvCate.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.gvCate.BackgroundColor = System.Drawing.Color.Lavender;
             this.gvCate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvCate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvCate.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -315,6 +315,7 @@
             this.gvCate.HeaderBgColor = System.Drawing.Color.Empty;
             this.gvCate.HeaderForeColor = System.Drawing.Color.White;
             this.gvCate.Location = new System.Drawing.Point(12, 82);
+            this.gvCate.MultiSelect = false;
             this.gvCate.Name = "gvCate";
             this.gvCate.ReadOnly = true;
             this.gvCate.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

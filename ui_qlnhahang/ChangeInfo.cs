@@ -11,7 +11,7 @@ using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
-    public partial class ChangeInfo : Form
+    public partial class ChangeInfo : BorderForm
     {
         public ChangeInfo()
         {
@@ -26,11 +26,6 @@ namespace ui_qlnhahang
             this.tk = tk;
         }
 
-        private void bunifuTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -38,18 +33,27 @@ namespace ui_qlnhahang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Equals(tk)) {
+            if (txtUsername.Text.Equals(tk))
+            {
                 if (txtNewPass.Text.Equals(txtNewPassConfirm.Text))
                 {
                     string username = txtUsername.Text;
                     string displayname = txtUsernameDisplay.Text;
                     string pass = txtNewPassConfirm.Text;
                     Accountupdate(username, displayname, pass);
-                    MessageBox.Show("Cập nhật thành công");
+                    MessBox mb = new MessBox("Cập nhật thành công!");
+                    mb.ShowDialog();
                 }
                 else
-                    MessageBox.Show("Mật khẩu không trùng");
-            }else MessageBox.Show("Tài khoản không hợp lệ");
+                {
+                    MessBox mb = new MessBox("Mật khẩu không trùng khớp!");
+                    mb.ShowDialog();
+                }
+            }
+            else {
+                MessBox mb = new MessBox("Tài khoản không hợp lệ");
+                mb.ShowDialog();
+            }
 
         }
         void  Accountupdate(string username , string displayname, string pass)

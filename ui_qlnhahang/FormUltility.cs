@@ -84,27 +84,22 @@ namespace ui_qlnhahang
         {
             DataProvider dataprovider = new DataProvider();
             dataprovider.ExecuteNonQueryProvider(name, procedureParams, parameter);
-            //MessageBox.Show(desc);
             MessBox mb = new MessBox(desc);
-            mb.Show();
+            mb.ShowDialog();
             GetAllData(query, gridview);
         }
 
-        public static void setStateButton(BunifuThinButton2 button, bool state)
-        {
-            if(!state)
-            {
-                button.Enabled = state;
-                button.ActiveFillColor = Color.DarkSlateGray;
-                button.IdleFillColor = Color.DarkSlateGray;
-                button.BackColor = Color.DarkSlateGray;
-            } else
-            {
-                button.Enabled = state;
-                button.IdleFillColor = Color.AliceBlue;
-                button.ActiveFillColor = Color.AliceBlue;
-            }
-        }
+        //public static void setStateButton(BunifuThinButton2 button, bool state)
+        //{
+        //    button.Enabled = state;
+        //    if(state == false)
+        //    {
+        //        button.IdleFillColor = Color.DarkSlateGray;
+        //    } else
+        //    {
+        //        button.IdleFillColor = Color.AliceBlue;
+        //    }
+        //}
 
         public static void handleFilter(DataGridView gridview, BunifuTextBox txtbox, string query, string columnName)
         {
@@ -126,5 +121,22 @@ namespace ui_qlnhahang
                 AddRowData(gridview, row.ItemArray);
             }
         }
+
+        public static void handleResetTextbox(DataGridView gridview, BunifuTextBox txtboxFocus = null ,  params BunifuTextBox[] txtboxparams)
+        {
+            foreach (BunifuTextBox textbox in txtboxparams)
+            {
+                textbox.Clear();
+            }
+            
+            gridview.ClearSelection();
+
+            if(txtboxFocus != null)
+            {
+                txtboxFocus.Focus();
+            }
+        }
+
+
     }
 }

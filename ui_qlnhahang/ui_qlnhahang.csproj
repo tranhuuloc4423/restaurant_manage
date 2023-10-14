@@ -91,6 +91,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
@@ -127,6 +130,12 @@
     </Compile>
     <Compile Include="BillDetail.Designer.cs">
       <DependentUpon>BillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorderForm.Designer.cs">
+      <DependentUpon>BorderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeInfo.cs">
       <SubType>Form</SubType>
@@ -214,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BillDetail.resx">
       <DependentUpon>BillDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorderForm.resx">
+      <DependentUpon>BorderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfo.resx">
       <DependentUpon>ChangeInfo.cs</DependentUpon>

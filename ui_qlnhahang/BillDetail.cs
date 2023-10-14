@@ -12,7 +12,7 @@ using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
-    public partial class BillDetail : Form
+    public partial class BillDetail : BorderForm
     {
         int billID;
         public BillDetail()

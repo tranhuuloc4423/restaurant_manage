@@ -29,38 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnInfo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnChangePass = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnExit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // btnInfo
             // 
-            this.btnAdd.ActiveBorderThickness = 2;
-            this.btnAdd.ActiveCornerRadius = 20;
-            this.btnAdd.ActiveFillColor = System.Drawing.Color.AliceBlue;
-            this.btnAdd.ActiveForecolor = System.Drawing.Color.Coral;
-            this.btnAdd.ActiveLineColor = System.Drawing.Color.Coral;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.ButtonText = "Thông Tin";
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.IdleBorderThickness = 2;
-            this.btnAdd.IdleCornerRadius = 20;
-            this.btnAdd.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnAdd.IdleForecolor = System.Drawing.Color.Black;
-            this.btnAdd.IdleLineColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(81, 47);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 75);
-            this.btnAdd.TabIndex = 43;
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInfo.ActiveBorderThickness = 2;
+            this.btnInfo.ActiveCornerRadius = 20;
+            this.btnInfo.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnInfo.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnInfo.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.BackgroundImage")));
+            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInfo.ButtonText = "Thông Tin";
+            this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.Black;
+            this.btnInfo.IdleBorderThickness = 2;
+            this.btnInfo.IdleCornerRadius = 20;
+            this.btnInfo.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnInfo.IdleForecolor = System.Drawing.Color.Black;
+            this.btnInfo.IdleLineColor = System.Drawing.Color.Black;
+            this.btnInfo.Location = new System.Drawing.Point(81, 47);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(150, 75);
+            this.btnInfo.TabIndex = 43;
+            this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnChangePass
             // 
@@ -119,7 +120,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnInfo);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnChangePass);
             this.panel1.Location = new System.Drawing.Point(633, 58);
@@ -148,7 +149,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnInfo;
         private Bunifu.Framework.UI.BunifuThinButton2 btnChangePass;
         private Bunifu.Framework.UI.BunifuThinButton2 btnExit;
         private System.Windows.Forms.Panel panel1;

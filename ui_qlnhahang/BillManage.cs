@@ -55,7 +55,8 @@ namespace ui_qlnhahang
         {
             if (dpTo.Value < dpFrom.Value)
             {
-                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                MessBox mb = new MessBox("Giá trị ngày không hợp lệ!");
+                mb.ShowDialog();
                 dpTo.Value = dpFrom.Value;
             }
         }

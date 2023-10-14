@@ -53,17 +53,18 @@
             // 
             // panelBtns
             // 
+            this.panelBtns.AutoScroll = true;
             this.panelBtns.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.panelBtns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBtns.BackgroundImage")));
             this.panelBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
             this.panelBtns.BorderRadius = 20;
             this.panelBtns.BorderThickness = 1;
-            this.panelBtns.Location = new System.Drawing.Point(4, 33);
+            this.panelBtns.Location = new System.Drawing.Point(23, 33);
             this.panelBtns.Margin = new System.Windows.Forms.Padding(2);
             this.panelBtns.Name = "panelBtns";
             this.panelBtns.ShowBorders = true;
-            this.panelBtns.Size = new System.Drawing.Size(531, 532);
+            this.panelBtns.Size = new System.Drawing.Size(512, 475);
             this.panelBtns.TabIndex = 24;
             // 
             // FoodlistDropdown1
@@ -139,7 +140,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.Location = new System.Drawing.Point(213, -1);
+            this.bunifuLabel2.Location = new System.Drawing.Point(211, -3);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(102, 31);
