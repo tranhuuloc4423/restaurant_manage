@@ -60,7 +60,7 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(602, 37);
+            this.bunifuLabel1.Size = new System.Drawing.Size(602, 50);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Nhà Hàng FOODIE";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,10 +228,10 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Black;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 4;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(-38, 482);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 482);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(804, 22);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(579, 22);
             this.bunifuSeparator1.TabIndex = 9;
             // 
             // picClose

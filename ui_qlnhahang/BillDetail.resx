@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 5px;font-family: 'Tahoma'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 12px;font-family: 'Tahoma'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Tahoma'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
@@ -126,10 +126,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuSeparator1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAyQAAAAWCAYAAAAxUFg/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABzSURBVHhe7cixDQAwDMOw/P90+4CnFnAWEtCiAQAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhxJEmSJGmpOCVJkiSpUZySJEmS1ChOSZIkSWoEAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAA8GLmAlkOhCVMv5XpAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAkMAAAAWCAYAAADD5Zj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABbSURBVHhe7chBDQAwEMOw8ie9ESiCqy3lkwAAAAAAAAAA
+        AAAAAAAAAAAAAAAAXPUkSZKGq1OSJGmlOiVJklaqU5IkaSUAAAAAAAAAAAAAAAAAAAAAAAAAgGuSD9jo
+        A3x5sdujAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="picClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

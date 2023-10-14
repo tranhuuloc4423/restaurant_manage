@@ -138,7 +138,6 @@ namespace ui_qlnhahang
 
             public void loadorderToGridView(int index, DataGridView dataGridView)
             {
-
                 OrderListed order = orders[index];
                 foreach (OrderItem item in order.OrderItems)
                 {
@@ -168,7 +167,9 @@ namespace ui_qlnhahang
                     string name = "Hóa đơn " + (invoiceID + 1);
                     int tableID = index + 1;
                     float status = 1;
-                    string checkoutDate = DateTime.Now.ToString("dd/MM/yyyy");
+
+                    // đổi thành định dạng chuẩn ISO "yyyy-MM-dd"
+                    string checkoutDate = DateTime.Now.ToString("yyyy-MM-dd");
                     string account = staffname.ToLower();
 
                     string query = "INSERT INTO [dbo].[Bills] ([Name], [TableID], [Amount], [Status], [CheckoutDate], [Account]) " +
@@ -429,13 +430,26 @@ namespace ui_qlnhahang
 
         private void btnDelFood_Click(object sender, EventArgs e)
         {
-            FoodDataGridView1.Rows.Clear();
-            string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
-            
-            Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
-            orderManager.RemoveItemFromOrder(tableindex , selectedFood.FoodId);
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
+            //string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
+
+
+
+            if (FoodDataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = FoodDataGridView1.SelectedRows[0].Index;
+                string selectedFoodName = FoodDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                MessBox mess = new MessBox(selectedFoodName);
+                mess.ShowDialog();
+                Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
+                orderManager.RemoveItemFromOrder(tableindex, selectedFood.FoodId);
+                FoodDataGridView1.Rows.Clear();
+                orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
+                getTotalBill();
+            } else
+            {
+                MessBox mess = new MessBox("Vui lòng chọn món để xoá!");
+                mess.ShowDialog();
+            }
         }
 
 
@@ -449,7 +463,8 @@ namespace ui_qlnhahang
 
             if (selectedFood != null)
             {
-                int totalPrice = selectedFood.Price * quantity;
+                //int totalPrice = selectedFood.Price * quantity;
+                int totalPrice = selectedFood.Price;
 
                 orderManager.AddItemToOrder(tableindex, selectedFood.FoodId, selectedFood.FoodName, quantity, totalPrice);
 
@@ -459,6 +474,8 @@ namespace ui_qlnhahang
                 orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
                 getTotalBill();
 
+                // reset sau khi add món ăn
+                numericUpDown1.Value = 1;
             }
         }
 

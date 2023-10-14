@@ -268,7 +268,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.FoodDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.FoodDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.FoodDataGridView1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.FoodDataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
             this.FoodDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FoodDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.FoodDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -318,10 +318,12 @@
             this.FoodDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.FoodDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.FoodDataGridView1.Location = new System.Drawing.Point(558, 140);
+            this.FoodDataGridView1.MultiSelect = false;
             this.FoodDataGridView1.Name = "FoodDataGridView1";
             this.FoodDataGridView1.ReadOnly = true;
             this.FoodDataGridView1.RowHeadersVisible = false;
             this.FoodDataGridView1.RowHeadersWidth = 51;
+            this.FoodDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.FoodDataGridView1.RowTemplate.Height = 40;
             this.FoodDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FoodDataGridView1.Size = new System.Drawing.Size(469, 368);
