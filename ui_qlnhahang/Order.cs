@@ -576,11 +576,15 @@ namespace ui_qlnhahang
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
                 tableButton.Width = 100;
                 tableButton.Height = 100;
-                
+                tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                tableButton.Font = new Font(tableButton.Font.FontFamily, 14, FontStyle.Regular);
+                tableButton.TextAlign = ContentAlignment.TopLeft;
+                tableButton.ForeColor = Color.Red;
                 tableButton.BackgroundImage = Resources.emty_table;
                 tableButton.BackgroundImageLayout = ImageLayout.Stretch;
                 //tableButton.Image =
                 tableButton.FlatStyle = FlatStyle.Flat;
+                tableButton.FlatAppearance.BorderSize = 0;
 
                 // Xử lý sự kiện khi nút được nhấp
                 tableButton.Click += TableButton_Click;
