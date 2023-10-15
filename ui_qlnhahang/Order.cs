@@ -241,7 +241,6 @@ namespace ui_qlnhahang
                         command.Parameters.AddWithValue("@Name", invoiceID);
                         command.Parameters.AddWithValue("@TableID", tableID);
                         command.Parameters.AddWithValue("@Amount", quantity);
-                        
 
                         connection.Open();
                         command.ExecuteNonQuery();
@@ -562,7 +561,7 @@ namespace ui_qlnhahang
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
                 tableButton.Width = 150;
                 tableButton.Height = 75;
-                //tableButton.Image =
+
                 tableButton.FlatStyle = FlatStyle.Flat;
 
                 // Xử lý sự kiện khi nút được nhấp
