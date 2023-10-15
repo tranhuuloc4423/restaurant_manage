@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FoodlistDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -46,7 +46,7 @@
             this.btnCheckout = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAddFood = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDelFood = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panelBtns = new Bunifu.UI.WinForms.BunifuPanel();
+            this.panelBtns = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +124,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.Location = new System.Drawing.Point(211, -3);
+            this.bunifuLabel2.Location = new System.Drawing.Point(224, -3);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(102, 31);
@@ -248,22 +248,22 @@
             this.FoodDataGridView1.AllowUserToDeleteRows = false;
             this.FoodDataGridView1.AllowUserToResizeColumns = false;
             this.FoodDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.FoodDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.FoodDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.FoodDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FoodDataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
             this.FoodDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FoodDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.FoodDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FoodDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FoodDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.FoodDataGridView1.ColumnHeadersHeight = 40;
             this.FoodDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FoodName,
@@ -288,14 +288,14 @@
             this.FoodDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.FoodDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FoodDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FoodDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.FoodDataGridView1.EnableHeadersVisualStyles = false;
             this.FoodDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.FoodDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -396,18 +396,12 @@
             // panelBtns
             // 
             this.panelBtns.AutoScroll = true;
-            this.panelBtns.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.panelBtns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBtns.BackgroundImage")));
-            this.panelBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
-            this.panelBtns.BorderRadius = 20;
-            this.panelBtns.BorderThickness = 1;
-            this.panelBtns.Location = new System.Drawing.Point(23, 33);
-            this.panelBtns.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBtns.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panelBtns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBtns.Location = new System.Drawing.Point(5, 34);
             this.panelBtns.Name = "panelBtns";
-            this.panelBtns.ShowBorders = true;
-            this.panelBtns.Size = new System.Drawing.Size(512, 532);
-            this.panelBtns.TabIndex = 24;
+            this.panelBtns.Size = new System.Drawing.Size(544, 530);
+            this.panelBtns.TabIndex = 50;
             // 
             // Order
             // 
@@ -415,6 +409,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1039, 576);
+            this.Controls.Add(this.panelBtns);
             this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.btnDelFood);
@@ -424,7 +419,6 @@
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.FoodlistDropdown1);
-            this.Controls.Add(this.panelBtns);
             this.Controls.Add(this.FoodDataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Order";
@@ -439,7 +433,6 @@
         }
 
         #endregion
-        private Bunifu.UI.WinForms.BunifuPanel panelBtns;
         private Bunifu.UI.WinForms.BunifuDropdown FoodlistDropdown1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
@@ -454,5 +447,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelFood;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddFood;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCheckout;
+        private System.Windows.Forms.Panel panelBtns;
     }
 }

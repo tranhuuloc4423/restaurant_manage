@@ -555,6 +555,49 @@ namespace ui_qlnhahang
             //LoadTables();
 
         }
+        //public void LoadTables()
+        //{
+        //    panelBtns.Controls.Clear();
+
+        //    // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
+        //    DataProvider provider = new DataProvider();
+        //    DataTable tableData = provider.ExecuteQuery("select * from [Table]");
+        //    // Sử dụng FlowLayoutPanel để chứa các nút bàn ăn
+        //    FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+        //    flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+        //    flowLayoutPanel.WrapContents = true;
+        //    flowLayoutPanel.Dock = DockStyle.Fill;
+        //    // Duyệt qua từng dòng dữ liệu trong bảng
+        //    foreach (DataRow row in tableData.Rows)
+        //    {
+        //        totalTable++;
+        //        // Tạo một nút đại diện cho mỗi bàn ăn
+        //        Button tableButton = new Button();
+        //        tableButton.Text = row["Name"].ToString();
+        //        tableButton.Name = "btnTable_" + row["ID"].ToString();
+        //        tableButton.Width = 150;
+        //        tableButton.Height = 150;
+
+        //        tableButton.BackgroundImage = Resources.emty_table;
+        //        tableButton.BackgroundImageLayout = ImageLayout.Stretch;
+        //        tableButton.Margin = new Padding(10);
+        //        tableButton.FlatStyle = FlatStyle.Flat;
+        //        tableButton.FlatAppearance.BorderSize = 0;
+        //        tableButton.TextAlign = ContentAlignment.TopLeft;
+        //        tableButton.Font = new Font("Tahoma", 14, FontStyle.Bold);
+        //        tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+        //        // Xử lý sự kiện khi nút được nhấp
+        //        tableButton.Click += TableButton_Click;
+
+        //        // Thêm nút vào form
+        //        flowLayoutPanel.Controls.Add(tableButton);
+        //    }
+        //    flowLayoutPanel.AutoSize = true; // Thêm dòng này
+        //    panelBtns.Controls.Add(flowLayoutPanel);
+        //    panelBtns.AutoScroll = true;
+        //    panelBtns.AutoScrollMinSize = flowLayoutPanel.PreferredSize;
+        //}
+
         public void LoadTables()
         {
             panelBtns.Controls.Clear();
@@ -562,37 +605,88 @@ namespace ui_qlnhahang
             // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
             DataProvider provider = new DataProvider();
             DataTable tableData = provider.ExecuteQuery("select * from [Table]");
-            // Sử dụng FlowLayoutPanel để chứa các nút bàn ăn
-            FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-            flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-            flowLayoutPanel.Dock = DockStyle.Fill;
+
+            // Sử dụng FlowLayoutPanel chính để cuộn dọc
+            FlowLayoutPanel mainFlowLayoutPanel = new FlowLayoutPanel();
+            mainFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            mainFlowLayoutPanel.WrapContents = false;
+            //mainFlowLayoutPanel.Dock = DockStyle.Fill;
+
+            mainFlowLayoutPanel.AutoSize = true;
+            mainFlowLayoutPanel.Anchor = AnchorStyles.None;
+
+            int maxButtonsPerRow = 4; // Số lượng button tối đa trong một dòng
+            int buttonWidth = 100;
+            int buttonHeight = 100;
+            int rowWidth = maxButtonsPerRow * buttonWidth;
+
+            FlowLayoutPanel currentFlowLayoutPanel = null; // FlowLayoutPanel hiện tại đang chứa các button
+
             // Duyệt qua từng dòng dữ liệu trong bảng
             foreach (DataRow row in tableData.Rows)
             {
                 totalTable++;
+
+                // Nếu currentFlowLayoutPanel chưa được tạo hoặc đã đầy dòng, tạo một dòng mới
+                if (currentFlowLayoutPanel == null || currentFlowLayoutPanel.Controls.Count == maxButtonsPerRow)
+                {
+                    currentFlowLayoutPanel = new FlowLayoutPanel();
+                    currentFlowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+                    currentFlowLayoutPanel.WrapContents = false;
+                    currentFlowLayoutPanel.AutoSize = true;
+
+                    // Thêm FlowLayoutPanel hiện tại vào FlowLayoutPanel chính
+                    mainFlowLayoutPanel.Controls.Add(currentFlowLayoutPanel);
+                }
+
+                TableLayoutPanel tableLayout = new TableLayoutPanel();
+                tableLayout.ColumnCount = 1;
+                tableLayout.RowCount = 2;
+                tableLayout.AutoSize = true;
+
+                Label tableLabel = new Label();
+                tableLabel.Text = row["Name"].ToString();
+                tableLabel.TextAlign = ContentAlignment.TopLeft;
+                tableLabel.Font = new Font("Tahoma", 10, FontStyle.Bold);
+
+
                 // Tạo một nút đại diện cho mỗi bàn ăn
                 Button tableButton = new Button();
-                tableButton.Text = row["Name"].ToString();
+                //tableButton.Text = row["Name"].ToString();
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
-                tableButton.Width = 100;
-                tableButton.Height = 100;
-                tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-                tableButton.Font = new Font(tableButton.Font.FontFamily, 14, FontStyle.Regular);
-                tableButton.TextAlign = ContentAlignment.TopLeft;
-                tableButton.ForeColor = Color.Red;
+                tableButton.Width = buttonWidth;
+                tableButton.Height = buttonHeight;
+
                 tableButton.BackgroundImage = Resources.emty_table;
                 tableButton.BackgroundImageLayout = ImageLayout.Stretch;
-                //tableButton.Image =
                 tableButton.FlatStyle = FlatStyle.Flat;
-                tableButton.FlatAppearance.BorderSize = 0;
+                //tableButton.TextAlign = ContentAlignment.TopLeft;
+                //tableButton.Font = new Font("Tahoma", 14, FontStyle.Bold);
+                //tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                tableButton.Padding = new Padding(10);
+                tableButton.Margin = new Padding(10);
 
                 // Xử lý sự kiện khi nút được nhấp
                 tableButton.Click += TableButton_Click;
 
-                // Thêm nút vào form
-                flowLayoutPanel.Controls.Add(tableButton);
+                tableLayout.Controls.Add(tableLabel, 0, 0);
+                tableLayout.Controls.Add(tableButton, 0, 1);
+                // Thêm nút vào FlowLayoutPanel hiện tại
+                //currentFlowLayoutPanel.Controls.Add(tableButton);
+                currentFlowLayoutPanel.Controls.Add(tableLayout);
             }
-            panelBtns.Controls.Add(flowLayoutPanel);
+
+            // Thêm FlowLayoutPanel chính vào panel chứa
+            panelBtns.Controls.Add(mainFlowLayoutPanel);
+            panelBtns.AutoScroll = true;
+            panelBtns.AutoScrollMinSize = mainFlowLayoutPanel.PreferredSize;
+
+            mainFlowLayoutPanel.Anchor = AnchorStyles.None;
+            mainFlowLayoutPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            // Tính toán vị trí căn giữa
+            int x = (panelBtns.Width - mainFlowLayoutPanel.Width) / 2;
+            mainFlowLayoutPanel.Location = new Point(x, mainFlowLayoutPanel.Location.Y);
         }
 
         private void TableButton_Click(object sender, EventArgs e)
