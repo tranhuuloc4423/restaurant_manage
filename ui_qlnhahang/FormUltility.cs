@@ -36,6 +36,15 @@ namespace ui_qlnhahang
             return dataTable;
         }
 
+        public static DataTable GetAllDataNew(string query)
+        {
+            DataProvider provider = new DataProvider();
+
+            DataTable dataTable = provider.ExecuteQuery(query);
+
+            return dataTable;
+        }
+
         public static void GetAllData(string query, BunifuDropdown dropdown)
         {
             dropdown.Items.Clear();
