@@ -240,3 +240,4 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
+G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.InfoMess.resources
