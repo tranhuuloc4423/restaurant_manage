@@ -17,7 +17,7 @@ namespace ui_qlnhahang
 {
     public partial class TableManage : Form
     {
-        string mainquery = "select * from [Table]";
+        string mainquery = "select ID, Name from [Table]";
         BunifuTextBox[] myTextBoxes;
 
         public TableManage()
@@ -27,8 +27,7 @@ namespace ui_qlnhahang
 
         private void TableManage_Load(object sender, EventArgs e)
         {
-            string query = "select * from [Table]";
-            GetAllData(query, gvTable);
+            GetAllData(mainquery, gvTable);
             txtNameTable.Clear();
             myTextBoxes = new BunifuTextBox[] { txtNameTable };
             handleResetTextbox(gvTable, txtNameTable, myTextBoxes);

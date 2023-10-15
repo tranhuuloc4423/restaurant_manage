@@ -14,6 +14,7 @@ using ui_qlnhahang.Properties;
 using static System.Net.Mime.MediaTypeNames;
 using static ui_qlnhahang.Order;
 using Image = System.Drawing.Image;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -52,17 +53,23 @@ namespace ui_qlnhahang
         //    }
 
         //}
-
+        string query = "select ID from [Table]";
+        DataTable listTable;
         public Order(string tk)
         {
             InitializeComponent();
             this.tk = tk;
             GetAllFoodData();
             LoadTables();
-            for (int i = 0; i <= totalTable; i++)
+            for (int i = 0; i <= 1000; i++)
             {
                 orderManager.CreateOrder(i, DateTime.Now);
             }
+            //foreach (DataRow item in listTable.Rows)
+            //{
+            //    orderManager.CreateOrder(Convert.ToInt32(item["ID"]), DateTime.Now);
+            //    //MessageBox.Show(item["ID"].ToString());
+            //}
         }
         OrderManager orderManager = new OrderManager();
 
@@ -167,7 +174,8 @@ namespace ui_qlnhahang
                 }
                 if (totalAmount !=0) {
                     string name = "Hóa đơn " + (invoiceID + 1);
-                    int tableID = index + 1;
+                    int tableID = index;
+                    //int tableID = index + 1;
                     float status = 1;
 
                     // đổi thành định dạng chuẩn ISO "yyyy-MM-dd"
@@ -677,6 +685,7 @@ namespace ui_qlnhahang
             }
 
             // Thêm FlowLayoutPanel chính vào panel chứa
+            panelBtns.Margin = new Padding(0, -20, 0, 100);
             panelBtns.Controls.Add(mainFlowLayoutPanel);
             panelBtns.AutoScroll = true;
             panelBtns.AutoScrollMinSize = mainFlowLayoutPanel.PreferredSize;
@@ -695,7 +704,7 @@ namespace ui_qlnhahang
             int tableID = Convert.ToInt32(tableButton.Name.Split('_')[1]);
             tableindex = tableID;
             FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
+            orderManager.loadorderToGridView(tableID, FoodDataGridView1);
             getTotalBill();
             //MessageBox.Show(tableID.ToString());
         }
@@ -719,223 +728,8 @@ namespace ui_qlnhahang
             //Application.Exit();
         }
 
-        private void FoodDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bunifuDropdown1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //public void LoadTables()
-        //{
-        //    panelBtns.Controls.Clear();
-
-        //    // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
-        //    DataProvider provider = new DataProvider();
-        //    DataTable tableData = provider.ExecuteQuery("select * from [Table]");
-
-        //    // Duyệt qua từng dòng dữ liệu trong bảng
-        //    foreach (DataRow row in tableData.Rows)
-        //    {
-        //        // Tạo một nút đại diện cho mỗi bàn ăn
-        //        Button tableButton = new Button();
-        //        tableButton.Text = row["ID"].ToString();
-        //        tableButton.Name = row["Name"].ToString();
-        //        tableButton.Width = 95;
-        //        tableButton.Height = 75;
-
-        //        // Xử lý sự kiện khi nút được nhấp
-        //        tableButton.Click += TableButton_Click;
-
-        //        // Thêm nút vào form
-        //        this.Controls.Add(tableButton);
-        //    }
-        //}
-
-        //private void TableButton_Click(object sender, EventArgs e)
-        //{
-        //    Button tableButton = (Button)sender;
-        //    int tableID = Convert.ToInt32(tableButton.Name);
-        //    FoodDataGridView1.Rows.Clear();
-        //    orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-        //    getTotalBill();
-        //}
-
         List<OrderListed> tableList = new List<OrderListed>();
         private int currentRowIndex = 0;
-        
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            tableindex = 0;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-            tableindex = 1;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-            tableindex = 2;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton4_Click(object sender, EventArgs e)
-        {
-            tableindex = 3;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton8_Click(object sender, EventArgs e)
-        {
-            tableindex = 4;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton7_Click(object sender, EventArgs e)
-        {
-            tableindex = 5;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton6_Click(object sender, EventArgs e)
-        {
-            tableindex = 6;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton5_Click(object sender, EventArgs e)
-        {
-            tableindex = 7;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton12_Click(object sender, EventArgs e)
-        {
-            tableindex = 8;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuLabel7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void bunifuButton11_Click(object sender, EventArgs e)
-        {
-            tableindex = 9;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton10_Click(object sender, EventArgs e)
-        {
-            tableindex = 10;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton9_Click(object sender, EventArgs e)
-        {
-            tableindex = 11;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton16_Click(object sender, EventArgs e)
-        {
-            tableindex = 12;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton15_Click(object sender, EventArgs e)
-        {
-            tableindex = 13;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton14_Click(object sender, EventArgs e)
-        {
-            tableindex = 14;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton13_Click(object sender, EventArgs e)
-        {
-            tableindex = 15;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton20_Click(object sender, EventArgs e)
-        {
-            tableindex = 16;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton19_Click(object sender, EventArgs e)
-        {
-            tableindex = 17;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton18_Click(object sender, EventArgs e)
-        {
-            tableindex = 18;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-        }
-
-        private void bunifuButton17_Click(object sender, EventArgs e)
-        {
-            tableindex = 19;
-            FoodDataGridView1.Rows.Clear();
-            orderManager.loadorderToGridView(tableindex, FoodDataGridView1);
-            getTotalBill();
-            // số bàn  = tableindex + 1
-        }
-
 
         void clearTable(int tableindex)
         {

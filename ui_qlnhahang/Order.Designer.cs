@@ -92,7 +92,6 @@
             this.FoodlistDropdown1.Text = "Món ăn";
             this.FoodlistDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.FoodlistDropdown1.TextLeftMargin = 5;
-            this.FoodlistDropdown1.SelectedIndexChanged += new System.EventHandler(this.bunifuDropdown1_SelectedIndexChanged);
             // 
             // numericUpDown1
             // 
@@ -207,7 +206,6 @@
             this.bunifuLabel7.Text = "0 VND";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel7.Click += new System.EventHandler(this.bunifuLabel7_Click);
             // 
             // TotalPrice
             // 
@@ -313,7 +311,6 @@
             this.FoodDataGridView1.Size = new System.Drawing.Size(469, 368);
             this.FoodDataGridView1.TabIndex = 23;
             this.FoodDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.FoodDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FoodDataGridView1_CellContentClick);
             // 
             // btnCheckout
             // 

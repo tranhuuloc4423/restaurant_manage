@@ -16,6 +16,7 @@ namespace ui_qlnhahang
 {
     public partial class BillManage : Form
     {
+        string mainquery = "select ID, TableID, Amount, Status,CheckoutDate, Account from [Bills]";
         public BillManage()
         {
             InitializeComponent();
@@ -30,8 +31,7 @@ namespace ui_qlnhahang
 
             dpTo.Format = DateTimePickerFormat.Custom;
             dpTo.CustomFormat = "dd/MM/yyyy";
-            string query = "select * from [Bills]";
-            GetAllData(query, gvBill);
+            GetAllData(mainquery, gvBill);
             gvBill.ClearSelection();
             handleFormatDate();
         }

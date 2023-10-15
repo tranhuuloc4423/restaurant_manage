@@ -121,6 +121,8 @@ BEGIN
     DELETE FROM [Table]
     WHERE ID = @ID;
 END
+
+
 GO
 --------------------ACCOUNT--------------------------
 --SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account

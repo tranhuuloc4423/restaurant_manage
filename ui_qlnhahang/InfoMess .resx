@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 62px;font-family: 'Tahoma'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 49px;font-family: 'Tahoma'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <data name="bunifuLabel1.Text" xml:space="preserve">
     <value>Phần mềm quản lý nhà hàng của chúng tôi là một giải pháp toàn diện và dễ sử dụng để quản lý mọi khía cạnh của hoạt động nhà hàng. Với giao diện thân thiện và dễ sử dụng, phần mềm giúp bạn tối ưu hóa quy trình làm việc, tăng cường hiệu suất và cải thiện trải nghiệm của khách hàng.

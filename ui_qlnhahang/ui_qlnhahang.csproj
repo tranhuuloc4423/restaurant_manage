@@ -336,8 +336,10 @@
     <Content Include="Properties\order-food.png" />
     <Content Include="Properties\restaurant.png" />
     <Content Include="Properties\user.png" />
+    <None Include="Resources\close.png" />
     <Content Include="Resources\emty-table.png" />
     <None Include="Resources\emty-table1.png" />
+    <None Include="Resources\info.png" />
     <Content Include="Resources\table.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\hide.png" />

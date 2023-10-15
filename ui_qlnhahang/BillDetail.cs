@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -52,7 +53,6 @@ namespace ui_qlnhahang
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     bunifuDataGridView1.DataSource = dataTable;
-
 
                     SqlCommand command2 = new SqlCommand("Amount_GetById", connection);
                     command2.CommandType = CommandType.StoredProcedure;
