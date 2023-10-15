@@ -210,3 +210,6 @@ D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.MessBox.resources
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.BorderForm.resources
+D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.BorderForm.resources
+D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.InfoMess.resources
+D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.MessBox.resources

@@ -1,0 +1,18 @@
+- Tổng kết 13/10/2023 :
++ Bỏ nút thông tin ở DashBoard (Hoặc hiển thị một số thông tin phù hợp) //NHÂN --> Done
++ Thêm chức năng tìm kiếm. // LỘC --> DONE
++ Thay đổi vị trí nút để đăng xuất sao cho vừa mắt. // NHÂN --> Done
++ Giảm số lượng bàn ( Khi có 15 bàn sẽ không thêm được nữa - Nhà hàng hết chỗ) // TUẤN 
++ Sửa lỗi thêm tài khoản ( bắt buộc phải điền thông tin đầy đủ mới thêm được tài khoản). // LỘC --> DONE
++ Sửa lỗi khi chọn bàn chưa cập nhật trạng thái bàn. // QUÂN
++ Thay UI các nút // LỘC --> DONE
++ Chỉnh màu khi selected // LỘC
++ Chỉnh format checkoutDate trong formBillDetails ( dạng dd/MM/yyyy ) // LỘC --> DONE
++ Hoàn thiện CRUD // LỘC --> ALMOST DONE
++ Lỗi giá món ăn khi order ( nếu sau khi xóa 1 món ăn, nếu số lượng lớn hơn 1 thì giá của món đó bị đổi. Giá mới = số lượng * đơn giá ) // QUÂN
++ Lỗi sau khi chọn bàn và vào order món ( Cần thay đổi UI để phân biệt bàn đã có người và bàn trống) // QUÂN
++ Tăng kích thước số của bàn ( quá nhỏ ) // QUÂN
++ ... // TUẤN
+
+- DEADLINE - 23:59 15/10/2023 - FIGHTING
+
