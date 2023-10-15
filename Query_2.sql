@@ -88,7 +88,7 @@ AS
 BEGIN
 DECLARE @TableCount int;
 SELECT @TableCount = COUNT(*) FROM [Table];
-IF @TableCount < 15
+IF @TableCount < 50
 	BEGIN
 		INSERT INTO [Table] (Name, Status)
 		VALUES (@Name, @Status);
