@@ -44,9 +44,9 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.btnCheckout = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDelFood = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAddFood = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnCheckout = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.panelBtns.Margin = new System.Windows.Forms.Padding(2);
             this.panelBtns.Name = "panelBtns";
             this.panelBtns.ShowBorders = true;
-            this.panelBtns.Size = new System.Drawing.Size(512, 475);
+            this.panelBtns.Size = new System.Drawing.Size(512, 532);
             this.panelBtns.TabIndex = 24;
             // 
             // FoodlistDropdown1
@@ -331,32 +331,6 @@
             this.FoodDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.FoodDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FoodDataGridView1_CellContentClick);
             // 
-            // btnCheckout
-            // 
-            this.btnCheckout.ActiveBorderThickness = 2;
-            this.btnCheckout.ActiveCornerRadius = 20;
-            this.btnCheckout.ActiveFillColor = System.Drawing.Color.AliceBlue;
-            this.btnCheckout.ActiveForecolor = System.Drawing.Color.Coral;
-            this.btnCheckout.ActiveLineColor = System.Drawing.Color.Coral;
-            this.btnCheckout.BackColor = System.Drawing.Color.LightBlue;
-            this.btnCheckout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckout.BackgroundImage")));
-            this.btnCheckout.ButtonText = "Tính Tiền";
-            this.btnCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckout.ForeColor = System.Drawing.Color.Black;
-            this.btnCheckout.IdleBorderThickness = 2;
-            this.btnCheckout.IdleCornerRadius = 20;
-            this.btnCheckout.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnCheckout.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCheckout.IdleLineColor = System.Drawing.Color.Black;
-            this.btnCheckout.Location = new System.Drawing.Point(558, 508);
-            this.btnCheckout.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(122, 57);
-            this.btnCheckout.TabIndex = 46;
-            this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
-            // 
             // btnDelFood
             // 
             this.btnDelFood.ActiveBorderThickness = 2;
@@ -409,15 +383,41 @@
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
+            // btnCheckout
+            // 
+            this.btnCheckout.ActiveBorderThickness = 2;
+            this.btnCheckout.ActiveCornerRadius = 20;
+            this.btnCheckout.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnCheckout.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnCheckout.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnCheckout.BackColor = System.Drawing.Color.LightBlue;
+            this.btnCheckout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckout.BackgroundImage")));
+            this.btnCheckout.ButtonText = "Thêm Món";
+            this.btnCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckout.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckout.IdleBorderThickness = 2;
+            this.btnCheckout.IdleCornerRadius = 20;
+            this.btnCheckout.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnCheckout.IdleForecolor = System.Drawing.Color.Black;
+            this.btnCheckout.IdleLineColor = System.Drawing.Color.Black;
+            this.btnCheckout.Location = new System.Drawing.Point(558, 518);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(107, 47);
+            this.btnCheckout.TabIndex = 49;
+            this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click_1);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1039, 576);
+            this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.btnDelFood);
-            this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.bunifuLabel7);
             this.Controls.Add(this.bunifuLabel5);
             this.Controls.Add(this.TypeDropdown);
@@ -451,8 +451,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
         private Bunifu.UI.WinForms.BunifuDataGridView FoodDataGridView1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckout;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelFood;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddFood;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckout;
     }
 }

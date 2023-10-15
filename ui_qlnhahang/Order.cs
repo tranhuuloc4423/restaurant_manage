@@ -10,8 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
+using ui_qlnhahang.Properties;
 using static System.Net.Mime.MediaTypeNames;
 using static ui_qlnhahang.Order;
+using Image = System.Drawing.Image;
 
 namespace ui_qlnhahang
 {
@@ -226,12 +228,9 @@ namespace ui_qlnhahang
                 foreach (OrderItem item in order.OrderItems)
                 {
                     int name = invoiceID;
-                    int tableID = index + 1;
+                    int fooid = item.FoodId;
                     int quantity = item.Quantity;
-                    
-                    
-                    
-
+                                     
                     string query = "INSERT INTO [dbo].[BillDetails] ([InvoiceID],  [FoodID], [Quantity]) " +
                                    "VALUES (@Name, @TableID, @Amount)";
 
@@ -239,17 +238,14 @@ namespace ui_qlnhahang
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Name", invoiceID);
-                        command.Parameters.AddWithValue("@TableID", tableID);
+                        command.Parameters.AddWithValue("@TableID", fooid);
                         command.Parameters.AddWithValue("@Amount", quantity);
                         
-
                         connection.Open();
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
                 }
-
-
 
                 order.OrderItems.Clear();
 
@@ -450,12 +446,28 @@ namespace ui_qlnhahang
                 MessBox mess = new MessBox("Vui lòng chọn món để xoá!");
                 mess.ShowDialog();
             }
+            if (FoodDataGridView1.Rows.Count == 0)
+            {
+                clearTable(tableindex);
+            }
         }
 
 
         // button thêm món t đổi tên 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
+            
+            
+                string buttonName = "btnTable_" + tableindex.ToString();
+                Control[] buttons = this.Controls.Find(buttonName, true);
+
+                if (buttons.Length > 0 && buttons[0] is Button)
+                {
+                    Button button = (Button)buttons[0];
+                    button.BackColor = Color.Red; // Set the desired color
+                }
+            
+
             string selectedFoodName = FoodlistDropdown1.SelectedItem.ToString();
             int quantity = (int)numericUpDown1.Value;
 
@@ -477,6 +489,8 @@ namespace ui_qlnhahang
                 // reset sau khi add món ăn
                 numericUpDown1.Value = 1;
             }
+
+            
         }
 
 
@@ -560,8 +574,11 @@ namespace ui_qlnhahang
                 Button tableButton = new Button();
                 tableButton.Text = row["Name"].ToString();
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
-                tableButton.Width = 150;
+                tableButton.Width = 75;
                 tableButton.Height = 75;
+                
+                tableButton.BackgroundImage = Resources.dining_table;
+                tableButton.BackgroundImageLayout = ImageLayout.Stretch;
                 //tableButton.Image =
                 tableButton.FlatStyle = FlatStyle.Flat;
 
@@ -821,22 +838,34 @@ namespace ui_qlnhahang
             // số bàn  = tableindex + 1
         }
 
-        private void btnCheckout_Click(object sender, EventArgs e)
+
+        void clearTable(int tableindex)
         {
+            string buttonName = "btnTable_" + tableindex.ToString();
+            Control[] buttons = this.Controls.Find(buttonName, true);
 
-            if (orderManager.orders[tableindex].OrderItems != null)
+            if (buttons.Length > 0 && buttons[0] is Button)
             {
-
-                //orderManager.checkoutToBillDetails(tableindex, label1);
-                orderManager.checkoutToBills(tableindex, tk);
-
-                orderManager.checkoutToBillDetails(tableindex);
-
-                FoodDataGridView1.Rows.Clear();
+                Button button = (Button)buttons[0];
+                button.BackColor = Color.Transparent; // Set the desired color
             }
         }
 
-        
+
+       
+
+        private void btnCheckout_Click_1(object sender, EventArgs e)
+        {
+            clearTable(tableindex);
+
+
+            //orderManager.checkoutToBillDetails(tableindex, label1);
+            orderManager.checkoutToBills(tableindex, tk);
+
+            orderManager.checkoutToBillDetails(tableindex);
+
+            FoodDataGridView1.Rows.Clear();
+        }
     }
 
         
