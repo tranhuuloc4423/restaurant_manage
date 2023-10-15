@@ -149,7 +149,7 @@ SET IDENTITY_INSERT [dbo].[BillDetails] OFF
 
 SET IDENTITY_INSERT [dbo].[Bills] ON 
 INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (1, N'Hóa đơn 1', 5, 410000, 1,'2023-10-04', N'levantuan')
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 410000, 1,'2023-10-04', N'levantuan')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Status],[CheckoutDate], [Account]) VALUES (2, N'Hóa đơn 2', 4, 0, 0,'2023-10-04', N'levantuan')
 SET IDENTITY_INSERT [dbo].[Bills] OFF
 
 SET IDENTITY_INSERT [dbo].[Category] ON 
@@ -162,20 +162,39 @@ SET IDENTITY_INSERT [dbo].[Category] OFF
 
 SET IDENTITY_INSERT [dbo].[Food] ON 
 INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (1, N'Gỏi cuốn', 1, 20000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (2, N'Soup', 1, 30000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (3, N'Thịt bò xào', 2, 150000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (4, N'Gà nướng', 2, 100000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (5, N'Tôm rang muối', 3, 200000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (6, N'Càng cua hấp', 3, 300000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (7, N'Rau muống xào tỏi', 4, 30000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (8, N'Đậu phụ xả ớt', 4, 25000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (9, N'Pudding', 5, 23000)
-INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (10, N'Plan', 5, 20000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (2, N'Soup', 1, 60000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (3, N'Nem rán', 1, 50000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (4, N'Bò tái chanh leo', 1, 80000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (5, N'Bánh mì pate', 1, 20000)
+
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (6, N'Thịt bò xào', 2, 150000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (7, N'Gà nướng', 2, 100000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (8, N'Cá kho tộ', 2, 120000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (9, N'Lẩu Thái', 2, 200000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (10, N'Cơm gà Hải Nam', 2, 80000)
+
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (11, N'Tôm rang muối', 3, 200000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (12, N'Càng cua hấp', 3, 300000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (13, N'Sò điệp nướng mỡ hành', 3, 120000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (14, N'Hàu nướng phô mai', 3, 30000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (15, N'Mực xào sả ớt', 3, 100000)
+
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (16, N'Rau muống xào tỏi', 4, 30000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (17, N'Đậu phụ xả ớt', 4, 25000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (18, N'Bánh đậu xanh hấp', 4, 40000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (19, N'Đậu phụ xốt cà chua', 4, 30000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (20, N'Mì xào chay', 4, 30000)
+
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (21, N'Pudding', 5, 23000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (22, N'Plan', 5, 20000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (23, N'Kem dừa', 5, 23000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (24, N'Sữa chua trái cây', 5, 80000)
+INSERT [dbo].[Food] ([ID], [Name], [FoodCategoryID], [Price]) VALUES (25, N'Chuối hấp nước cốt dừa', 5, 24000)
 SET IDENTITY_INSERT [dbo].[Food] OFF
 
 SET IDENTITY_INSERT [dbo].[Role] ON 
-INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (1, N'Adminstrator')
-INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (2, N'Staff')
+INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (1, N'Quản lý')
+INSERT [dbo].[Role] ([ID], [RoleName]) VALUES (2, N'Nhân viên')
 SET IDENTITY_INSERT [dbo].[Role] OFF
 
 INSERT [dbo].[RoleAccount] ([RoleID], [AccountName], [Actived]) VALUES (1, N'levantuan', 1)
@@ -195,11 +214,6 @@ INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (7, N'07', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (8, N'08', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (9, N'09', 0)
 INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (10, N'10', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (11, N'VIP.1', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (12, N'VIP.2', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (13, N'VIP.3', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (14, N'VIP.4', 0)
-INSERT [dbo].[Table] ([ID], [Name], [Status]) VALUES (15, N'VIP.5', 0)
 SET IDENTITY_INSERT [dbo].[Table] OFF
 
 ALTER TABLE [dbo].[BillDetails] ADD  CONSTRAINT [DF_InvoiceDetails_Amount]  DEFAULT ((0)) FOR [Quantity]

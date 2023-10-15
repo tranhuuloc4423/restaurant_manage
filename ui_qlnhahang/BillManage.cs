@@ -55,7 +55,8 @@ namespace ui_qlnhahang
         {
             if (dpTo.Value < dpFrom.Value)
             {
-                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                MessBox mb = new MessBox("Giá trị ngày không hợp lệ!");
+                mb.ShowDialog();
                 dpTo.Value = dpFrom.Value;
             }
         }
@@ -81,7 +82,7 @@ namespace ui_qlnhahang
             }
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+        private void btnStatistic_Click(object sender, EventArgs e)
         {
             DateTime startDate = dpFrom.Value;
             DateTime endDate = dpTo.Value;
@@ -90,7 +91,6 @@ namespace ui_qlnhahang
 
         private void filterBill(DateTime start, DateTime end)
         {
-
             string columnName = "billCheckout";
             foreach (DataGridViewRow row in gvBill.Rows)
             {
@@ -110,17 +110,6 @@ namespace ui_qlnhahang
                 {
                     row.Visible = false;
                 }
-            }
-        }
-
-        private void LoadBillReport(DateTime startDate, DateTime endDate)
-        {
-            using (SqlConnection connection = new SqlConnection(DataProvider.Instance.connectionSTR))
-            {
-                SqlCommand command = new SqlCommand("CreateBillReport", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@StartDate", startDate);
-                command.Parameters.AddWithValue("@EndDate", endDate);
             }
         }
     }

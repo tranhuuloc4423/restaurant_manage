@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace ui_qlnhahang
     public partial class CateManage : Form
     {
         string mainquery = "select * from [Category]";
+        BunifuTextBox[] myTextBoxes;
         public CateManage()
         {
             InitializeComponent();
@@ -28,30 +30,23 @@ namespace ui_qlnhahang
         private void CateManage_Load(object sender, EventArgs e)
         {
             GetAllData(mainquery, gvCate);
-            gvCate.ClearSelection();
-            txtCate.Clear();
-        }
-
-        private void handleData(string name, string query, string desc, object[] parameter = null)
-        {
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
-            MessageBox.Show(desc);
-            GetAllData(mainquery, gvCate);
+            myTextBoxes = new BunifuTextBox[] { txtCate };
+            handleResetTextbox(gvCate, txtCate, myTextBoxes);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(txtCate.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên danh mục món ăn");
+                MessBox mb = new MessBox("Vui lòng nhập tên danh mục món ăn!");
+                mb.ShowDialog();
                 return;
             }
             string name = "Category_Insert";
-            string query = "@Name @Type";
+            string procedureParams = "@Name @Type";
             string desc = "Thêm danh mục món ăn thành công!";
-            handleData(name, query, desc, new object[] { txtCate.Text, 1 });
-
+            handleProcedure(mainquery, name, procedureParams,gvCate, desc, new object[] { txtCate.Text, 1 });
+            handleResetTextbox(gvCate, txtCate, myTextBoxes);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -61,30 +56,41 @@ namespace ui_qlnhahang
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
                 if (string.IsNullOrEmpty(txtCate.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập tên danh mục món ăn");
+                    MessBox mb = new MessBox("Vui lòng nhập tên danh mục món ăn!");
+                    mb.ShowDialog();
                     return;
-                } else
-                {
-                    object id = selectedRow.Cells[0].Value;
-                    string name = "Category_Update";
-                    string query = "@ID @Name @Type";
-                    string desc = "Cập nhật danh mục món ăn thành công!";
-                    handleData(name, query, desc, new object[] { id, txtCate.Text, 1 });
                 }
+
+                object id = selectedRow.Cells[0].Value;
+                string name = "Category_Update";
+                string procedureParams = "@ID @Name @Type";
+                string desc = "Cập nhật danh mục món ăn thành công!";
+                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id, txtCate.Text, 1 });
+                handleResetTextbox(gvCate, txtCate, myTextBoxes);
+            }
+            else
+            {
+                MessBox mb = new MessBox("Vui lòng chọn tên danh mục món ăn muốn sửa!");
+                mb.ShowDialog();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             if (gvCate.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
                 string name = "Category_Delete";
-                string query = "@ID";
+                string procedureParams = "@ID";
                 string desc = "Xoá danh mục món ăn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                handleData(name, query, desc, new object[] { id });
+                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
+                handleResetTextbox(gvCate, txtCate, myTextBoxes);
+            }
+            else
+            {
+                MessBox mb = new MessBox("Vui lòng chọn tên danh mục món ăn muốn xoá!");
+                mb.ShowDialog();
             }
         }
 
@@ -94,6 +100,16 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
                 txtCate.Text = selectedRow.Cells[1].Value.ToString();
+            }
+        }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "Name";
+            handleFilter(gvCate, txtSearch, mainquery, columnName);
+            if(String.IsNullOrEmpty(txtSearch.Text))
+            {
+                handleResetTextbox(gvCate, txtSearch, myTextBoxes);
             }
         }
     }

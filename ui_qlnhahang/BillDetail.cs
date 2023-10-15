@@ -12,7 +12,7 @@ using ui_qlnhahang.DAo;
 
 namespace ui_qlnhahang
 {
-    public partial class BillDetail : Form
+    public partial class BillDetail : BorderForm
     {
         int billID;
         public BillDetail()
@@ -73,7 +73,17 @@ namespace ui_qlnhahang
                     object result3 = command3.ExecuteScalar();
                     if (result3 != null)
                     {
-                        lblBillDate.Text = result3.ToString();
+                        DateTime dateValue;
+                        if (DateTime.TryParse(result3.ToString(), out dateValue))
+                        {
+                            string formattedDate = dateValue.ToString("dd/MM/yyyy");
+
+                            lblBillDate.Text = formattedDate; 
+                        }
+                        else
+                        {
+                            lblBillDate.Text = "Không thể định dạng ngày tháng";
+                        }
                     }
                     else
                     {

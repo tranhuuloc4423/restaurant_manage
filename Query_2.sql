@@ -82,12 +82,21 @@ GO
 --GO
 --drop PROCEDURE Table_Insert 
 CREATE PROCEDURE Table_Insert -- THÊM BÀN
-    @Name nvarchar(1000),
-    @Status int
+@Name nvarchar(1000),
+@Status int
 AS
 BEGIN
-    INSERT INTO [Table] (Name, Status)
-    VALUES (@Name, @Status);
+DECLARE @TableCount int;
+SELECT @TableCount = COUNT(*) FROM [Table];
+IF @TableCount < 15
+	BEGIN
+		INSERT INTO [Table] (Name, Status)
+		VALUES (@Name, @Status);
+	END
+ELSE
+	BEGIN
+		PRINT N'Đã đạt đến giới hạn số lượng bàn. Không thể thêm bàn mới.';
+	END
 END;
 GO
 
@@ -117,7 +126,7 @@ GO
 --SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account
 --GO
 --drop procedure [InsertAccount]
-CREATE PROCEDURE [dbo].[InsertAccount]
+CREATE PROCEDURE [dbo].[InsertAccount] -- Thêm tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
     @Password NVARCHAR(200),
@@ -144,8 +153,8 @@ go
 --    @RoleName = N'Staff'
 
 
---drop PROCEDURE [[UpdateAccountWithRoleID]]
-CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
+--drop PROCEDURE [UpdateAccountWithRoleID]
+CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
     @Password NVARCHAR(200),
@@ -153,14 +162,25 @@ CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID]
 AS
 BEGIN
     SET NOCOUNT ON;
-    UPDATE [dbo].[Account]
-    SET DisplayName = @DisplayName,
-        Password = @Password
-    WHERE AccountName = @AccountName
-    UPDATE [dbo].[RoleAccount]
-    SET RoleID = @NewRoleID
-    WHERE AccountName = @AccountName
-    SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
+    IF EXISTS (
+        SELECT 1
+        FROM [dbo].[RoleAccount]
+        WHERE AccountName = @AccountName
+    )
+    BEGIN
+        UPDATE [dbo].[Account]
+        SET DisplayName = @DisplayName,
+            Password = @Password
+        WHERE AccountName = @AccountName
+        UPDATE [dbo].[RoleAccount]
+        SET RoleID = @NewRoleID
+        WHERE AccountName = @AccountName
+        SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
+    END
+    ELSE
+    BEGIN
+        SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message
+    END
 END
 GO
 
@@ -168,10 +188,10 @@ GO
 --    @AccountName = N'nguyenthiennhan', 
 --    @DisplayName = N'Nguyen Thien Nhan', 
 --    @Password = N'123456789', 
---    @NewRoleID = 1 
+--    @NewRoleID = 1
 
 --drop PROCEDURE [DeleteAccountWithRole]
-CREATE PROCEDURE [dbo].[DeleteAccountWithRole]
+CREATE PROCEDURE [dbo].[DeleteAccountWithRole] -- Xóa tài khoản
     @AccountName NVARCHAR(100)
 AS
 BEGIN
@@ -188,7 +208,7 @@ GO
 --    @AccountName = N'test' 
 
 --drop PROCEDURE [UpdateRoleAccountStatus]
-CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus]
+CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus] -- Cập nhật trạng thái quyền của tài khoản
     @AccountName NVARCHAR(100),
     @Actived BIT
 AS

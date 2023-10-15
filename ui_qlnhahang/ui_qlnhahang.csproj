@@ -82,11 +82,17 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>C:\Users\TGC\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="BillDetail.Designer.cs">
       <DependentUpon>BillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorderForm.Designer.cs">
+      <DependentUpon>BorderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeInfo.cs">
       <SubType>Form</SubType>
@@ -176,6 +188,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessBox.Designer.cs">
+      <DependentUpon>MessBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +224,9 @@
     <EmbeddedResource Include="BillDetail.resx">
       <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BorderForm.resx">
+      <DependentUpon>BorderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfo.resx">
       <DependentUpon>ChangeInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessBox.resx">
+      <DependentUpon>MessBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

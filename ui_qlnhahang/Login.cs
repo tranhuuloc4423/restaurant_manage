@@ -14,7 +14,7 @@ using ui_qlnhahang.Properties;
 
 namespace ui_qlnhahang
 {
-    public partial class Login : Form
+    public partial class Login : BorderForm
     {
         public Login()
         {
@@ -32,7 +32,10 @@ namespace ui_qlnhahang
                 this.Hide();
                 f.ShowDialog();
             }
-            else MessageBox.Show("Sai tài khoản mật khẩu");
+            else {
+                MessBox mb = new MessBox("Sai tài khoản mật khẩu");
+                mb.ShowDialog();
+            }
             
         }
         bool checkLogin(string tk, string mk)
@@ -54,6 +57,7 @@ namespace ui_qlnhahang
         {
             txtmk.PasswordChar = '*';
             pbHide.BringToFront();
+            this.KeyPreview = true;
         }
 
         private void pbShow_Click(object sender, EventArgs e)
@@ -71,6 +75,14 @@ namespace ui_qlnhahang
             {
                 txtmk.PasswordChar = '\0';
                 pbShow.BringToFront();
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap_Click(sender, e);
             }
         }
     }

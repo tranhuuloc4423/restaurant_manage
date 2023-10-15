@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,8 @@ namespace ui_qlnhahang
     public partial class TableManage : Form
     {
         string mainquery = "select * from [Table]";
+        BunifuTextBox[] myTextBoxes;
+
         public TableManage()
         {
             InitializeComponent();
@@ -26,27 +30,23 @@ namespace ui_qlnhahang
             string query = "select * from [Table]";
             GetAllData(query, gvTable);
             txtNameTable.Clear();
-        }
-
-        private void handleData(string name, string query, string desc, object[] parameter = null)
-        {
-            DataProvider dataprovider = new DataProvider();
-            dataprovider.ExecuteNonQueryProvider(name, query, parameter);
-            MessageBox.Show(desc);
-            GetAllData(mainquery, gvTable);
+            myTextBoxes = new BunifuTextBox[] { txtNameTable };
+            handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNameTable.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên danh mục món ăn");
+                MessBox mb = new MessBox("Vui lòng nhập tên bàn!");
+                mb.ShowDialog();
                 return;
             }
             string name = "Table_Insert";
-            string query = "@Name @Status";
+            string procedureParams = "@Name @Status";
             string desc = "Thêm bàn thành công!";
-            handleData(name, query, desc, new object[] { txtNameTable.Text, 0 });
+            handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { txtNameTable.Text, 0 });
+            handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -56,17 +56,21 @@ namespace ui_qlnhahang
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
                 if (string.IsNullOrEmpty(txtNameTable.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập tên bàn!");
+                    MessBox mb = new MessBox("Vui lòng nhập tên bàn!");
+                    mb.ShowDialog();
                     return;
                 }
-                else
-                {
-                    object id = selectedRow.Cells[0].Value;
-                    string name = "Table_Update";
-                    string query = "@ID @Name @Status";
-                    string desc = "Cập nhật bàn thành công!";
-                    handleData(name, query, desc, new object[] { id, txtNameTable.Text, 0 });
-                }
+                object id = selectedRow.Cells[0].Value;
+                string name = "Table_Update";
+                string procedureParams = "@ID @Name @Status";
+                string desc = "Cập nhật bàn thành công!";
+                handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { id, txtNameTable.Text, 0 });
+                handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
+            }
+            else
+            {
+                MessBox mb = new MessBox("Vui lòng chọn bàn để sửa!");
+                mb.ShowDialog();
             }
         }
 
@@ -76,10 +80,16 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
                 string name = "Table_Delete";
-                string query = "@ID";
+                string procedureParams = "@ID";
                 string desc = "Xoá bàn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                handleData(name, query, desc, new object[] { id });
+                handleProcedure(mainquery, name, procedureParams,gvTable, desc, new object[] { id });
+                handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
+            }
+            else
+            {
+                MessBox mb = new MessBox("Vui lòng chọn bàn để xoá!");
+                mb.ShowDialog();
             }
         }
 
@@ -89,6 +99,16 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
                 txtNameTable.Text = selectedRow.Cells[1].Value.ToString();
+            }
+        }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            string columnName = "Name";
+            handleFilter(gvTable, txtSearch, mainquery, columnName);
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                handleResetTextbox(gvTable, txtSearch, myTextBoxes);
             }
         }
     }
