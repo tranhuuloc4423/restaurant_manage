@@ -246,7 +246,12 @@ namespace ui_qlnhahang
                         connection.Close();
                     }
                 }
+                // Lấy ID của hóa đơn được chọn
+               
 
+                // Tạo form Chi tiết hóa đơn và truyền ID cho nó
+                BillDetail detailForm = new BillDetail(invoiceID);
+                detailForm.ShowDialog();
                 order.OrderItems.Clear();
 
             }
