@@ -464,7 +464,7 @@ namespace ui_qlnhahang
                 if (buttons.Length > 0 && buttons[0] is Button)
                 {
                     Button button = (Button)buttons[0];
-                    button.BackColor = Color.Red; // Set the desired color
+                    button.BackgroundImage = Resources.dining_table; // Set the desired color
                 }
             
 
@@ -574,10 +574,10 @@ namespace ui_qlnhahang
                 Button tableButton = new Button();
                 tableButton.Text = row["Name"].ToString();
                 tableButton.Name = "btnTable_" + row["ID"].ToString();
-                tableButton.Width = 75;
-                tableButton.Height = 75;
+                tableButton.Width = 100;
+                tableButton.Height = 100;
                 
-                tableButton.BackgroundImage = Resources.dining_table;
+                tableButton.BackgroundImage = Resources.emty_table;
                 tableButton.BackgroundImageLayout = ImageLayout.Stretch;
                 //tableButton.Image =
                 tableButton.FlatStyle = FlatStyle.Flat;
@@ -847,7 +847,7 @@ namespace ui_qlnhahang
             if (buttons.Length > 0 && buttons[0] is Button)
             {
                 Button button = (Button)buttons[0];
-                button.BackColor = Color.Transparent; // Set the desired color
+                button.BackgroundImage = Resources.emty_table; // Set the desired color
             }
         }
 
