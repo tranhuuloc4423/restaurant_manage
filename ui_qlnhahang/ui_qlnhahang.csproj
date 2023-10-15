@@ -327,6 +327,7 @@
     <Content Include="Properties\order-food.png" />
     <Content Include="Properties\restaurant.png" />
     <Content Include="Properties\user.png" />
+    <Content Include="Resources\emty-table.png" />
     <Content Include="Resources\table.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\hide.png" />
