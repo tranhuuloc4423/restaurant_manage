@@ -44,8 +44,8 @@ namespace ui_qlnhahang
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            CustomMessBox mb = new CustomMessBox("Phần mềm quản lý nhà hàng của chúng tôi là một giải pháp toàn diện và dễ sử dụng để quản lý mọi khía cạnh của hoạt động nhà hàng. Với giao diện thân thiện và dễ sử dụng, phần mềm giúp bạn tối ưu hóa quy trình làm việc, tăng cường hiệu suất và cải thiện trải nghiệm của khách hàng.\r\n\r\nGiao diện người dùng được thiết kế một cách trực quan và thân thiện, cho phép bạn nhanh chóng thao tác và tiếp cận các chức năng quản lý quan trọng.");
-            mb.ShowDialog();
+            InfoMess f = new InfoMess();
+            f.ShowDialog();
         }
     }
 }
