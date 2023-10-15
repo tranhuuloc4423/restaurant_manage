@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelBtns = new Bunifu.UI.WinForms.BunifuPanel();
             this.FoodlistDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -45,27 +44,12 @@
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnCheckout = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnDelFood = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAddFood = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnDelFood = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panelBtns = new Bunifu.UI.WinForms.BunifuPanel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodDataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelBtns
-            // 
-            this.panelBtns.AutoScroll = true;
-            this.panelBtns.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.panelBtns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBtns.BackgroundImage")));
-            this.panelBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
-            this.panelBtns.BorderRadius = 20;
-            this.panelBtns.BorderThickness = 1;
-            this.panelBtns.Location = new System.Drawing.Point(23, 33);
-            this.panelBtns.Margin = new System.Windows.Forms.Padding(2);
-            this.panelBtns.Name = "panelBtns";
-            this.panelBtns.ShowBorders = true;
-            this.panelBtns.Size = new System.Drawing.Size(512, 475);
-            this.panelBtns.TabIndex = 24;
             // 
             // FoodlistDropdown1
             // 
@@ -340,7 +324,7 @@
             this.btnCheckout.ActiveLineColor = System.Drawing.Color.Coral;
             this.btnCheckout.BackColor = System.Drawing.Color.LightBlue;
             this.btnCheckout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckout.BackgroundImage")));
-            this.btnCheckout.ButtonText = "Tính Tiền";
+            this.btnCheckout.ButtonText = "Tính tiền";
             this.btnCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckout.ForeColor = System.Drawing.Color.Black;
@@ -349,39 +333,13 @@
             this.btnCheckout.IdleFillColor = System.Drawing.Color.AliceBlue;
             this.btnCheckout.IdleForecolor = System.Drawing.Color.Black;
             this.btnCheckout.IdleLineColor = System.Drawing.Color.Black;
-            this.btnCheckout.Location = new System.Drawing.Point(558, 508);
+            this.btnCheckout.Location = new System.Drawing.Point(558, 518);
             this.btnCheckout.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(122, 57);
-            this.btnCheckout.TabIndex = 46;
+            this.btnCheckout.Size = new System.Drawing.Size(107, 47);
+            this.btnCheckout.TabIndex = 49;
             this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
-            // 
-            // btnDelFood
-            // 
-            this.btnDelFood.ActiveBorderThickness = 2;
-            this.btnDelFood.ActiveCornerRadius = 20;
-            this.btnDelFood.ActiveFillColor = System.Drawing.Color.AliceBlue;
-            this.btnDelFood.ActiveForecolor = System.Drawing.Color.Coral;
-            this.btnDelFood.ActiveLineColor = System.Drawing.Color.Coral;
-            this.btnDelFood.BackColor = System.Drawing.Color.LightBlue;
-            this.btnDelFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelFood.BackgroundImage")));
-            this.btnDelFood.ButtonText = "Xoá Món";
-            this.btnDelFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelFood.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelFood.ForeColor = System.Drawing.Color.Black;
-            this.btnDelFood.IdleBorderThickness = 2;
-            this.btnDelFood.IdleCornerRadius = 20;
-            this.btnDelFood.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnDelFood.IdleForecolor = System.Drawing.Color.Black;
-            this.btnDelFood.IdleLineColor = System.Drawing.Color.Black;
-            this.btnDelFood.Location = new System.Drawing.Point(920, 83);
-            this.btnDelFood.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnDelFood.Name = "btnDelFood";
-            this.btnDelFood.Size = new System.Drawing.Size(107, 47);
-            this.btnDelFood.TabIndex = 47;
-            this.btnDelFood.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDelFood.Click += new System.EventHandler(this.btnDelFood_Click);
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click_1);
             // 
             // btnAddFood
             // 
@@ -409,15 +367,57 @@
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
+            // btnDelFood
+            // 
+            this.btnDelFood.ActiveBorderThickness = 2;
+            this.btnDelFood.ActiveCornerRadius = 20;
+            this.btnDelFood.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnDelFood.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnDelFood.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnDelFood.BackColor = System.Drawing.Color.LightBlue;
+            this.btnDelFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelFood.BackgroundImage")));
+            this.btnDelFood.ButtonText = "Xoá Món";
+            this.btnDelFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelFood.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelFood.ForeColor = System.Drawing.Color.Black;
+            this.btnDelFood.IdleBorderThickness = 2;
+            this.btnDelFood.IdleCornerRadius = 20;
+            this.btnDelFood.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnDelFood.IdleForecolor = System.Drawing.Color.Black;
+            this.btnDelFood.IdleLineColor = System.Drawing.Color.Black;
+            this.btnDelFood.Location = new System.Drawing.Point(920, 83);
+            this.btnDelFood.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnDelFood.Name = "btnDelFood";
+            this.btnDelFood.Size = new System.Drawing.Size(107, 47);
+            this.btnDelFood.TabIndex = 47;
+            this.btnDelFood.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelFood.Click += new System.EventHandler(this.btnDelFood_Click);
+            // 
+            // panelBtns
+            // 
+            this.panelBtns.AutoScroll = true;
+            this.panelBtns.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.panelBtns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBtns.BackgroundImage")));
+            this.panelBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBtns.BorderColor = System.Drawing.Color.Transparent;
+            this.panelBtns.BorderRadius = 20;
+            this.panelBtns.BorderThickness = 1;
+            this.panelBtns.Location = new System.Drawing.Point(23, 33);
+            this.panelBtns.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBtns.Name = "panelBtns";
+            this.panelBtns.ShowBorders = true;
+            this.panelBtns.Size = new System.Drawing.Size(512, 532);
+            this.panelBtns.TabIndex = 24;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1039, 576);
+            this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.btnDelFood);
-            this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.bunifuLabel7);
             this.Controls.Add(this.bunifuLabel5);
             this.Controls.Add(this.TypeDropdown);
@@ -451,8 +451,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
         private Bunifu.UI.WinForms.BunifuDataGridView FoodDataGridView1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckout;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelFood;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddFood;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckout;
     }
 }
