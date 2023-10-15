@@ -252,7 +252,7 @@ ALTER TABLE [dbo].[RoleAccount] CHECK CONSTRAINT [FK_RoleAccount_Role]
 GO
 
 --LẤY THÔNG TIN
-Select * from [Account]
+select * from [Account]
 select * from [Role]
 select * from [RoleAccount]
 select * from [BillDetails]

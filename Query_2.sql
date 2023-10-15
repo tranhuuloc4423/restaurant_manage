@@ -244,20 +244,24 @@ end
 go
 -----------------------BILLS-------------------------
 --drop procedure Bills_Insert
-create procedure Bills_Insert -- THÊM HÓA ĐƠN
-@id int output,
-@Name nvarchar(1000),
-@TableID int,
-@Amount int,
-@Status bit,
-@CheckoutDate smalldatetime,
-@Account nvarchar(100)
-as
-begin
-	insert into Bills(Name, TableID, Amount, Status, CheckoutDate, Account) values (@Name, @TableID, @Amount, @Status,@CheckoutDate, @Account)
-	SELECT @id = SCOPE_IDENTITY()
-end
-go
+CREATE PROCEDURE Bills_Insert
+    @id INT OUTPUT,
+    @TableID INT,
+    @Amount INT,
+    @Status BIT,
+    @CheckoutDate Date,
+    @Account NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @Name NVARCHAR(1000)
+    DECLARE @NextID INT
+    SELECT @NextID = ISNULL(MAX(id), 0) + 1 FROM Bills
+    SET @Name = N'Hóa đơn ' + CAST(@NextID AS NVARCHAR(10))
+    INSERT INTO Bills (Name, TableID, Amount, Status, CheckoutDate, Account)
+    VALUES (@Name, @TableID, @Amount, @Status, @CheckoutDate, @Account)
+    SELECT @id = SCOPE_IDENTITY()
+END
+GO
 
 --drop procedure Bills_GetByDate
 create procedure Bills_GetByDate -- XUẤT DANH SÁCH HÓA ĐƠN THEO NGÀY

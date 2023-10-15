@@ -244,3 +244,4 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
 >>>>>>> 423ca762b45456d1eb3353772817b226969f7354
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.InfoMess.resources
