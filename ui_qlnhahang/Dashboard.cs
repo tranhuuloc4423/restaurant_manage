@@ -39,6 +39,9 @@ namespace ui_qlnhahang
                 subForm.Dispose();
                 panel.Controls.Remove(subForm);
             }
+            activeButton(title);
+            Loading fl = new Loading();
+            fl.ShowDialog();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
@@ -46,7 +49,7 @@ namespace ui_qlnhahang
             panel.Controls.Add(subForm);
             form.Show();
             changeTitle(title);
-            activeButton(title);
+            
         }
 
         void activeButton(string title)
