@@ -131,20 +131,21 @@ namespace ui_qlnhahang
                 }
             }
             int invoiceID = 0;
+            
 
             public void checkoutToBills(int index,string staffname)
             {
                 DataProvider provider = new DataProvider();
                 OrderListed order = orders[index];
                 int totalAmount = 0;
-
+              
                 foreach (OrderItem item in order.OrderItems)
                 {
                     int quantity = item.Quantity;
                     int amount = item.Price * quantity;
                     totalAmount += amount;
                 }
-                if (totalAmount !=0) {
+                if (totalAmount != 0) {
                     string name = "Hóa đơn " + (invoiceID + 1);
                     int tableID = index;
                     //int tableID = index + 1;
@@ -172,6 +173,14 @@ namespace ui_qlnhahang
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
+
+                    
+                }
+                else
+                {
+                    MessBox mb = new MessBox("Vui lòng đặt món ăn!");
+                    mb.ShowDialog();
+                    return;
                 }
                 
 
@@ -227,12 +236,14 @@ namespace ui_qlnhahang
                     }
                 }
                 // Lấy ID của hóa đơn được chọn
-               
+                if ( order.OrderItems.Count != 0) {
+                    BillDetail detailForm = new BillDetail(invoiceID);
+                    detailForm.ShowDialog();
+                    return;
+                }
+                order.OrderItems.Clear();
 
                 // Tạo form Chi tiết hóa đơn và truyền ID cho nó
-                BillDetail detailForm = new BillDetail(invoiceID);
-                detailForm.ShowDialog();
-                order.OrderItems.Clear();
 
             }
 
@@ -680,9 +691,10 @@ namespace ui_qlnhahang
 
             //orderManager.checkoutToBillDetails(tableindex, label1);
             orderManager.checkoutToBills(tableindex, tk);
-
+            
+            
             orderManager.checkoutToBillDetails(tableindex);
-
+            
             FoodDataGridView1.Rows.Clear();
         }
     }
