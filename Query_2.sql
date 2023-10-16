@@ -154,6 +154,21 @@ go
 --    @Password = N'123456',
 --    @RoleName = N'Staff'
 
+--drop PROCEDURE [UpdateAccount]
+CREATE PROCEDURE [dbo].[UpdateAccount]
+    @AccountName NVARCHAR(100),
+    @DisplayName NVARCHAR(100),
+    @Password NVARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [dbo].[Account]
+    SET DisplayName = @DisplayName,
+        Password = @Password
+    WHERE AccountName = @AccountName
+    SELECT 'Thông tin tài khoản đã được cập nhật thành công' AS Message
+END
+GO
 
 --drop PROCEDURE [UpdateAccountWithRoleID]
 CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
