@@ -44,7 +44,6 @@
             this.gvTable = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtNameTable = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -86,7 +85,7 @@
             this.gvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -97,8 +96,7 @@
             this.gvTable.ColumnHeadersHeight = 40;
             this.gvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tableID,
-            this.TableName,
-            this.tableState});
+            this.TableName});
             this.gvTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.gvTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gvTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -117,7 +115,7 @@
             this.gvTable.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.gvTable.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.gvTable.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
@@ -158,13 +156,6 @@
             this.TableName.HeaderText = "Tên bàn";
             this.TableName.Name = "TableName";
             this.TableName.ReadOnly = true;
-            // 
-            // tableState
-            // 
-            this.tableState.FillWeight = 111.9289F;
-            this.tableState.HeaderText = "Trạng thái";
-            this.tableState.Name = "tableState";
-            this.tableState.ReadOnly = true;
             // 
             // bunifuSeparator1
             // 
@@ -462,13 +453,12 @@
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Bunifu.UI.WinForms.BunifuTextBox txtNameTable;
         private Bunifu.UI.WinForms.BunifuDataGridView gvTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tableID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TableName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tableState;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
         private Bunifu.Framework.UI.BunifuThinButton2 btnEdit;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tableID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TableName;
     }
 }

@@ -24,13 +24,14 @@ namespace ui_qlnhahang
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            
             string tk = txttk.Text;
             string mk = txtmk.Text;
             if (checkLogin(tk, mk))
             {
-                Dashboard f = new Dashboard(tk);
                 this.Hide();
-                f.ShowDialog();
+                Dashboard fdb = new Dashboard(tk);
+                fdb.ShowDialog();
             }
             else {
                 MessBox mb = new MessBox("Sai tài khoản mật khẩu");

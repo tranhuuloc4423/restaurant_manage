@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillManage));
             this.gvBill = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.billID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billTableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billState = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +55,9 @@
             this.gvBill.AllowUserToDeleteRows = false;
             this.gvBill.AllowUserToResizeColumns = false;
             this.gvBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.gvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.gvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvBill.BackgroundColor = System.Drawing.Color.LightSkyBlue;
@@ -66,18 +65,17 @@
             this.gvBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gvBill.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.gvBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvBill.ColumnHeadersHeight = 40;
             this.gvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.billID,
-            this.billName,
             this.billTableID,
             this.billTotal,
             this.billState,
@@ -101,14 +99,14 @@
             this.gvBill.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.gvBill.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.gvBill.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvBill.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvBill.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvBill.EnableHeadersVisualStyles = false;
             this.gvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.gvBill.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -135,14 +133,6 @@
             this.billID.ReadOnly = true;
             this.billID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.billID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // billName
-            // 
-            this.billName.HeaderText = "Tên hoá đơn";
-            this.billName.Name = "billName";
-            this.billName.ReadOnly = true;
-            this.billName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.billName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // billTableID
             // 
@@ -338,14 +328,13 @@
         private Bunifu.UI.WinForms.BunifuDatePicker dpFrom;
         private Bunifu.UI.WinForms.BunifuDatePicker dpTo;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPrintBill;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnStatistic;
         private System.Windows.Forms.DataGridViewTextBoxColumn billID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billName;
         private System.Windows.Forms.DataGridViewTextBoxColumn billTableID;
         private System.Windows.Forms.DataGridViewTextBoxColumn billTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn billState;
         private System.Windows.Forms.DataGridViewTextBoxColumn billCheckout;
         private System.Windows.Forms.DataGridViewTextBoxColumn billAccount;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnPrintBill;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnStatistic;
     }
 }

@@ -20,6 +20,7 @@ namespace ui_qlnhahang
         string queryRoleName = "select [RoleName] from [Role]";
         string queryRole = "select *  from [Role]";
         DataTable roles;
+        DataTable list;
         BunifuTextBox[] myTextBoxes;
         public AccountManage()
         {
@@ -44,30 +45,45 @@ namespace ui_qlnhahang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtUserName.Text))
-            {
-                MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
-                mb.ShowDialog();
-                return;
-            }
-
-            if (String.IsNullOrEmpty(txtUserNameDisplay.Text))
-            {
-                MessBox mb = new MessBox("Vui lòng nhập tên hiển thị!");
-                mb.ShowDialog();
-                return;
-            }
-
-            if (String.IsNullOrEmpty(txtPass.Text))
-            {
-                MessBox mb = new MessBox("Vui lòng nhập mật khẩu!");
-                mb.ShowDialog();
-                return;
-            }
-            
             string name = txtUserName.Text.Trim();
             string displayName = txtUserNameDisplay.Text.Trim();
             string pass = txtPass.Text.Trim();
+            if (String.IsNullOrEmpty(name))
+            {
+                MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
+                mb.ShowDialog();
+                txtUserName.Clear();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(displayName))
+            {
+                MessBox mb = new MessBox("Vui lòng nhập tên hiển thị!");
+                mb.ShowDialog();
+                txtUserNameDisplay.Clear();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(pass))
+            {
+                MessBox mb = new MessBox("Vui lòng nhập mật khẩu!");
+                mb.ShowDialog();
+                txtPass.Clear();
+                return;
+            }
+
+            foreach (DataRow item in GetAllData(mainquery, gvAccount).Rows)
+            {
+                if (item["Name"].ToString().Equals(name))
+                {
+                    MessBox mb = new MessBox("Tên tài khoản đã có trong cơ sỡ dữ liệu!");
+                    mb.ShowDialog();
+                    handleResetTextbox(gvAccount, txtUserName, myTextBoxes);
+                    return;
+                }
+            }
+
+
             string role = dpdType.Text;
 
             string procedureName = "InsertAccount";
@@ -82,32 +98,33 @@ namespace ui_qlnhahang
             if (gvAccount.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvAccount.SelectedRows[0];
-
-                if (String.IsNullOrEmpty(txtUserName.Text))
-                {
-                    MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
-                    mb.ShowDialog();
-                    return;
-                }
-
-                if (String.IsNullOrEmpty(txtUserNameDisplay.Text))
-                {
-                    MessBox mb = new MessBox("Vui lòng nhập tên hiển thị!");
-                    mb.ShowDialog();
-                    return;
-                }
-
-                if (String.IsNullOrEmpty(txtPass.Text))
-                {
-                    MessBox mb = new MessBox("Vui lòng nhập mật khẩu!");
-                    mb.ShowDialog();
-                    return;
-                }
-
-
                 string name = txtUserName.Text.Trim();
                 string displayName = txtUserNameDisplay.Text.Trim();
                 string pass = txtPass.Text.Trim();
+                if (String.IsNullOrEmpty(name))
+                {
+                    MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
+                    mb.ShowDialog();
+                    txtUserName.Clear();
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(displayName))
+                {
+                    MessBox mb = new MessBox("Vui lòng nhập tên hiển thị!");
+                    mb.ShowDialog();
+                    txtUserNameDisplay.Clear();
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(pass))
+                {
+                    MessBox mb = new MessBox("Vui lòng nhập mật khẩu!");
+                    mb.ShowDialog();
+                    txtPass.Clear();
+                    return;
+                }
+                
                 int roleId = 0;
                 string role = dpdType.Text;
                 foreach (DataRow row in roles.Rows)
@@ -122,6 +139,7 @@ namespace ui_qlnhahang
                 {
                     MessBox mb = new MessBox("Không thể đổi tên đăng nhập tài khoản!");
                     mb.ShowDialog();
+                    txtUserName.Clear();
                     return;
                 }
 
@@ -176,7 +194,6 @@ namespace ui_qlnhahang
             if (String.IsNullOrEmpty(txtSearch.Text))
             {
                 handleResetTextbox(gvAccount, txtSearch, myTextBoxes);
-
             }
         }
     }

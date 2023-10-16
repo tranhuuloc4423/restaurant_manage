@@ -44,6 +44,7 @@
             // 
             this.lblTitle.AllowParentOverrides = false;
             this.lblTitle.AutoEllipsis = false;
+            this.lblTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTitle.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblTitle.Font = new System.Drawing.Font("Cascadia Code", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTitle.Location = new System.Drawing.Point(106, 48);
@@ -82,7 +83,7 @@
             this.pbIcon.BorderRadius = 30;
             this.pbIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbIcon.Image")));
             this.pbIcon.IsCircle = true;
-            this.pbIcon.Location = new System.Drawing.Point(30, 36);
+            this.pbIcon.Location = new System.Drawing.Point(23, 58);
             this.pbIcon.Name = "pbIcon";
             this.pbIcon.Size = new System.Drawing.Size(60, 60);
             this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

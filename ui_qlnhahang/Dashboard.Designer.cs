@@ -38,13 +38,13 @@
             this.btnCateManage = new System.Windows.Forms.Button();
             this.btnFoodManage = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.Panel();
-            this.lblaccountactive = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnDangXuat = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lblaccountactive = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnExit = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnMinimize = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.panel = new Bunifu.UI.WinForms.BunifuPanel();
             this.pbHeader = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.btnDangXuat = new Bunifu.Framework.UI.BunifuThinButton2();
             this.sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -190,6 +190,7 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sidebar.Controls.Add(this.btnDangXuat);
             this.sidebar.Controls.Add(this.btnOpenOrder);
             this.sidebar.Controls.Add(this.bunifuPictureBox1);
@@ -204,6 +205,49 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(225, 668);
             this.sidebar.TabIndex = 15;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.ActiveBorderThickness = 2;
+            this.btnDangXuat.ActiveCornerRadius = 20;
+            this.btnDangXuat.ActiveFillColor = System.Drawing.Color.AliceBlue;
+            this.btnDangXuat.ActiveForecolor = System.Drawing.Color.Coral;
+            this.btnDangXuat.ActiveLineColor = System.Drawing.Color.Coral;
+            this.btnDangXuat.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDangXuat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.BackgroundImage")));
+            this.btnDangXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDangXuat.ButtonText = "Đăng Xuất";
+            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangXuat.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btnDangXuat.IdleBorderThickness = 2;
+            this.btnDangXuat.IdleCornerRadius = 20;
+            this.btnDangXuat.IdleFillColor = System.Drawing.Color.AliceBlue;
+            this.btnDangXuat.IdleForecolor = System.Drawing.Color.Black;
+            this.btnDangXuat.IdleLineColor = System.Drawing.Color.Black;
+            this.btnDangXuat.Location = new System.Drawing.Point(49, 591);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(121, 48);
+            this.btnDangXuat.TabIndex = 44;
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
+            // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 98;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(11, 11);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(197, 197);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 1;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // lblaccountactive
             // 
@@ -221,22 +265,6 @@
             this.lblaccountactive.Text = "Dashboard";
             this.lblaccountactive.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.lblaccountactive.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuPictureBox1
-            // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 98;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(197, 197);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 1;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // btnExit
             // 
@@ -305,33 +333,6 @@
             this.pbHeader.TabIndex = 0;
             this.pbHeader.TabStop = false;
             this.pbHeader.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.ActiveBorderThickness = 2;
-            this.btnDangXuat.ActiveCornerRadius = 20;
-            this.btnDangXuat.ActiveFillColor = System.Drawing.Color.AliceBlue;
-            this.btnDangXuat.ActiveForecolor = System.Drawing.Color.Coral;
-            this.btnDangXuat.ActiveLineColor = System.Drawing.Color.Coral;
-            this.btnDangXuat.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnDangXuat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.BackgroundImage")));
-            this.btnDangXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDangXuat.ButtonText = "Đăng Xuất";
-            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangXuat.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
-            this.btnDangXuat.IdleBorderThickness = 2;
-            this.btnDangXuat.IdleCornerRadius = 20;
-            this.btnDangXuat.IdleFillColor = System.Drawing.Color.AliceBlue;
-            this.btnDangXuat.IdleForecolor = System.Drawing.Color.Black;
-            this.btnDangXuat.IdleLineColor = System.Drawing.Color.Black;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 626);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(120, 42);
-            this.btnDangXuat.TabIndex = 44;
-            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
             // Dashboard
             // 

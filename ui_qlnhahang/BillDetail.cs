@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
@@ -31,7 +32,6 @@ namespace ui_qlnhahang
         private void BillDetail_Load(object sender, EventArgs e)
         {
             LoadBillDetail();
-
         }
 
         private void LoadBillDetail()
@@ -52,7 +52,6 @@ namespace ui_qlnhahang
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     bunifuDataGridView1.DataSource = dataTable;
-
 
                     SqlCommand command2 = new SqlCommand("Amount_GetById", connection);
                     command2.CommandType = CommandType.StoredProcedure;
@@ -107,6 +106,30 @@ namespace ui_qlnhahang
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+
+            foreach (DataGridViewColumn column in bunifuDataGridView1.Columns)
+            {
+                if (column.DataPropertyName == "InvoiceID") 
+                {
+                    column.HeaderText = "Mã hóa đơn"; 
+                }
+                else if (column.DataPropertyName == "Name")
+                {
+                    column.HeaderText = "Tên món ăn";
+                }
+                else if (column.DataPropertyName == "Quantity")
+                {
+                    column.HeaderText = "Số lượng";
+                }
+                else if (column.DataPropertyName == "Price")
+                {
+                    column.HeaderText = "Đơn giá";
+                }
+
+
+                // Nếu bạn muốn ẩn một cột cụ thể, bạn có thể sử dụng:
+                // column.Visible = false;
             }
         }
 

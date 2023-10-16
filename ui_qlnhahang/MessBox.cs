@@ -9,10 +9,9 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Framework.UI;
 namespace ui_qlnhahang
 {
-    public partial class MessBox : BunifuForm
+    public partial class MessBox : BorderForm
     {
         string title;
         public MessBox(string title)
@@ -38,11 +37,11 @@ namespace ui_qlnhahang
         void handleTitleBounds()
         {
             lblTitle.Anchor = AnchorStyles.None;
-            int labelWidth = lblTitle.Width; 
-            int labelHeight = lblTitle.Height; 
+            int labelWidth = lblTitle.Width;
+            int labelHeight = lblTitle.Height;
 
-            int labelX = 100; 
-            int labelY = (this.Height - labelHeight) / 2; 
+            int labelX = 100;
+            int labelY = (this.Height - labelHeight) / 2;
 
             lblTitle.SetBounds(labelX, labelY, labelWidth, labelHeight);
         }
@@ -65,8 +64,8 @@ namespace ui_qlnhahang
             int iconWidth = btnExit.Width;
             int iconHeight = btnExit.Height;
 
-            int iconX = (this.Width - 40);
-            int iconY = 20;
+            int iconX = (this.Width - 50);
+            int iconY = 15;
             btnExit.SetBounds(iconX, iconY, iconWidth, iconHeight);
 
         }
