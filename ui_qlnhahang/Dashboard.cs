@@ -130,6 +130,12 @@ namespace ui_qlnhahang
             Order form = new Order(tk);
             navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
+            btnHome.Enabled = false;
+            btnAccManage.Enabled = false;
+            btnBillManage.Enabled = false;
+            btnCateManage.Enabled = false;
+            btnTableManage.Enabled = false;
+            btnFoodManage.Enabled = false;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
