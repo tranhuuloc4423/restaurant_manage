@@ -39,6 +39,9 @@ namespace ui_qlnhahang
                 subForm.Dispose();
                 panel.Controls.Remove(subForm);
             }
+            activeButton(title);
+            Loading fl = new Loading();
+            fl.ShowDialog();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
@@ -46,7 +49,7 @@ namespace ui_qlnhahang
             panel.Controls.Add(subForm);
             form.Show();
             changeTitle(title);
-            activeButton(title);
+            
         }
 
         void activeButton(string title)
@@ -127,6 +130,12 @@ namespace ui_qlnhahang
             Order form = new Order(tk);
             navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
+            btnHome.Enabled = false;
+            btnAccManage.Enabled = false;
+            btnBillManage.Enabled = false;
+            btnCateManage.Enabled = false;
+            btnTableManage.Enabled = false;
+            btnFoodManage.Enabled = false;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
