@@ -101,6 +101,9 @@ D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.cspro
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Loading.resources
+<<<<<<< HEAD
+D:\QLNH\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Loading.resources
+=======
 G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Loading.resources
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe.config
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\bin\Debug\ui_qlnhahang.exe
@@ -130,3 +133,4 @@ C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.csproj.CopyComplete
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 C:\Users\Quan\Desktop\quanlynhahang 4-10-2023\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
+>>>>>>> 978c48a3e183c48366c1730f9d9f66820119309e
