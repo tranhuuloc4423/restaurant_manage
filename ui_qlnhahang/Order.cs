@@ -239,7 +239,6 @@ namespace ui_qlnhahang
                 if ( order.OrderItems.Count != 0) {
                     BillDetail detailForm = new BillDetail(invoiceID);
                     detailForm.ShowDialog();
-                    return;
                 }
                 order.OrderItems.Clear();
 
@@ -430,8 +429,6 @@ namespace ui_qlnhahang
             {
                 int selectedIndex = FoodDataGridView1.SelectedRows[0].Index;
                 string selectedFoodName = FoodDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                MessBox mess = new MessBox(selectedFoodName);
-                mess.ShowDialog();
                 Food selectedFood = foodList.Find(food => food.FoodName == selectedFoodName);
                 orderManager.RemoveItemFromOrder(tableindex, selectedFood.FoodId);
                 FoodDataGridView1.Rows.Clear();

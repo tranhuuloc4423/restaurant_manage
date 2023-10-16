@@ -184,6 +184,23 @@ BEGIN
         SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message
     END
 END
+
+--------
+CREATE PROCEDURE [dbo].[Account_Update] -- Cập nhật tài khoản
+    @AccountName NVARCHAR(100),
+    @DisplayName NVARCHAR(100),
+    @Pass NVARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN
+        UPDATE [dbo].[Account]
+        SET DisplayName = @DisplayName,
+            Password = @Pass
+        WHERE AccountName = @AccountName
+    END
+END
+-----
 GO
 
 --EXEC [dbo].[UpdateAccountWithRoleID]

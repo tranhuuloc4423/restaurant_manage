@@ -25,9 +25,11 @@ namespace ui_qlnhahang
             CenterToScreen();
         }
         private string tk;
-        public Dashboard(string tk)
+        private string mk;
+        public Dashboard(string tk, string mk)
         {
             this.tk = tk;
+            this.mk = mk;
             InitializeComponent();
             CenterToScreen();
         }
@@ -139,17 +141,22 @@ namespace ui_qlnhahang
 
         private void btnOpenOrder_Click(object sender, EventArgs e)
         {
-            Order form = new Order(tk);
-            navigation(form, btnOpenOrder.Text);
-            pbHeader.Image = Resources.order_food;
+            
+            
             if (btnOpenOrder.Text.Equals("Bắt Đầu Order"))
             {
                 handleStateBtn(false);
+                Order form = new Order(tk);
+                navigation(form, btnOpenOrder.Text);
                 btnOpenOrder.Text = "Kết Thúc Order";
+                pbHeader.Image = Resources.order_food;
             } else
             {
                 handleStateBtn(true);
                 btnOpenOrder.Text = "Bắt Đầu Order";
+                Home formHome = new Home();
+                navigation(formHome, btnHome.Text);
+                pbHeader.Image = Resources.restaurant;
             }
         }
 
@@ -172,7 +179,7 @@ namespace ui_qlnhahang
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            Home form = new Home(tk);
+            Home form = new Home(tk, mk);
             navigation(form, btnHome.Text);
             activeButton(btnHome.Text);
             if(checkStaff(tk))

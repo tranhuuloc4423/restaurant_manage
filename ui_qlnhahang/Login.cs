@@ -30,7 +30,7 @@ namespace ui_qlnhahang
             if (checkLogin(tk, mk))
             {
                 this.Hide();
-                Dashboard fdb = new Dashboard(tk);
+                Dashboard fdb = new Dashboard(tk, mk);
                 fdb.ShowDialog();
             }
             else {

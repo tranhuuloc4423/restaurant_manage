@@ -350,6 +350,7 @@
     <None Include="Resources\emty-table1.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\Loading.gif" />
+    <None Include="Resources\foodie1.png" />
     <Content Include="Resources\table.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\hide.png" />
