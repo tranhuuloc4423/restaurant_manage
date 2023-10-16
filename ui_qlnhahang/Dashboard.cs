@@ -142,12 +142,25 @@ namespace ui_qlnhahang
             Order form = new Order(tk);
             navigation(form, btnOpenOrder.Text);
             pbHeader.Image = Resources.order_food;
-            btnHome.Enabled = false;
-            btnAccManage.Enabled = false;
-            btnBillManage.Enabled = false;
-            btnCateManage.Enabled = false;
-            btnTableManage.Enabled = false;
-            btnFoodManage.Enabled = false;
+            if (btnOpenOrder.Text.Equals("Bắt Đầu Order"))
+            {
+                handleStateBtn(false);
+                btnOpenOrder.Text = "Kết Thúc Order";
+            } else
+            {
+                handleStateBtn(true);
+                btnOpenOrder.Text = "Bắt Đầu Order";
+            }
+        }
+
+        void handleStateBtn(bool state)
+        {
+            btnHome.Enabled = state;
+            btnAccManage.Enabled = state;
+            btnBillManage.Enabled = state;
+            btnCateManage.Enabled = state;
+            btnTableManage.Enabled = state;
+            btnFoodManage.Enabled = state;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
