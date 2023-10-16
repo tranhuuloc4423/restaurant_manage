@@ -36,16 +36,29 @@ namespace ui_qlnhahang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtCate.Text))
+            string cateName = txtCate.Text.Trim();
+            if (string.IsNullOrEmpty(cateName))
             {
                 MessBox mb = new MessBox("Vui lòng nhập tên danh mục món ăn!");
                 mb.ShowDialog();
+                txtCate.Clear();
                 return;
+            }
+
+            foreach (DataRow item in GetAllData(mainquery, gvCate).Rows)
+            {
+                if (item["Name"].ToString().Equals(cateName))
+                {
+                    MessBox mb = new MessBox("Tên danh mục đã có trong cơ sỡ dữ liệu!");
+                    mb.ShowDialog();
+                    handleResetTextbox(gvCate, txtCate, myTextBoxes);
+                    return;
+                }
             }
             string name = "Category_Insert";
             string procedureParams = "@Name @Type";
             string desc = "Thêm danh mục món ăn thành công!";
-            handleProcedure(mainquery, name, procedureParams,gvCate, desc, new object[] { txtCate.Text, 1 });
+            handleProcedure(mainquery, name, procedureParams,gvCate, desc, new object[] { cateName, 1 });
             handleResetTextbox(gvCate, txtCate, myTextBoxes);
         }
 
@@ -54,10 +67,12 @@ namespace ui_qlnhahang
             if (gvCate.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvCate.SelectedRows[0];
-                if (string.IsNullOrEmpty(txtCate.Text))
+                string cateName = txtCate.Text.Trim();
+                if (string.IsNullOrEmpty(cateName))
                 {
                     MessBox mb = new MessBox("Vui lòng nhập tên danh mục món ăn!");
                     mb.ShowDialog();
+                    txtCate.Clear();
                     return;
                 }
 
@@ -65,7 +80,7 @@ namespace ui_qlnhahang
                 string name = "Category_Update";
                 string procedureParams = "@ID @Name @Type";
                 string desc = "Cập nhật danh mục món ăn thành công!";
-                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id, txtCate.Text, 1 });
+                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id, cateName, 1 });
                 handleResetTextbox(gvCate, txtCate, myTextBoxes);
             }
             else

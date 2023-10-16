@@ -64,8 +64,8 @@ namespace ui_qlnhahang
             int iconWidth = btnExit.Width;
             int iconHeight = btnExit.Height;
 
-            int iconX = (this.Width - 60);
-            int iconY = 20;
+            int iconX = (this.Width - 50);
+            int iconY = 15;
             btnExit.SetBounds(iconX, iconY, iconWidth, iconHeight);
 
         }

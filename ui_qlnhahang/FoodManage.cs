@@ -51,23 +51,27 @@ namespace ui_qlnhahang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtFoodName.Text))
+            string name = txtFoodName.Text.Trim();
+            string foodCateText = dpdCate.Text.Trim();
+            string price = txtPrice.Text.Trim();
+            
+            if (String.IsNullOrEmpty(name))
             {
                 MessBox mb = new MessBox("Vui lòng nhập tên món ăn!");
                 mb.ShowDialog();
+                txtFoodName.Clear();
                 return;
             }
 
-            if (String.IsNullOrEmpty(txtPrice.Text))
+            if (String.IsNullOrEmpty(price))
             {
                 MessBox mb = new MessBox("Vui lòng nhập giá món ăn!");
                 mb.ShowDialog();
-
+                txtPrice.Clear();
                 return;
             }
-            string name = txtFoodName.Text;
-            string foodCateText = dpdCate.Text;
-            int foodPrice = Convert.ToInt32(txtPrice.Text);
+            int foodPrice = Convert.ToInt32(price);
+
             int foodCateID = 0;
 
             foreach (DataRow row in categoryList.Rows)
@@ -76,6 +80,16 @@ namespace ui_qlnhahang
                 {
                     foodCateID = Convert.ToInt32(row["ID"]);
                     break;
+                }
+            }
+            foreach (DataRow item in GetAllData(mainquery, gvFood).Rows)
+            {
+                if (item["Name"].ToString().Equals(name))
+                {
+                    MessBox mb = new MessBox("Tên món ăn đã có trong cơ sỡ dữ liệu!");
+                    mb.ShowDialog();
+                    handleResetTextbox(gvFood, txtFoodName, myTextBoxes);
+                    return;
                 }
             }
             string nameProcedure = "[InsertFood]";
@@ -91,23 +105,27 @@ namespace ui_qlnhahang
             {
                 DataGridViewRow selectedRow = gvFood.SelectedRows[0];
 
-                if (String.IsNullOrEmpty(txtFoodName.Text))
+                string name = txtFoodName.Text.Trim();
+                string foodCateText = dpdCate.Text.Trim();
+                string price = txtPrice.Text.Trim();
+                int foodPrice = Convert.ToInt32(price);
+                if (String.IsNullOrEmpty(name))
                 {
                     MessBox mb = new MessBox("Vui lòng nhập tên món ăn!");
                     mb.ShowDialog();
+                    txtFoodName.Clear();
                     return;
                 }
 
-                if (String.IsNullOrEmpty(txtPrice.Text))
+                if (String.IsNullOrEmpty(price))
                 {
                     MessBox mb = new MessBox("Vui lòng nhập giá món ăn!");
                     mb.ShowDialog();
+                    txtPrice.Clear();
+                    return;
                 }
 
                 object id = selectedRow.Cells[0].Value;
-                string name = txtFoodName.Text;
-                string foodCateText = dpdCate.Text;
-                int foodPrice = Convert.ToInt32(txtPrice.Text);
                 int foodCateID = 0;
 
                 foreach (DataRow row in categoryList.Rows)
@@ -118,6 +136,7 @@ namespace ui_qlnhahang
                         break;
                     }
                 }
+
                 string nameProcedure = "[UpdateFood]";
                 string procedureParams = "@ID @Name @FoodCategoryID @Price";
                 string desc = "Cập nhật món ăn thành công!";

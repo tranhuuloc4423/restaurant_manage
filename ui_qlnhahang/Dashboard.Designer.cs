@@ -190,6 +190,7 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sidebar.Controls.Add(this.btnDangXuat);
             this.sidebar.Controls.Add(this.btnOpenOrder);
             this.sidebar.Controls.Add(this.bunifuPictureBox1);
@@ -240,7 +241,7 @@
             this.bunifuPictureBox1.BorderRadius = 98;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(11, 11);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(197, 197);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

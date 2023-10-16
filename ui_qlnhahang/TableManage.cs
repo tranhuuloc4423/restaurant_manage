@@ -35,16 +35,28 @@ namespace ui_qlnhahang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNameTable.Text))
+            string tableName = txtNameTable.Text.Trim();
+            if (string.IsNullOrEmpty(tableName))
             {
                 MessBox mb = new MessBox("Vui lòng nhập tên bàn!");
                 mb.ShowDialog();
+                txtNameTable.Clear();
                 return;
+            }
+            foreach (DataRow item in GetAllData(mainquery, gvTable).Rows)
+            {
+                if (item["Name"].ToString().Equals(tableName))
+                {
+                    MessBox mb = new MessBox("Tên bàn đã có trong cơ sỡ dữ liệu!");
+                    mb.ShowDialog();
+                    handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
+                    return;
+                }
             }
             string name = "Table_Insert";
             string procedureParams = "@Name @Status";
             string desc = "Thêm bàn thành công!";
-            handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { txtNameTable.Text, 0 });
+            handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { tableName, 0 });
             handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
         }
 
@@ -53,17 +65,19 @@ namespace ui_qlnhahang
             if (gvTable.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = gvTable.SelectedRows[0];
-                if (string.IsNullOrEmpty(txtNameTable.Text))
+                string tableName = txtNameTable.Text.Trim();
+                if (string.IsNullOrEmpty(tableName))
                 {
                     MessBox mb = new MessBox("Vui lòng nhập tên bàn!");
                     mb.ShowDialog();
+                    handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
                     return;
                 }
                 object id = selectedRow.Cells[0].Value;
                 string name = "Table_Update";
                 string procedureParams = "@ID @Name @Status";
                 string desc = "Cập nhật bàn thành công!";
-                handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { id, txtNameTable.Text, 0 });
+                handleProcedure(mainquery, name, procedureParams, gvTable, desc, new object[] { id, tableName, 0 });
                 handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
             }
             else
