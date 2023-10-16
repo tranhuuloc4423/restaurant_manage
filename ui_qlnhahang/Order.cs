@@ -144,7 +144,7 @@ namespace ui_qlnhahang
                     int amount = item.Price * quantity;
                     totalAmount += amount;
                 }
-                if (totalAmount !=0) {
+                if (totalAmount != 0) {
                     string name = "Hóa đơn " + (invoiceID + 1);
                     int tableID = index;
                     //int tableID = index + 1;
@@ -172,6 +172,11 @@ namespace ui_qlnhahang
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
+                } else
+                {
+                    MessBox mb = new MessBox("Vui lòng đặt món ăn!");
+                    mb.ShowDialog();
+                    return;
                 }
                 
 
@@ -227,7 +232,7 @@ namespace ui_qlnhahang
                     }
                 }
                 // Lấy ID của hóa đơn được chọn
-               
+                
 
                 // Tạo form Chi tiết hóa đơn và truyền ID cho nó
                 BillDetail detailForm = new BillDetail(invoiceID);

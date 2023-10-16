@@ -101,3 +101,4 @@ D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.cspro
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.exe
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.pdb
 D:\school\restaurant\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Loading.resources
+G:\WinForm\ui_qlnh\restaurant_manage\ui_qlnhahang\obj\Debug\ui_qlnhahang.Loading.resources

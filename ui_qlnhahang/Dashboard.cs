@@ -32,6 +32,19 @@ namespace ui_qlnhahang
             CenterToScreen();
         }
 
+        private void CenterFormInPanel(Form form, Panel panel)
+        {
+            int panelWidth = panel.Width;
+            int panelHeight = panel.Height;
+            int formWidth = form.Width;
+            int formHeight = form.Height;
+
+            int left = (panelWidth - formWidth) / 2;
+            int top = (panelHeight - formHeight) / 2;
+
+            form.Location = new Point(left, top);
+        }
+
         private void navigation(Form form, string title)
         {
             if (subForm != null)
@@ -49,7 +62,6 @@ namespace ui_qlnhahang
             panel.Controls.Add(subForm);
             form.Show();
             changeTitle(title);
-            
         }
 
         void activeButton(string title)
