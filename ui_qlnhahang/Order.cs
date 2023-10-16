@@ -22,53 +22,25 @@ namespace ui_qlnhahang
     {
         private string tk;
         public int totalTable;
-        //public Order()
-        //{
-        //    InitializeComponent();
-        //    GetAllFoodData();
-
-        //    //orderManager.CreateOrder(0, DateTime.Now);
-        //    //orderManager.CreateOrder(1, DateTime.Now);
-        //    //orderManager.CreateOrder(2, DateTime.Now);
-        //    //orderManager.CreateOrder(3, DateTime.Now);
-        //    //orderManager.CreateOrder(4, DateTime.Now);
-        //    //orderManager.CreateOrder(5, DateTime.Now);
-        //    //orderManager.CreateOrder(6, DateTime.Now);
-        //    //orderManager.CreateOrder(7, DateTime.Now);
-        //    //orderManager.CreateOrder(8, DateTime.Now);
-        //    //orderManager.CreateOrder(9, DateTime.Now);
-        //    //orderManager.CreateOrder(10, DateTime.Now);
-        //    //orderManager.CreateOrder(11, DateTime.Now);
-        //    //orderManager.CreateOrder(12, DateTime.Now);
-        //    //orderManager.CreateOrder(13, DateTime.Now);
-        //    //orderManager.CreateOrder(14, DateTime.Now);
-        //    //orderManager.CreateOrder(15, DateTime.Now);
-        //    //orderManager.CreateOrder(16, DateTime.Now);
-        //    //orderManager.CreateOrder(17, DateTime.Now);
-        //    //orderManager.CreateOrder(18, DateTime.Now);
-        //    //orderManager.CreateOrder(19, DateTime.Now);
-        //    for (int i = 0; i < 100; i++)
-        //    {
-        //        orderManager.CreateOrder(i, DateTime.Now);
-        //    }
-
-        //}
         string query = "select ID from [Table]";
         DataTable listTable;
         public Order(string tk)
         {
             InitializeComponent();
             this.tk = tk;
+            //listTable = GetAllDataNew(query);
             GetAllFoodData();
             LoadTables();
-            for (int i = 0; i <= 1000; i++)
+            for (int i = 0; i <= 100; i++)
             {
                 orderManager.CreateOrder(i, DateTime.Now);
             }
+            //orderManager.CreateOrder(0, DateTime.Now);
+
             //foreach (DataRow item in listTable.Rows)
             //{
             //    orderManager.CreateOrder(Convert.ToInt32(item["ID"]), DateTime.Now);
-            //    //MessageBox.Show(item["ID"].ToString());
+            //    MessageBox.Show(item["ID"].ToString());
             //}
         }
         OrderManager orderManager = new OrderManager();
@@ -565,55 +537,13 @@ namespace ui_qlnhahang
         {
             //loadFoodlist();
             loadCatlist();
-            //LoadTables();
 
         }
-        //public void LoadTables()
-        //{
-        //    panelBtns.Controls.Clear();
-
-        //    // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
-        //    DataProvider provider = new DataProvider();
-        //    DataTable tableData = provider.ExecuteQuery("select * from [Table]");
-        //    // Sử dụng FlowLayoutPanel để chứa các nút bàn ăn
-        //    FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-        //    flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-        //    flowLayoutPanel.WrapContents = true;
-        //    flowLayoutPanel.Dock = DockStyle.Fill;
-        //    // Duyệt qua từng dòng dữ liệu trong bảng
-        //    foreach (DataRow row in tableData.Rows)
-        //    {
-        //        totalTable++;
-        //        // Tạo một nút đại diện cho mỗi bàn ăn
-        //        Button tableButton = new Button();
-        //        tableButton.Text = row["Name"].ToString();
-        //        tableButton.Name = "btnTable_" + row["ID"].ToString();
-        //        tableButton.Width = 150;
-        //        tableButton.Height = 150;
-
-        //        tableButton.BackgroundImage = Resources.emty_table;
-        //        tableButton.BackgroundImageLayout = ImageLayout.Stretch;
-        //        tableButton.Margin = new Padding(10);
-        //        tableButton.FlatStyle = FlatStyle.Flat;
-        //        tableButton.FlatAppearance.BorderSize = 0;
-        //        tableButton.TextAlign = ContentAlignment.TopLeft;
-        //        tableButton.Font = new Font("Tahoma", 14, FontStyle.Bold);
-        //        tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-        //        // Xử lý sự kiện khi nút được nhấp
-        //        tableButton.Click += TableButton_Click;
-
-        //        // Thêm nút vào form
-        //        flowLayoutPanel.Controls.Add(tableButton);
-        //    }
-        //    flowLayoutPanel.AutoSize = true; // Thêm dòng này
-        //    panelBtns.Controls.Add(flowLayoutPanel);
-        //    panelBtns.AutoScroll = true;
-        //    panelBtns.AutoScrollMinSize = flowLayoutPanel.PreferredSize;
-        //}
 
         public void LoadTables()
         {
             panelBtns.Controls.Clear();
+            panelBtns.Padding = new Padding(0);
 
             // Tạo kết nối đến cơ sở dữ liệu và truy vấn danh sách bàn ăn
             DataProvider provider = new DataProvider();
@@ -623,10 +553,9 @@ namespace ui_qlnhahang
             FlowLayoutPanel mainFlowLayoutPanel = new FlowLayoutPanel();
             mainFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             mainFlowLayoutPanel.WrapContents = false;
-            //mainFlowLayoutPanel.Dock = DockStyle.Fill;
-
             mainFlowLayoutPanel.AutoSize = true;
             mainFlowLayoutPanel.Anchor = AnchorStyles.None;
+            mainFlowLayoutPanel.Dock = DockStyle.Fill;
 
             int maxButtonsPerRow = 4; // Số lượng button tối đa trong một dòng
             int buttonWidth = 100;
@@ -659,7 +588,7 @@ namespace ui_qlnhahang
 
                 Label tableLabel = new Label();
                 tableLabel.Text = row["Name"].ToString();
-                tableLabel.TextAlign = ContentAlignment.TopLeft;
+                tableLabel.TextAlign = ContentAlignment.MiddleCenter;
                 tableLabel.Font = new Font("Tahoma", 10, FontStyle.Bold);
 
 
@@ -673,10 +602,6 @@ namespace ui_qlnhahang
                 tableButton.BackgroundImage = Resources.emty_table;
                 tableButton.BackgroundImageLayout = ImageLayout.Stretch;
                 tableButton.FlatStyle = FlatStyle.Flat;
-                //tableButton.TextAlign = ContentAlignment.TopLeft;
-                //tableButton.Font = new Font("Tahoma", 14, FontStyle.Bold);
-                //tableButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-                tableButton.Padding = new Padding(10);
                 tableButton.Margin = new Padding(10);
 
                 // Xử lý sự kiện khi nút được nhấp
@@ -684,13 +609,10 @@ namespace ui_qlnhahang
 
                 tableLayout.Controls.Add(tableLabel, 0, 0);
                 tableLayout.Controls.Add(tableButton, 0, 1);
-                // Thêm nút vào FlowLayoutPanel hiện tại
-                //currentFlowLayoutPanel.Controls.Add(tableButton);
                 currentFlowLayoutPanel.Controls.Add(tableLayout);
             }
 
             // Thêm FlowLayoutPanel chính vào panel chứa
-            panelBtns.Margin = new Padding(0, -20, 0, 100);
             panelBtns.Controls.Add(mainFlowLayoutPanel);
             panelBtns.AutoScroll = true;
             panelBtns.AutoScrollMinSize = mainFlowLayoutPanel.PreferredSize;
@@ -764,21 +686,4 @@ namespace ui_qlnhahang
             FoodDataGridView1.Rows.Clear();
         }
     }
-
-        
-    
-
-
-    /*public class Table
-    {
-        public int tableIndex { get; set; }
-        int NumberOfFoodRow;
-        public void createFoodList()
-        {
-            OrderListed orderListed = new OrderListed();
-        }
-
-        
-
-    }*/
 }
