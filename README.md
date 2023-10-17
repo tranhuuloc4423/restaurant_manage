@@ -8,7 +8,9 @@
 
 # Phần mềm Quản lý Nhà Hàng
 
+<div align="center">
 <img src="./assest/img/logo.png" alt="logo" width="300" style="display: block; margin: 0 auto; border-radius: 50%;">
+</div>
 
 ## Giới thiệu
 
@@ -52,36 +54,51 @@
 
 ### Form Đăng Nhập (Login)
 
-<img src="./screenshot/login.png" alt="logo" width="300" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/login.png" alt="logo" width="300" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Giao Diện Chính (Dashboard)
 
-<img src="./screenshot/dashboard.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/dashboard.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Quản Lý Món Ăn (FoodManage)
 
-<img src="./screenshot/foodManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/foodManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Quản Lý Danh Mục Món Ăn (CateManage)
 
-<img src="./screenshot/categoryManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/categoryManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Quản Lý Bàn Ăn (tableManage)
 
-<img src="./screenshot/tableManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/tableManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Quản Lý Tài Khoản (accountManage)
 
-<img src="./screenshot/accountManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/accountManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Quản Lý Hoá Đơn (billManage)
 
-<img src="./screenshot/billManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+<div align="center">
+  <img src="./screenshot/billManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 
 ### Form Đặt Món Ăn (Order)
 
-<img src="./screenshot/orderManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
-
+<div align="center">
+  <img src="./screenshot/orderManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+</div>
 ## Release
 
 -   Chương trình đã có bản release. Có thể download file installer về cài đặt và dùng thử
