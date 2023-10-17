@@ -9,7 +9,7 @@
 # Phần mềm Quản lý Nhà Hàng
 
 <div align="center">
-<img src="./assest/img/logo.png" alt="logo" width="300" style="display: block; margin: 0 auto; border-radius: 50%;">
+  <img src="./assest/img/logo.png" alt="logo" width="300" style="display: block; margin: 0 auto; border-radius: 50%;">
 </div>
 
 ## Giới thiệu

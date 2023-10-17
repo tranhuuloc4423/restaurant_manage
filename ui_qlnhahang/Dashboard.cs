@@ -174,7 +174,7 @@ namespace ui_qlnhahang
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Home form = new Home();
+            Home form = new Home(tk, mk);
             navigation(form, btnHome.Text);
             pbHeader.Image = Resources.restaurant;
         }
