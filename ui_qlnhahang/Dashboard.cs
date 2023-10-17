@@ -12,12 +12,14 @@ using System.Drawing;
 using Bunifu.UI.WinForms.BunifuButton;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ui_qlnhahang.DAo;
+using static ui_qlnhahang.FormUltility;
 
 namespace ui_qlnhahang
 {
     
     public partial class Dashboard : Form
     {
+        string accountquery = "select * from [Account]";
         Form subForm = null;
         public Dashboard()
         {
@@ -190,7 +192,16 @@ namespace ui_qlnhahang
                 btnTableManage.Enabled = false;
                 btnFoodManage.Enabled = false;
             }
-            lblaccountactive.Text =  "Tài khoản : " + tk ;
+            string displayName = "";
+            foreach (DataRow account in GetAllDataNew(accountquery).Rows)
+            {
+                if (account["AccountName"].ToString().Equals(tk))
+                {
+                    displayName = account["DisplayName"].ToString();
+                    break;
+                }
+            }
+            lblaccountactive.Text =  "Tài khoản : " + displayName;
         }
         bool checkStaff(string tk)
         {

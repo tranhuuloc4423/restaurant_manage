@@ -1,10 +1,14 @@
 <p align="center">
   <a href="https://calen.lhu.edu.vn" title="Trường Đại Học Lạc Hồng" style="border: none;">
-    <img src="https://lhu.edu.vn/Data/News/446/images/Large/LOGO%20DUNG%20EN_Large.png" alt="Trường Đại Học Lạc Hồng | Lac Hong University">
+    <img src="https://lhu.edu.vn/Data/News/446/images/Large/LOGO%20DUNG%20EN_Large.png" alt="Trường Đại Học Lạc Hồng | Lac Hong University"
+      width="300"
+    >
   </a>
 </p>
 
 # Phần mềm Quản lý Nhà Hàng
+
+<img src="./assest/img/logo.png" alt="logo" width="300" style="display: block; margin: 0 auto; border-radius: 50%;">
 
 ## Giới thiệu
 
@@ -36,13 +40,47 @@
 
 ### Bước 1: Khởi tạo database
 
--   Thực thi file QLTV.sql để khởi tạo database
+-   Thực thi file QLNH.sql và QLNH_Scripts.sql để khởi tạo database
 
 ### Bước 2: Thực thi chương trình
 
 -   Mở solution trong Visual Studio
 -   Tải về bằng Nuget nếu VS không tự động tải: Bunifu UI/UX Framework
 -   Debug
+
+## Demo ứng dụng
+
+### Form Đăng Nhập (Login)
+
+<img src="./screenshot/login.png" alt="logo" width="300" style="display: block; margin: 0 auto;">
+
+### Form Giao Diện Chính (Dashboard)
+
+<img src="./screenshot/dashboard.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Quản Lý Món Ăn (FoodManage)
+
+<img src="./screenshot/foodManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Quản Lý Danh Mục Món Ăn (CateManage)
+
+<img src="./screenshot/categoryManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Quản Lý Bàn Ăn (tableManage)
+
+<img src="./screenshot/tableManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Quản Lý Tài Khoản (accountManage)
+
+<img src="./screenshot/accountManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Quản Lý Hoá Đơn (billManage)
+
+<img src="./screenshot/billManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
+
+### Form Đặt Món Ăn (Order)
+
+<img src="./screenshot/orderManage.png" alt="logo" width="600" style="display: block; margin: 0 auto;">
 
 ## Release
 

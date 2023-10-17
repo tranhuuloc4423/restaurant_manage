@@ -37,37 +37,36 @@ namespace ui_qlnhahang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Equals(tk))
+            if (!txtUsername.Text.Equals(tk))
             {
-                if(!txtCurrentPass.Text.Equals(mk))
-                {
-                    MessBox mb = new MessBox("Sai mật khẩu!");
-                    mb.ShowDialog();
-                    return;
-                }
-                if (txtNewPass.Text.Equals(txtNewPassConfirm.Text))
-                {
-                    string username = txtUsername.Text;
-                    string displayname = txtUsernameDisplay.Text;
-                    string pass = txtNewPassConfirm.Text;
-                    Accountupdate(username, displayname, pass);
-                    MessBox mb = new MessBox("Cập nhật thành công!");
-                    mb.ShowDialog();
-                    this.Close();
-                    this.ParentForm.Close();
-                    Login login = new Login();
-                    login.ShowDialog();
-                }
-                else
-                {
-                    MessBox mb = new MessBox("Mật khẩu không trùng khớp!");
-                    mb.ShowDialog();
-                }
+                MessBox mb1 = new MessBox("Tài khoản không hợp lệ");
+                mb1.ShowDialog();
+                return;
             }
-            else {
-                MessBox mb = new MessBox("Tài khoản không hợp lệ");
-                mb.ShowDialog();
+            if (!txtCurrentPass.Text.Equals(mk))
+            {
+                MessBox mb2 = new MessBox("Sai mật khẩu!");
+                mb2.ShowDialog();
+                return;
             }
+            if (!txtNewPass.Text.Equals(txtNewPassConfirm.Text))
+            {
+                MessBox mb3 = new MessBox("Mật khẩu không trùng khớp!");
+                mb3.ShowDialog();
+                return;
+            }
+
+            string username = txtUsername.Text;
+            string displayname = txtUsernameDisplay.Text;
+            string pass = txtNewPassConfirm.Text;
+            Accountupdate(username, displayname, pass);
+            MessBox mb = new MessBox("Cập nhật thành công!");
+            mb.ShowDialog();
+            //this.ParentForm.Close();
+            //this.Close();
+            //Login login = new Login();
+            //login.ShowDialog();
+            Application.Restart();
 
         }
         void  Accountupdate(string username , string displayname, string pass)
