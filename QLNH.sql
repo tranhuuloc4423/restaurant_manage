@@ -251,8 +251,11 @@ GO
 ALTER TABLE [dbo].[RoleAccount] CHECK CONSTRAINT [FK_RoleAccount_Role]
 GO
 
+
 --LẤY THÔNG TIN
 select * from [Account]
+select AccountName,DisplayName,HashBytes('MD5', Password) as Password
+from Account --Mật khẩu được mã hóa
 select * from [Role]
 select * from [RoleAccount]
 select * from [BillDetails]
