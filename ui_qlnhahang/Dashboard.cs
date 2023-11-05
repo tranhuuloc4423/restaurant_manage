@@ -28,13 +28,7 @@ namespace ui_qlnhahang
         }
         private string tk;
         private string mk;
-        public Dashboard(string tk, string mk)
-        {
-            this.tk = tk;
-            this.mk = mk;
-            InitializeComponent();
-            CenterToScreen();
-        }
+       
 
         private void CenterFormInPanel(Form form, Panel panel)
         {
@@ -164,12 +158,24 @@ namespace ui_qlnhahang
 
         void handleStateBtn(bool state)
         {
-            btnHome.Enabled = state;
-            btnAccManage.Enabled = state;
-            btnBillManage.Enabled = state;
-            btnCateManage.Enabled = state;
-            btnTableManage.Enabled = state;
-            btnFoodManage.Enabled = state;
+            if (checkStaff(tk))
+            {
+                btnHome.Enabled = state;
+                btnAccManage.Enabled = false;
+                btnBillManage.Enabled = false;
+                btnCateManage.Enabled = false;
+                btnTableManage.Enabled = false;
+                btnFoodManage.Enabled = false;
+            }
+            else
+            {
+                btnHome.Enabled = state;
+                btnAccManage.Enabled = state;
+                btnBillManage.Enabled = state;
+                btnCateManage.Enabled = state;
+                btnTableManage.Enabled = state;
+                btnFoodManage.Enabled = state;
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -181,17 +187,18 @@ namespace ui_qlnhahang
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            var fn = new Login();
+            fn.ShowDialog();
+            tk = fn.tk;
+            mk = fn.mk;
             Home form = new Home(tk, mk);
             navigation(form, btnHome.Text);
             activeButton(btnHome.Text);
-            if(checkStaff(tk))
-            {
-                btnAccManage.Enabled = false;
-                btnBillManage.Enabled = false;
-                btnCateManage.Enabled = false;
-                btnTableManage.Enabled = false;
-                btnFoodManage.Enabled = false;
-            }
+            btnAccManage.Enabled = !checkStaff(tk);
+            btnBillManage.Enabled = !checkStaff(tk);
+            btnCateManage.Enabled = !checkStaff(tk);
+            btnTableManage.Enabled = !checkStaff(tk);
+            btnFoodManage.Enabled = !checkStaff(tk);
             string displayName = "";
             foreach (DataRow account in GetAllDataNew(accountquery).Rows)
             {
@@ -210,9 +217,31 @@ namespace ui_qlnhahang
 
         private void btnDangXuat_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            tk = "";
+            mk = "";
             Login f = new Login();
-            f.Show();
+            f.ShowDialog();
+            tk = f.tk;
+            mk = f.mk;
+            Home form = new Home(tk, mk);
+            navigation(form, btnHome.Text);
+            activeButton(btnHome.Text);
+            btnAccManage.Enabled = !checkStaff(tk);
+            btnBillManage.Enabled = !checkStaff(tk);
+            btnCateManage.Enabled = !checkStaff(tk);
+            btnTableManage.Enabled = !checkStaff(tk);
+            btnFoodManage.Enabled = !checkStaff(tk);
+            
+            string displayName = "";
+            foreach (DataRow account in GetAllDataNew(accountquery).Rows)
+            {
+                if (account["AccountName"].ToString().Equals(tk))
+                {
+                    displayName = account["DisplayName"].ToString();
+                    break;
+                }
+            }
+            lblaccountactive.Text = "Tài khoản : " + displayName;
         }
     }
 }
