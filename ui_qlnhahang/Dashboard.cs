@@ -187,7 +187,7 @@ namespace ui_qlnhahang
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            var fn = new Login();
+            Login fn = new Login();
             fn.ShowDialog();
             tk = fn.tk;
             mk = fn.mk;

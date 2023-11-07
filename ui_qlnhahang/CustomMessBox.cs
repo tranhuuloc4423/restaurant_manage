@@ -28,42 +28,6 @@ namespace ui_qlnhahang
             //handleExitBounds();
         }
 
-        void handleTitleBounds()
-        {
-            lblTitle.Anchor = AnchorStyles.None;
-            int labelWidth = lblTitle.Width;
-            int labelHeight = lblTitle.Height;
-
-            int labelX = 100;
-            int labelY = (this.Height - labelHeight) / 2;
-
-            lblTitle.SetBounds(labelX, labelY, labelWidth, labelHeight);
-        }
-
-        void handleIconBounds()
-        {
-            pbIcon.Anchor = AnchorStyles.None;
-            int iconWidth = pbIcon.Width;
-            int iconHeight = pbIcon.Height;
-
-            int iconX = 20;
-            int iconY = (this.Height - iconHeight) / 2;
-
-            pbIcon.SetBounds(iconX, iconY, iconWidth, iconHeight);
-        }
-
-        void handleExitBounds()
-        {
-            btnExit.Anchor = AnchorStyles.None;
-            int iconWidth = btnExit.Width;
-            int iconHeight = btnExit.Height;
-
-            int iconX = (this.Width - 50);
-            int iconY = 10;
-            btnExit.SetBounds(iconX, iconY, iconWidth, iconHeight);
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

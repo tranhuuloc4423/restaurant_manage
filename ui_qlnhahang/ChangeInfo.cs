@@ -39,7 +39,7 @@ namespace ui_qlnhahang
         {
             if (!txtUsername.Text.Equals(tk))
             {
-                MessBox mb1 = new MessBox("Tài khoản không hợp lệ");
+                MessBox mb1 = new MessBox("Tài khoản không hợp lệ!");
                 mb1.ShowDialog();
                 return;
             }

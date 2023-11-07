@@ -20,6 +20,8 @@ namespace ui_qlnhahang
     public partial class CateManage : Form
     {
         string mainquery = "select * from [Category]";
+        string foodCateIDQuery = "select FoodCategoryID from [Food]";
+        DataTable foodCateList;
         BunifuTextBox[] myTextBoxes;
         public CateManage()
         {
@@ -30,6 +32,7 @@ namespace ui_qlnhahang
         private void CateManage_Load(object sender, EventArgs e)
         {
             GetAllData(mainquery, gvCate);
+            foodCateList = GetAllDataNew(foodCateIDQuery);
             myTextBoxes = new BunifuTextBox[] { txtCate };
             handleResetTextbox(gvCate, txtCate, myTextBoxes);
         }
@@ -49,7 +52,7 @@ namespace ui_qlnhahang
             {
                 if (item["Name"].ToString().Equals(cateName))
                 {
-                    MessBox mb = new MessBox("Tên danh mục đã có trong cơ sỡ dữ liệu!");
+                    MessBox mb = new MessBox("Tên danh mục đã có trong cơ sở dữ liệu!");
                     mb.ShowDialog();
                     handleResetTextbox(gvCate, txtCate, myTextBoxes);
                     return;
@@ -99,7 +102,21 @@ namespace ui_qlnhahang
                 string procedureParams = "@ID";
                 string desc = "Xoá danh mục món ăn thành công!";
                 object id = selectedRow.Cells[0].Value;
-                handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
+
+                foreach (DataRow item in foodCateList.Rows)
+                {
+                    if (item["FoodCategoryID"].ToString().Equals(id))
+                    {
+                        MessBox mb = new MessBox("Hiện đang có món ăn sử dụng danh mục món ăn này!");
+                        mb.ShowDialog();
+                        return;
+                    } else
+                    {
+                        handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
+                    }
+                }
+
+                
                 handleResetTextbox(gvCate, txtCate, myTextBoxes);
             }
             else

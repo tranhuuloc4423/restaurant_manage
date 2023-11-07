@@ -86,7 +86,7 @@ namespace ui_qlnhahang
             {
                 if (item["Name"].ToString().Equals(name))
                 {
-                    MessBox mb = new MessBox("Tên món ăn đã có trong cơ sỡ dữ liệu!");
+                    MessBox mb = new MessBox("Tên món ăn đã có trong cơ sở dữ liệu!");
                     mb.ShowDialog();
                     handleResetTextbox(gvFood, txtFoodName, myTextBoxes);
                     return;
