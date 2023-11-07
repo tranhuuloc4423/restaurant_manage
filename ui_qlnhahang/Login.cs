@@ -21,17 +21,16 @@ namespace ui_qlnhahang
             InitializeComponent();
             CenterToScreen();
         }
-
+        public string tk ;
+        public string mk ;
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             
-            string tk = txttk.Text;
-            string mk = txtmk.Text;
+            tk = txttk.Text;
+            mk = txtmk.Text;
             if (checkLogin(tk, mk))
             {
-                this.Hide();
-                Dashboard fdb = new Dashboard(tk, mk);
-                fdb.ShowDialog();
+                this.Close();
             }
             else {
                 MessBox mb = new MessBox("Sai tài khoản mật khẩu");

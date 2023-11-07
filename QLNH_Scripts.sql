@@ -13,8 +13,13 @@ AS
 	VALUES ( @Name, @FoodCategoryID, @Price)
 go
 
+--EXEC InsertFood 
+--   @Name = 'Mon an moi',
+--   @FoodCategoryID = 1,
+--   @Price = 10000;
+
 --drop PROCEDURE UpdateFood
-CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂNS
+CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂN
 @ID int output,
 @Name nvarchar(3000), 
 @FoodCategoryID int, 
@@ -30,6 +35,18 @@ else
 return 1
 GO
 
+--DECLARE @ID int, @Name nvarchar(3000), @FoodCategoryID int, @Price int;
+--SET @ID = 26; -- ID của món ăn cần cập nhật
+--SET @Name = N'Tên món ăn mới';
+--SET @FoodCategoryID = 2; -- ID của danh mục thức ăn mới
+--SET @Price = 15000; -- Giá mới
+
+--EXEC UpdateFood 
+--   @ID = @ID OUTPUT,
+--   @Name = @Name,
+--   @FoodCategoryID = @FoodCategoryID,
+--   @Price = @Price;
+
 --drop PROCEDURE DeleteFood
 CREATE PROCEDURE [dbo].[DeleteFood] -- XÓA MÓN ĂN
     @FoodID INT
@@ -39,6 +56,12 @@ BEGIN
     WHERE [ID] = @FoodID;
 END
 GO
+
+--DECLARE @FoodID INT;
+--SET @FoodID = 26; -- ID của món ăn cần xóa
+
+--EXEC DeleteFood 
+--   @FoodID = @FoodID;
 --------------------CATEGORY-------------------------
 --SELECT * FROM Category -- Xem danh mục món ăn từ bảng Category
 --GO
@@ -148,12 +171,6 @@ BEGIN
 END
 go
 
---EXEC [dbo].[InsertAccount]
---    @AccountName = N'test',
---    @DisplayName = N'Tét Văn Tơ',
---    @Password = N'123456',
---    @RoleName = N'Staff'
-
 --drop PROCEDURE [UpdateAccount]
 CREATE PROCEDURE [dbo].[UpdateAccount]
     @AccountName NVARCHAR(100),
@@ -199,8 +216,8 @@ BEGIN
         SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message
     END
 END
-
---------
+GO
+--drop PROCEDURE [Account_Update]
 CREATE PROCEDURE [dbo].[Account_Update] -- Cập nhật tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
@@ -215,9 +232,7 @@ BEGIN
         WHERE AccountName = @AccountName
     END
 END
------
 GO
-
 --EXEC [dbo].[UpdateAccountWithRoleID]
 --    @AccountName = N'nguyenthiennhan', 
 --    @DisplayName = N'Nguyen Thien Nhan', 
@@ -422,7 +437,6 @@ begin
 end
 go
 -----------------------------------------------------
-
 CREATE PROC USP_LOGIN
 @userName nvarchar(100),
 @passWord nvarchar(100)
@@ -431,3 +445,7 @@ BEGIN
 	SELECT * FROM dbo.Account WHERE AccountName =@userName AND Password = @passWord
 END
 GO
+
+-- MÃ HÓA MẬT KHẨU
+SELECT AccountName,DisplayName,HashBytes('MD5', Password) as Password
+from Account
