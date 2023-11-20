@@ -34,7 +34,7 @@ namespace ui_qlnhahang
                 this.Close();
             }
             else {
-                MessBox mb = new MessBox("Sai tài khoản mật khẩu");
+                MessBox mb = new MessBox("Sai tài khoản mật khẩu!");
                 mb.ShowDialog();
             }
             

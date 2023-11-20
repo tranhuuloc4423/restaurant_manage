@@ -47,7 +47,7 @@ namespace ui_qlnhahang
             {
                 if (item["Name"].ToString().Equals(tableName))
                 {
-                    MessBox mb = new MessBox("Tên bàn đã có trong cơ sỡ dữ liệu!");
+                    MessBox mb = new MessBox("Tên bàn đã có trong cơ sở dữ liệu!");
                     mb.ShowDialog();
                     handleResetTextbox(gvTable, txtNameTable, myTextBoxes);
                     return;

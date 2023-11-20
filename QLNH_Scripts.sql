@@ -159,17 +159,24 @@ CREATE PROCEDURE [dbo].[InsertAccount] -- Thêm tài khoản
 AS
 BEGIN
     SET NOCOUNT ON;
-    DECLARE @RoleID INT
+
+    DECLARE @RoleID INT;
     SELECT @RoleID = ID
     FROM [dbo].[Role]
-    WHERE RoleName = @RoleName
+    WHERE RoleName = @RoleName;
+
+    DECLARE @HashedPassword NVARCHAR(32);
+    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
+
     INSERT INTO [dbo].[Account] (AccountName, DisplayName, Password)
-    VALUES (@AccountName, @DisplayName, @Password)
+    VALUES (@AccountName, @DisplayName, @HashedPassword);
+
     INSERT INTO [dbo].[RoleAccount] (RoleID, AccountName, Actived)
-    VALUES (@RoleID, @AccountName, 1) -- Giả sử Actived = 1 cho tài khoản mới
-    SELECT N'Tài khoản đã được thêm thành công' AS Message
+    VALUES (@RoleID, @AccountName, 1); -- Giả sử Actived = 1 cho tài khoản mới
+
+    SELECT N'Tài khoản đã được thêm thành công' AS Message;
 END
-go
+GO 
 
 --drop PROCEDURE [UpdateAccount]
 CREATE PROCEDURE [dbo].[UpdateAccount]
@@ -179,11 +186,16 @@ CREATE PROCEDURE [dbo].[UpdateAccount]
 AS
 BEGIN
     SET NOCOUNT ON;
+
+    DECLARE @HashedPassword NVARCHAR(32);
+    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
+
     UPDATE [dbo].[Account]
     SET DisplayName = @DisplayName,
-        Password = @Password
-    WHERE AccountName = @AccountName
-    SELECT 'Thông tin tài khoản đã được cập nhật thành công' AS Message
+        Password = @HashedPassword
+    WHERE AccountName = @AccountName;
+
+    SELECT 'Thông tin tài khoản đã được cập nhật thành công' AS Message;
 END
 GO
 
@@ -196,48 +208,33 @@ CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
 AS
 BEGIN
     SET NOCOUNT ON;
+
     IF EXISTS (
         SELECT 1
         FROM [dbo].[RoleAccount]
         WHERE AccountName = @AccountName
     )
     BEGIN
+        DECLARE @HashedPassword NVARCHAR(32);
+        SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
+
         UPDATE [dbo].[Account]
         SET DisplayName = @DisplayName,
-            Password = @Password
-        WHERE AccountName = @AccountName
+            Password = @HashedPassword
+        WHERE AccountName = @AccountName;
+
         UPDATE [dbo].[RoleAccount]
         SET RoleID = @NewRoleID
-        WHERE AccountName = @AccountName
-        SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message
+        WHERE AccountName = @AccountName;
+
+        SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message;
     END
     ELSE
     BEGIN
-        SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message
+        SELECT N'Không tìm thấy AccountName trong bảng RoleAccount' AS Message;
     END
 END
 GO
---drop PROCEDURE [Account_Update]
-CREATE PROCEDURE [dbo].[Account_Update] -- Cập nhật tài khoản
-    @AccountName NVARCHAR(100),
-    @DisplayName NVARCHAR(100),
-    @Pass NVARCHAR(200)
-AS
-BEGIN
-    SET NOCOUNT ON;
-    BEGIN
-        UPDATE [dbo].[Account]
-        SET DisplayName = @DisplayName,
-            Password = @Pass
-        WHERE AccountName = @AccountName
-    END
-END
-GO
---EXEC [dbo].[UpdateAccountWithRoleID]
---    @AccountName = N'nguyenthiennhan', 
---    @DisplayName = N'Nguyen Thien Nhan', 
---    @Password = N'123456789', 
---    @NewRoleID = 1
 
 --drop PROCEDURE [DeleteAccountWithRole]
 CREATE PROCEDURE [dbo].[DeleteAccountWithRole] -- Xóa tài khoản
@@ -245,52 +242,51 @@ CREATE PROCEDURE [dbo].[DeleteAccountWithRole] -- Xóa tài khoản
 AS
 BEGIN
     SET NOCOUNT ON;
-    DELETE FROM [dbo].[RoleAccount]
-    WHERE AccountName = @AccountName
-    DELETE FROM [dbo].[Account]
-    WHERE AccountName = @AccountName
-    SELECT N'Tài khoản đã được xóa thành công từ cả bảng Account và bảng RoleAccount' AS Message
+
+    DECLARE @HashedPassword NVARCHAR(32);
+    SELECT @HashedPassword = Password
+    FROM [dbo].[Account]
+    WHERE AccountName = @AccountName;
+
+    IF @HashedPassword IS NOT NULL
+    BEGIN
+        DELETE FROM [dbo].[RoleAccount]
+        WHERE AccountName = @AccountName;
+
+        DELETE FROM [dbo].[Account]
+        WHERE AccountName = @AccountName;
+
+        SELECT N'Tài khoản đã được xóa thành công từ cả bảng Account và bảng RoleAccount' AS Message;
+    END
+    ELSE
+    BEGIN
+        SELECT N'Tài khoản không tồn tại' AS Message;
+    END
 END
 GO
-
---EXEC [dbo].[DeleteAccountWithRole]
---    @AccountName = N'test' 
-
---drop PROCEDURE [UpdateRoleAccountStatus]
-CREATE PROCEDURE [dbo].[UpdateRoleAccountStatus] -- Cập nhật trạng thái quyền của tài khoản
-    @AccountName NVARCHAR(100),
-    @Actived BIT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    UPDATE [dbo].[RoleAccount]
-    SET Actived = @Actived
-    WHERE AccountName = @AccountName
-    SELECT N'Trạng thái tài khoản đã được cập nhật thành công' AS Message
-END
-GO
-
---EXEC [dbo].[UpdateRoleAccountStatus]
---    @AccountName = N'nguyenthiennhan', 
---    @Actived = 1
 -----------------------------------------------------
 --SELECT AccountName,HashBytes('MD5', Password) as Password
 --from Account
 --go
 ---------------PASSWORD------------------------------
 --drop PROCEDURE Password_Update
-create procedure Password_Update -- CẬP NHẬT MẬT KHẨU
+CREATE PROCEDURE Password_Update -- CẬP NHẬT MẬT KHẨU
 (
-	@AccountName nvarchar(100),
-	@Pass nvarchar(200)
+    @AccountName NVARCHAR(100),
+    @Pass NVARCHAR(200)
 )
-as
-begin
-	update Account
-	set Password = @Pass
-	where AccountName = @AccountName
-end
-go
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @HashedPassword NVARCHAR(32);
+    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Pass), 2);
+
+    UPDATE Account
+    SET Password = @HashedPassword
+    WHERE AccountName = @AccountName;
+END
+GO
 -----------------------BILLS-------------------------
 --drop procedure Bills_Insert
 CREATE PROCEDURE Bills_Insert
@@ -445,7 +441,3 @@ BEGIN
 	SELECT * FROM dbo.Account WHERE AccountName =@userName AND Password = @passWord
 END
 GO
-
--- MÃ HÓA MẬT KHẨU
-SELECT AccountName,DisplayName,HashBytes('MD5', Password) as Password
-from Account
