@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -36,6 +37,24 @@ namespace ui_qlnhahang.DAo
             string query = "Account_Update @AccountName  , @DisplayName , @Pass";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, displayname, password });
             return result.Rows.Count > 0;
+        }
+        public class textToMd5
+        {
+            public static string converText(string text)
+            {
+                MD5 mD5 = MD5.Create();
+
+                byte[] b = Encoding.ASCII.GetBytes(text);
+                byte[] hash = mD5.ComputeHash(b);
+
+                StringBuilder sb = new StringBuilder();
+                foreach (var a in hash)
+                {
+                    sb.Append(a.ToString("x2"));
+                }
+                string rs = sb.ToString();
+                return rs;
+            }
         }
     }
 }

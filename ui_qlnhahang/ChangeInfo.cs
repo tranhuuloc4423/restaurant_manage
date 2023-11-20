@@ -43,7 +43,7 @@ namespace ui_qlnhahang
                 mb1.ShowDialog();
                 return;
             }
-            if (!txtCurrentPass.Text.Equals(mk))
+            if (!AccountDAO.textToMd5.converText(txtCurrentPass.Text).Equals(mk))
             {
                 MessBox mb2 = new MessBox("Sai mật khẩu!");
                 mb2.ShowDialog();
@@ -58,7 +58,7 @@ namespace ui_qlnhahang
 
             string username = txtUsername.Text;
             string displayname = txtUsernameDisplay.Text;
-            string pass = txtNewPassConfirm.Text;
+            string pass = AccountDAO.textToMd5.converText(txtNewPassConfirm.Text);
             Accountupdate(username, displayname, pass);
             MessBox mb = new MessBox("Cập nhật thành công!");
             mb.ShowDialog();
