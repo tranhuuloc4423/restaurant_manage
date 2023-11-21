@@ -1,9 +1,6 @@
 ﻿use [RestaurantManagement]
 go
 ------------------------FOOD-------------------------
---SELECT * FROM Food -- Xem món ăn từ bảng Food
---GO
---drop PROCEDURE InsertFood
 CREATE PROCEDURE [InsertFood] -- THÊM MÓN ĂN
 @Name nvarchar(3000), 
 @FoodCategoryID int, 
@@ -18,7 +15,6 @@ go
 --   @FoodCategoryID = 1,
 --   @Price = 10000;
 
---drop PROCEDURE UpdateFood
 CREATE PROCEDURE [UpdateFood] -- SỬA MÓN ĂN
 @ID int output,
 @Name nvarchar(3000), 
@@ -40,14 +36,12 @@ GO
 --SET @Name = N'Tên món ăn mới';
 --SET @FoodCategoryID = 2; -- ID của danh mục thức ăn mới
 --SET @Price = 15000; -- Giá mới
-
 --EXEC UpdateFood 
 --   @ID = @ID OUTPUT,
 --   @Name = @Name,
 --   @FoodCategoryID = @FoodCategoryID,
 --   @Price = @Price;
 
---drop PROCEDURE DeleteFood
 CREATE PROCEDURE [dbo].[DeleteFood] -- XÓA MÓN ĂN
     @FoodID INT
 AS
@@ -59,13 +53,9 @@ GO
 
 --DECLARE @FoodID INT;
 --SET @FoodID = 26; -- ID của món ăn cần xóa
-
 --EXEC DeleteFood 
 --   @FoodID = @FoodID;
 --------------------CATEGORY-------------------------
---SELECT * FROM Category -- Xem danh mục món ăn từ bảng Category
---GO
---drop PROCEDURE Category_Insert 
 CREATE PROCEDURE Category_Insert -- THÊM DANH MỤC
     @Name nvarchar(1000),
     @Type int
@@ -76,7 +66,11 @@ BEGIN
 END;
 GO
 
---drop PROCEDURE Category_Update 
+--EXEC Category_Insert
+--    @Name = N'Tên danh mục',
+--    @Type = 1;
+
+
 CREATE PROCEDURE Category_Update -- CHỈNH SỬA DANH MỤC
     @ID int,
     @Name nvarchar(1000),
@@ -90,7 +84,6 @@ END;
 GO
 --EXECUTE Category_Update @ID = 1, @Name = 'Danh mục sửa', @Type = 2;
 
---drop PROCEDURE Category_Delete 
 CREATE PROCEDURE Category_Delete -- XÓA DANH MỤC
     @ID int
 AS
@@ -101,9 +94,6 @@ END
 GO
 --EXECUTE Category_Delete @ID = 1;
 -----------------------TABLE-------------------------
---SELECT * FROM [dbo].[Table] -- Xem bàn từ bảng Table
---GO
---drop PROCEDURE Table_Insert 
 CREATE PROCEDURE Table_Insert -- THÊM BÀN
 @Name nvarchar(1000),
 @Status int
@@ -122,8 +112,10 @@ ELSE
 	END
 END;
 GO
+--EXEC Table_Insert
+--    @Name = N'Tên bàn',
+--    @Status = 1;
 
---drop PROCEDURE Table_Update 
 CREATE PROCEDURE Table_Update-- CHỈNH SỬA BÀN
     @ID int,
     @Name nvarchar(1000),
@@ -135,8 +127,11 @@ BEGIN
     WHERE ID = @ID;
 END;
 GO
+--EXEC Table_Update
+--    @ID = 1,
+--    @Name = N'Tên bàn mới',
+--    @Status = 2;
 
---drop PROCEDURE Table_Delete 
 CREATE PROCEDURE Table_Delete -- XÓA BÀN
 @ID int
 AS
@@ -145,12 +140,9 @@ AS
 		WHERE ID = @ID;
 	END
 GO
-
-
+--EXEC Table_Delete
+--    @ID = 1;
 --------------------ACCOUNT--------------------------
---SELECT * FROM [dbo].[Account] -- Xem danh sách tài khoản từ bảng Account
---GO
---drop procedure [InsertAccount]
 CREATE PROCEDURE [dbo].[InsertAccount] -- Thêm tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
@@ -165,8 +157,7 @@ BEGIN
     FROM [dbo].[Role]
     WHERE RoleName = @RoleName;
 
-    
-
+ 
     INSERT INTO [dbo].[Account] (AccountName, DisplayName, Password)
     VALUES (@AccountName, @DisplayName, @Password);
 
@@ -176,8 +167,12 @@ BEGIN
     SELECT N'Tài khoản đã được thêm thành công' AS Message;
 END
 GO 
+--EXEC [dbo].[InsertAccount]
+--    @AccountName = N'Tên tài khoản',
+--    @DisplayName = N'Tên hiển thị',
+--    @Password = N'Mật khẩu',
+--    @RoleName = N'Tên vai trò';
 
---drop PROCEDURE [UpdateAccount]
 CREATE PROCEDURE [dbo].[UpdateAccount]
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
@@ -195,8 +190,11 @@ BEGIN
     SELECT 'Thông tin tài khoản đã được cập nhật thành công' AS Message;
 END
 GO
+--EXEC [dbo].[UpdateAccount]
+--    @AccountName = N'Tên tài khoản',
+--    @DisplayName = N'Tên hiển thị mới',
+--    @Password = N'Mật khẩu mới';
 
---drop PROCEDURE [UpdateAccountWithRoleID]
 CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
     @AccountName NVARCHAR(100),
     @DisplayName NVARCHAR(100),
@@ -205,23 +203,19 @@ CREATE PROCEDURE [dbo].[UpdateAccountWithRoleID] -- Cập nhật tài khoản
 AS
 BEGIN
     SET NOCOUNT ON;
-
     IF EXISTS (
         SELECT 1
         FROM [dbo].[RoleAccount]
         WHERE AccountName = @AccountName
     )
     BEGIN
-
         UPDATE [dbo].[Account]
         SET DisplayName = @DisplayName,
             Password = @Password
         WHERE AccountName = @AccountName;
-
         UPDATE [dbo].[RoleAccount]
         SET RoleID = @NewRoleID
         WHERE AccountName = @AccountName;
-
         SELECT N'Thông tin tài khoản và RoleID đã được cập nhật thành công' AS Message;
     END
     ELSE
@@ -230,27 +224,27 @@ BEGIN
     END
 END
 GO
+--EXEC [dbo].[UpdateAccountWithRoleID]
+--    @AccountName = N'Tên tài khoản',
+--    @DisplayName = N'Tên hiển thị mới',
+--    @Password = N'Mật khẩu mới',
+--    @NewRoleID = 2;
 
---drop PROCEDURE [DeleteAccountWithRole]
 CREATE PROCEDURE [dbo].[DeleteAccountWithRole] -- Xóa tài khoản
     @AccountName NVARCHAR(100)
 AS
 BEGIN
     SET NOCOUNT ON;
-
     DECLARE @HashedPassword NVARCHAR(32);
     SELECT @HashedPassword = Password
     FROM [dbo].[Account]
     WHERE AccountName = @AccountName;
-
     IF @HashedPassword IS NOT NULL
     BEGIN
         DELETE FROM [dbo].[RoleAccount]
         WHERE AccountName = @AccountName;
-
         DELETE FROM [dbo].[Account]
         WHERE AccountName = @AccountName;
-
         SELECT N'Tài khoản đã được xóa thành công từ cả bảng Account và bảng RoleAccount' AS Message;
     END
     ELSE
@@ -259,12 +253,9 @@ BEGIN
     END
 END
 GO
------------------------------------------------------
---SELECT AccountName,HashBytes('MD5', Password) as Password
---from Account
---go
+--EXEC [dbo].[DeleteAccountWithRole]
+--    @AccountName = N'Tên tài khoản';
 ---------------PASSWORD------------------------------
---drop PROCEDURE Password_Update
 CREATE PROCEDURE Password_Update -- CẬP NHẬT MẬT KHẨU
 (
     @AccountName NVARCHAR(100),
@@ -281,8 +272,10 @@ BEGIN
     WHERE AccountName = @AccountName;
 END
 GO
+--EXEC Password_Update
+--    @AccountName = N'Tên tài khoản',
+--    @Pass = N'Mật khẩu mới';
 -----------------------BILLS-------------------------
---drop procedure Bills_Insert
 CREATE PROCEDURE Bills_Insert
     @id INT OUTPUT,
     @TableID INT,
@@ -301,8 +294,16 @@ BEGIN
     SELECT @id = SCOPE_IDENTITY()
 END
 GO
+--DECLARE @BillID INT;
+--EXEC Bills_Insert
+--    @id = @BillID OUTPUT,
+--    @TableID = 1,
+--    @Amount = 100,
+--    @Status = 1,
+--    @CheckoutDate = '2023-11-21',
+--    @Account = N'Tên tài khoản';
+--SELECT @BillID AS BillID;
 
---drop procedure Bills_GetByDate
 create procedure Bills_GetByDate -- XUẤT DANH SÁCH HÓA ĐƠN THEO NGÀY
 @date smalldatetime
 as 
@@ -311,7 +312,9 @@ begin
 	where CheckoutDate = @date
 end
 go
---drop procedure [CreateBillReport]
+--EXEC Bills_GetByDate
+--    @date = '2023-11-21';
+
 create procedure [CreateBillReport] -- THỐNG KÊ HÓA ĐƠN THEO KHOẢNG THỜI GIAN
 	@StartDate DATE,
     @EndDate DATE
@@ -323,7 +326,7 @@ end
 go
 --EXEC [CreateBillReport] '2023-01-01', '2024-12-31';
 --GO
---drop procedure BillDetail_Insert
+
 create procedure BillDetail_Insert -- THÊM CHI TIẾT HÓA ĐƠN
 @id int output,
 @InvoiceID int,
@@ -335,7 +338,14 @@ begin
 	SELECT @id = SCOPE_IDENTITY()
 end
 go
---drop procedure BillDetail_Update
+--DECLARE @BillDetailID INT;
+--EXEC BillDetail_Insert
+--    @id = @BillDetailID OUTPUT,
+--    @InvoiceID = 1,
+--    @FoodID = 1,
+--    @Quantity = 2;
+--SELECT @BillDetailID AS BillDetailID;
+
 create procedure BillDetail_Update -- CẬP NHẬT SỐ LƯỢNG TRONG CHI TIẾT HÓA ĐƠN
 @ID int,
 @BillId int,
@@ -347,7 +357,11 @@ begin
 	where ID = @ID and InvoiceID = @BillId
 end
 go
---drop procedure BillDetail_GetByIdWithFood
+--EXEC BillDetail_Update
+--    @ID = 1,
+--    @BillId = 1,
+--    @Quantity = 3;
+
 CREATE PROCEDURE BillDetail_GetByIdWithFood
 @ID int
 AS 
@@ -359,7 +373,9 @@ BEGIN
     WHERE bd.InvoiceID = @ID
 END
 GO
-
+--EXEC BillDetail_GetByIdWithFood
+--    @ID = 1;
+------------GET_BY_ID_FOR_BILLDETAILS-----------------
 CREATE PROCEDURE Amount_GetById
 @ID int
 AS 
@@ -369,6 +385,8 @@ BEGIN
     WHERE b.ID = @ID
 END
 GO
+--EXEC Amount_GetById
+--    @ID = 1;
 
 CREATE PROCEDURE Date_GetById
 @ID int
@@ -379,6 +397,8 @@ BEGIN
     WHERE b.ID = @ID
 END
 GO
+--EXEC Date_GetById
+--    @ID = 1;
 
 CREATE PROCEDURE GetID
 @ID int
@@ -389,8 +409,9 @@ BEGIN
     WHERE b.ID = @ID
 END
 GO
+--EXEC GetID
+--    @ID = 1;
 --------------------TABLE_STATUS---------------------
---drop proc UpdateTableStatus
 CREATE PROCEDURE UpdateTableStatus -- CẬP NHẬT TRẠNG THÁI BÀN
     @TableID INT,
     @IsOccupied BIT
@@ -401,8 +422,10 @@ BEGIN
     WHERE [ID] = @TableID
 END
 GO
+--EXEC UpdateTableStatus
+--    @TableID = 1,
+--    @IsOccupied = 1;
 --------------------BILL_STATUS---------------------
---drop proc UpdateBillStatus
 CREATE PROCEDURE UpdateBillStatus -- CẬP NHẬT TRẠNG THÁI BILL
     @BillID INT,
     @IsPaid BIT
@@ -413,8 +436,10 @@ BEGIN
     WHERE [ID] = @BillID
 END
 GO
+--EXEC UpdateBillStatus
+--    @BillID = 1,
+--    @IsPaid = 1;
 ------------------AMOUNT----------------------------
---drop procedure Amount_Update
 create procedure Amount_Update -- CẬP NHẬT TỔNG TIỀN 
 @ID int
 as
@@ -426,6 +451,8 @@ begin
 	where Bills.ID = @ID
 end
 go
+--EXEC Amount_Update
+--    @ID = 1;
 -----------------------------------------------------
 CREATE PROC USP_LOGIN
 @userName nvarchar(100),
