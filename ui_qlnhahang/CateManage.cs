@@ -102,21 +102,24 @@ namespace ui_qlnhahang
                 string procedureParams = "@ID";
                 string desc = "Xoá danh mục món ăn thành công!";
                 object id = selectedRow.Cells[0].Value;
-
+                bool canDelete = true;
                 foreach (DataRow item in foodCateList.Rows)
                 {
-                    if (item["FoodCategoryID"].ToString().Equals(id))
+                    if(item["FoodCategoryID"].ToString().Contains(id.ToString()))
                     {
-                        MessBox mb = new MessBox("Hiện đang có món ăn sử dụng danh mục món ăn này!");
+                        MessBox mb = new MessBox("Danh mục món ăn đang sử dụng!");
                         mb.ShowDialog();
+                        canDelete = false;
                         return;
-                    } else
-                    {
-                        handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
                     }
                 }
 
-                
+
+                if(canDelete)
+                {
+                    handleProcedure(mainquery, name, procedureParams, gvCate, desc, new object[] { id });
+                }
+
                 handleResetTextbox(gvCate, txtCate, myTextBoxes);
             }
             else
