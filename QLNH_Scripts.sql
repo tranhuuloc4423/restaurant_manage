@@ -165,11 +165,10 @@ BEGIN
     FROM [dbo].[Role]
     WHERE RoleName = @RoleName;
 
-    DECLARE @HashedPassword NVARCHAR(32);
-    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
+    
 
     INSERT INTO [dbo].[Account] (AccountName, DisplayName, Password)
-    VALUES (@AccountName, @DisplayName, @HashedPassword);
+    VALUES (@AccountName, @DisplayName, @Password);
 
     INSERT INTO [dbo].[RoleAccount] (RoleID, AccountName, Actived)
     VALUES (@RoleID, @AccountName, 1); -- Giả sử Actived = 1 cho tài khoản mới
@@ -213,12 +212,10 @@ BEGIN
         WHERE AccountName = @AccountName
     )
     BEGIN
-        DECLARE @HashedPassword NVARCHAR(32);
-        SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
 
         UPDATE [dbo].[Account]
         SET DisplayName = @DisplayName,
-            Password = @HashedPassword
+            Password = @Password
         WHERE AccountName = @AccountName;
 
         UPDATE [dbo].[RoleAccount]
@@ -277,11 +274,10 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @HashedPassword NVARCHAR(32);
-    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Pass), 2);
+    
 
     UPDATE Account
-    SET Password = @HashedPassword
+    SET Password = @Pass
     WHERE AccountName = @AccountName;
 END
 GO
