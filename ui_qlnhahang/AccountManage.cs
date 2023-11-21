@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using ui_qlnhahang.DAo;
 using static ui_qlnhahang.FormUltility;
 using static ui_qlnhahang.Order;
 
@@ -47,7 +48,9 @@ namespace ui_qlnhahang
         {
             string name = txtUserName.Text.Trim();
             string displayName = txtUserNameDisplay.Text.Trim();
+            
             string pass = txtPass.Text.Trim();
+            string passtomd5 = AccountDAO.textToMd5.converText(pass);
             if (String.IsNullOrEmpty(name))
             {
                 MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
@@ -89,7 +92,7 @@ namespace ui_qlnhahang
             string procedureName = "InsertAccount";
             string procedureParams = "@AccountName @DisplayName @Password @RoleName";
             string desc = "Thêm tài khoản thành công";
-            handleProcedure(mainquery, procedureName, procedureParams, gvAccount, desc, new object[] {name, displayName, pass, role});
+            handleProcedure(mainquery, procedureName, procedureParams, gvAccount, desc, new object[] {name, displayName, passtomd5, role});
             handleResetTextbox(gvAccount, txtUserName, myTextBoxes);
         }
 
@@ -101,6 +104,7 @@ namespace ui_qlnhahang
                 string name = txtUserName.Text.Trim();
                 string displayName = txtUserNameDisplay.Text.Trim();
                 string pass = txtPass.Text.Trim();
+                string passtomd5 = AccountDAO.textToMd5.converText(pass);
                 if (String.IsNullOrEmpty(name))
                 {
                     MessBox mb = new MessBox("Vui lòng nhập tên tài khoản!");
@@ -146,7 +150,7 @@ namespace ui_qlnhahang
                 string nameProcedure = "[UpdateAccountWithRoleID]";
                 string procedureParams = "@AccountName @DisplayName @Password @NewRoleID";
                 string desc = "Cập nhật tài khoản thành công!";
-                handleProcedure(mainquery, nameProcedure, procedureParams, gvAccount, desc, new object[] { name, displayName, pass, roleId });
+                handleProcedure(mainquery, nameProcedure, procedureParams, gvAccount, desc, new object[] { name, displayName, passtomd5, roleId });
                 handleResetTextbox(gvAccount, txtUserName, myTextBoxes);
             } else
             {

@@ -133,11 +133,16 @@ CREATE TABLE [dbo].[Table](
 ) ON [PRIMARY]
 GO
 
-INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'levantuan',N'Lê Văn Tuấn', N'123')
-INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'nguyenminhquan',N'Nguyễn Minh Quân', N'123')
-INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'tranhuuloc',N'Trần Hữu Lộc', N'123')
-INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'nguyenthiennhan',N'Nguyễn Thiện Nhân', N'123')
-INSERT [dbo].[Account] ([AccountName],[DisplayName], [Password]) VALUES (N'letanphat',N'Lê Tấn Phát', N'123')
+INSERT INTO [dbo].[Account] ([AccountName], [DisplayName], [Password])
+VALUES ('levantuan', N'Lê Văn Tuấn', CONVERT(NVARCHAR(32), HASHBYTES('MD5', '123'), 2));
+INSERT INTO [dbo].[Account] ([AccountName], [DisplayName], [Password])
+VALUES ('letanphat', N'Lê Tấn Phát', CONVERT(NVARCHAR(32), HASHBYTES('MD5', '123'), 2));
+INSERT INTO [dbo].[Account] ([AccountName], [DisplayName], [Password])
+VALUES ('nguyenthiennhan', N'Nguyễn Thiện Nhân', CONVERT(NVARCHAR(32), HASHBYTES('MD5', '123'), 2));
+INSERT INTO [dbo].[Account] ([AccountName], [DisplayName], [Password])
+VALUES ('nguyenminhquan', N'Nguyễn Minh Quân', CONVERT(NVARCHAR(32), HASHBYTES('MD5', '123'), 2));
+INSERT INTO [dbo].[Account] ([AccountName], [DisplayName], [Password])
+VALUES ('tranhuuloc', N'Trần Hữu Lộc', CONVERT(NVARCHAR(32), HASHBYTES('MD5', '123'), 2));
 
 SET IDENTITY_INSERT [dbo].[BillDetails] ON 
 --INSERT [dbo].[BillDetails] ([ID], [InvoiceID], [FoodID], [Quantity]) VALUES (1, 1, 1, 1)
@@ -253,9 +258,7 @@ GO
 
 
 --LẤY THÔNG TIN
-select * from [Account]
-select AccountName,DisplayName,HashBytes('MD5', Password) as Password
-from Account --Mật khẩu được mã hóa
+SELECT * from [Account]
 select * from [Role]
 select * from [RoleAccount]
 select * from [BillDetails]

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ui_qlnhahang.DAo;
 using ui_qlnhahang.Properties;
+using System.Security.Cryptography;
 
 namespace ui_qlnhahang
 {
@@ -27,7 +28,7 @@ namespace ui_qlnhahang
         {
             
             tk = txttk.Text;
-            mk = txtmk.Text;
+            mk = AccountDAO.textToMd5.converText(txtmk.Text);
             if (checkLogin(tk, mk))
             {
                 this.Close();
@@ -38,6 +39,7 @@ namespace ui_qlnhahang
             }
             
         }
+        
         bool checkLogin(string tk, string mk)
         {
             return AccountDAO.Instance.Login(tk, mk);
