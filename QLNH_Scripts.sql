@@ -187,12 +187,10 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @HashedPassword NVARCHAR(32);
-    SET @HashedPassword = CONVERT(NVARCHAR(32), HASHBYTES('MD5', @Password), 2);
 
     UPDATE [dbo].[Account]
     SET DisplayName = @DisplayName,
-        Password = @HashedPassword
+        Password = @Password
     WHERE AccountName = @AccountName;
 
     SELECT 'Thông tin tài khoản đã được cập nhật thành công' AS Message;

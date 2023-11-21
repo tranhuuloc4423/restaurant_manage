@@ -34,7 +34,7 @@ namespace ui_qlnhahang.DAo
         }
         public bool UpdateAccount(string username, string displayname, string password ) 
         {
-            string query = "Account_Update @AccountName  , @DisplayName , @Pass";
+            string query = "UpdateAccount @AccountName  , @DisplayName , @Password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, displayname, password });
             return result.Rows.Count > 0;
         }
@@ -42,18 +42,17 @@ namespace ui_qlnhahang.DAo
         {
             public static string converText(string text)
             {
-                MD5 mD5 = MD5.Create();
-
-                byte[] b = Encoding.ASCII.GetBytes(text);
-                byte[] hash = mD5.ComputeHash(b);
-
+                MD5 md = MD5.Create();
+                byte[] inputstr = System.Text.Encoding.ASCII.GetBytes(text);
+                byte[] hash = md.ComputeHash(inputstr);
                 StringBuilder sb = new StringBuilder();
-                foreach (var a in hash)
+
+                for(int i =0; i < hash.Length; i++)
                 {
-                    sb.Append(a.ToString("x2"));
+                    sb.Append(hash[i].ToString("X2"));
                 }
-                string rs = sb.ToString();
-                return rs;
+                return sb.ToString();
+
             }
         }
     }
