@@ -191,6 +191,7 @@ namespace ui_qlnhahang
             fn.ShowDialog();
             tk = fn.tk;
             mk = fn.mk;
+            if (tk == null) Application.Exit();
             Home form = new Home(tk, mk);
             navigation(form, btnHome.Text);
             activeButton(btnHome.Text);
