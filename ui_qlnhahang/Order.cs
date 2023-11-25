@@ -28,20 +28,12 @@ namespace ui_qlnhahang
         {
             InitializeComponent();
             this.tk = tk;
-            //listTable = GetAllDataNew(query);
             GetAllFoodData();
             LoadTables();
             for (int i = 0; i <= 100; i++)
             {
                 orderManager.CreateOrder(i, DateTime.Now);
             }
-            //orderManager.CreateOrder(0, DateTime.Now);
-
-            //foreach (DataRow item in listTable.Rows)
-            //{
-            //    orderManager.CreateOrder(Convert.ToInt32(item["ID"]), DateTime.Now);
-            //    MessageBox.Show(item["ID"].ToString());
-            //}
         }
         OrderManager orderManager = new OrderManager();
 
@@ -357,34 +349,6 @@ namespace ui_qlnhahang
             public int Price { get; set; }
         }
 
-        /*public List<Food> GetAllFoodData()
-        {
-            List<Food> foodList = new List<Food>();
-            string query = "SELECT ID, Name, FoodCategoryID, Price FROM Food";
-
-            DataProvider provider = new DataProvider();
-
-            DataTable dataTable = provider.ExecuteQuery(query);
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                int foodId = (int)row["ID"];
-                string foodName = (string)row["Name"];
-                int foodCategoryId = (int)row["FoodCategoryID"];
-                int foodPrice = (int)row["Price"];
-
-                Food food = new Food
-                {
-                    FoodId = foodId,
-                    FoodName = foodName,
-                    FoodCategoryId = foodCategoryId,
-                    Price = foodPrice
-                };
-                foodList.Add(food);
-            }
-
-            return foodList;
-        }*/
         private List<Food> foodList;
 
         void GetAllFoodData()

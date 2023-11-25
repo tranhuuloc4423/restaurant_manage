@@ -59,6 +59,7 @@ namespace ui_qlnhahang
             string username = txtUsername.Text;
             string displayname = txtUsernameDisplay.Text;
             string pass = AccountDAO.textToMd5.converText(txtNewPassConfirm.Text);
+
             Accountupdate(username, displayname, pass);
             MessBox mb = new MessBox("Cập nhật thành công!");
             mb.ShowDialog();
@@ -67,7 +68,6 @@ namespace ui_qlnhahang
             //Login login = new Login();
             //login.ShowDialog();
             Application.Restart();
-
         }
         void  Accountupdate(string username , string displayname, string pass)
         {

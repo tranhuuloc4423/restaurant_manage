@@ -98,18 +98,6 @@ namespace ui_qlnhahang
             GetAllData(query, gridview);
         }
 
-        //public static void setStateButton(BunifuThinButton2 button, bool state)
-        //{
-        //    button.Enabled = state;
-        //    if(state == false)
-        //    {
-        //        button.IdleFillColor = Color.DarkSlateGray;
-        //    } else
-        //    {
-        //        button.IdleFillColor = Color.AliceBlue;
-        //    }
-        //}
-
         public static void handleFilter(DataGridView gridview, BunifuTextBox txtbox, string query, string columnName)
         {
             string keyword = txtbox.Text.Trim();

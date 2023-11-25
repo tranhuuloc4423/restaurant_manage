@@ -28,21 +28,8 @@ namespace ui_qlnhahang
         }
         private string tk;
         private string mk;
-       
 
-        private void CenterFormInPanel(Form form, Panel panel)
-        {
-            int panelWidth = panel.Width;
-            int panelHeight = panel.Height;
-            int formWidth = form.Width;
-            int formHeight = form.Height;
-
-            int left = (panelWidth - formWidth) / 2;
-            int top = (panelHeight - formHeight) / 2;
-
-            form.Location = new Point(left, top);
-        }
-
+        // Hàm chuyển form
         private void navigation(Form form, string title)
         {
             if (subForm != null)
@@ -137,8 +124,6 @@ namespace ui_qlnhahang
 
         private void btnOpenOrder_Click(object sender, EventArgs e)
         {
-            
-            
             if (btnOpenOrder.Text.Equals("Bắt Đầu Order"))
             {
                 handleStateBtn(false);
@@ -187,6 +172,11 @@ namespace ui_qlnhahang
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            handleLogin();
+        }
+
+        void handleLogin()
+        {
             Login fn = new Login();
             fn.ShowDialog();
             tk = fn.tk;
@@ -209,7 +199,7 @@ namespace ui_qlnhahang
                     break;
                 }
             }
-            lblaccountactive.Text =  "Tài khoản : " + displayName;
+            lblaccountactive.Text = "Tài khoản : " + displayName;
         }
         bool checkStaff(string tk)
         {
@@ -220,29 +210,7 @@ namespace ui_qlnhahang
         {
             tk = "";
             mk = "";
-            Login f = new Login();
-            f.ShowDialog();
-            tk = f.tk;
-            mk = f.mk;
-            Home form = new Home(tk, mk);
-            navigation(form, btnHome.Text);
-            activeButton(btnHome.Text);
-            btnAccManage.Enabled = !checkStaff(tk);
-            btnBillManage.Enabled = !checkStaff(tk);
-            btnCateManage.Enabled = !checkStaff(tk);
-            btnTableManage.Enabled = !checkStaff(tk);
-            btnFoodManage.Enabled = !checkStaff(tk);
-            
-            string displayName = "";
-            foreach (DataRow account in GetAllDataNew(accountquery).Rows)
-            {
-                if (account["AccountName"].ToString().Equals(tk))
-                {
-                    displayName = account["DisplayName"].ToString();
-                    break;
-                }
-            }
-            lblaccountactive.Text = "Tài khoản : " + displayName;
+            handleLogin();
         }
     }
 }

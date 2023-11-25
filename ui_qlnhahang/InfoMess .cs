@@ -18,13 +18,11 @@ namespace ui_qlnhahang
             InitializeComponent();
             CenterToScreen();
         }
-        
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
     }
 }

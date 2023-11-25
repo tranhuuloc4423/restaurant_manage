@@ -31,14 +31,6 @@ namespace ui_qlnhahang
             InitializeComponent();
         }
 
-        private void bunifuTextBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void FoodManage_Load(object sender, EventArgs e)
         {
             categoryList = GetTableData(queryCategory);
@@ -126,6 +118,7 @@ namespace ui_qlnhahang
                 }
 
                 object id = selectedRow.Cells[0].Value;
+
                 int foodCateID = 0;
 
                 foreach (DataRow row in categoryList.Rows)
@@ -174,6 +167,7 @@ namespace ui_qlnhahang
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // only number
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;

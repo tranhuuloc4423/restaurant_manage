@@ -38,6 +38,7 @@ namespace ui_qlnhahang.DAo
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, displayname, password });
             return result.Rows.Count > 0;
         }
+
         public class textToMd5
         {
             public static string converText(string text)
