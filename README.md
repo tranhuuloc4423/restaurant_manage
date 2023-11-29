@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://calen.lhu.edu.vn" title="Trường Đại Học Lạc Hồng" style="border: none;">
+  <a href="https://lhu.edu.vn/" title="Trường Đại Học Lạc Hồng" style="border: none;">
     <img src="https://lhu.edu.vn/Data/News/446/images/Large/LOGO%20DUNG%20EN_Large.png" alt="Trường Đại Học Lạc Hồng | Lac Hong University"
       width="300"
     >
