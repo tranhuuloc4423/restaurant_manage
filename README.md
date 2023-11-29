@@ -19,7 +19,7 @@
 
 ### Giảng viên hướng dẫn
 
--   ...
+-   Lê Mạnh Hùng
 
 ### Sinh viên thực hiện
 
