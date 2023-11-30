@@ -186,7 +186,6 @@ namespace ui_qlnhahang
                 DataGridViewRow selectedRow = gvAccount.SelectedRows[0];
                 txtUserName.Text = selectedRow.Cells[0].Value.ToString();
                 txtUserNameDisplay.Text = selectedRow.Cells[1].Value.ToString();
-                txtPass.Text = selectedRow.Cells[2].Value.ToString();
                 dpdType.Text = selectedRow.Cells[3].Value.ToString();
             }
         }

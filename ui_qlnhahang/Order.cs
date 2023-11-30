@@ -605,7 +605,6 @@ namespace ui_qlnhahang
             FoodDataGridView1.Rows.Clear();
             orderManager.loadorderToGridView(tableID, FoodDataGridView1);
             getTotalBill();
-            //MessageBox.Show(tableID.ToString());
         }
 
 

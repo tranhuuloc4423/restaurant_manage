@@ -266,3 +266,5 @@ select ID, TableID, Amount, Status,CheckoutDate, Account from [Bills]
 select * from [Category]
 select FoodCategoryID from [Food]
 select ID, Name from [Table]
+
+SELECT F.ID, F.Name AS Name, C.Name AS CategoryName, F.Price FROM Food F JOIN Category C ON F.FoodCategoryID = C.ID
